@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+require("dotenv").config();
 import { closeConnectionMongoDB, connectMongoDB } from "./Config/db";
 const express = require("express");
 const app = express();
