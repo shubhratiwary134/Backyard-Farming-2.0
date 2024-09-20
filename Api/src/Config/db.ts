@@ -1,3 +1,4 @@
+// Configuring the DATABASE
 const mongoose = require("mongoose");
 
 export const connectMongoDB = async () => {
