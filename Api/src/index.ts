@@ -10,7 +10,6 @@ const PORT = 3000;
 const startServer = async () => {
   await connectMongoDB();
   app.use(express.json()); // parse the JSON data into the request Format
-
   app.listen(PORT, () => {
     console.log("lets fucking go brother ");
   });
