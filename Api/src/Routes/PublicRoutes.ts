@@ -1,3 +1,8 @@
-import { Router } from "express";
+const express = require("express");
+import { getFamousCrops } from "../Controllers/cropController";
 
-const router = Router();
+const router = express.Router();
+
+router.get("/famousCrops", getFamousCrops);
+
+export default router;
