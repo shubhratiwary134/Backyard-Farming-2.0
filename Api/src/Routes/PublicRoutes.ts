@@ -1,8 +1,8 @@
 const express = require("express");
 import { getFamousCrops } from "../Controllers/cropController";
 
-const router = express.Router();
+const publicRouter = express.Router();
 
-router.get("/famousCrops", getFamousCrops);
+publicRouter.get("/famousCrops", getFamousCrops);
 
-export default router;
+export default publicRouter;

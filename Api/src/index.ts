@@ -3,7 +3,6 @@ require("dotenv").config();
 import { closeConnectionMongoDB, connectMongoDB } from "./Config/db";
 import PublicRoutes from "./Routes/PublicRoutes";
 import PrivateRoutes from "./Routes/PrivateRoutes";
-import { ClerkExpressWithAuth } from "@clerk/clerk-sdk-node";
 const express = require("express");
 const app = express();
 const PORT = 3000;
@@ -16,7 +15,7 @@ const startServer = async () => {
   //Public Routes that don't require the authentication for the access
   app.use("/", PublicRoutes);
   //Protected Routes that require the authentication
-  app.use("/api", ClerkExpressWithAuth(), PrivateRoutes);
+  app.use("/api", PrivateRoutes);
   app.listen(PORT, () => {
     console.log("lets fucking go brother ");
   });
