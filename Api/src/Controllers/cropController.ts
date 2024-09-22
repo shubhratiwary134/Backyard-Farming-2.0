@@ -1,3 +1,1 @@
-export const getFamousCrops = () => {
-  console.log("getting famous crops");
-};
+export const getFamousCrops = () => {};
