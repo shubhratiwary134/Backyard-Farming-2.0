@@ -88,3 +88,19 @@ export const updateSpecificPlantorium = async (req: Request, res: Response) => {
     res.status(500).json({ error: "Server error" });
   }
 };
+export const getUserPlantoriums = async (req: Request, res: Response) => {
+  const userId = req.params.id;
+  try {
+    // find all the plantoriums associated with the user .
+    const plantoriums = await Plantorium.find({ userId });
+    if (!plantoriums) {
+      return res
+        .status(404)
+        .json({ message: "no plantoriums found for the user" });
+    }
+    return res.status(200).json(plantoriums);
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: "problem in getting the Plantoriums" });
+  }
+};
