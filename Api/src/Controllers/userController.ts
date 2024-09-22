@@ -31,3 +31,33 @@ export const getProfile = async (req: UserProfileRequest, res: Response) => {
   };
   return res.status(200).json(completeUserProfile);
 };
+
+export const updateProfileMetadata = async (req: Request, res: Response) => {
+  const userId = req.params.id;
+  try {
+    const updatedUser = await User.findByIdAndUpdate(userId, req.body, {
+      new: true,
+      runValidators: true,
+    });
+    if (!updatedUser) {
+      return res.status(400).json({ message: "User not found" });
+    }
+    return res.status(200).json(updatedUser);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ message: "error in updating the profile" });
+  }
+};
+export const deleteUser = async (req: Request, res: Response) => {
+  const userId = req.params.id;
+  try {
+    const deletedUser = await User.findByIdAndDelete(userId);
+    if (!deletedUser) {
+      return res.status(404).json({ message: "the user not found" });
+    }
+    return res.status(200).json({ message: "user deleted successfully " });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ message: "error in deleting the profile" });
+  }
+};
