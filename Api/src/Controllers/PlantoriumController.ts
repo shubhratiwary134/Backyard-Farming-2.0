@@ -56,3 +56,16 @@ export const getSpecificPlantorium = async (req: Request, res: Response) => {
     res.status(500).json({ message: "Error fetching plantorium", err });
   }
 };
+
+export const deleteSpecificPlantorium = async (req: Request, res: Response) => {
+  const plantoriumId = req.params.id;
+  try {
+    const deletedPlantorium = await Plantorium.findByIdAndDelete(plantoriumId);
+    if (!deletedPlantorium) {
+      return res.status(404).json({ message: "Plantorium not found" });
+    }
+    res.status(200).json({ message: "Plantorium successfully deleted" });
+  } catch (err) {
+    res.status(500).json({ message: "error deleting the plantorium" });
+  }
+};
