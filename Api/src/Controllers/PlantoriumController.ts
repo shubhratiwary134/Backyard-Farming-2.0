@@ -69,3 +69,22 @@ export const deleteSpecificPlantorium = async (req: Request, res: Response) => {
     res.status(500).json({ message: "error deleting the plantorium" });
   }
 };
+
+export const updateSpecificPlantorium = async (req: Request, res: Response) => {
+  const plantoriumId = req.params.id;
+  try {
+    const updatedPlantorium = await Plantorium.findByIdAndUpdate(
+      plantoriumId,
+      req.body,
+      { new: true, runValidators: true }
+      // new:true ensures that findByIdAndUpdate returns the updated document .
+      // runValidators: true ensures that findByIdAndUpdate returns after the schema validation is complete .
+    );
+    if (!updatedPlantorium) {
+      return res.status(404).json({ message: "Plantorium not found" });
+    }
+    res.status(200).json(updatedPlantorium);
+  } catch (err) {
+    res.status(500).json({ error: "Server error" });
+  }
+};
