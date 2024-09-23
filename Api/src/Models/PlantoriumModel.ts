@@ -49,9 +49,6 @@ const plantoriumSchema = new mongoose.Schema({
     type: Number, // Area of the land in acres or square meters
     required: true,
   },
-  famous: {
-    type: Boolean,
-  },
   createdAt: {
     type: Date,
     default: Date.now,
