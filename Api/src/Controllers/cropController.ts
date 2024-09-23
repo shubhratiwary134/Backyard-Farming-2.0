@@ -1,7 +1,14 @@
 import { Request, Response } from "express";
+import mongoose from "mongoose";
 
-const Plantorium = require("../Models/PlantoriumModel");
 export const getFamousCrops = async (req: Request, res: Response) => {
-  const famousCrops = await Plantorium.find({ famous: true });
-  return res.status(200).send(famousCrops);
+  try {
+    const crops = await mongoose.connection
+      .collection("famousCrops")
+      .find({})
+      .toArray();
+    res.status(200).json(crops);
+  } catch (err) {
+    res.status(500).send("Error retrieving crops: " + err);
+  }
 };
