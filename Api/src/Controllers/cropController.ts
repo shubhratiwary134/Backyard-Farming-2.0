@@ -12,3 +12,5 @@ export const getFamousCrops = async (req: Request, res: Response) => {
     res.status(500).send("Error retrieving crops: " + err);
   }
 };
+
+// getSpecificCrop endpoint
