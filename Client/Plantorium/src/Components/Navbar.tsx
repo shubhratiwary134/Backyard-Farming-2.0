@@ -2,7 +2,7 @@ import {
   SignedIn,
   SignedOut,
   SignInButton,
-  SignOutButton,
+  UserButton,
 } from "@clerk/clerk-react";
 
 const Navbar = () => {
@@ -12,7 +12,7 @@ const Navbar = () => {
         <SignInButton />
       </SignedOut>
       <SignedIn>
-        <SignOutButton />
+        <UserButton />
       </SignedIn>
     </div>
   );
