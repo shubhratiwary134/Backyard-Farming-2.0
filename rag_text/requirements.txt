@@ -1,0 +1,16 @@
+#Python 3.12.4
+
+flask
+groq
+langchain_chroma
+langchain
+langchain-community
+pypdf
+flask-cors
+qdrant-client
+python-dotenv
+nomic
+nomic[local]
+torch
+flasgger
+minio
