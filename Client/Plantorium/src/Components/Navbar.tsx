@@ -1,21 +1,5 @@
-import {
-  SignedIn,
-  SignedOut,
-  SignInButton,
-  UserButton,
-} from "@clerk/clerk-react";
-
 const Navbar = () => {
-  return (
-    <div>
-      <SignedOut>
-        <SignInButton />
-      </SignedOut>
-      <SignedIn>
-        <UserButton />
-      </SignedIn>
-    </div>
-  );
+  return <div>navbar</div>;
 };
 
 export default Navbar;

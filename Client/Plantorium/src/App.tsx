@@ -1,10 +1,17 @@
+import { SignedIn, SignedOut } from "@clerk/clerk-react";
 import "./App.css";
-import Navbar from "./Components/Navbar";
+import HomePage from "./Pages/HomePage";
+import LandingPage from "./Pages/LandingPage";
 
 function App() {
   return (
     <>
-      <Navbar />
+      <SignedIn>
+        <HomePage />
+      </SignedIn>
+      <SignedOut>
+        <LandingPage />
+      </SignedOut>
     </>
   );
 }
