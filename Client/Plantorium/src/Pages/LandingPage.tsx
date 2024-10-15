@@ -1,10 +1,11 @@
 import { SignInButton } from "@clerk/clerk-react";
+import FamousCropsLists from "../Components/FamousCropsLists";
 
 const LandingPage = () => {
   return (
     <div>
       <SignInButton />
-      Landing la la la
+      <FamousCropsLists />
     </div>
   );
 };

@@ -11,7 +11,12 @@ const FamousCropsLists = () => {
   return (
     <div>
       {allFamousCrops.map((crop) => {
-        return <div>{crop.name}</div>;
+        return (
+          <div>
+            <div>{crop.name}</div>
+            <div>{crop.additionalTips}</div>
+          </div>
+        );
       })}
     </div>
   );
