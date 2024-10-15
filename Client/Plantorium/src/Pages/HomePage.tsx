@@ -1,10 +1,11 @@
 import { UserButton } from "@clerk/clerk-react";
+import FamousCropsLists from "../Components/FamousCropsLists";
 
 const HomePage = () => {
   return (
     <div>
       <UserButton />
-      HomePage Lala la la
+      <FamousCropsLists />
     </div>
   );
 };
