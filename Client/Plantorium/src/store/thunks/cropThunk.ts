@@ -8,7 +8,7 @@ export const getFamousCrops = createAsyncThunk(
       const response = await axios.get("http://localhost:3000/famousCrops", {
         withCredentials: true,
       });
-      console.log("control reaches here");
+
       return response.data;
     } catch (error) {
       if (axios.isAxiosError(error)) {
