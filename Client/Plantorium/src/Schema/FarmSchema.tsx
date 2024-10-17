@@ -1,6 +1,6 @@
 import * as Yup from "yup";
 
-const plantoriumValidationSchema = Yup.object().shape({
+export const plantoriumValidationSchema = Yup.object().shape({
   averageRainfall: Yup.number()
     .min(0, "Average rainfall cannot be negative")
     .required("Average Rainfall is required"),
