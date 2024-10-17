@@ -5,7 +5,7 @@ const StartFarmButton = () => {
   const navigate = useNavigate();
   return (
     <div>
-      <button onClick={() => navigate("/Farm")}>Start Farm</button>
+      <button onClick={() => navigate("/CreateFarm")}>Start Farm</button>
     </div>
   );
 };

@@ -7,6 +7,7 @@ import { ClerkProvider } from "@clerk/clerk-react";
 import { store } from "./store/store.ts";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import FarmForm from "./Pages/FarmForm.tsx";
+import ProtectedRoute from "./Components/ProtectedRoute.tsx";
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 if (!PUBLISHABLE_KEY) {
@@ -19,7 +20,14 @@ createRoot(document.getElementById("root")!).render(
         <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
           <Routes>
             <Route path="/" element={<App />} />
-            <Route path="/Farm" element={<FarmForm />} />
+            <Route
+              path="/CreateFarm"
+              element={
+                <ProtectedRoute>
+                  <FarmForm />
+                </ProtectedRoute>
+              }
+            />
           </Routes>
         </ClerkProvider>
       </Provider>
