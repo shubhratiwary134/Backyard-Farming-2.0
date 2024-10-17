@@ -1,7 +1,15 @@
 import React from "react";
 
 const FarmForm = () => {
-  return <div>Welcome to the form </div>;
+  return (
+    <>
+      <div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+    </>
+  );
 };
 
 export default FarmForm;
