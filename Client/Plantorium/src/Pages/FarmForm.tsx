@@ -20,9 +20,10 @@ const FarmForm = () => {
       console.log(values);
     },
   });
+  
   return (
     <>
-      <form autoComplete="off">
+      <form autoComplete="off" className="flex flex-col">
         <label htmlFor="AverageRainfall">Average Rainfall</label>
         <input
           value={formik.values.averageRainfall}
