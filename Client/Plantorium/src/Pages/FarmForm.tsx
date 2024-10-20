@@ -23,7 +23,7 @@ const FarmForm = () => {
 
   return (
     <>
-      <div className="max-w-xl mx-auto p-6 bg-white rounded-lg shadow-md">
+      <div className="max-w-xl mx-auto p-6 bg-green-800 rounded-lg shadow-md">
         <form autoComplete="off" onSubmit={formik.handleSubmit}>
           {/* Average Rainfall */}
           <div className="mb-4">
