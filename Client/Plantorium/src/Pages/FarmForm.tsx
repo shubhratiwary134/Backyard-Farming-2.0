@@ -20,92 +20,97 @@ const FarmForm = () => {
       console.log(values);
     },
   });
-  
+
   return (
     <>
-      <form autoComplete="off" className="flex flex-col">
-        <label htmlFor="AverageRainfall">Average Rainfall</label>
-        <input
-          value={formik.values.averageRainfall}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          type="text"
-          placeholder="enter average rainfall"
-        ></input>
-        <label htmlFor="AverageRainfall">Soil Type</label>
-        <input
-          value={formik.values.soilType}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          type="text"
-          placeholder="enter average rainfall"
-        ></input>
-        <label htmlFor="AverageRainfall">Soil COlor</label>
-        <input
-          value={formik.values.soilColor}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          type="text"
-          placeholder="enter average rainfall"
-        ></input>
-        <label htmlFor="AverageRainfall">soil texture</label>
-        <input
-          value={formik.values.soilTexture}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          type="text"
-          placeholder="enter average rainfall"
-        ></input>
-        <label htmlFor="AverageRainfall">soil ph</label>
-        <input
-          value={formik.values.soilPH}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          type="text"
-          placeholder="enter average rainfall"
-        ></input>
-        <label htmlFor="AverageRainfall">Past crops</label>
-        <input
-          value={formik.values.pastCrops}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          type="text"
-          placeholder="enter average rainfall"
-        ></input>
-        <label htmlFor="AverageRainfall">Crop Diseases</label>
-        <input
-          value={formik.values.cropDiseases}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          type="text"
-          placeholder="enter average rainfall"
-        ></input>
-        <label htmlFor="AverageRainfall">Affected Crops</label>
-        <input
-          value={formik.values.affectedCrops}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          type="text"
-          placeholder="enter average rainfall"
-        ></input>
-        <label htmlFor="AverageRainfall">Water Supply</label>
-        <input
-          value={formik.values.waterSupply}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          type="text"
-          placeholder="enter average rainfall"
-        ></input>
-        <label htmlFor="AverageRainfall">Land Area</label>
-        <input
-          value={formik.values.landArea}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          type="text"
-          placeholder="enter average rainfall"
-        ></input>
-        <button type="submit">submit</button>
-      </form>
+      <div>
+        <form autoComplete="off">
+          <div className="flex flex-col">
+            <label htmlFor="AverageRainfall"> Rainfall</label>
+            <input
+              value={formik.values.averageRainfall}
+              onChange={formik.handleChange}
+              onBlur={formik.handleBlur}
+              type="text"
+              placeholder="enter average rainfall"
+            />
+          </div>
+
+          <label htmlFor="AverageRainfall">Soil Type</label>
+          <input
+            value={formik.values.soilType}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            type="text"
+            placeholder="enter average rainfall"
+          ></input>
+          <label htmlFor="AverageRainfall">Soil COlor</label>
+          <input
+            value={formik.values.soilColor}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            type="text"
+            placeholder="enter average rainfall"
+          ></input>
+          <label htmlFor="AverageRainfall">soil texture</label>
+          <input
+            value={formik.values.soilTexture}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            type="text"
+            placeholder="enter average rainfall"
+          ></input>
+          <label htmlFor="AverageRainfall">soil ph</label>
+          <input
+            value={formik.values.soilPH}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            type="text"
+            placeholder="enter average rainfall"
+          ></input>
+          <label htmlFor="AverageRainfall">Past crops</label>
+          <input
+            value={formik.values.pastCrops}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            type="text"
+            placeholder="enter average rainfall"
+          ></input>
+          <label htmlFor="AverageRainfall">Crop Diseases</label>
+          <input
+            value={formik.values.cropDiseases}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            type="text"
+            placeholder="enter average rainfall"
+          ></input>
+          <label htmlFor="AverageRainfall">Affected Crops</label>
+          <input
+            value={formik.values.affectedCrops}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            type="text"
+            placeholder="enter average rainfall"
+          ></input>
+          <label htmlFor="AverageRainfall">Water Supply</label>
+          <input
+            value={formik.values.waterSupply}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            type="text"
+            placeholder="enter average rainfall"
+          ></input>
+          <label htmlFor="AverageRainfall">Land Area</label>
+          <input
+            value={formik.values.landArea}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            type="text"
+            placeholder="enter average rainfall"
+          ></input>
+          <button type="submit">submit</button>
+        </form>
+      </div>
     </>
   );
 };
