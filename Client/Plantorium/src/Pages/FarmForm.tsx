@@ -10,6 +10,9 @@ const FarmForm = () => {
       soilPh: 0,
       waterSupply: "",
       landArea: 0,
+      pastCrops: [], // multiple select option here
+      cropDiseases: [], // multiple select option here
+      affectedCrops: [], // multiple select option here
     },
     onSubmit: (values) => console.log(values),
   });
