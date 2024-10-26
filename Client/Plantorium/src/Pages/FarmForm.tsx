@@ -1,7 +1,8 @@
 import { useFormik } from "formik";
+import plantoriumValidationSchema from "../Schema/FarmSchema";
 
 const FarmForm = () => {
-  const { values, handleChange, handleSubmit } = useFormik({
+  const { values, handleChange, handleSubmit, errors, touched } = useFormik({
     initialValues: {
       averageRainfall: 0,
       soilType: "",
@@ -14,6 +15,7 @@ const FarmForm = () => {
       cropDiseases: [], // multiple select option here
       affectedCrops: [], // multiple select option here
     },
+    validationSchema: plantoriumValidationSchema,
     onSubmit: (values) => console.log(values),
   });
   return (
@@ -29,6 +31,9 @@ const FarmForm = () => {
           value={values.averageRainfall}
           onChange={handleChange}
         />
+        {errors.averageRainfall && touched.averageRainfall && (
+          <div className="text-red-500">{errors.averageRainfall}</div>
+        )}
         <select
           id="soilType"
           name="soilType"
