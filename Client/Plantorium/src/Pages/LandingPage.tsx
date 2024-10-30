@@ -1,11 +1,11 @@
 import { SignInButton } from "@clerk/clerk-react";
-import FamousCropsLists from "../Components/FamousCropsLists";
+import BannerImage from "../Components/LandingPageComponents/BannerImage";
 
 const LandingPage = () => {
   return (
     <div>
+      <BannerImage />
       <SignInButton />
-      <FamousCropsLists />
     </div>
   );
 };

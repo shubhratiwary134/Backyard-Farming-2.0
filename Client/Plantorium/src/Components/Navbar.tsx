@@ -6,12 +6,13 @@ const Navbar = () => {
         <a href="#">How It Works</a>
         <a href="#">Plans</a>
         <a href="#">FAQS</a>
-        <div className="flex gap-10 ">
-          <button className="bg-green-600 text-white px-5 py-2 rounded-full">
-            LogIn
-          </button>
-          <button className="bg-green-600 text-white px-5 py-2 rounded-full">
+
+        <div className="flex gap-5 ">
+          <button className="bg-green-400 text-black px-5 py-2 rounded-full">
             SignUp
+          </button>
+          <button className="bg-gray-300 text-black px-5 py-2 rounded-full">
+            Login
           </button>
         </div>
       </div>
