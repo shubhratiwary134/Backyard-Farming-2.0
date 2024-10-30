@@ -1,4 +1,4 @@
-import BannerPic from "../../Assests/banner.jpg";
+import BannerPic from "../../Assests/BannerFinal.jpg";
 const BannerImage = () => {
   return (
     <div className="pt-5 pb-20 w-full h-dvh flex justify-center relative">
