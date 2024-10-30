@@ -1,4 +1,4 @@
-import image1 from "../../Assests/PersonHoldingAPhone.jpg";
+import image1 from "../../Assests/farmeronphone.jpg";
 import image2 from "../../Assests/report.png";
 import image3 from "../../Assests/BannerTry.avif";
 const HowDoesItWork = () => {
@@ -6,7 +6,7 @@ const HowDoesItWork = () => {
     <div className="px-5">
       <div className=" text-3xl">How Does It Work ? </div>
       <div className="flex w-full justify-between mt-5">
-        <div className="w-96 flex flex-col border-2 border-black rounded-lg">
+        <div className="w-96 h-96 p-5 flex flex-col border-2 border-black rounded-lg">
           <div>Upload Your Plant Photos</div>
           <div>
             <img src={image1} className="w-full rounded-3xl" />
@@ -17,7 +17,7 @@ const HowDoesItWork = () => {
             crops to get started.
           </div>
         </div>
-        <div className=" w-96 flex flex-col  border-2 border-black">
+        <div className="w-96 p-5 flex flex-col border-2 border-black rounded-lg">
           <div>Receive Your Weekly Roadmap</div>
           <div>
             <img src={image2} className="w-full rounded-3xl" />
@@ -27,7 +27,7 @@ const HowDoesItWork = () => {
             with all the steps you need to help your plants thrive.
           </div>
         </div>
-        <div className=" w-96 flex flex-col  border-2 border-black">
+        <div className="w-96 p-5 flex flex-col border-2 border-black rounded-lg">
           <div>Track Progress & Join the Community</div>
           <div>
             <img src={image3} className=" rounded-3xl" />
