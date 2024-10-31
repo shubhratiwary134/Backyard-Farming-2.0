@@ -1,12 +1,12 @@
 const WhatsIncluded = () => {
   return (
     <div className="w-full">
-      <div className=" text-3xl">Whats Included</div>
+      <div className=" text-5xl">Whats Included</div>
       <div className="flex w-full justify-between mt-5">
-        <div className="w-96 h-96 p-5 flex flex-col border-2 border-black rounded-lg">
+        <div className="w-96  px-5 py-10 flex flex-col border-2 border-black rounded-lg">
           <div>Personalized Guidance</div>
           <div></div>
-          <div className="text-wrap">
+          <div>
             Get weekly, tailored advice based on the specific plants you’re
             growing and your local climate. From planting tips to harvesting
             milestones, our roadmap is crafted to help you succeed at every step
@@ -28,6 +28,15 @@ const WhatsIncluded = () => {
             Need quick answers? Our integrated chatbot is here to help! Get
             real-time answers to common gardening questions, from planting
             advice to troubleshooting plant health issues
+          </div>
+        </div>
+        <div className="w-96 p-5 flex flex-col border-2 border-black rounded-lg">
+          <div>Get Help with Pests</div>
+          <div></div>
+          <div>
+            Protect your plants from common pests with tailored tips and
+            treatments. Access expert advice on safe and effective ways to
+            manage pests without harming your garden.
           </div>
         </div>
       </div>

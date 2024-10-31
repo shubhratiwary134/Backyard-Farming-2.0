@@ -4,9 +4,9 @@ import image3 from "../../Assests/BannerTry.avif";
 const HowDoesItWork = () => {
   return (
     <div className="w-full">
-      <div className=" text-3xl">How Does It Work ? </div>
+      <div className=" text-5xl">How Does It Work ? </div>
       <div className="flex w-full justify-between mt-5">
-        <div className="w-96 h-96 p-5 flex flex-col border-2 border-black rounded-lg">
+        <div className="w-96  p-5 flex flex-col border-2 border-black rounded-lg">
           <div>Upload Your Plant Photos</div>
           <div>
             <img src={image1} className="w-full rounded-3xl" />
