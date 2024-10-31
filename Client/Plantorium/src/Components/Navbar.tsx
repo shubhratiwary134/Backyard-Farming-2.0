@@ -5,8 +5,8 @@ const Navbar = () => {
       <div className="flex justify-around items-center w-1/3">
         <a href="#">How It Works</a>
         <a href="#">Plans</a>
+        <a href="#">Team</a>
         <a href="#">FAQS</a>
-
         <div className="flex gap-5 ">
           <button className="bg-green-400 text-black px-5 py-2 rounded-full">
             SignUp
