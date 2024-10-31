@@ -1,9 +1,9 @@
 const WhatsIncluded = () => {
   return (
     <div className="w-full">
-      <div className=" text-5xl">Whats Included</div>
-      <div className="flex w-full justify-between mt-5">
-        <div className="w-96  px-5 py-10 flex flex-col border-2 border-black rounded-lg">
+      <div className=" mt-10 text-5xl">Whats Included</div>
+      <div className="flex w-full justify-between my-5">
+        <div className="w-96   py-10 flex flex-col border-2 border-black rounded-lg">
           <div>Personalized Guidance</div>
           <div></div>
           <div>
