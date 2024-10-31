@@ -1,5 +1,3 @@
-import React from "react";
-
 const WhatsIncluded = () => {
   return (
     <div className="px-5">
