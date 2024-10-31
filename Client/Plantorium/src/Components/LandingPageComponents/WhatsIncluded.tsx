@@ -3,7 +3,7 @@ const WhatsIncluded = () => {
     <div className="w-full">
       <div className=" mt-10 text-5xl">Whats Included</div>
       <div className="flex w-full justify-between my-5">
-        <div className="w-96   py-10 flex flex-col border-2 border-black rounded-lg">
+        <div className="w-96   py-10 flex flex-col border-2 border-gray-400 rounded-lg">
           <div>Personalized Guidance</div>
           <div></div>
           <div>
@@ -12,7 +12,7 @@ const WhatsIncluded = () => {
             milestones, our roadmap is crafted to help you succeed at every step
           </div>
         </div>
-        <div className="w-96 p-5 flex flex-col border-2 border-black rounded-lg">
+        <div className="w-96 p-5 flex flex-col border-2 border-gray-400 rounded-lg">
           <div>Connect with Other Farmers</div>
           <div></div>
           <div>
@@ -21,7 +21,7 @@ const WhatsIncluded = () => {
             gardeners to make your journey more rewarding and fun.
           </div>
         </div>
-        <div className="w-96 p-5 flex flex-col border-2 border-black rounded-lg">
+        <div className="w-96 p-5 flex flex-col border-2 border-gray-400 rounded-lg">
           <div>Ask Questions</div>
           <div></div>
           <div>
@@ -30,7 +30,7 @@ const WhatsIncluded = () => {
             advice to troubleshooting plant health issues
           </div>
         </div>
-        <div className="w-96 p-5 flex flex-col border-2 border-black rounded-lg">
+        <div className="w-96 p-5 flex flex-col border-2 border-gray-400 rounded-lg">
           <div>Get Help with Pests</div>
           <div></div>
           <div>
