@@ -1,7 +1,7 @@
 const WhatsIncluded = () => {
   return (
     <div className="px-5">
-      <div className=" text-3xl">How Does It Work ? </div>
+      <div className=" text-3xl">Whats Included</div>
       <div className="flex w-full justify-between mt-5">
         <div className="w-96 h-96 p-5 flex flex-col border-2 border-black rounded-lg">
           <div>Personalized Guidance</div>
