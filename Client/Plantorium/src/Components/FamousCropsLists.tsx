@@ -9,10 +9,10 @@ const FamousCropsLists = () => {
     dispatch(getFamousCrops());
   }, [dispatch]);
   return (
-    <div>
+    <div className="grid grid-cols-3 gap-20">
       {allFamousCrops.map((crop) => {
         return (
-          <div className="flex gap-20">
+          <div className="w-96 border-2 p-10 border-black">
             <div>{crop.name}</div>
             <div>{crop.additionalTips}</div>
           </div>

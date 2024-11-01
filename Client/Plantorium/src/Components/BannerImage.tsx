@@ -23,7 +23,10 @@ const BannerImage = () => {
         </SignUpButton>
       </SignedOut>
       <SignedIn>
-        <StartFarmButton className="absolute bottom-40 left-1/3 transform -translate-x-1/2 bg-[#e9f2e6]  py-2 px-8 rounded-xl shadow-lg" />
+        <StartFarmButton
+          className="absolute bottom-40 left-1/3 transform -translate-x-1/2 bg-[#e9f2e6]  py-2 px-8 rounded-xl shadow-lg"
+          text="Get Started"
+        />
       </SignedIn>
     </div>
   );
