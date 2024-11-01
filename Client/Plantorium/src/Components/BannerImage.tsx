@@ -1,5 +1,5 @@
 import { SignInButton, SignUpButton } from "@clerk/clerk-react";
-import BannerPic from "../../Assests/BannerFinal.jpg";
+import BannerPic from "../Assests/BannerFinal.jpg";
 const BannerImage = () => {
   return (
     <div className="pt-5 pb-20 w-full h-dvh flex justify-center relative">

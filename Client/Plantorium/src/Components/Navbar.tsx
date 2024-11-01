@@ -1,4 +1,10 @@
-import { SignInButton, SignUpButton } from "@clerk/clerk-react";
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  SignUpButton,
+  UserButton,
+} from "@clerk/clerk-react";
 
 const Navbar = () => {
   return (
@@ -9,18 +15,23 @@ const Navbar = () => {
         <a href="#">Plans</a>
         <a href="#">Team</a>
         <a href="#">FAQS</a>
-        <div className="flex gap-5 ">
-          <SignUpButton>
-            <button className="bg-[#66f542] text-black px-5 py-2 rounded-full">
-              SignUp
-            </button>
-          </SignUpButton>
-          <SignInButton>
-            <button className="bg-[#e9f2e6]  text-black px-5 py-2 rounded-full">
-              Login
-            </button>
-          </SignInButton>
-        </div>
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
+        <SignedOut>
+          <div className="flex gap-5 ">
+            <SignUpButton>
+              <button className="bg-[#66f542] text-black px-5 py-2 rounded-full">
+                SignUp
+              </button>
+            </SignUpButton>
+            <SignInButton>
+              <button className="bg-[#e9f2e6]  text-black px-5 py-2 rounded-full">
+                Login
+              </button>
+            </SignInButton>
+          </div>
+        </SignedOut>
       </div>
     </div>
   );

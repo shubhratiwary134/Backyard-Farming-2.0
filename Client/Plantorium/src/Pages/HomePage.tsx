@@ -1,11 +1,11 @@
-import { UserButton } from "@clerk/clerk-react";
 import FamousCropsLists from "../Components/FamousCropsLists";
 import StartFarmButton from "../Components/StartFarmButton";
+import BannerImage from "../Components/BannerImage";
 
 const HomePage = () => {
   return (
-    <div>
-      <UserButton />
+    <div className="px-40 flex flex-col items-center ">
+      <BannerImage />
       <StartFarmButton />
       <FamousCropsLists />
     </div>
