@@ -1,5 +1,5 @@
 import image1 from "../../Assests/YellowTheme.jpg";
-import image2 from "../../Assests/report.png";
+import image2 from "../../Assests/muchBetterReport.jpg";
 import image3 from "../../Assests/betterFarmer.jpg";
 const HowDoesItWork = () => {
   return (
