@@ -9,25 +9,25 @@ const HowDoesItWork = () => {
         AI analyzes your unique backyard farm and provides personalized guidance
       </div>
       <div className="flex w-full justify-between mt-5">
-        <div className="w-96  flex flex-col border-2 gap-20 border-gray-200 rounded-lg">
+        <div className="w-96  flex flex-col border-2 gap-5 border-gray-200 rounded-lg">
           <img src={image1} className="w-full rounded-lg h-2/3" />
-          <div className="text-sm">
+          <div className="text-md mr-5 ml-2">
             Start by uploading pictures of your plants or the crops you want to
             grow. Don’t have photos? No problem! Select from a list of popular
             crops to get started.
           </div>
         </div>
-        <div className="w-96  flex flex-col border-2 border-gray-200 rounded-lg">
+        <div className="w-96  flex flex-col border-2 gap-5 border-gray-200 rounded-lg">
           <img src={image2} className="w-full rounded-lg h-2/3" />
 
-          <div className="text-sm">
+          <div className="text-md mr-5 ml-2">
             Based on your plant choice, we’ll create a tailored weekly roadmap
             with all the steps you need to help your plants thrive.
           </div>
         </div>
-        <div className="w-96  flex flex-col border-2 border-gray-200 rounded-lg">
+        <div className="w-96  flex flex-col border-2 gap-5 border-gray-200 rounded-lg">
           <img src={image3} className="w-full rounded-lg h-2/3" />
-          <div className="text-sm">
+          <div className="text-md mr-5 ml-2">
             Check off completed tasks each week, track your progress, and share
             tips and experiences with other backyard gardeners
           </div>
