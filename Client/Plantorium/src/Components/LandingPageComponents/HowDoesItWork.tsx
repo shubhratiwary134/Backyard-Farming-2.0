@@ -9,10 +9,9 @@ const HowDoesItWork = () => {
         AI analyzes your unique backyard farm and provides personalized guidance
       </div>
       <div className="flex w-full justify-between mt-5">
-        <div className="w-96  p-5 flex flex-col border-2 border-gray-200 rounded-lg">
-          <div>Upload Your Plant Photos</div>
+        <div className="w-96 pb-5 flex flex-col border-2 gap-20 border-gray-200 rounded-lg">
           <div>
-            <img src={image1} className="w-full rounded-3xl" />
+            <img src={image1} className="w-full rounded-lg" />
           </div>
           <div className="text-wrap">
             Start by uploading pictures of your plants or the crops you want to
@@ -20,20 +19,18 @@ const HowDoesItWork = () => {
             crops to get started.
           </div>
         </div>
-        <div className="w-96 p-5 flex flex-col border-2 border-gray-200 rounded-lg">
-          <div>Receive Your Weekly Roadmap</div>
+        <div className="w-96  flex flex-col border-2 border-gray-200 rounded-lg">
           <div>
-            <img src={image2} className="w-full rounded-3xl" />
+            <img src={image2} className="w-full rounded-lg" />
           </div>
           <div>
             Based on your plant choice, we’ll create a tailored weekly roadmap
             with all the steps you need to help your plants thrive.
           </div>
         </div>
-        <div className="w-96 p-5 flex flex-col border-2 border-gray-200 rounded-lg">
-          <div>Track Progress & Join the Community</div>
+        <div className="w-96  flex flex-col border-2 border-gray-200 rounded-lg">
           <div>
-            <img src={image3} className=" rounded-3xl" />
+            <img src={image3} className=" rounded-lg" />
           </div>
           <div>
             Check off completed tasks each week, track your progress, and share
