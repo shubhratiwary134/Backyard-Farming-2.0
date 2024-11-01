@@ -12,7 +12,7 @@ const FamousCropsLists = () => {
     <div>
       {allFamousCrops.map((crop) => {
         return (
-          <div>
+          <div className="flex gap-20">
             <div>{crop.name}</div>
             <div>{crop.additionalTips}</div>
           </div>
