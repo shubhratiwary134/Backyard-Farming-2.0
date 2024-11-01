@@ -18,7 +18,7 @@ const Navbar = () => {
           <a href="#">FAQS</a>
           <div className="flex gap-5 ">
             <SignUpButton>
-              <button className="bg-[#66f542] text-black px-5 py-2 rounded-full">
+              <button className="bg-[#FFC645] text-black px-5 py-2 rounded-full">
                 SignUp
               </button>
             </SignUpButton>
