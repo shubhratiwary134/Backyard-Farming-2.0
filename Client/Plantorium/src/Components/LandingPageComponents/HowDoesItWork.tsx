@@ -1,6 +1,6 @@
 import image1 from "../../Assests/YellowTheme.jpg";
 import image2 from "../../Assests/report.png";
-import image3 from "../../Assests/BannerTry.avif";
+import image3 from "../../Assests/betterFarmer.jpg";
 const HowDoesItWork = () => {
   return (
     <div className="w-full">
@@ -10,7 +10,7 @@ const HowDoesItWork = () => {
       </div>
       <div className="flex w-full justify-between mt-5">
         <div className="w-96  flex flex-col border-2 gap-5 border-gray-200 rounded-lg">
-          <img src={image1} className="w-full rounded-lg h-2/3" />
+          <img src={image1} className="w-full h-2/3" />
           <div className="text-xl mr-5 ml-2">Upload Your Plant Photos</div>
           <div className="text-md mr-5 ml-2 text-neutral-900">
             Start by uploading pictures of your plants or the crops you want to
@@ -19,7 +19,7 @@ const HowDoesItWork = () => {
           </div>
         </div>
         <div className="w-96  flex flex-col border-2 gap-5 border-gray-200 rounded-lg">
-          <img src={image2} className="w-full rounded-lg h-2/3" />
+          <img src={image2} className="w-full  h-2/3" />
           <div className="text-xl mr-5 ml-2">Receive Your Weekly Roadmap</div>
           <div className="text-md mr-5 ml-2 text-neutral-900">
             Based on your plant choice, we’ll create a tailored weekly roadmap
@@ -27,7 +27,7 @@ const HowDoesItWork = () => {
           </div>
         </div>
         <div className="w-96  flex flex-col border-2 gap-5 border-gray-200 rounded-lg">
-          <img src={image3} className="w-full rounded-lg h-2/3" />
+          <img src={image3} className="w-full  h-2/3" />
           <div className="text-xl mr-5 ml-2">
             Track Progress & Join the Community
           </div>

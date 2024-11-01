@@ -1,3 +1,5 @@
+import { SignInButton, SignUpButton } from "@clerk/clerk-react";
+
 const Navbar = () => {
   return (
     <div className="px-5 py-2 flex justify-between ">
@@ -8,12 +10,16 @@ const Navbar = () => {
         <a href="#">Team</a>
         <a href="#">FAQS</a>
         <div className="flex gap-5 ">
-          <button className="bg-[#66f542] text-black px-5 py-2 rounded-full">
-            SignUp
-          </button>
-          <button className="bg-[#e9f2e6]  text-black px-5 py-2 rounded-full">
-            Login
-          </button>
+          <SignUpButton>
+            <button className="bg-[#66f542] text-black px-5 py-2 rounded-full">
+              SignUp
+            </button>
+          </SignUpButton>
+          <SignInButton>
+            <button className="bg-[#e9f2e6]  text-black px-5 py-2 rounded-full">
+              Login
+            </button>
+          </SignInButton>
         </div>
       </div>
     </div>
