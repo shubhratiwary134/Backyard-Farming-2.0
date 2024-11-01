@@ -8,10 +8,10 @@ const Navbar = () => {
         <a href="#">Team</a>
         <a href="#">FAQS</a>
         <div className="flex gap-5 ">
-          <button className="bg-green-400 text-black px-5 py-2 rounded-full">
+          <button className="bg-[#66f542] text-black px-5 py-2 rounded-full">
             SignUp
           </button>
-          <button className="bg-gray-300 text-black px-5 py-2 rounded-full">
+          <button className="bg-[#e9f2e6]  text-black px-5 py-2 rounded-full">
             Login
           </button>
         </div>
