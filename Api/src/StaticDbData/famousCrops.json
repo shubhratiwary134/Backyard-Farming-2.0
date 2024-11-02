@@ -1,6 +1,7 @@
 [
     {
         "name": "Tomatoes",
+        "description":"Grows well in most climates",
         "favorableSoilType": "Loamy, well-drained soil with a pH of 6.0-6.8",
         "dos": [
           "Plant in a sunny spot",
@@ -18,6 +19,7 @@
       },
       {
         "name": "Lettuce",
+        "description":"Prefers cooler weather and partial shade",
         "favorableSoilType": "Loamy, fertile soil with good drainage and a pH of 6.0-7.0",
         "dos": [
           "Grow in partial shade in warmer climates",
@@ -35,6 +37,7 @@
       },
       {
         "name": "Carrots",
+        "description":"Does best in loose, well-drained soil",
         "favorableSoilType": "Loose, sandy, well-drained soil with a pH of 6.0-7.0",
         "dos": [
           "Thin seedlings to allow room for root development",
@@ -52,6 +55,7 @@
       },
       {
         "name": "Zucchini",
+        "description":"Prefers warm weather and well-drained, fertile soil; requires full sun for optimal growth.",
         "favorableSoilType": "Loamy, well-drained soil with a pH of 6.0-7.0",
         "dos": [
           "Plant in full sun",
@@ -69,6 +73,7 @@
       },
       {
         "name": "Cucumbers",
+        "description":"Needs plenty of sun and water",
         "favorableSoilType": "Loamy, well-drained soil with a pH of 6.0-7.0",
         "dos": [
           "Provide trellises for better airflow and easier harvesting",
@@ -86,6 +91,7 @@
       },
       {
         "name": "Spinach",
+        "description":"Thrives in cool weather and partial shade; grows best in moist, well-drained soil.",
         "favorableSoilType": "Well-drained, rich soil with a pH of 6.0-7.0",
         "dos": [
           "Grow in partial shade in warmer climates",
@@ -103,6 +109,7 @@
       },
       {
         "name": "Bell Peppers",
+        "description":"Grows best in warm weather with full sun; prefers well-drained, fertile soil.",
         "favorableSoilType": "Loamy, well-drained soil with a pH of 6.0-6.8",
         "dos": [
           "Plant in full sun",
@@ -117,56 +124,7 @@
         "tools": ["Trowel", "Pruners", "Stakes", "Watering can"],
         "idealMoisture": "Keep soil consistently moist but avoid waterlogging",
         "additionalTips": "Mulching helps retain soil moisture and reduce weeds."
-      },
-      {
-        "name": "Peas",
-        "favorableSoilType": "Loamy, well-drained soil with a pH of 6.0-7.5",
-        "dos": [
-          "Plant early in the season for best results",
-          "Provide trellises for support"
-        ],
-        "donts": [
-          "Don't allow soil to dry out",
-          "Avoid overwatering, especially after the plants flower"
-        ],
-        "favorableClimate": "Cool climate, 55-70°F (13-21°C)",
-        "timeTaken": "60-70 days",
-        "tools": ["Trellis", "Trowel", "Watering can"],
-        "idealMoisture": "Keep soil evenly moist, particularly during flowering and pod formation",
-        "additionalTips": "Harvest pods regularly to encourage continued production."
-      },
-      {
-        "name": "Green Beans",
-        "favorableSoilType": "Loamy, well-drained soil with a pH of 6.0-7.0",
-        "dos": [
-          "Provide trellises for pole beans",
-          "Harvest beans regularly for the best yield"
-        ],
-        "donts": [
-          "Don't over-fertilize with nitrogen",
-          "Avoid planting in cold, wet soil"
-        ],
-        "favorableClimate": "Warm climate, 70-85°F (21-29°C)",
-        "timeTaken": "50-60 days",
-        "tools": ["Trowel", "Trellis", "Watering can"],
-        "idealMoisture": "Keep soil moist but not soggy",
-        "additionalTips": "Mulching helps retain soil moisture and reduce weed growth."
-      },
-      {
-        "name": "Radishes",
-        "favorableSoilType": "Loose, well-drained soil with a pH of 6.0-7.0",
-        "dos": [
-          "Plant in cool weather for best results",
-          "Thin seedlings to allow room for root development"
-        ],
-        "donts": [
-          "Don't overwater",
-          "Avoid planting in hot weather to prevent bitterness"
-        ],
-        "favorableClimate": "Cool climate, 50-65°F (10-18°C)",
-        "timeTaken": "20-30 days",
-        "tools": ["Trowel", "Watering can"],
-        "idealMoisture": "Keep soil consistently moist",
-        "additionalTips": "Succession planting allows for continuous harvest throughout the season."
       }
+    
+    
 ]
