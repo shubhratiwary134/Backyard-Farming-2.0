@@ -1,9 +1,9 @@
 import { useAuth } from "@clerk/clerk-react";
-import { Navigate } from "react-router";
 import { useEffect, useState } from "react";
+import { Navigate } from "react-router";
 
 const ProtectedRoute = ({ children }) => {
-  const { isSignedIn, isLoaded } = useAuth(); //added the isLoaded
+  const { isSignedIn, isLoaded } = useAuth();
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -12,15 +12,13 @@ const ProtectedRoute = ({ children }) => {
     }
   }, [isLoaded]);
 
-  // Show a loading indicator or fallback component while checking auth status
   if (loading) {
-    return <div>Loading...</div>;
+    return <div>Loading ...</div>;
   }
 
   if (!isSignedIn) {
-    return <Navigate to="/sign-in" />;
+    return <Navigate to="/Sign-In" />;
   }
-
   return children;
 };
 
