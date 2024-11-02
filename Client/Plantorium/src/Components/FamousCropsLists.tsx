@@ -10,14 +10,14 @@ const FamousCropsLists = () => {
     dispatch(getFamousCrops());
   }, [dispatch]);
   return (
-    <div className="grid grid-cols-3 gap-20">
+    <div className="grid grid-cols-4 gap-20">
       {allFamousCrops.map((crop) => {
         return (
-          <div className="w-96  flex flex-col border-2 gap-5 border-gray-200 rounded-lg">
-            <img src={image1} className="w-full h-2/3" />
+          <div className="w-60 h-80 flex flex-col border-2 gap-5 border-gray-200 rounded-lg">
+            <img src={image1} className="w-full h-1/2" />
             <div className="text-xl mr-5 ml-2">{crop.name}</div>
             <div className="text-md mr-5 ml-2 text-neutral-900">
-              {crop.additionalTips}
+              {crop.description}
             </div>
           </div>
         );
