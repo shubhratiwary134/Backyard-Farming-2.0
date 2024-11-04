@@ -27,7 +27,7 @@ const FarmForm = () => {
         </div>
         <form
           onSubmit={handleSubmit}
-          className=" flex flex-col gap-10 w-full border-2 border-black px-10 py-20 rounded-3xl"
+          className=" flex flex-col gap-10 w-full  rounded-3xl"
         >
           <input
             type="number"
@@ -122,6 +122,7 @@ const FarmForm = () => {
           {errors.landArea && touched.landArea && (
             <div className="text-red-500">{errors.landArea}</div>
           )}
+
           <button
             type="submit"
             className="w-60 px-10 rounded-lg py-2 border-black border-2"
