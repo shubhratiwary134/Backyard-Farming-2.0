@@ -21,11 +21,13 @@ const FarmForm = () => {
     });
   return (
     <>
-      <div className="flex  flex-col justify-center items-center ">
-        <div className="text-3xl">Backyard Farming 2.O</div>
+      <div className="px-40 py-10 flex  flex-col justify-center items-center">
+        <div className="w-full">
+          <div className="text-5xl">Create A Backyard Farm</div>
+        </div>
         <form
           onSubmit={handleSubmit}
-          className="ml-10 mt-10 flex flex-col gap-10 w-5/6 border-2 border-black px-10 py-20 rounded-3xl"
+          className=" flex flex-col gap-10 w-full border-2 border-black px-10 py-20 rounded-3xl"
         >
           <input
             type="number"
