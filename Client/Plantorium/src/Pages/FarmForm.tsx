@@ -21,8 +21,8 @@ const FarmForm = () => {
     });
   return (
     <>
-      <div className="px-40 py-10 flex  flex-col justify-center items-center">
-        <div className="w-full">
+      <div className="px-40 py-5 flex  flex-col justify-center items-center">
+        <div className="w-full mb-10">
           <div className="text-5xl">Create A Backyard Farm</div>
         </div>
         <form
