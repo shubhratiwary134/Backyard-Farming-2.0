@@ -1,7 +1,12 @@
 import { useFormik } from "formik";
 import plantoriumValidationSchema from "../Schema/FarmSchema";
+import { useState } from "react";
+import Step1 from "./Steps/Step1";
+import Step2 from "./Steps/Step2";
+import Step3 from "./Steps/Step3";
 
 const FarmForm = () => {
+  const [step, setStep] = useState(1);
   const { values, handleChange, handleSubmit, errors, touched, handleBlur } =
     useFormik({
       initialValues: {
@@ -19,6 +24,14 @@ const FarmForm = () => {
       validationSchema: plantoriumValidationSchema,
       onSubmit: (values) => console.log(values),
     });
+  const handleNextStep = () => {
+    const newStep = Math.min(step + 1, 3);
+    setStep(newStep);
+  };
+  const handlePreviousStep = () => {
+    const newStep = Math.max(step - 1, 1);
+    setStep(newStep);
+  };
   return (
     <>
       <div className="px-40 py-5 flex  flex-col justify-center items-center">
@@ -29,6 +42,9 @@ const FarmForm = () => {
           onSubmit={handleSubmit}
           className=" flex flex-col gap-10 w-full  rounded-3xl"
         >
+          {step === 1 && <Step1 />}
+          {step === 2 && <Step2 />}
+          {step === 3 && <Step3 />}
           <input
             type="number"
             name="averageRainfall"
@@ -122,13 +138,20 @@ const FarmForm = () => {
           {errors.landArea && touched.landArea && (
             <div className="text-red-500">{errors.landArea}</div>
           )}
-
-          <button
-            type="submit"
-            className="w-60 px-10 rounded-lg py-2 border-black border-2"
-          >
-            Submit
-          </button>
+          <div className="w-full flex gap-20">
+            <button
+              onClick={handleNextStep}
+              className="rounded-lg border-black border-2 p-3"
+            >
+              Next
+            </button>
+            <button
+              onClick={handlePreviousStep}
+              className="rounded-lg border-black border-2 p-3"
+            >
+              previous
+            </button>
+          </div>
         </form>
       </div>
     </>
