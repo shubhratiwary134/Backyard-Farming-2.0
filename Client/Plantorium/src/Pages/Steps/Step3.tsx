@@ -1,5 +1,5 @@
 const Step3 = () => {
-  return <div>Step3</div>;
+  return <div className="flex flex-col gap-10">Step3</div>;
 };
 
 export default Step3;

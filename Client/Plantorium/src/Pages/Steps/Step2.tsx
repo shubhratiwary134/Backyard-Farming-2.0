@@ -5,7 +5,7 @@ const Step2 = () => {
   const { values, handleChange, handleBlur, errors, touched } =
     useFormikContext<FarmFormValues>();
   return (
-    <div>
+    <div className="flex flex-col gap-10">
       <input
         type="number"
         name="soilPh"
