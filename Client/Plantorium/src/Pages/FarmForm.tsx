@@ -41,64 +41,25 @@ const FarmForm = () => {
           validationSchema={plantoriumValidationSchema}
           onSubmit={(values) => console.log(values)}
         >
-          {({ values, errors, touched, handleChange, handleBlur }) => (
-            <form className=" flex flex-col gap-10 w-full  rounded-3xl">
-              {step === 1 && <Step1 />}
-              {step === 2 && <Step2 />}
-              {step === 3 && <Step3 />}
-              <input
-                type="number"
-                name="soilPh"
-                placeholder="Enter the soilPh"
-                value={values.soilPh}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-              {errors.soilPh && touched.soilPh && (
-                <div className="text-red-500">{errors.soilPh}</div>
-              )}
-              <select
-                id="waterSupply"
-                name="waterSupply"
-                value={values.waterSupply}
-                onChange={handleChange}
-                onBlur={handleBlur}
+          <form className=" flex flex-col gap-10 w-full  rounded-3xl">
+            {step === 1 && <Step1 />}
+            {step === 2 && <Step2 />}
+            {step === 3 && <Step3 />}
+            <div className="w-full flex gap-20">
+              <button
+                onClick={handlePreviousStep}
+                className="rounded-lg border-black border-2 p-3"
               >
-                <option value="" label="Select Water Supply" />
-                <option value="Channel" label="Channel" />
-                <option value="Tube Well" label="Tube Well" />
-                <option value="Other" label="Other" />
-              </select>
-              {errors.waterSupply && touched.waterSupply && (
-                <div className="text-red-500">{errors.waterSupply}</div>
-              )}
-              <input
-                type="number"
-                name="landArea"
-                placeholder="Enter the landArea"
-                value={values.landArea}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-              {errors.landArea && touched.landArea && (
-                <div className="text-red-500">{errors.landArea}</div>
-              )}
-              <div className="w-full flex gap-20">
-                <button
-                  onClick={handlePreviousStep}
-                  className="rounded-lg border-black border-2 p-3"
-                >
-                  previous
-                </button>
-                <button
-                  onClick={handleNextStep}
-                  className="rounded-lg border-black border-2 p-3"
-                >
-                  Next
-                </button>
-              </div>
-            </form>
-          )}
+                previous
+              </button>
+              <button
+                onClick={handleNextStep}
+                className="rounded-lg border-black border-2 p-3"
+              >
+                Next
+              </button>
+            </div>
+          </form>
         </Formik>
       </div>
     </>
