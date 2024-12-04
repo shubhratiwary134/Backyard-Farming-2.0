@@ -9,4 +9,5 @@ export type FarmFormValues = {
   pastCrops: string[];
   cropDiseases: string[];
   affectedCrops: string[];
+  Photos: File[];
 };

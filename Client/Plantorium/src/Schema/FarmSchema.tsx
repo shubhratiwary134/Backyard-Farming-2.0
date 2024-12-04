@@ -33,6 +33,21 @@ export const plantoriumValidationSchema = Yup.object().shape({
   landArea: Yup.number()
     .min(0, "Land area cannot be negative")
     .required("Land area is required"),
+
+  Photos: Yup.array()
+    .of(
+      Yup.mixed()
+        .test("fileType", "Unsupported file format", (value) => {
+          if (!value) return true; // Skip validation if no file is selected
+          return ["image/jpeg", "image/png"].includes(value.type);
+        })
+        .test("fileSize", "File size is too large", (value) => {
+          if (!value) return true; // Skip validation if no file is selected
+          return value.size <= 5 * 1024 * 1024;
+        })
+    )
+    .max(5, "You can upload a maximum of 5 files") // Limit to 3 files
+    .nullable(),
 });
 
 export default plantoriumValidationSchema;

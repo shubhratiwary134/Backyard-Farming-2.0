@@ -18,7 +18,8 @@ const FarmForm = () => {
     landArea: 0,
     pastCrops: [], // multiple select option here
     cropDiseases: [], // multiple select option here
-    affectedCrops: [], // multiple select option here
+    affectedCrops: [],
+    Photos: [],
   };
   const handleNextStep = (e) => {
     e.preventDefault();
