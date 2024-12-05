@@ -62,6 +62,17 @@ const Step1 = () => {
       {errors.soilTexture && touched.soilTexture && (
         <div className="text-red-500">{errors.soilTexture}</div>
       )}
+      <input
+        type="number"
+        name="soilPh"
+        placeholder="Enter the soilPh"
+        value={values.soilPh}
+        onChange={handleChange}
+        onBlur={handleBlur}
+      />
+      {errors.soilPh && touched.soilPh && (
+        <div className="text-red-500">{errors.soilPh}</div>
+      )}
     </div>
   );
 };

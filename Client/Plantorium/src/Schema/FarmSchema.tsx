@@ -1,6 +1,6 @@
 import * as Yup from "yup";
 
-export const plantoriumValidationSchema = Yup.object().shape({
+export const plantoriumValidationSchemaStep1 = Yup.object().shape({
   averageRainfall: Yup.number()
     .min(0, "Average rainfall cannot be negative")
     .required("Average Rainfall is required"),
@@ -17,6 +17,8 @@ export const plantoriumValidationSchema = Yup.object().shape({
     .min(0, "pH cannot be negative")
     .max(14, "pH cannot exceed 14")
     .required("Soil pH is required"),
+});
+export const plantoriumValidationSchemaStep2 = Yup.object().shape({
   pastCrops: Yup.array()
     .of(Yup.string().required("Crop name is required"))
     .nullable(),
@@ -29,11 +31,11 @@ export const plantoriumValidationSchema = Yup.object().shape({
   waterSupply: Yup.string()
     .oneOf(["Channel", "Tube Well", "Other"], "Invalid water supply type")
     .required("Water supply is required"),
-
   landArea: Yup.number()
     .min(0, "Land area cannot be negative")
     .required("Land area is required"),
-
+});
+export const plantoriumValidationSchemaStep3 = Yup.object().shape({
   Photos: Yup.array()
     .of(
       Yup.mixed()
@@ -49,5 +51,3 @@ export const plantoriumValidationSchema = Yup.object().shape({
     .max(5, "You can upload a maximum of 5 files") // Limit to 3 files
     .nullable(),
 });
-
-export default plantoriumValidationSchema;

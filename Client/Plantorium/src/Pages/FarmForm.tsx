@@ -1,5 +1,9 @@
 import { Formik } from "formik";
-import plantoriumValidationSchema from "../Schema/FarmSchema";
+import {
+  plantoriumValidationSchemaStep1,
+  plantoriumValidationSchemaStep2,
+  plantoriumValidationSchemaStep3,
+} from "../Schema/FarmSchema";
 import { useState } from "react";
 import Step1 from "./Steps/Step1";
 import Step2 from "./Steps/Step2";
@@ -31,6 +35,16 @@ const FarmForm = () => {
     const newStep = Math.max(step - 1, 1);
     setStep(newStep);
   };
+  const handleValidation = (step) => {
+    switch (step) {
+      case 1:
+        return plantoriumValidationSchemaStep1;
+      case 2:
+        return plantoriumValidationSchemaStep2;
+      case 3:
+        return plantoriumValidationSchemaStep3;
+    }
+  };
   return (
     <>
       <div className="px-40 py-5 flex  flex-col justify-center items-center">
@@ -39,7 +53,7 @@ const FarmForm = () => {
         </div>
         <Formik
           initialValues={initialValues}
-          validationSchema={plantoriumValidationSchema}
+          validationSchema={() => handleValidation(step)}
           onSubmit={(values) => console.log(values)}
         >
           <form className=" flex flex-col gap-10 w-full  rounded-3xl">
@@ -57,7 +71,7 @@ const FarmForm = () => {
                 onClick={handleNextStep}
                 className="rounded-lg border-black border-2 p-3"
               >
-                Next
+                {step == 3 ? "Submit" : "Next"}
               </button>
             </div>
           </form>
