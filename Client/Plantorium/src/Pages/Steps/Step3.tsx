@@ -12,41 +12,48 @@ const Step3 = () => {
       setFieldValue("Photos", updatedPhotos.slice(0, 5)); // Limit to 5 files
     }
   }
+  function handleRemove(index) {
+    const updatedPhotos = values.Photos?.filter((_, i) => i !== index);
+    setFieldValue("Photos", updatedPhotos);
+  }
   return (
     <div className="flex flex-col gap-10">
       <p className="text-lg">Upload images</p>
-      <div className="flex gap-20">
+      <div className="grid grid-cols-4 gap-10 ">
         {values.Photos?.map((image, index) => {
           return (
             <div key={index}>
-              <div className="flex flex-col items-center justify-center w-60 h-60  bg-gray-100 rounded-lg shadow-md">
+              <div className="w-60 h-60 rounded-lg shadow-md ">
                 <img
                   src={URL.createObjectURL(image)}
                   alt={image.name}
                   className="w-full h-full object-cover rounded-lg"
                 />
+                <button onClick={() => handleRemove(index)}>X</button>
               </div>
             </div>
           );
         })}
-        <div className="flex flex-col items-center justify-center w-60 h-60  bg-gray-100 rounded-lg shadow-md">
-          {/* Hidden File Input */}
-          <input
-            type="file"
-            id="customFileInput"
-            className="hidden w-full h-full"
-            accept="image/*"
-            onChange={handleFileChange}
-          />
+        {values.Photos.length < 5 && (
+          <div className="flex flex-col items-center justify-center w-60 h-60  bg-gray-100 rounded-lg shadow-md">
+            {/* Hidden File Input */}
+            <input
+              type="file"
+              id="customFileInput"
+              className="hidden w-full h-full"
+              accept="image/*"
+              onChange={handleFileChange}
+            />
 
-          {/* Custom Button */}
-          <label
-            htmlFor="customFileInput"
-            className="w-full h-full  flex justify-center items-center bg-gray-100 text-black rounded cursor-pointer"
-          >
-            <FaPlus size={32} />
-          </label>
-        </div>
+            {/* Custom Button */}
+            <label
+              htmlFor="customFileInput"
+              className="w-full h-full  flex justify-center items-center bg-gray-100 text-black rounded cursor-pointer"
+            >
+              <FaPlus size={32} />
+            </label>
+          </div>
+        )}
       </div>
     </div>
   );
