@@ -25,11 +25,14 @@ const FarmForm = () => {
     affectedCrops: [],
     Photos: [],
   };
-  const handleNextStep = (e) => {
+  const handleNextStep = async (e, validateForm) => {
     e.preventDefault();
-    const newStep = Math.min(step + 1, 3);
-    setStep(newStep);
+    const errors = await validateForm();
+    if (Object.keys(errors).length === 0) {
+      setStep((prev) => Math.min(prev + 1, 3)); // Move to the next step
+    }
   };
+
   const handlePreviousStep = (e) => {
     e.preventDefault();
     const newStep = Math.max(step - 1, 1);
@@ -53,28 +56,31 @@ const FarmForm = () => {
         </div>
         <Formik
           initialValues={initialValues}
-          validationSchema={() => handleValidation(step)}
+          validationSchema={handleValidation(step)}
           onSubmit={(values) => console.log(values)}
         >
-          <form className=" flex flex-col gap-10 w-full  rounded-3xl">
-            {step === 1 && <Step1 />}
-            {step === 2 && <Step2 />}
-            {step === 3 && <Step3 />}
-            <div className="w-full flex gap-20">
-              <button
-                onClick={handlePreviousStep}
-                className="rounded-lg border-black border-2 p-3"
-              >
-                previous
-              </button>
-              <button
-                onClick={handleNextStep}
-                className="rounded-lg border-black border-2 p-3"
-              >
-                {step == 3 ? "Submit" : "Next"}
-              </button>
-            </div>
-          </form>
+          {({ validateForm, isValid, dirty }) => (
+            <form className=" flex flex-col gap-10 w-full  rounded-3xl">
+              {step === 1 && <Step1 />}
+              {step === 2 && <Step2 />}
+              {step === 3 && <Step3 />}
+              <div className="w-full flex gap-20">
+                <button
+                  onClick={handlePreviousStep}
+                  className="rounded-lg border-black border-2 p-3"
+                >
+                  previous
+                </button>
+                <button
+                  onClick={(e) => handleNextStep(e, validateForm)}
+                  disabled={!(isValid && dirty)}
+                  className="rounded-lg border-black border-2 p-3"
+                >
+                  {step == 3 ? "Submit" : "Next"}
+                </button>
+              </div>
+            </form>
+          )}
         </Formik>
       </div>
     </>
