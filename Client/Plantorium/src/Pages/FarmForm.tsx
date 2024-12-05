@@ -71,13 +71,19 @@ const FarmForm = () => {
                 >
                   previous
                 </button>
-                <button
-                  onClick={(e) => handleNextStep(e, validateForm)}
-                  disabled={!(isValid && dirty)}
-                  className="rounded-lg border-black border-2 p-3"
-                >
-                  {step == 3 ? "Submit" : "Next"}
-                </button>
+                {step < 3 ? (
+                  <button
+                    onClick={(e) => handleNextStep(e, validateForm)}
+                    disabled={!(isValid && dirty)}
+                    className="rounded-lg border-black border-2 p-3"
+                  >
+                    Next
+                  </button>
+                ) : (
+                  <button className="rounded-lg border-black border-2 p-3">
+                    submit
+                  </button>
+                )}
               </div>
             </form>
           )}

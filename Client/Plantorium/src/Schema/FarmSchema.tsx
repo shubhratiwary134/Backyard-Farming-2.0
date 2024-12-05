@@ -41,7 +41,7 @@ export const plantoriumValidationSchemaStep3 = Yup.object().shape({
       Yup.mixed()
         .test("fileType", "Unsupported file format", (value) => {
           if (!value) return true; // Skip validation if no file is selected
-          return ["image/jpeg", "image/png"].includes(value.type);
+          return ["image/jpeg", "image/png", "image/jpg"].includes(value.type);
         })
         .test("fileSize", "File size is too large", (value) => {
           if (!value) return true; // Skip validation if no file is selected
