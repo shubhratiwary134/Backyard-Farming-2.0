@@ -1,6 +1,7 @@
 import { useFormikContext } from "formik";
 import { FaPlus } from "react-icons/fa";
 import { FarmFormValues } from "../../Types/FarmFormTypes";
+import { IoMdRemoveCircle } from "react-icons/io";
 
 const Step3 = () => {
   const { values, setFieldValue } = useFormikContext<FarmFormValues>();
@@ -22,15 +23,18 @@ const Step3 = () => {
       <div className="grid grid-cols-4 gap-10 ">
         {values.Photos?.map((image, index) => {
           return (
-            <div key={index}>
-              <div className="w-60 h-60 rounded-lg shadow-md ">
-                <img
-                  src={URL.createObjectURL(image)}
-                  alt={image.name}
-                  className="w-full h-full object-cover rounded-lg"
-                />
-                <button onClick={() => handleRemove(index)}>X</button>
-              </div>
+            <div className="relative w-60 h-60 rounded-lg shadow-md  group ">
+              <img
+                src={URL.createObjectURL(image)}
+                alt={image.name}
+                className="w-full h-full object-cover rounded-lg"
+              />
+              <button
+                onClick={() => handleRemove(index)}
+                className="absolute opacity-0 group-hover:opacity-100 -right-4 -top-4"
+              >
+                <IoMdRemoveCircle size={32} />
+              </button>
             </div>
           );
         })}
