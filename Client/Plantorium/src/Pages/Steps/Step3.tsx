@@ -23,7 +23,7 @@ const Step3 = () => {
       <div className="grid grid-cols-4 gap-10 ">
         {values.Photos?.map((image, index) => {
           return (
-            <div className="relative w-60 h-60 rounded-lg shadow-md  group ">
+            <div className="relative border-2 w-60 h-60 rounded-lg shadow-md hover:border-black group  ">
               <img
                 src={URL.createObjectURL(image)}
                 alt={image.name}
@@ -31,7 +31,7 @@ const Step3 = () => {
               />
               <button
                 onClick={() => handleRemove(index)}
-                className="absolute opacity-0 group-hover:opacity-100 -right-4 -top-4"
+                className="absolute opacity-0 group-hover:opacity-100 duration-300 -right-4 -top-6 "
               >
                 <IoMdRemoveCircle size={32} />
               </button>
@@ -49,7 +49,6 @@ const Step3 = () => {
               onChange={handleFileChange}
             />
 
-            {/* Custom Button */}
             <label
               htmlFor="customFileInput"
               className="w-full h-full  flex justify-center items-center bg-gray-100 text-black rounded cursor-pointer"
