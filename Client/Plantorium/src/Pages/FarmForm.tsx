@@ -57,10 +57,16 @@ const FarmForm = () => {
         <Formik
           initialValues={initialValues}
           validationSchema={handleValidation(step)}
-          onSubmit={(values) => console.log(values)}
+          onSubmit={(values) => {
+            console.log("Form Submitted", values);
+            // Perform your submission logic here
+          }}
         >
-          {({ validateForm, isValid, dirty }) => (
-            <form className=" flex flex-col gap-10 w-full  rounded-3xl">
+          {({ validateForm, isValid, dirty, handleSubmit }) => (
+            <form
+              className=" flex flex-col gap-10 w-full  rounded-3xl"
+              onSubmit={handleSubmit}
+            >
               {step === 1 && <Step1 />}
               {step === 2 && <Step2 />}
               {step === 3 && <Step3 />}
@@ -80,7 +86,10 @@ const FarmForm = () => {
                     Next
                   </button>
                 ) : (
-                  <button className="rounded-lg border-black border-2 p-3">
+                  <button
+                    type="submit"
+                    className="rounded-lg border-black border-2 p-3"
+                  >
                     submit
                   </button>
                 )}
