@@ -59,7 +59,6 @@ const FarmForm = () => {
           validationSchema={handleValidation(step)}
           onSubmit={(values) => {
             console.log("Form Submitted", values);
-            // Perform your submission logic here
           }}
         >
           {({ validateForm, isValid, dirty, handleSubmit }) => (
