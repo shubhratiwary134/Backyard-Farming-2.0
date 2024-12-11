@@ -4,8 +4,9 @@ import WhatsIncluded from "../Components/LandingPageComponents/WhatsIncluded";
 
 const LandingPage = () => {
   return (
-    <div className="px-40 flex flex-col items-center ">
+    <div className="px-10 flex flex-col items-center ">
       <BannerImage />
+
       <HowDoesItWork />
       <WhatsIncluded />
     </div>

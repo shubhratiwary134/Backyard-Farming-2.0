@@ -11,6 +11,9 @@
   },
   "dependencies": {
     "@clerk/clerk-react": "^5.11.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^5.16.11",
     "@reduxjs/toolkit": "^2.2.8",
     "axios": "^1.7.7",
     "formik": "^2.4.6",

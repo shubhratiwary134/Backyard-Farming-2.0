@@ -9,6 +9,7 @@ import Step1 from "./Steps/Step1";
 import Step2 from "./Steps/Step2";
 import Step3 from "./Steps/Step3";
 import { FarmFormValues } from "../Types/FarmFormTypes";
+import { LinearProgress } from "@mui/material";
 
 const FarmForm = () => {
   const [step, setStep] = useState(1);
@@ -51,8 +52,9 @@ const FarmForm = () => {
   return (
     <>
       <div className="px-40 py-5 flex  flex-col justify-center items-center">
-        <div className="w-full mb-10">
+        <div className="w-full mb-10 flex flex-col gap-20">
           <div className="text-5xl">Create A Backyard Farm</div>
+          <LinearProgress variant="determinate" value={step * 33} />
         </div>
         <Formik
           initialValues={initialValues}
