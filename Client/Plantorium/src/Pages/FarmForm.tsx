@@ -10,9 +10,12 @@ import Step2 from "./Steps/Step2";
 import Step3 from "./Steps/Step3";
 import { FarmFormValues } from "../Types/FarmFormTypes";
 import { LinearProgress } from "@mui/material";
+import { useAppDispatch } from "../store/Hook";
+import { createAFarm } from "../store/thunks/plantoriumThunk";
 
 const FarmForm = () => {
   const [step, setStep] = useState(1);
+  const dispatch = useAppDispatch();
   const initialValues: FarmFormValues = {
     averageRainfall: 0,
     soilType: "",
@@ -60,7 +63,7 @@ const FarmForm = () => {
           initialValues={initialValues}
           validationSchema={handleValidation(step)}
           onSubmit={(values) => {
-            console.log("Form Submitted", values);
+            dispatch(createAFarm(values));
           }}
         >
           {({ validateForm, isValid, dirty, handleSubmit }) => (
