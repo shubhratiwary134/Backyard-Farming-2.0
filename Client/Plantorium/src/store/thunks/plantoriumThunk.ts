@@ -3,13 +3,16 @@ import axios from "axios";
 
 export const createAFarm = createAsyncThunk(
   "/createAFarm",
-  async (_, { rejectWithValue }) => {
+  async (FarmFormData, { rejectWithValue }) => {
     try {
       const response = await axios.post(
         "http://localhost:3000/plantorium/createNew",
-        {},
         {
-          withCredentials: true,
+          method: "POST",
+          body: JSON.stringify(FarmFormData),
+          headers: {
+            "Content-Type": "application/json",
+          },
         }
       );
       return response.data;
