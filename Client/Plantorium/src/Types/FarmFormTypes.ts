@@ -3,7 +3,7 @@ export type FarmFormValues = {
   soilType: string;
   soilColor: string;
   soilTexture: string;
-  soilPh: number;
+  soilPH: number;
   waterSupply: string;
   landArea: number;
   pastCrops: string[];

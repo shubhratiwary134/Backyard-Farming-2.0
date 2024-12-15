@@ -13,7 +13,7 @@ export const plantoriumValidationSchemaStep1 = Yup.object().shape({
   soilTexture: Yup.string()
     .oneOf(["Soft", "Hard", "Airy"], "Invalid soil texture")
     .required("Soil texture is required"),
-  soilPh: Yup.number()
+  soilPH: Yup.number()
     .min(0, "pH cannot be negative")
     .max(14, "pH cannot exceed 14")
     .required("Soil pH is required"),

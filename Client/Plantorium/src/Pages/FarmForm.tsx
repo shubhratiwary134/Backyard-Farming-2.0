@@ -12,16 +12,18 @@ import { FarmFormValues } from "../Types/FarmFormTypes";
 import { LinearProgress } from "@mui/material";
 import { useAppDispatch } from "../store/Hook";
 import { createAFarm } from "../store/thunks/plantoriumThunk";
+import { useUser } from "@clerk/clerk-react";
 
 const FarmForm = () => {
   const [step, setStep] = useState(1);
+  const { user } = useUser();
   const dispatch = useAppDispatch();
   const initialValues: FarmFormValues = {
     averageRainfall: 0,
     soilType: "",
     soilColor: "",
     soilTexture: "",
-    soilPh: 0,
+    soilPH: 0,
     waterSupply: "",
     landArea: 0,
     pastCrops: [], // multiple select option here

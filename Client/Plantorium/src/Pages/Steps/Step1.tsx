@@ -64,14 +64,14 @@ const Step1 = () => {
       )}
       <input
         type="number"
-        name="soilPh"
+        name="soilPH"
         placeholder="Enter the soilPh"
-        value={values.soilPh}
+        value={values.soilPH}
         onChange={handleChange}
         onBlur={handleBlur}
       />
-      {errors.soilPh && touched.soilPh && (
-        <div className="text-red-500">{errors.soilPh}</div>
+      {errors.soilPH && touched.soilPH && (
+        <div className="text-red-500">{errors.soilPH}</div>
       )}
     </div>
   );
