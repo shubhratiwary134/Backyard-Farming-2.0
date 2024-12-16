@@ -2,8 +2,7 @@ import mongoose from "mongoose";
 
 const plantoriumSchema = new mongoose.Schema({
   userId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "User", // Reference to the User model
+    type: String,
     required: true,
   },
   averageRainfall: {

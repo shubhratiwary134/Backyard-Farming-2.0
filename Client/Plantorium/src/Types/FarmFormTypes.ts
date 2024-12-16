@@ -11,3 +11,6 @@ export type FarmFormValues = {
   affectedCrops: string[];
   Photos: File[];
 };
+export type FormValueForThunk = FarmFormValues & {
+  userId: string;
+};

@@ -13,10 +13,12 @@ import { LinearProgress } from "@mui/material";
 import { useAppDispatch } from "../store/Hook";
 import { createAFarm } from "../store/thunks/plantoriumThunk";
 import { useUser } from "@clerk/clerk-react";
+import { useNavigate } from "react-router";
 
 const FarmForm = () => {
   const [step, setStep] = useState(1);
   const { user } = useUser();
+  const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const initialValues: FarmFormValues = {
     averageRainfall: 0,
@@ -65,7 +67,14 @@ const FarmForm = () => {
           initialValues={initialValues}
           validationSchema={handleValidation(step)}
           onSubmit={(values) => {
-            dispatch(createAFarm(values));
+            if (user) {
+              const dataWithUserId = {
+                ...values,
+                userId: user.id,
+              };
+              dispatch(createAFarm(dataWithUserId));
+              navigate("/");
+            }
           }}
         >
           {({ validateForm, isValid, dirty, handleSubmit }) => (

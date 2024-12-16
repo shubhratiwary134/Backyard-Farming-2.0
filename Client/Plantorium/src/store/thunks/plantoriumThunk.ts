@@ -1,9 +1,11 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { FormValueForThunk } from "../../Types/FarmFormTypes";
 
 export const createAFarm = createAsyncThunk(
   "/createAFarm",
-  async (FarmFormData, { rejectWithValue }) => {
+  async (FarmFormData: FormValueForThunk, { rejectWithValue }) => {
+    console.log("reaching the async of the endpoint ");
     try {
       const response = await axios.post(
         "http://localhost:3000/api/plantorium/createNew",
