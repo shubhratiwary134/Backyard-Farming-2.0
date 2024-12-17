@@ -7,9 +7,11 @@ const CheckAndAddUserInTheDB = () => {
   useEffect(() => {
     if (user && !hasChecked.current) {
       hasChecked.current = true;
+      const userId = user.id;
+      const email = user.primaryEmailAddress?.emailAddress;
     }
   }, [user]);
-  return <div>CheckAndAddUserInTheDB</div>;
+  return null;
 };
 
 export default CheckAndAddUserInTheDB;
