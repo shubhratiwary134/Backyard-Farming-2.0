@@ -10,16 +10,18 @@ import Step2 from "./Steps/Step2";
 import Step3 from "./Steps/Step3";
 import { FarmFormValues } from "../Types/FarmFormTypes";
 import { LinearProgress } from "@mui/material";
-import { useAppDispatch } from "../store/Hook";
+import { useAppDispatch, useAppSelector } from "../store/Hook";
 import { createAFarm } from "../store/thunks/plantoriumThunk";
 import { useUser } from "@clerk/clerk-react";
 import { useNavigate } from "react-router";
+import toast, { Toaster } from "react-hot-toast";
 
 const FarmForm = () => {
   const [step, setStep] = useState(1);
   const { user } = useUser();
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
+  const { status } = useAppSelector((state) => state.plantorium);
   const initialValues: FarmFormValues = {
     averageRainfall: 0,
     soilType: "",
@@ -73,7 +75,13 @@ const FarmForm = () => {
                 userId: user.id,
               };
               dispatch(createAFarm(dataWithUserId));
-              navigate("/");
+              toast.success("Form submitted successfully!", {
+                position: "top-center",
+                duration: 1000,
+              });
+              setTimeout(() => {
+                navigate("/");
+              }, 1000);
             }
           }}
         >
@@ -113,6 +121,7 @@ const FarmForm = () => {
           )}
         </Formik>
       </div>
+      <Toaster />
     </>
   );
 };
