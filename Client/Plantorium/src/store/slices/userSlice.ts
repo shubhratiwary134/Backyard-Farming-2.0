@@ -15,7 +15,11 @@ const initialState: initialStateInterface = {
 const userSlice = createSlice({
   name: "user",
   initialState: initialState,
-  reducers: {},
+  reducers: {
+    setHasChecked(state, action) {
+      state.hasChecked = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(checkAndAddUserInTheDBThunk.pending, (state) => {
@@ -32,4 +36,5 @@ const userSlice = createSlice({
       });
   },
 });
+export const { setHasChecked } = userSlice.actions;
 export default userSlice.reducer;
