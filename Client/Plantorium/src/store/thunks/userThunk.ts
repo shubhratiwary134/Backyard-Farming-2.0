@@ -1,14 +1,19 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
-import { FormValueForThunk } from "../../Types/FarmFormTypes";
 
-export const createAFarm = createAsyncThunk(
-  "/createAFarm",
-  async (FarmFormData: FormValueForThunk, { rejectWithValue }) => {
+interface UserDataType {
+  name: string;
+  id: string;
+  email: string;
+}
+
+export const checkAndAddUserInTheDBThunk = createAsyncThunk(
+  "/checkAndAddUserInTheDatabase",
+  async (userData: UserDataType, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/plantorium/createNew",
-        FarmFormData,
+        "http://localhost:3000/api/user/Check-or-create-user",
+        userData,
         {
           headers: {
             "Content-Type": "application/json",
@@ -22,7 +27,7 @@ export const createAFarm = createAsyncThunk(
           error.response?.data.message || "something went wrong"
         );
       }
-      return rejectWithValue("unknown error occurred");
+      return rejectWithValue("unknown error arrived");
     }
   }
 );

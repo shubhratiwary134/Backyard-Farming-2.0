@@ -78,17 +78,17 @@ const FarmForm = () => {
               if (status == "completed") {
                 toast.success("Form submitted successfully!", {
                   position: "top-center",
-                  duration: 1000,
+                  duration: 2000,
                 });
               } else if (status == "failed") {
                 toast.error("Error submitting the form!", {
-                  position: "top-center",
-                  duration: 1000,
+                  position: "bottom-center",
+                  duration: 2000,
                 });
               }
               setTimeout(() => {
                 navigate("/");
-              }, 1000);
+              }, 2000);
             }
           }}
         >

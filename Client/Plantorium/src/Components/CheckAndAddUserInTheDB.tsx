@@ -1,21 +1,19 @@
 import { useUser } from "@clerk/clerk-react";
-import { useEffect, useRef } from "react";
-import { useAppDispatch } from "../store/Hook";
+import { useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "../store/Hook";
 
 const CheckAndAddUserInTheDB = () => {
-  const hasChecked = useRef(false);
   const dispatch = useAppDispatch();
   const { user } = useUser();
-  const retryCount = useRef(0);
-  const Max_Retries = 5; //Maximum times we call the Api in case of error
+  const { haschecked } = useAppSelector((state) => state.user);
   useEffect(() => {
-    if (user && !hasChecked.current) {
-      hasChecked.current = true;
+    if (user && !hasChecked) {
+      hasChecked = true;
       const userId = user.id;
       const email = user.primaryEmailAddress?.emailAddress;
       //dispatch here
     }
-  }, [user]);
+  }, [user, dispatch, hasChecked]);
   return null;
 };
 
