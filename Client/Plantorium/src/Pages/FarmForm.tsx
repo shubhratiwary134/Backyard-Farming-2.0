@@ -75,10 +75,17 @@ const FarmForm = () => {
                 userId: user.id,
               };
               dispatch(createAFarm(dataWithUserId));
-              toast.success("Form submitted successfully!", {
-                position: "top-center",
-                duration: 1000,
-              });
+              if (status == "completed") {
+                toast.success("Form submitted successfully!", {
+                  position: "top-center",
+                  duration: 1000,
+                });
+              } else if (status == "failed") {
+                toast.error("Error submitting the form!", {
+                  position: "top-center",
+                  duration: 1000,
+                });
+              }
               setTimeout(() => {
                 navigate("/");
               }, 1000);
