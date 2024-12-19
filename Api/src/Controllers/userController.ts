@@ -5,6 +5,25 @@ interface UserProfileRequest extends Request {
   auth?: AuthObject;
 }
 const User = require("../Models/UserModel");
+export const CheckAndAddUser = async (req: Request, res: Response) => {
+  const data = req.body;
+  if (!data) {
+    return res
+      .status(400)
+      .json({ message: "Cannot store user , incomplete Data " });
+  }
+  const { email, userId, name } = req.body;
+  try {
+    await User.create({
+      email,
+      name,
+      userId,
+    });
+    res.status(201).json({ message: "User is Created" });
+  } catch (err) {
+    res.json({ message: `error creating a user ${err}` });
+  }
+};
 export const getProfile = async (req: UserProfileRequest, res: Response) => {
   const clerkUserId = req.auth?.userId;
   // if the userId is not string we put a check since the getUser method wants a string .
