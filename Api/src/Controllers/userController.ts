@@ -5,25 +5,38 @@ interface UserProfileRequest extends Request {
   auth?: AuthObject;
 }
 const User = require("../Models/UserModel");
+
 export const CheckAndAddUser = async (req: Request, res: Response) => {
-  const data = req.body;
-  if (!data) {
-    return res
-      .status(400)
-      .json({ message: "Cannot store user , incomplete Data " });
-  }
   const { email, userId, name } = req.body;
-  try {
-    await User.create({
-      email,
-      name,
-      userId,
+
+  if (!email || !userId || !name) {
+    return res.status(400).json({
+      message: "Incomplete data. Please provide email, userId, and name.",
     });
-    res.status(201).json({ message: "User is Created" });
+  }
+
+  try {
+    const UserInTheDB = await User.findOne({ email });
+
+    if (!UserInTheDB) {
+      await User.create({ email, name, userId });
+      return res
+        .status(201)
+        .json({ message: "User has been created successfully." });
+    }
+
+    return res.status(200).json({
+      message: "The user already exists in the database.",
+      user: UserInTheDB,
+    });
   } catch (err) {
-    res.json({ message: `error creating a user ${err}` });
+    console.error("Error during user lookup or creation:", err);
+    return res.status(500).json({
+      message: "An error occurred while processing the request.",
+    });
   }
 };
+
 export const getProfile = async (req: UserProfileRequest, res: Response) => {
   const clerkUserId = req.auth?.userId;
   // if the userId is not string we put a check since the getUser method wants a string .
