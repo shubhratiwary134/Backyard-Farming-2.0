@@ -11,9 +11,12 @@ const FamousCropsLists = () => {
   }, [dispatch]);
   return (
     <div className="grid grid-cols-4 gap-20">
-      {allFamousCrops.map((crop) => {
+      {allFamousCrops.map((crop, id) => {
         return (
-          <div className="w-60 h-80 flex flex-col border-2 gap-5 border-gray-200 rounded-lg">
+          <div
+            key={id}
+            className="w-60 h-80 flex flex-col border-2 gap-5 border-gray-200 rounded-lg"
+          >
             <img src={image1} className="w-full h-1/2" />
             <div className="text-xl mr-5 ml-2">{crop.name}</div>
             <div className="text-md mr-5 ml-2 text-neutral-900">
