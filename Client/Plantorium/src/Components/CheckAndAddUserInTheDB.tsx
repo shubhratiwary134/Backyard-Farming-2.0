@@ -9,9 +9,10 @@ const CheckAndAddUserInTheDB = () => {
   useEffect(() => {
     if (user && !hasChecked) {
       dispatch(setHasChecked(true));
-      const userId = user.id;
+      const clerkUserId = user.id;
       const email = user.primaryEmailAddress?.emailAddress;
-      console.log(userId, email, hasChecked);
+      const name = `${user.firstName} ${user.lastName}`.trim();
+      console.log(clerkUserId, email, hasChecked, name);
       //dispatch here
     }
   }, [user, dispatch, hasChecked]);

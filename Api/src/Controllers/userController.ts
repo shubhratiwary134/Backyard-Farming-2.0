@@ -7,9 +7,9 @@ interface UserProfileRequest extends Request {
 const User = require("../Models/UserModel");
 
 export const CheckAndAddUser = async (req: Request, res: Response) => {
-  const { email, userId, name } = req.body;
+  const { email, clerkUserId, name } = req.body;
 
-  if (!email || !userId || !name) {
+  if (!email || !clerkUserId || !name) {
     return res.status(400).json({
       message: "Incomplete data. Please provide email, userId, and name.",
     });
@@ -19,7 +19,7 @@ export const CheckAndAddUser = async (req: Request, res: Response) => {
     const UserInTheDB = await User.findOne({ email });
 
     if (!UserInTheDB) {
-      await User.create({ email, name, userId });
+      await User.create({ email, clerkUserId, name });
       return res
         .status(201)
         .json({ message: "User has been created successfully." });
