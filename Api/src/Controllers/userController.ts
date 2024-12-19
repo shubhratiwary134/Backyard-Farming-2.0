@@ -8,7 +8,7 @@ const User = require("../Models/UserModel");
 
 export const CheckAndAddUser = async (req: Request, res: Response) => {
   const { email, clerkUserId, name } = req.body;
-
+  console.log(email, clerkUserId, name);
   if (!email || !clerkUserId || !name) {
     return res.status(400).json({
       message: "Incomplete data. Please provide email, userId, and name.",

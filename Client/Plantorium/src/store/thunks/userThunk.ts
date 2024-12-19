@@ -3,8 +3,8 @@ import axios from "axios";
 
 interface UserDataType {
   name: string;
-  id: string;
-  email: string;
+  clerkUserId: string;
+  email: string | undefined;
 }
 
 export const checkAndAddUserInTheDBThunk = createAsyncThunk(

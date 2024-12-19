@@ -2,6 +2,7 @@ import { useUser } from "@clerk/clerk-react";
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../store/Hook";
 import { setHasChecked } from "../store/slices/userSlice";
+import { checkAndAddUserInTheDBThunk } from "../store/thunks/userThunk";
 const CheckAndAddUserInTheDB = () => {
   const dispatch = useAppDispatch();
   const { user } = useUser();
@@ -12,8 +13,13 @@ const CheckAndAddUserInTheDB = () => {
       const clerkUserId = user.id;
       const email = user.primaryEmailAddress?.emailAddress;
       const name = `${user.firstName} ${user.lastName}`.trim();
-      console.log(clerkUserId, email, hasChecked, name);
+      const userData = {
+        clerkUserId,
+        email,
+        name,
+      };
       //dispatch here
+      dispatch(checkAndAddUserInTheDBThunk(userData));
     }
   }, [user, dispatch, hasChecked]);
   return null;
