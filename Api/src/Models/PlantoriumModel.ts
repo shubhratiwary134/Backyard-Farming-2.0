@@ -4,6 +4,7 @@ const plantoriumSchema = new mongoose.Schema({
   userId: {
     type: String,
     required: true,
+    ref: "User",
   },
   averageRainfall: {
     type: Number, // Average rainfall in mm
@@ -24,6 +25,8 @@ const plantoriumSchema = new mongoose.Schema({
   soilPH: {
     type: Number, // pH value of the soil
     required: true,
+    min: 0,
+    max: 14,
   },
   pastCrops: [
     {
@@ -47,6 +50,7 @@ const plantoriumSchema = new mongoose.Schema({
   landArea: {
     type: Number, // Area of the land in acres or square meters
     required: true,
+    min: 0,
   },
   createdAt: {
     type: Date,

@@ -32,6 +32,7 @@ const Navbar = () => {
 
         <SignedIn>
           <a href="/CreateFarm">Start Farm</a>
+          <a href="/myFarms">My Farms</a>
           <a href="#">View Progress</a>
           <a href="#">Team</a>
           <a href="#">FAQS</a>
