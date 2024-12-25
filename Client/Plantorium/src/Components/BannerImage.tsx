@@ -9,11 +9,13 @@ import StartFarmButton from "./StartFarmButton";
 const BannerImage = () => {
   return (
     <div className="pt-5 pb-20 w-full h-dvh flex justify-between">
-      <div className="relative mt-20 ml-5  flex flex-col gap-20">
-        <div className="text-8xl text-[#3ba944]">Backyard Farming 2.O</div>
-        <div className="text-3xl text-[#336937] pr-40">
-          Your Journey to Sustainable Living Starts Here – Backyard Farming Made
-          Simple!
+      <div className="w-1/2 relative mt-5 ml-5 mb-10 flex flex-col gap-10">
+        <div className="text-9xl text-[#3ba944] font-heading">
+          Backyard Farming 2.0
+        </div>
+        <div className="text-4xl text-[#336937]  font-dancing">
+          Unlock your backyard’s potential with custom roadmaps. Sustainable
+          living starts here with Backyard Farming 2.0!
         </div>
         <SignedIn>
           <StartFarmButton
@@ -22,17 +24,17 @@ const BannerImage = () => {
           />
         </SignedIn>
         <SignedOut>
-          <div className="mt-20 flex gap-40">
-            <SignInButton>
-              <button className="  py-2 px-8 border-[#3ba944] border-y-2">
-                Log In
-              </button>
-            </SignInButton>
+          <div className="mt-20 flex gap-80">
             <SignUpButton>
-              <button className=" py-2 px-8 border-[#3ba944] border-y-2 ">
+              <button className="text-xl  py-2 px-16 border-[#3ba944] border-y-2 ">
                 Sign Up
               </button>
             </SignUpButton>
+            <SignInButton>
+              <button className="text-xl  py-2 px-16 border-[#3ba944] border-y-2 ">
+                Log In
+              </button>
+            </SignInButton>
           </div>
         </SignedOut>
       </div>
