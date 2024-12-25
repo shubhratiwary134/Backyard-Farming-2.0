@@ -4,12 +4,12 @@ import {
   SignInButton,
   SignUpButton,
 } from "@clerk/clerk-react";
-import BannerPic from "../Assests/Farmer character cartoon vector illustration.jpg";
+import BannerPic from "../Assests/BannerImage-lightTheme.png";
 import StartFarmButton from "./StartFarmButton";
 const BannerImage = () => {
   return (
     <div className="pt-5 pb-20 w-full h-dvh flex justify-between">
-      <div className=" text-5xl text-[#87CEEB] top-40 left-10 ">
+      <div className="mt-20 ml-5 text-8xl text-[#3ba944] ">
         Backyard Farming 2.O
       </div>
       <SignedOut>
