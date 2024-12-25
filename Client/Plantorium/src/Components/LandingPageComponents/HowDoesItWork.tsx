@@ -3,7 +3,7 @@ import image2 from "../../Assests/muchBetterReport.jpg";
 import image3 from "../../Assests/betterFarmer.jpg";
 const HowDoesItWork = () => {
   return (
-    <div className="w-full">
+    <div className="w-full px-10">
       <div className=" text-5xl">How Does It Work ? </div>
       <div className="text-gray-500 mt-5">
         AI analyzes your unique backyard farm and provides personalized guidance
