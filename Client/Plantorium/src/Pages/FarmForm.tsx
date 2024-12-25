@@ -63,7 +63,10 @@ const FarmForm = () => {
       <div className="px-40 py-5 flex  flex-col justify-center items-center">
         <div className="w-full mb-10 flex flex-col gap-20">
           <div className="text-5xl">Create A Backyard Farm</div>
-          <LinearProgress variant="determinate" value={step * 33} />
+          <LinearProgress
+            variant="determinate"
+            value={step == 1 ? 0 : (step - 1) * 33}
+          />
         </div>
         <Formik
           initialValues={initialValues}
