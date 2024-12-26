@@ -24,30 +24,43 @@ export const createPlantorium = async (req: Request, res: Response) => {
     createdAt,
   } = req.body;
   const Photos = req.files as Express.Multer.File[]; // multer middleware makes it possible for us to access the photos in req.files
-  if (!Photos || Photos.length === 0) {
+
+  /* This Part of the Code could be used in future if
+   we want to make the photos are required but
+   note that commenting this Out also means that
+    you need to change the Yup (validationSchema) 
+    in the frontend from nullable to required */
+
+  /* 
+   if (!Photos || Photos.length === 0) {
     return res.status(400).json({ message: "No photos uploaded" });
-  }
+   }
+  
+  */
 
   try {
     // Upload photos to Cloudinary and get URLs
-    const uploadPromises = Photos.map(
-      (photo) =>
-        new Promise((resolve, reject) => {
-          cloudinary.uploader
-            .upload_stream(
-              { resource_type: "auto", folder: "Plantify_Farm_Images" }, // Automatically detects file type
-              (error, result) => {
-                if (error) {
-                  reject(new Error("Image upload failed"));
-                } else {
-                  resolve(result.secure_url);
+    let imageUrls: string[] = [];
+    if (Photos && Photos.length > 0) {
+      const uploadPromises: Promise<string>[] = Photos.map(
+        (photo) =>
+          new Promise((resolve, reject) => {
+            cloudinary.uploader
+              .upload_stream(
+                { resource_type: "auto", folder: "Plantify_Farm_Images" },
+                (error, result) => {
+                  if (error) {
+                    reject(new Error("Image upload failed"));
+                  } else {
+                    resolve(result.secure_url);
+                  }
                 }
-              }
-            )
-            .end(photo.buffer); // Use photo.buffer for multer's in-memory file
-        })
-    );
-    const imageUrls = await Promise.all(uploadPromises);
+              )
+              .end(photo.buffer); // Use photo.buffer for multer's in-memory file
+          })
+      );
+      imageUrls = await Promise.all(uploadPromises);
+    }
 
     await Plantorium.create({
       userId,
