@@ -35,7 +35,7 @@ export const createPlantorium = async (req: Request, res: Response) => {
         new Promise((resolve, reject) => {
           cloudinary.uploader
             .upload_stream(
-              { resource_type: "auto" }, // Automatically detects file type
+              { resource_type: "auto", folder: "Plantify_Farm_Images" }, // Automatically detects file type
               (error, result) => {
                 if (error) {
                   reject(new Error("Image upload failed"));
