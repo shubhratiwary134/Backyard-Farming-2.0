@@ -1,4 +1,5 @@
 import { Request, Response } from "express";
+import cloudinary from "../Config/cloudinaryConfig";
 const Plantorium = require("../Models/PlantoriumModel");
 export const createPlantorium = async (req: Request, res: Response) => {
   const data = req.body;
@@ -22,7 +23,32 @@ export const createPlantorium = async (req: Request, res: Response) => {
     famous,
     createdAt,
   } = req.body;
+  const Photos = req.files as Express.Multer.File[]; // multer middleware makes it possible for us to access the photos in req.files
+  if (!Photos || Photos.length === 0) {
+    return res.status(400).json({ message: "No photos uploaded" });
+  }
+
   try {
+    // Upload photos to Cloudinary and get URLs
+    const uploadPromises = Photos.map(
+      (photo) =>
+        new Promise((resolve, reject) => {
+          cloudinary.uploader
+            .upload_stream(
+              { resource_type: "auto" }, // Automatically detects file type
+              (error, result) => {
+                if (error) {
+                  reject(new Error("Image upload failed"));
+                } else {
+                  resolve(result.secure_url);
+                }
+              }
+            )
+            .end(photo.buffer); // Use photo.buffer for multer's in-memory file
+        })
+    );
+    const imageUrls = await Promise.all(uploadPromises);
+
     await Plantorium.create({
       userId,
       averageRainfall,
@@ -37,6 +63,7 @@ export const createPlantorium = async (req: Request, res: Response) => {
       landArea,
       famous,
       createdAt,
+      photos: imageUrls,
     });
     res.status(201).json({ message: "plantorium successfully created" });
   } catch (err) {

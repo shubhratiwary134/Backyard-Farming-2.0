@@ -1,3 +1,4 @@
+import upload from "../Config/multerConfig";
 import {
   createPlantorium,
   deleteSpecificPlantorium,
@@ -9,7 +10,11 @@ const express = require("express");
 
 const plantoriumRoutes = express.Router();
 
-plantoriumRoutes.post("/createNew", createPlantorium);
+plantoriumRoutes.post(
+  "/createNew",
+  upload.array("Photos", 5),
+  createPlantorium
+);
 plantoriumRoutes.get("/:id", getSpecificPlantorium);
 plantoriumRoutes.delete("/:id", deleteSpecificPlantorium);
 plantoriumRoutes.put("/:id", updateSpecificPlantorium);

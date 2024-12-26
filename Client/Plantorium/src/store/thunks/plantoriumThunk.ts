@@ -11,7 +11,7 @@ export const createAFarm = createAsyncThunk(
         FarmFormData,
         {
           headers: {
-            "Content-Type": "application/json",
+            "Content-Type": "multipart/form-data",
           },
         }
       );
