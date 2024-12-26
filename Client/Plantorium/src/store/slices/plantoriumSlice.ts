@@ -28,7 +28,7 @@ const plantoriumSlice = createSlice({
       })
       .addCase(createAFarm.fulfilled, (state, action) => {
         state.status = "completed";
-        state.plantoriums.push(action.payload);
+        state.plantoriums.push(action.payload.plantorium);
       })
       .addCase(createAFarm.rejected, (state, action) => {
         state.status = "failed";

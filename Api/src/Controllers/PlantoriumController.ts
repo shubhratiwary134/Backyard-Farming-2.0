@@ -51,8 +51,12 @@ export const createPlantorium = async (req: Request, res: Response) => {
                 (error, result) => {
                   if (error) {
                     reject(new Error(`Image upload failed: ${error.message} `));
-                  } else {
+                  } else if (result && result.secure_url) {
                     resolve(result.secure_url);
+                  } else {
+                    reject(
+                      new Error("Image upload failed: result is undefined.")
+                    );
                   }
                 }
               )
@@ -62,7 +66,7 @@ export const createPlantorium = async (req: Request, res: Response) => {
       imageUrls = await Promise.all(uploadPromises);
     }
 
-    await Plantorium.create({
+    const plantorium = await Plantorium.create({
       userId,
       averageRainfall,
       soilType,
@@ -78,7 +82,9 @@ export const createPlantorium = async (req: Request, res: Response) => {
       createdAt,
       photos: imageUrls,
     });
-    res.status(201).json({ message: "plantorium successfully created" });
+    res
+      .status(201)
+      .json({ message: "plantorium successfully created", plantorium });
   } catch (err) {
     console.log(err);
     res
