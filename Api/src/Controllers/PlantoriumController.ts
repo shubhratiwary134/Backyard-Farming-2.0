@@ -50,7 +50,7 @@ export const createPlantorium = async (req: Request, res: Response) => {
                 { resource_type: "auto", folder: "Plantify_Farm_Images" },
                 (error, result) => {
                   if (error) {
-                    reject(new Error("Image upload failed"));
+                    reject(new Error(`Image upload failed: ${error.message} `));
                   } else {
                     resolve(result.secure_url);
                   }
@@ -81,6 +81,9 @@ export const createPlantorium = async (req: Request, res: Response) => {
     res.status(201).json({ message: "plantorium successfully created" });
   } catch (err) {
     console.log(err);
+    res
+      .status(500)
+      .json({ message: "An error occurred while creating Plantorium" });
   }
 };
 
