@@ -56,6 +56,11 @@ const plantoriumSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  photos: [
+    {
+      type: String,
+    },
+  ],
 });
 
 const Plantorium = mongoose.model("Plantorium", plantoriumSchema);

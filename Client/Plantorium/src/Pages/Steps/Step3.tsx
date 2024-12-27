@@ -43,6 +43,7 @@ const Step3 = () => {
             {/* Hidden File Input */}
             <input
               type="file"
+              name="Photos"
               id="customFileInput"
               className="hidden w-full h-full"
               accept="image/*"

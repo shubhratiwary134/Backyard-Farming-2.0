@@ -98,6 +98,7 @@ const FarmForm = () => {
           {({ validateForm, isValid, dirty, handleSubmit }) => (
             <form
               className=" flex flex-col gap-10 w-full  rounded-3xl"
+              encType="multipart/form-data"
               onSubmit={handleSubmit}
             >
               {step === 1 && <Step1 />}
