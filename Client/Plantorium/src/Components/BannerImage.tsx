@@ -14,12 +14,12 @@ const BannerImage = () => {
           Backyard Farming 2.0
         </div>
         <div className="text-4xl text-[#216125]  font-dancing">
-          Unlock your backyard’s potential with custom roadmaps. Sustainable
-          living starts here with Backyard Farming 2.0!
+          Turn your backyard into a thriving ecosystem with personalized guides.
+          Your sustainable journey begins now with Backyard Farming 2.O !!!
         </div>
         <SignedIn>
           <StartFarmButton
-            className="mt-20 text-3xl font-bold font-dancing py-2 px-16 border-[#3ba944] border-y-2 "
+            className="mt-20 ml-20 text-5xl  font-dancing py-2 px-16 border-[#3ba944] border-y-2 "
             text="Get Started"
           />
         </SignedIn>
@@ -31,7 +31,7 @@ const BannerImage = () => {
               </button>
             </SignUpButton>
             <SignInButton>
-              <button className="text-3xl  py-2 px-16 border-[#3ba944] border-y-2 font-dancing font-bold">
+              <button className="text-3xl  py-2 px-16 border-[#3ba944] border-y-2 font-dancing  font-bold">
                 Log In
               </button>
             </SignInButton>

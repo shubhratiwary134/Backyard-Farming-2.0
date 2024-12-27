@@ -3,7 +3,7 @@ import BannerImage from "../Components/BannerImage";
 
 const HomePage = () => {
   return (
-    <div className="flex flex-col items-center ">
+    <div className="px-10 flex flex-col items-center ">
       <BannerImage />
       <FamousCropsLists />
     </div>
