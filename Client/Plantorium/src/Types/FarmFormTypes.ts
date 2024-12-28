@@ -9,6 +9,7 @@ export type FarmFormValues = {
   pastCrops: string[];
   cropDiseases: string[];
   affectedCrops: string[];
+  Address: string;
   Photos: File[];
 };
 export type FormValueForThunk = FarmFormValues & {

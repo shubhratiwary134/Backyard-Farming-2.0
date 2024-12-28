@@ -34,6 +34,7 @@ export const plantoriumValidationSchemaStep2 = Yup.object().shape({
   landArea: Yup.number()
     .min(0, "Land area cannot be negative")
     .required("Land area is required"),
+  Address: Yup.string().required(),
 });
 export const plantoriumValidationSchemaStep3 = Yup.object().shape({
   Photos: Yup.array()

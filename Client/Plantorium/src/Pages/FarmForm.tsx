@@ -33,6 +33,7 @@ const FarmForm = () => {
     pastCrops: [], // multiple select option here
     cropDiseases: [], // multiple select option here
     affectedCrops: [],
+    Address: "",
     Photos: [],
   };
   const handleNextStep = async (e, validateForm) => {

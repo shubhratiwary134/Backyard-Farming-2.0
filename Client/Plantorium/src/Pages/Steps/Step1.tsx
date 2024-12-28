@@ -1,5 +1,6 @@
 import { useFormikContext } from "formik";
 import { FarmFormValues } from "../../Types/FarmFormTypes";
+import AddressInputField from "./AddressInputField";
 
 const Step1 = () => {
   const { values, handleChange, handleBlur, touched, errors } =
@@ -73,6 +74,7 @@ const Step1 = () => {
       {errors.soilPH && touched.soilPH && (
         <div className="text-red-500">{errors.soilPH}</div>
       )}
+      <AddressInputField />
     </div>
   );
 };
