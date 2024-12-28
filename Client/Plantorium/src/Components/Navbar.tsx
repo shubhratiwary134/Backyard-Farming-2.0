@@ -13,10 +13,6 @@ const Navbar = () => {
       <div className="text-xl">Backyard Farming 2.O</div>
       <div className="flex justify-around items-center w-1/3">
         <SignedOut>
-          {/* <a href="#">How It Works</a>
-          <a href="#">Plans</a>
-          <a href="#">Team</a>
-          <a href="#">FAQS</a> */}
           <AnimatedLink href="#">How It Works</AnimatedLink>
           <AnimatedLink href="#">Plans</AnimatedLink>
           <AnimatedLink href="#">Team</AnimatedLink>
