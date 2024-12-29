@@ -52,15 +52,15 @@ export const createAFarm = createAsyncThunk(
 );
 export const myFarms = createAsyncThunk(
   "/myFarm",
-  async (userId, { rejectWithValue }) => {
+  async (userId: string, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        `http://localhost:3000/api/plantorium/${userId}`,
+        `http://localhost:3000/api/plantorium/user/${userId}`,
         {
           withCredentials: true,
         }
       );
-      return response;
+      return response.data;
     } catch (error) {
       if (axios.isAxiosError(error)) {
         return rejectWithValue(error.response?.data || "Something went wrong");

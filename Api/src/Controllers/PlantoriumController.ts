@@ -143,7 +143,7 @@ export const getUserPlantoriums = async (req: Request, res: Response) => {
   const userId = req.params.id;
   try {
     // find all the plantoriums associated with the user .
-    const plantoriums = await Plantorium.find({ userId });
+    const plantoriums = await Plantorium.find({ userId: userId });
     if (!plantoriums) {
       return res
         .status(404)
