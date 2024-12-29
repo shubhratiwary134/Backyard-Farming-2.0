@@ -12,7 +12,6 @@ export const getFamousCrops = createAsyncThunk(
       return response.data;
     } catch (error) {
       if (axios.isAxiosError(error)) {
-        console.log("control reaches the error of thunk");
         return rejectWithValue(error.response?.data || "Something went wrong");
       }
       return rejectWithValue("an unknown Error occurred");

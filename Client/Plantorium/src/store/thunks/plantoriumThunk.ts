@@ -50,3 +50,22 @@ export const createAFarm = createAsyncThunk(
     }
   }
 );
+export const myFarms = createAsyncThunk(
+  "/myFarm",
+  async (userId, { rejectWithValue }) => {
+    try {
+      const response = await axios.get(
+        `http://localhost:3000/api/plantorium/${userId}`,
+        {
+          withCredentials: true,
+        }
+      );
+      return response;
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        return rejectWithValue(error.response?.data || "Something went wrong");
+      }
+      return rejectWithValue("an unknown Error occurred");
+    }
+  }
+);
