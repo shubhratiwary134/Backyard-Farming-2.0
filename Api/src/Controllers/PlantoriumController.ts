@@ -21,6 +21,7 @@ export const createPlantorium = async (req: Request, res: Response) => {
     waterSupply,
     landArea,
     famous,
+    Address,
     createdAt,
   } = req.body;
   const Photos = req.files as Express.Multer.File[]; // multer middleware makes it possible for us to access the photos in req.files
@@ -80,6 +81,7 @@ export const createPlantorium = async (req: Request, res: Response) => {
       landArea,
       famous,
       createdAt,
+      Address,
       photos: imageUrls,
     });
     res

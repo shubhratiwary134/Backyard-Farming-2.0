@@ -56,6 +56,10 @@ const plantoriumSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
+  Address: {
+    type: String,
+    required: true,
+  },
   photos: [
     {
       type: String,

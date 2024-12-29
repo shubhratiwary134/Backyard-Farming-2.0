@@ -79,6 +79,9 @@ const FarmForm = () => {
                 userId: user.id,
               };
               dispatch(createAFarm(dataWithUserId));
+              setTimeout(() => {
+                navigate("/");
+              }, 2000);
               if (status == "completed") {
                 toast.success("Form submitted successfully!", {
                   position: "top-center",
@@ -90,9 +93,6 @@ const FarmForm = () => {
                   duration: 2000,
                 });
               }
-              setTimeout(() => {
-                navigate("/");
-              }, 2000);
             }
           }}
         >

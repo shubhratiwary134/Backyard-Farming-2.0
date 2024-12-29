@@ -50,7 +50,9 @@ const AddressInputField = () => {
   return (
     <div>
       {loading ? (
-        <CircularProgress />
+        <div className="w-full flex justify-center">
+          <CircularProgress />
+        </div>
       ) : (
         <div className="flex  gap-10">
           <input

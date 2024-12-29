@@ -15,6 +15,7 @@ export const createAFarm = createAsyncThunk(
       formData.append("soilPH", String(FarmFormData.soilPH));
       formData.append("waterSupply", FarmFormData.waterSupply);
       formData.append("landArea", String(FarmFormData.landArea));
+      formData.append("Address", String(FarmFormData.Address));
       formData.append("pastCrops", JSON.stringify(FarmFormData.pastCrops));
       formData.append(
         "cropDiseases",
