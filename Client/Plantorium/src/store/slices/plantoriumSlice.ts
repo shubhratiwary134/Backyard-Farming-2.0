@@ -27,7 +27,7 @@ interface plantoriumInitialState {
 
 const initialState: plantoriumInitialState = {
   plantoriums: [], // array to store the farms of the user
-  cropChoices: ["firstCrop", "secondCrop", "thirdCrop"],
+  cropChoices: [],
   selectedCrop: "",
   status: "idle",
   error: null,
@@ -51,8 +51,13 @@ const plantoriumSlice = createSlice({
       })
       .addCase(createAFarm.fulfilled, (state, action) => {
         state.status = "completed";
-        if (action.payload && action.payload.plantorium) {
+        if (
+          action.payload &&
+          action.payload.plantorium &&
+          action.payload.cropChoices
+        ) {
           state.plantoriums.push(action.payload.plantorium);
+          state.cropChoices.push(action.payload.CropChoices);
         }
       })
       .addCase(createAFarm.rejected, (state, action) => {
