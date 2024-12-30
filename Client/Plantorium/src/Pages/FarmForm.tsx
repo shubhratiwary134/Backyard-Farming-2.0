@@ -13,13 +13,11 @@ import { LinearProgress } from "@mui/material";
 import { useAppDispatch, useAppSelector } from "../store/Hook";
 import { createAFarm } from "../store/thunks/plantoriumThunk";
 import { useUser } from "@clerk/clerk-react";
-import { useNavigate } from "react-router";
 import toast, { Toaster } from "react-hot-toast";
 
 const FarmForm = () => {
   const [step, setStep] = useState(1);
   const { user } = useUser();
-  const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const { status } = useAppSelector((state) => state.plantorium);
   const initialValues: FarmFormValues = {
@@ -79,9 +77,6 @@ const FarmForm = () => {
                 userId: user.id,
               };
               dispatch(createAFarm(dataWithUserId));
-              setTimeout(() => {
-                navigate("/");
-              }, 2000);
               if (status == "completed") {
                 toast.success("Form submitted successfully!", {
                   position: "top-center",
