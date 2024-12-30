@@ -19,19 +19,30 @@ interface Farm {
 
 interface plantoriumInitialState {
   plantoriums: Farm[];
+  cropChoices: string[];
+  selectedCrop: string;
   status: "idle" | "pending" | "completed" | "failed";
   error: string | null;
 }
 
 const initialState: plantoriumInitialState = {
   plantoriums: [], // array to store the farms of the user
+  cropChoices: [],
+  selectedCrop: "",
   status: "idle",
   error: null,
 };
 const plantoriumSlice = createSlice({
   name: "plantorium",
   initialState: initialState,
-  reducers: {},
+  reducers: {
+    setCropChoices: (state, action) => {
+      state.cropChoices = action.payload;
+    },
+    setSelectedCrop: (state, action) => {
+      state.selectedCrop = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(createAFarm.pending, (state) => {
