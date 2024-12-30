@@ -15,7 +15,7 @@ import { createAFarm } from "../store/thunks/plantoriumThunk";
 import { useUser } from "@clerk/clerk-react";
 import toast, { Toaster } from "react-hot-toast";
 
-const FarmForm = () => {
+const FarmForm = ({ farmSubmission }) => {
   const [step, setStep] = useState(1);
   const { user } = useUser();
   const dispatch = useAppDispatch();
@@ -88,6 +88,7 @@ const FarmForm = () => {
                   duration: 2000,
                 });
               }
+              farmSubmission();
             }
           }}
         >
