@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import cloudinary from "../Config/cloudinaryConfig";
+import axios from "axios";
 const Plantorium = require("../Models/PlantoriumModel");
 export const createPlantorium = async (req: Request, res: Response) => {
   const data = req.body;
@@ -84,9 +85,17 @@ export const createPlantorium = async (req: Request, res: Response) => {
       Address,
       photos: imageUrls,
     });
+    const cropChoices = await axios.post(
+      "http://localhost:5000/predictCrops",
+      plantorium
+    );
     res
       .status(201)
-      .json({ message: "plantorium successfully created", plantorium });
+      .json({
+        message: "plantorium successfully created",
+        plantorium,
+        cropChoices,
+      });
   } catch (err) {
     console.log(err);
     res
