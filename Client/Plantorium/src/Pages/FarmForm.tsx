@@ -59,9 +59,9 @@ const FarmForm = ({ farmSubmission }) => {
   };
   return (
     <>
-      <div className="px-40 py-5 flex  flex-col justify-center items-center">
+      <div className="w-3/4 p-5  flex  flex-col justify-center items-center rounded-lg">
         <div className="w-full mb-10 flex flex-col gap-20">
-          <div className="text-5xl">Create A Backyard Farm</div>
+          <div className="text-5xl font-heading">Create A Backyard Farm</div>
           <LinearProgress
             variant="determinate"
             value={step == 1 ? 0 : (step - 1) * 33}
@@ -94,7 +94,7 @@ const FarmForm = ({ farmSubmission }) => {
         >
           {({ validateForm, isValid, dirty, handleSubmit }) => (
             <form
-              className=" flex flex-col gap-10 w-full  rounded-3xl"
+              className=" flex flex-col gap-20 w-full  rounded-3xl"
               encType="multipart/form-data"
               onSubmit={handleSubmit}
             >

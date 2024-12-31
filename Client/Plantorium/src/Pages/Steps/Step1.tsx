@@ -6,7 +6,10 @@ const Step1 = () => {
   const { values, handleChange, handleBlur, touched, errors } =
     useFormikContext<FarmFormValues>();
   return (
-    <div className="flex flex-col gap-5">
+    <div className="w-1/2 flex flex-col gap-5">
+      <label htmlFor="averageRainfall" className="p-0">
+        Average Rainfall
+      </label>
       <input
         type="number"
         name="averageRainfall"
@@ -14,10 +17,12 @@ const Step1 = () => {
         value={values.averageRainfall}
         onChange={handleChange}
         onBlur={handleBlur}
+        className="focus:outline-none border-black border-2  p-2"
       />
       {errors.averageRainfall && touched.averageRainfall && (
         <div className="text-red-500">{errors.averageRainfall}</div>
       )}
+      <label htmlFor="soliType">Soil Type</label>
       <select
         id="soilType"
         name="soilType"

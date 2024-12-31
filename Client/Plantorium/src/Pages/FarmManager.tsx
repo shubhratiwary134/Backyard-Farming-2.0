@@ -8,7 +8,7 @@ const FarmManager = () => {
     setStep("Crop-Choice");
   };
   return (
-    <div>
+    <div className="mt-10 flex justify-center ">
       {step === "form" && <FarmForm farmSubmission={farmSubmission} />}
       {step === "Crop-Choice" && <CropChoice />}
     </div>
