@@ -59,7 +59,7 @@ const FarmForm = ({ farmSubmission }) => {
   };
   return (
     <>
-      <div className="w-3/4 p-5  flex  flex-col justify-center items-center rounded-lg">
+      <div className="w-3/4 p-5 flex  flex-col justify-center items-center rounded-lg">
         <div className="w-full mb-10 flex flex-col gap-20">
           <div className="text-5xl font-heading">Create A Backyard Farm</div>
           <LinearProgress

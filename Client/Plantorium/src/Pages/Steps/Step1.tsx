@@ -53,6 +53,7 @@ const Step1 = () => {
             value={values.soilColor}
             onChange={handleChange}
             onBlur={handleBlur}
+            className="p-2"
           >
             <option value="" label="Select soil Color" />
             <option value="Black" label="Black" />
@@ -63,7 +64,7 @@ const Step1 = () => {
           )}
         </div>
       </div>
-      <div className="w-1/2 flex flex-col gap-10">
+      <div className="w-1/2 flex flex-col gap-5">
         <div className="flex flex-col gap-1">
           <label htmlFor="soilTexture">Soil Texture</label>
           <select
@@ -72,6 +73,7 @@ const Step1 = () => {
             value={values.soilTexture}
             onChange={handleChange}
             onBlur={handleBlur}
+            className="p-2"
           >
             <option value="" label="Select Soil Texture" />
             <option value="Soft" label="Soft" />
@@ -97,8 +99,10 @@ const Step1 = () => {
             <div className="text-red-500">{errors.soilPH}</div>
           )}
         </div>
-
-        <AddressInputField />
+        <div className="flex flex-col gap-1">
+          <label>Address</label>
+          <AddressInputField />
+        </div>
       </div>
     </div>
   );
