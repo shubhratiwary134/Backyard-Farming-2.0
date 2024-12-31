@@ -19,7 +19,7 @@ const Step1 = () => {
             value={values.averageRainfall}
             onChange={handleChange}
             onBlur={handleBlur}
-            className="focus:outline-none w-1/2 appearance-none border-black border-2  p-2"
+            className="focus:outline-none w-1/2  border-black border-2  p-2 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
           />
           {errors.averageRainfall && touched.averageRainfall && (
             <div className="text-red-500">{errors.averageRainfall}</div>
@@ -93,7 +93,7 @@ const Step1 = () => {
             value={values.soilPH}
             onChange={handleChange}
             onBlur={handleBlur}
-            className="focus:outline-none w-1/2 appearance-none border-black border-2  p-2"
+            className="focus:outline-none w-1/2  border-black border-2 p-2 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
           />
           {errors.soilPH && touched.soilPH && (
             <div className="text-red-500">{errors.soilPH}</div>
