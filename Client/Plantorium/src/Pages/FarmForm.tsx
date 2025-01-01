@@ -59,9 +59,9 @@ const FarmForm = ({ farmSubmission }) => {
   };
   return (
     <>
-      <div className="w-3/4 p-5 flex  flex-col justify-center items-center rounded-lg">
+      <div className="w-3/4 border-4 border-black px-5 py-10 flex  flex-col justify-center items-center rounded-lg">
         <div className="w-full mb-10 flex flex-col gap-10">
-          <div className="text-5xl font-heading">Create A Backyard Farm</div>
+          <div className="text-7xl font-heading">Create A Backyard Farm</div>
           <LinearProgress
             variant="determinate"
             value={step == 1 ? 0 : (step - 1) * 33}
