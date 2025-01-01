@@ -1,6 +1,7 @@
 import { useAuth } from "@clerk/clerk-react";
 import { useEffect, useState } from "react";
 import { Navigate } from "react-router";
+import LoadingScreen from "./LoadingScreen";
 
 const ProtectedRoute = ({ children }) => {
   const { isSignedIn, isLoaded } = useAuth();
@@ -13,7 +14,11 @@ const ProtectedRoute = ({ children }) => {
   }, [isLoaded]);
 
   if (loading) {
-    return <div>Loading ...</div>;
+    return (
+      <div>
+        <LoadingScreen />
+      </div>
+    );
   }
 
   if (!isSignedIn) {

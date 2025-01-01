@@ -9,6 +9,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ProtectedRoute from "./Components/ProtectedRoute.tsx";
 import MyFarms from "./Pages/MyFarms.tsx";
 import FarmManager from "./Pages/FarmManager.tsx";
+import LoadingScreen from "./Components/LoadingScreen.tsx";
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 if (!PUBLISHABLE_KEY) {
