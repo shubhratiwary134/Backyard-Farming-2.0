@@ -15,6 +15,7 @@ import { createAFarm } from "../store/thunks/plantoriumThunk";
 import { useUser } from "@clerk/clerk-react";
 import toast, { Toaster } from "react-hot-toast";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+import farmHeadingPhoto from "../Assests/formHeading.jpg";
 
 const FarmForm = ({ farmSubmission }) => {
   const [step, setStep] = useState(1);
@@ -60,19 +61,25 @@ const FarmForm = ({ farmSubmission }) => {
   };
   return (
     <>
-      <div className="w-3/4  my-10  bg-white  px-5  flex  flex-col  items-center shadow-2xl rounded-lg">
+      <div className="w-3/4  my-10  bg-white  px-10 py-5  flex  flex-col  items-center shadow-2xl rounded-2xl">
         <div className="w-full mb-5 flex flex-col gap-10">
-          <div className="text-5xl font-heading mt-5">
-            Create A Backyard Farm
+          <div className="flex justify-between items-end">
+            <div className="text-5xl font-heading mt-5">
+              Create A Backyard Farm
+            </div>
+            <img
+              src={farmHeadingPhoto}
+              className="object-contain max-w-full  h-16 rounded-full"
+            />
           </div>
           <LinearProgress
             variant="determinate"
             value={step == 1 ? 0 : (step - 1) * 33}
             sx={{
               "& .MuiLinearProgress-bar": {
-                backgroundColor: "#00c90a",
+                backgroundColor: "black",
               },
-              backgroundColor: "#000000",
+              backgroundColor: "#c1c1c4",
             }}
           />
         </div>
@@ -113,7 +120,7 @@ const FarmForm = ({ farmSubmission }) => {
               <div className="w-full flex justify-between ">
                 <button
                   onClick={handlePreviousStep}
-                  className="rounded-lg border-black border-2 p-3"
+                  className="rounded-lg border-[#c1c1c4] border-2 p-3"
                 >
                   <FaAngleLeft />
                 </button>
@@ -121,14 +128,14 @@ const FarmForm = ({ farmSubmission }) => {
                   <button
                     onClick={(e) => handleNextStep(e, validateForm)}
                     disabled={!(isValid && dirty)}
-                    className="rounded-lg bg-black text-white border-2 p-3"
+                    className="rounded-lg border-[#c1c1c4] border-2 p-3"
                   >
                     <FaAngleRight />
                   </button>
                 ) : (
                   <button
                     type="submit"
-                    className="rounded-lg bg-black text-white border-2 p-3"
+                    className="rounded-lg border-[#c1c1c4] border-2 p-3"
                   >
                     Submit
                   </button>

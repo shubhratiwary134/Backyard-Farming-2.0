@@ -1,14 +1,14 @@
 import { useFormikContext } from "formik";
 import { FarmFormValues } from "../../Types/FarmFormTypes";
 import AddressInputField from "./AddressInputField";
-
+import formImage from "../../Assests/FormImage.jpg";
 const Step1 = () => {
   const { values, handleChange, handleBlur, touched, errors } =
     useFormikContext<FarmFormValues>();
   return (
     <div className=" flex  gap-10">
-      <div className="w-1/2 flex flex-col gap-5">
-        <div className=" flex flex-col gap-1">
+      <div className="w-1/3 flex flex-col gap-5">
+        <div className="flex flex-col gap-1">
           <label htmlFor="averageRainfall" className="px-1 text-lg">
             Average Rainfall
           </label>
@@ -19,7 +19,7 @@ const Step1 = () => {
             value={values.averageRainfall}
             onChange={handleChange}
             onBlur={handleBlur}
-            className="focus:outline-none w-1/2  border-2 py-4 px-2  [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none rounded-2xl"
+            className="focus:outline-none border-2 py-4 px-2  [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none rounded-2xl"
           />
           {errors.averageRainfall && touched.averageRainfall && (
             <div className="text-red-500">{errors.averageRainfall}</div>
@@ -68,7 +68,13 @@ const Step1 = () => {
           )}
         </div>
       </div>
-      <div className="w-1/2 flex flex-col gap-5">
+      <div className="w-1/4 flex items-center">
+        <img
+          src={formImage}
+          className="max-w-full object-contain rounded-full"
+        />
+      </div>
+      <div className="w-1/3 flex flex-col gap-5">
         <div className="flex flex-col gap-1">
           <label htmlFor="soilTexture" className="px-1 text-lg">
             Soil Texture
@@ -92,7 +98,7 @@ const Step1 = () => {
         </div>
         <div className="flex flex-col gap-1">
           <label htmlFor="soilPH" className="px-1 text-lg">
-            Soil PH
+            Soil Ph
           </label>
           <input
             type="number"
@@ -101,7 +107,7 @@ const Step1 = () => {
             value={values.soilPH}
             onChange={handleChange}
             onBlur={handleBlur}
-            className="focus:outline-none w-1/2  border-2 py-4 px-2  [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none rounded-2xl"
+            className="focus:outline-none border-2 py-4 px-2  [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none rounded-2xl"
           />
           {errors.soilPH && touched.soilPH && (
             <div className="text-red-500">{errors.soilPH}</div>
