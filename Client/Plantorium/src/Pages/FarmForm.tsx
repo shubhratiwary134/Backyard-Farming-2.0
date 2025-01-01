@@ -15,7 +15,7 @@ import { createAFarm } from "../store/thunks/plantoriumThunk";
 import { useUser } from "@clerk/clerk-react";
 import toast, { Toaster } from "react-hot-toast";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
-import farmHeadingPhoto from "../Assests/formHeading.jpg";
+import farmHeadingPhoto from "../Assests/formHeading2.jpg";
 
 const FarmForm = ({ farmSubmission }) => {
   const [step, setStep] = useState(1);
