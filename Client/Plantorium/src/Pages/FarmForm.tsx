@@ -14,6 +14,7 @@ import { useAppDispatch, useAppSelector } from "../store/Hook";
 import { createAFarm } from "../store/thunks/plantoriumThunk";
 import { useUser } from "@clerk/clerk-react";
 import toast, { Toaster } from "react-hot-toast";
+import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 
 const FarmForm = ({ farmSubmission }) => {
   const [step, setStep] = useState(1);
@@ -59,9 +60,11 @@ const FarmForm = ({ farmSubmission }) => {
   };
   return (
     <>
-      <div className="w-3/4 border-4 border-black px-5 py-10 flex  flex-col justify-center items-center rounded-lg">
-        <div className="w-full mb-10 flex flex-col gap-10">
-          <div className="text-7xl font-heading">Create A Backyard Farm</div>
+      <div className="w-3/4  my-10  bg-white  px-5  flex  flex-col  items-center shadow-2xl rounded-lg">
+        <div className="w-full mb-5 flex flex-col gap-10">
+          <div className="text-5xl font-heading mt-5">
+            Create A Backyard Farm
+          </div>
           <LinearProgress
             variant="determinate"
             value={step == 1 ? 0 : (step - 1) * 33}
@@ -100,34 +103,34 @@ const FarmForm = ({ farmSubmission }) => {
         >
           {({ validateForm, isValid, dirty, handleSubmit }) => (
             <form
-              className="mt-5 flex flex-col gap-20 w-full  rounded-3xl"
+              className="mt-10 flex flex-col gap-20 w-full  rounded-3xl"
               encType="multipart/form-data"
               onSubmit={handleSubmit}
             >
               {step === 1 && <Step1 />}
               {step === 2 && <Step2 />}
               {step === 3 && <Step3 />}
-              <div className="w-full flex gap-20">
+              <div className="w-full flex justify-between ">
                 <button
                   onClick={handlePreviousStep}
                   className="rounded-lg border-black border-2 p-3"
                 >
-                  previous
+                  <FaAngleLeft />
                 </button>
                 {step < 3 ? (
                   <button
                     onClick={(e) => handleNextStep(e, validateForm)}
                     disabled={!(isValid && dirty)}
-                    className="rounded-lg border-black border-2 p-3"
+                    className="rounded-lg bg-black text-white border-2 p-3"
                   >
-                    Next
+                    <FaAngleRight />
                   </button>
                 ) : (
                   <button
                     type="submit"
-                    className="rounded-lg border-black border-2 p-3"
+                    className="rounded-lg bg-black text-white border-2 p-3"
                   >
-                    submit
+                    Submit
                   </button>
                 )}
               </div>

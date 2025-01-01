@@ -62,7 +62,7 @@ const AddressInputField = () => {
             value={values.Address}
             onChange={handleChange}
             onBlur={handleBlur}
-            className="w-1/2 p-2 border-2 border-black"
+            className="w-1/2 py-4 px-2  border-2"
           ></input>
           {errors.Address && touched.Address && (
             <div className="text-red-500">{errors.Address}</div>

@@ -8,8 +8,8 @@ const Step1 = () => {
   return (
     <div className=" flex  gap-10">
       <div className="w-1/2 flex flex-col gap-5">
-        <div className="flex flex-col gap-1">
-          <label htmlFor="averageRainfall" className="p-0">
+        <div className=" flex flex-col gap-1">
+          <label htmlFor="averageRainfall" className="px-1 text-lg">
             Average Rainfall
           </label>
           <input
@@ -19,21 +19,23 @@ const Step1 = () => {
             value={values.averageRainfall}
             onChange={handleChange}
             onBlur={handleBlur}
-            className="focus:outline-none w-1/2  border-black border-2  p-2 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+            className="focus:outline-none w-1/2  border-2 py-4 px-2  [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none rounded-2xl"
           />
           {errors.averageRainfall && touched.averageRainfall && (
             <div className="text-red-500">{errors.averageRainfall}</div>
           )}
         </div>
         <div className="flex flex-col gap-1">
-          <label htmlFor="soliType">Soil Type</label>
+          <label htmlFor="soliType" className="px-1 text-lg">
+            Soil Type
+          </label>
           <select
             id="soilType"
             name="soilType"
             value={values.soilType}
             onChange={handleChange}
             onBlur={handleBlur}
-            className="p-2"
+            className="py-4 px-2  bg-white text-[#222222] border-2 rounded-xl"
           >
             <option value="" label="Select soil type" />
             <option value="Humus" label="Humus" />
@@ -46,14 +48,16 @@ const Step1 = () => {
           )}
         </div>
         <div className="flex flex-col gap-1">
-          <label htmlFor="soilColor">Soil Color</label>
+          <label htmlFor="soilColor" className="px-1 text-lg">
+            Soil Color
+          </label>
           <select
             id="soilColor"
             name="soilColor"
             value={values.soilColor}
             onChange={handleChange}
             onBlur={handleBlur}
-            className="p-2"
+            className="py-4 px-2  bg-white text-[#222222] border-2 rounded-xl"
           >
             <option value="" label="Select soil Color" />
             <option value="Black" label="Black" />
@@ -66,14 +70,16 @@ const Step1 = () => {
       </div>
       <div className="w-1/2 flex flex-col gap-5">
         <div className="flex flex-col gap-1">
-          <label htmlFor="soilTexture">Soil Texture</label>
+          <label htmlFor="soilTexture" className="px-1 text-lg">
+            Soil Texture
+          </label>
           <select
             id="soilTexture"
             name="soilTexture"
             value={values.soilTexture}
             onChange={handleChange}
             onBlur={handleBlur}
-            className="p-2"
+            className="py-4 px-2  bg-white text-[#222222] border-2 rounded-xl"
           >
             <option value="" label="Select Soil Texture" />
             <option value="Soft" label="Soft" />
@@ -85,7 +91,9 @@ const Step1 = () => {
           )}
         </div>
         <div className="flex flex-col gap-1">
-          <label htmlFor="soilPH">Soil PH</label>
+          <label htmlFor="soilPH" className="px-1 text-lg">
+            Soil PH
+          </label>
           <input
             type="number"
             name="soilPH"
@@ -93,14 +101,14 @@ const Step1 = () => {
             value={values.soilPH}
             onChange={handleChange}
             onBlur={handleBlur}
-            className="focus:outline-none w-1/2  border-black border-2 p-2 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+            className="focus:outline-none w-1/2  border-2 py-4 px-2  [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none rounded-2xl"
           />
           {errors.soilPH && touched.soilPH && (
             <div className="text-red-500">{errors.soilPH}</div>
           )}
         </div>
         <div className="flex flex-col gap-1">
-          <label>Address</label>
+          <label className="px-1 text-lg">Address</label>
           <AddressInputField />
         </div>
       </div>
