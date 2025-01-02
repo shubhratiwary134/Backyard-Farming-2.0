@@ -60,6 +60,10 @@ const plantoriumSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  SelectedCrop: {
+    type: String,
+    default: "",
+  },
   photos: [
     {
       type: String,

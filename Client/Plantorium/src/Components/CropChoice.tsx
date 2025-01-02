@@ -5,7 +5,17 @@ const CropChoice = () => {
   return (
     <div className="flex justify-around items-center">
       {cropChoices.map((crop) => {
-        return <div>{crop}</div>;
+        return (
+          <div>
+            <button
+              onClick={() => {
+                // dispatch the generate report here
+              }}
+            >
+              {crop}
+            </button>
+          </div>
+        );
       })}
     </div>
   );
