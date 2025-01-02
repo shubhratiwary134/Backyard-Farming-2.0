@@ -2,6 +2,7 @@ import { useFormikContext } from "formik";
 import { FaPlus } from "react-icons/fa";
 import { FarmFormValues } from "../../Types/FarmFormTypes";
 import { IoMdRemoveCircle } from "react-icons/io";
+import { motion } from "motion/react";
 
 const Step3 = () => {
   const { values, setFieldValue } = useFormikContext<FarmFormValues>();
@@ -18,7 +19,12 @@ const Step3 = () => {
     setFieldValue("Photos", updatedPhotos);
   }
   return (
-    <div className="flex flex-col gap-10">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      className="flex flex-col gap-10"
+    >
       <p className="text-lg">Upload images</p>
       <div className="grid grid-cols-4 gap-10 ">
         {values.Photos?.map((image, index) => {
@@ -59,7 +65,7 @@ const Step3 = () => {
           </div>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

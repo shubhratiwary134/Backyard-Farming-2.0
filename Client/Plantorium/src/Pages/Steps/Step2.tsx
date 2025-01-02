@@ -140,17 +140,23 @@ const Step2 = () => {
       {errors.waterSupply && touched.waterSupply && (
         <div className="text-red-500">{errors.waterSupply}</div>
       )}
-      <input
-        type="number"
-        name="landArea"
-        placeholder="Enter the landArea"
-        value={values.landArea}
-        onChange={handleChange}
-        onBlur={handleBlur}
-      />
-      {errors.landArea && touched.landArea && (
-        <div className="text-red-500">{errors.landArea}</div>
-      )}
+      <div className="flex flex-col gap-1">
+        <label htmlFor="landArea" className="px-1 text-lg font-mono ">
+          Land-Area
+        </label>
+        <input
+          type="number"
+          name="landArea"
+          placeholder="Enter the landArea"
+          value={values.landArea}
+          onChange={handleChange}
+          onBlur={handleBlur}
+          className="focus:outline-none border-2 py-4 px-2 text-[#c8c9cc] font-bold [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none rounded-2xl"
+        />
+        {errors.landArea && touched.landArea && (
+          <div className="text-red-500">{errors.landArea}</div>
+        )}
+      </div>
     </div>
   );
 };
