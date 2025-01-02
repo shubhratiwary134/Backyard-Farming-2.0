@@ -2,11 +2,17 @@ import { useFormikContext } from "formik";
 import { FarmFormValues } from "../../Types/FarmFormTypes";
 import AddressInputField from "./AddressInputField";
 import formImage from "../../Assests/FormImage.jpg";
+import { motion } from "motion/react";
 const Step1 = () => {
   const { values, handleChange, handleBlur, touched, errors } =
     useFormikContext<FarmFormValues>();
   return (
-    <div className=" flex  gap-10">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      className=" flex  gap-10"
+    >
       <div className="w-1/3 flex flex-col gap-5">
         <div className="flex flex-col gap-1">
           <label htmlFor="averageRainfall" className="px-1 text-lg font-mono ">
@@ -118,7 +124,7 @@ const Step1 = () => {
           <AddressInputField />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
