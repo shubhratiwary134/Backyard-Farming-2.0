@@ -45,7 +45,6 @@ const Step2 = () => {
           </div>
         )}
       </FieldArray>
-      {/* FieldArray for Crop Diseases */}
       <FieldArray name="cropDiseases">
         {({ push, remove }) => (
           <div className="flex flex-col gap-4">
@@ -85,7 +84,6 @@ const Step2 = () => {
           </div>
         )}
       </FieldArray>
-
       <FieldArray name="affectedCrops">
         {({ push, remove }) => (
           <div className="flex flex-col gap-4">

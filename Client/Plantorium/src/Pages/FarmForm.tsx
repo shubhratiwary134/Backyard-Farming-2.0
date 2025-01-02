@@ -16,8 +16,7 @@ import { useUser } from "@clerk/clerk-react";
 import toast, { Toaster } from "react-hot-toast";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import farmHeadingPhoto from "../Assests/formHeading2.jpg";
-import { GiFarmer } from "react-icons/gi";
-import { motion } from "motion/react";
+import { GiFarmTractor } from "react-icons/gi";
 
 const FarmForm = ({ farmSubmission }) => {
   const [step, setStep] = useState(1);
@@ -139,7 +138,7 @@ const FarmForm = ({ farmSubmission }) => {
                     type="submit"
                     className="rounded-lg border-black border-2 p-3"
                   >
-                    <GiFarmer size={32} />
+                    <GiFarmTractor size={32} />
                   </button>
                 )}
               </div>
