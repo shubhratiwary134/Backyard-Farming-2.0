@@ -12,7 +12,7 @@ const plantoriumRoutes = express.Router();
 
 plantoriumRoutes.post(
   "/createNew",
-  upload.array("Photos", 5),
+  upload.array("Photos", 4),
   createPlantorium
 );
 plantoriumRoutes.get("/:id", getSpecificPlantorium);

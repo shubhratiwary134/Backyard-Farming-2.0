@@ -10,7 +10,7 @@ const Step3 = () => {
     if (e.target.files) {
       const files = Array.from(e.target.files);
       const updatedPhotos = [...(values.Photos || []), ...files];
-      setFieldValue("Photos", updatedPhotos.slice(0, 5)); // Limit to 5 files
+      setFieldValue("Photos", updatedPhotos.slice(0, 4)); // Limit to 5 files
     }
   }
   function handleRemove(index) {
@@ -38,7 +38,7 @@ const Step3 = () => {
             </div>
           );
         })}
-        {values.Photos.length < 5 && (
+        {values.Photos.length < 4 && (
           <div className="flex flex-col items-center justify-center w-60 h-60  bg-gray-100 rounded-lg shadow-md">
             {/* Hidden File Input */}
             <input

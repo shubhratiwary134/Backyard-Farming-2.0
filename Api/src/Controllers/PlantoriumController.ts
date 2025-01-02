@@ -86,7 +86,7 @@ export const createPlantorium = async (req: Request, res: Response) => {
       photos: imageUrls,
     });
     const cropChoicesResponse = await axios.post(
-      "http://localhost:5000/predictCrops",
+      "http://localhost:3000/predictCrops",
       plantorium
     );
     const cropChoices = cropChoicesResponse.data.cropChoices;

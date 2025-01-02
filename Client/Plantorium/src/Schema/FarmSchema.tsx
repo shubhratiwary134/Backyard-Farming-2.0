@@ -49,6 +49,6 @@ export const plantoriumValidationSchemaStep3 = Yup.object().shape({
           return value.size <= 5 * 1024 * 1024;
         })
     )
-    .max(5, "You can upload a maximum of 5 files") // Limit to 3 files
+    .max(4, "You can upload a maximum of 4 files") // Limit to 3 files
     .nullable(),
 });
