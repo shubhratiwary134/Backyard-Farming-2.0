@@ -16,12 +16,12 @@ const Step1 = () => {
       <div className="w-1/3 flex flex-col gap-5">
         <div className="flex flex-col gap-1">
           <label htmlFor="averageRainfall" className="px-1 text-lg font-mono ">
-            Average Rainfall
+            Average Rainfall(mm)
           </label>
           <input
             type="number"
             name="averageRainfall"
-            placeholder="Enter The Average Rainfall"
+            placeholder="Enter The Average Rainfall in mm"
             value={values.averageRainfall}
             onChange={handleChange}
             onBlur={handleBlur}
