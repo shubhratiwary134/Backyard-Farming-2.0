@@ -8,7 +8,8 @@ export default {
     extend: {
       fontFamily: {
         dancing: ['"Dancing Script"', 'cursive'], 
-        heading:['"Playfair Display"','serif']
+        heading:['"Playfair Display"','serif'],
+        caveat: ['"Caveat"', 'cursive'],
       },
     },
   },
