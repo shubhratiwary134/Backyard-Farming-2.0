@@ -6,9 +6,15 @@ import {
 } from "@clerk/clerk-react";
 import BannerPic from "../Assests/BannerImage-lightTheme.png";
 import StartFarmButton from "./StartFarmButton";
+import { motion } from "motion/react";
 const BannerImage = () => {
   return (
-    <div className="pt-5 pb-20 w-full h-dvh flex justify-between">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      className="pt-5 pb-20 w-full h-dvh flex justify-between"
+    >
       <div className="w-1/2 relative mt-5 ml-5 mb-10 flex flex-col gap-10">
         <div className="text-9xl text-[#3ba944] font-heading">
           Backyard Farming 2.0
@@ -40,7 +46,7 @@ const BannerImage = () => {
       </div>
 
       <img src={BannerPic} className="object-cover rounded-2xl  " />
-    </div>
+    </motion.div>
   );
 };
 
