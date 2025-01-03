@@ -13,7 +13,7 @@ const BannerImage = () => {
         <div className="text-9xl text-[#3ba944] font-heading">
           Backyard Farming 2.0
         </div>
-        <div className="text-4xl text-[#216125]  font-dancing">
+        <div className="pl-3 text-4xl text-[#216125]  font-dancing">
           Turn your backyard into a thriving ecosystem with personalized guides.
           Your sustainable journey begins now with Backyard Farming 2.O !!!
         </div>
@@ -39,10 +39,7 @@ const BannerImage = () => {
         </SignedOut>
       </div>
 
-      <img
-        src={BannerPic}
-        className="object-cover rounded-2xl transform hover:scale-105 hover:translate-y-2 transition duration-500"
-      />
+      <img src={BannerPic} className="object-cover rounded-2xl  " />
     </div>
   );
 };
