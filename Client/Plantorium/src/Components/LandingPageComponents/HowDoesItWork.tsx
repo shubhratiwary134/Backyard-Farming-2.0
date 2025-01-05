@@ -13,7 +13,6 @@ const HowDoesItWork = () => {
           <img src={image1} className="w-full h-2/3" />
           <div className="text-2xl mr-5 ml-2 font-heading ">
             Upload Your Plant Photos
-            <hr className="mt-2 border-black" />
           </div>
           <div className="text-base text-gray-600 mr-5 ml-2 ">
             Start by uploading pictures of your plants or the crops you want to
@@ -23,9 +22,8 @@ const HowDoesItWork = () => {
         </div>
         <div className="w-96  flex flex-col border-2 gap-5 border-gray-200 rounded-lg">
           <img src={image2} className="w-full  h-2/3 border-b-2" />
-          <div className="text-2xl mr-5 ml-2 font-heading  ">
+          <div className="text-2xl mr-5 ml-2 font-heading">
             Receive Your Weekly Roadmap
-            <hr className="mt-2 border-black" />
           </div>
           <div className="text-base text-gray-600 mr-5 ml-2  ">
             Based on your plant choice, we’ll create a tailored weekly roadmap
@@ -36,7 +34,6 @@ const HowDoesItWork = () => {
           <img src={image3} className="w-full  h-2/3" />
           <div className="text-2xl mr-5 ml-2 font-heading ">
             Track Your Progress
-            <hr className="mt-2 border-black" />
           </div>
           <div className="text-base text-gray-600 mr-5 ml-2 ">
             Check off completed tasks each week, track your progress, and share
