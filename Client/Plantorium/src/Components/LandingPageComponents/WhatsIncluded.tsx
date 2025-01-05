@@ -7,7 +7,7 @@ const WhatsIncluded = () => {
     <div className="w-full px-10 my-10">
       <div className="my-10 text-5xl font-heading ">Whats Included !!!</div>
       <div className="flex w-full justify-between my-5">
-        <div className="w-80 p-5 flex flex-col border-4 border-gray-900 rounded-lg">
+        <div className="w-80 p-5 flex flex-col border-2 border-gray-300 rounded-lg">
           <div className="text-neutral-900  text-xl font-heading flex justify-between items-center">
             Personalized Guidance
             <CiSearch size={24} />
@@ -18,7 +18,7 @@ const WhatsIncluded = () => {
             milestones, our roadmap is crafted to help you succeed at every step
           </div>
         </div>
-        <div className="w-80 p-5 flex flex-col border-4 border-gray-900 rounded-lg">
+        <div className="w-80 p-5 flex flex-col border-2 border-gray-300 rounded-lg">
           <div className="text-neutral-900 text-xl font-heading flex justify-between items-center">
             Connect with Farmers
             <IoPeople size={24} />
@@ -29,7 +29,7 @@ const WhatsIncluded = () => {
             gardeners to make your journey more rewarding and fun.
           </div>
         </div>
-        <div className="w-80 p-5 flex flex-col border-4 border-gray-900 rounded-lg">
+        <div className="w-80 p-5 flex flex-col border-2 border-gray-300 rounded-lg">
           <div className="text-neutral-900 text-xl flex justify-between items-center ">
             {" "}
             Ask Questions
@@ -41,7 +41,7 @@ const WhatsIncluded = () => {
             advice to troubleshooting plant health issues
           </div>
         </div>
-        <div className="w-80 p-5 flex flex-col border-4 border-gray-900 rounded-lg">
+        <div className="w-80 p-5 flex flex-col border-2 border-gray-300 rounded-lg">
           <div className="text-neutral-900 text-xl flex justify-between items-center">
             Get Help with Pests
             <CiGlobe size={24} />
