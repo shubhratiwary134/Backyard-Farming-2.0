@@ -4,10 +4,10 @@ import { IoPeople } from "react-icons/io5";
 
 const WhatsIncluded = () => {
   return (
-    <div className="w-full px-10 mt-10">
-      <div className=" mt-10 text-5xl">Whats Included !!!</div>
+    <div className="w-full px-10 my-10">
+      <div className="my-10 text-5xl font-heading ">Whats Included !!!</div>
       <div className="flex w-full justify-between my-5">
-        <div className="w-80 p-5 flex flex-col border-2 border-gray-200 rounded-lg">
+        <div className="w-80 p-5 flex flex-col border-4 border-gray-200 rounded-lg">
           <CiSearch size={24} />
           <div className="text-neutral-900  text-xl">Personalized Guidance</div>
           <div className="text-gray-500 ">
@@ -16,7 +16,7 @@ const WhatsIncluded = () => {
             milestones, our roadmap is crafted to help you succeed at every step
           </div>
         </div>
-        <div className="w-80 p-5 flex flex-col border-2 border-gray-200 rounded-lg">
+        <div className="w-80 p-5 flex flex-col border-4 border-gray-200 rounded-lg">
           <IoPeople size={24} />
           <div className="text-neutral-900 text-xl">
             Connect with Other Farmers
@@ -27,7 +27,7 @@ const WhatsIncluded = () => {
             gardeners to make your journey more rewarding and fun.
           </div>
         </div>
-        <div className="w-80 p-5 flex flex-col border-2 border-gray-200 rounded-lg">
+        <div className="w-80 p-5 flex flex-col border-4 border-gray-200 rounded-lg">
           <FaRegComment size={24} />
           <div className="text-neutral-900 text-xl">Ask Questions</div>
           <div className="text-gray-500 text-md">
@@ -36,7 +36,7 @@ const WhatsIncluded = () => {
             advice to troubleshooting plant health issues
           </div>
         </div>
-        <div className="w-80 p-5 flex flex-col border-2 border-gray-200 rounded-lg">
+        <div className="w-80 p-5 flex flex-col border-4 border-gray-200 rounded-lg">
           <CiGlobe size={24} />
           <div className="text-neutral-900 text-xl">Get Help with Pests</div>
           <div className="text-gray-500">
