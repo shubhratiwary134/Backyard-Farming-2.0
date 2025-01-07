@@ -2,6 +2,7 @@ import upload from "../Config/multerConfig";
 import {
   createPlantorium,
   deleteSpecificPlantorium,
+  getGeneratedReport,
   getSpecificPlantorium,
   getUserPlantoriums,
   updateSpecificPlantorium,
@@ -19,4 +20,5 @@ plantoriumRoutes.get("/:id", getSpecificPlantorium);
 plantoriumRoutes.delete("/:id", deleteSpecificPlantorium);
 plantoriumRoutes.put("/:id", updateSpecificPlantorium);
 plantoriumRoutes.get("/user/:id", getUserPlantoriums);
+plantoriumRoutes.post("/generateReport", getGeneratedReport);
 export default plantoriumRoutes;

@@ -103,6 +103,11 @@ export const createPlantorium = async (req: Request, res: Response) => {
   }
 };
 
+export const getGeneratedReport = (req: Request, res: Response) => {
+  const { crop } = req.body;
+  res.status(200).json({ crop, message: "report is successfully generated" });
+};
+
 export const getSpecificPlantorium = async (req: Request, res: Response) => {
   const plantoriumId = req.params.id;
   try {

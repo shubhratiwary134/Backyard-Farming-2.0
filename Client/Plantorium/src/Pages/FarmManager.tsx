@@ -7,9 +7,6 @@ const FarmManager = () => {
   const farmSubmission = () => {
     setStep("Crop-Choice");
   };
-  // const handleCropChoice = () => {
-  //   setStep("Report");
-  // };
   return (
     <div className="bg-[#E7E7E9] h-screen flex justify-center">
       {step === "form" && <FarmForm farmSubmission={farmSubmission} />}
