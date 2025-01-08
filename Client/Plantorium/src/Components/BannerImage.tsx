@@ -25,7 +25,7 @@ const BannerImage = () => {
         </div>
         <SignedIn>
           <StartFarmButton
-            className="mt-20 ml-20 text-5xl  font-dancing py-2 px-16 border-[#3ba944] border-y-2 "
+            className="mt-10 ml-20 text-5xl  font-dancing  bg-[#3ba944] hover:bg-[#246d27] duration-100 rounded-tl-full rounded-br-full text-white text-md text-center self-center px-8 py-2 m-2 "
             text="Get Started"
           />
         </SignedIn>
