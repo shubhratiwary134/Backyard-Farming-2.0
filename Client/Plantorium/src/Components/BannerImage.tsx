@@ -19,9 +19,7 @@ const BannerImage = () => {
       transition={{ duration: 1 }}
       className="pt-5 pb-20 w-full h-dvh flex gap-5"
     >
-      <SignedIn>
-        <img src={marketPic} className="object-contain w-1/4" />
-      </SignedIn>
+      <img src={marketPic} className="object-contain w-1/4" />
       <div className="w-1/2 relative mt-5 ml-5 mb-10 flex flex-col gap-10 items-center">
         <div className="text-9xl text-center text-[#3ba944] font-heading">
           Backyard Farming 2.0
@@ -33,7 +31,7 @@ const BannerImage = () => {
         <SignedIn>
           <StartFarmButton
             className="mt-10 text-5xl font-dancing  bg-[#3ba944] hover:bg-[#246d27] duration-100 rounded-tl-full rounded-br-full text-white text-md text-center self-center px-8 py-2 m-2 "
-            text="Get Started"
+            text="Start Your Farm"
           />
         </SignedIn>
         <SignedOut>
