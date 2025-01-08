@@ -3,11 +3,14 @@ import {
   SignedOut,
   SignInButton,
   SignUpButton,
+  useAuth,
 } from "@clerk/clerk-react";
 import BannerPic from "../Assests/BannerImage-lightTheme.png";
+import BannerPic2 from "../Assests/farmer_enhanced.png";
 import StartFarmButton from "./StartFarmButton";
 import { motion } from "motion/react";
 const BannerImage = () => {
+  const { isSignedIn } = useAuth();
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -45,7 +48,10 @@ const BannerImage = () => {
         </SignedOut>
       </div>
 
-      <img src={BannerPic} className="object-cover rounded-2xl  " />
+      <img
+        src={isSignedIn ? BannerPic2 : BannerPic}
+        className="object-cover rounded-2xl  "
+      />
     </motion.div>
   );
 };
