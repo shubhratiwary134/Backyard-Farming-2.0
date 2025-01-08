@@ -6,6 +6,7 @@ import {
   useAuth,
 } from "@clerk/clerk-react";
 import BannerPic from "../Assests/BannerImage-lightTheme.png";
+import marketPic from "../Assests/market.jpg";
 import BannerPic2 from "../Assests/farmer_enhanced.png";
 import StartFarmButton from "./StartFarmButton";
 import { motion } from "motion/react";
@@ -16,19 +17,22 @@ const BannerImage = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className="pt-5 pb-20 w-full h-dvh flex justify-between"
+      className="pt-5 pb-20 w-full h-dvh flex gap-5"
     >
-      <div className="w-1/2 relative mt-5 ml-5 mb-10 flex flex-col gap-10">
-        <div className="text-9xl text-[#3ba944] font-heading">
+      <SignedIn>
+        <img src={marketPic} className="object-contain w-1/4" />
+      </SignedIn>
+      <div className="w-1/2 relative mt-5 ml-5 mb-10 flex flex-col gap-10 items-center">
+        <div className="text-9xl text-center text-[#3ba944] font-heading">
           Backyard Farming 2.0
         </div>
-        <div className="pl-3 text-5xl text-[#248736]  font-dancing">
+        <div className="pl-3 text-4xl text-[#248736] text-center font-dancing">
           Turn your backyard into a thriving ecosystem with personalized guides.
           Your sustainable journey begins now with Backyard Farming 2.O !!!
         </div>
         <SignedIn>
           <StartFarmButton
-            className="mt-10 text-5xl  font-dancing  bg-[#3ba944] hover:bg-[#246d27] duration-100 rounded-tl-full rounded-br-full text-white text-md text-center self-center px-8 py-2 m-2 "
+            className="mt-10 text-5xl font-dancing  bg-[#3ba944] hover:bg-[#246d27] duration-100 rounded-tl-full rounded-br-full text-white text-md text-center self-center px-8 py-2 m-2 "
             text="Get Started"
           />
         </SignedIn>
@@ -48,7 +52,10 @@ const BannerImage = () => {
         </SignedOut>
       </div>
 
-      <img src={isSignedIn ? BannerPic2 : BannerPic} className="object-cover" />
+      <img
+        src={isSignedIn ? BannerPic2 : BannerPic}
+        className="object-contain w-1/4"
+      />
     </motion.div>
   );
 };
