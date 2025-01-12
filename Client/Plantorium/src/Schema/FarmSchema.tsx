@@ -2,7 +2,7 @@ import * as Yup from "yup";
 
 export const plantoriumValidationSchemaStep1 = Yup.object().shape({
   averageRainfall: Yup.number()
-    .min(0, "Average rainfall negative")
+    .min(0, "Average rainfall should not be negative")
     .max(12000, "Rainfall exceeds the realistic limit of 12,000 mm")
     .required("Average Rainfall is required"),
   soilType: Yup.string()
