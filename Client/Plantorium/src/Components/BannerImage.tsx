@@ -24,7 +24,7 @@ const BannerImage = () => {
         <div className="text-9xl text-center text-[#3ba944] font-heading">
           Backyard Farming 2.0
         </div>
-        <div className="pl-3 text-4xl text-[#248736] text-center font-dancing">
+        <div className="text-2xl text-[#296633] text-center font-Montserrat">
           Turn your backyard into a thriving ecosystem with personalized guides.
           Your sustainable journey begins now with Backyard Farming 2.O !!!
         </div>
