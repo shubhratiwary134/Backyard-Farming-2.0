@@ -11,7 +11,7 @@ const Navbar = () => {
   return (
     <div className="px-5 py-2 flex justify-between ">
       <div className="text-xl">Backyard Farming 2.O</div>
-      <div className="flex justify-around items-center w-1/3">
+      <div className="flex justify-around items-center w-1/3 font-Montserrat text-md">
         <SignedOut>
           <AnimatedLink href="#">How It Works</AnimatedLink>
           <AnimatedLink href="#">Plans</AnimatedLink>
