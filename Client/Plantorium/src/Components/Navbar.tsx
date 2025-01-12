@@ -6,10 +6,16 @@ import {
   UserButton,
 } from "@clerk/clerk-react";
 import AnimatedLink from "./AnimatedLinkTag";
+import { motion } from "motion/react";
 
 const Navbar = () => {
   return (
-    <div className="px-5 py-2 flex justify-between ">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+      className="px-5 py-2 flex justify-between "
+    >
       <div className="text-xl">Backyard Farming 2.O</div>
       <div className="flex justify-around items-center w-1/3 font-Montserrat text-md">
         <SignedOut>
@@ -33,14 +39,14 @@ const Navbar = () => {
 
         <SignedIn>
           <AnimatedLink href="/CreateFarm">Start Farm</AnimatedLink>
-          <AnimatedLink href="/myFarms">My Farms</AnimatedLink>
+          <AnimatedLink href="/myFarms">My Farm</AnimatedLink>
           <AnimatedLink href="#">View Updates</AnimatedLink>
           <AnimatedLink href="#">Team</AnimatedLink>
           <AnimatedLink href="#">FAQS</AnimatedLink>
           <UserButton />
         </SignedIn>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
