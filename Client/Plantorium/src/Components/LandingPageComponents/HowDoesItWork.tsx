@@ -1,6 +1,6 @@
 import image1 from "../../Assests/YellowTheme.jpg";
-import image2 from "../../Assests/muchBetterReport.jpg";
-import image3 from "../../Assests/betterFarmer.jpg";
+import image2 from "../../Assests/ReportGIF.gif";
+import image3 from "../../Assests/TrackProgress.gif";
 const HowDoesItWork = () => {
   return (
     <div className="w-full px-10">
@@ -10,8 +10,8 @@ const HowDoesItWork = () => {
       </div>
       <div className="flex w-full justify-between mt-5">
         <div className="w-96  flex flex-col border-2 gap-5 border-gray-200 rounded-lg ">
-          <img src={image1} className="w-full h-2/3" />
-          <div className="text-2xl mr-5 ml-2 font-heading ">
+          <img src={image1} className="w-full h-2/3 " />
+          <div className="text-3xl mr-5 ml-2 font-heading ">
             Upload Your Plant Photos
           </div>
           <div className="text-base text-gray-600 mr-5 ml-2 ">
@@ -20,19 +20,25 @@ const HowDoesItWork = () => {
             crops to get started.
           </div>
         </div>
-        <div className="w-96  flex flex-col border-2 gap-5 border-gray-200 rounded-lg">
-          <img src={image2} className="w-full  h-2/3 border-b-2" />
-          <div className="text-2xl mr-5 ml-2 font-heading">
-            Receive Your Weekly Roadmap
+        <div className="w-96 overflow-hidden flex flex-col border-2 gap-5 border-gray-200 rounded-lg">
+          <img
+            src={image2}
+            className="w-full  h-2/3 border-b-2 hover:scale-105 duration-200"
+          />
+          <div className="text-3xl mr-5 ml-2 font-heading">
+            Receive Weekly Roadmap
           </div>
           <div className="text-base text-gray-600 mr-5 ml-2  ">
             Based on your plant choice, we’ll create a tailored weekly roadmap
             with all the steps you need to help your plants thrive.
           </div>
         </div>
-        <div className="w-96  flex flex-col border-2 gap-5 border-gray-200 rounded-lg">
-          <img src={image3} className="w-full  h-2/3" />
-          <div className="text-2xl mr-5 ml-2 font-heading ">
+        <div className="w-96 overflow-hidden flex flex-col border-2 gap-5 border-gray-200 rounded-lg">
+          <img
+            src={image3}
+            className="w-full  h-2/3 hover:scale-105 duration-200"
+          />
+          <div className="text-3xl mr-5 ml-2 font-heading ">
             Track Your Progress
           </div>
           <div className="text-base text-gray-600 mr-5 ml-2 ">
