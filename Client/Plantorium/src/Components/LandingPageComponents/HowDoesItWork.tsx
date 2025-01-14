@@ -4,13 +4,16 @@ import image3 from "../../Assests/TrackProgress.gif";
 const HowDoesItWork = () => {
   return (
     <div className="w-full px-10">
-      <div className=" text-5xl font-heading">How Does It Work ? </div>
+      <div className=" text-5xl font-heading">How Does It Work ?</div>
       <div className="text-gray-500 mt-5 font-sans text-xl">
         AI analyzes your unique backyard farm and provides personalized guidance
       </div>
       <div className="flex w-full justify-between mt-5">
-        <div className="w-96  flex flex-col border-2 gap-5 border-gray-200 rounded-lg ">
-          <img src={image1} className="w-full h-2/3 " />
+        <div className="w-96 overflow-hidden flex flex-col border-2 gap-5 border-gray-200 rounded-lg ">
+          <img
+            src={image1}
+            className="w-full h-2/3 hover:scale-105 duration-200"
+          />
           <div className="text-3xl mr-5 ml-2 font-heading ">
             Upload Your Plant Photos
           </div>
