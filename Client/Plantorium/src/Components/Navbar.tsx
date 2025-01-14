@@ -42,7 +42,6 @@ const Navbar = () => {
           <AnimatedLink href="/myFarms">My Farm</AnimatedLink>
           <AnimatedLink href="#">View Updates</AnimatedLink>
           <AnimatedLink href="#">Team</AnimatedLink>
-          <AnimatedLink href="#">FAQS</AnimatedLink>
           <UserButton />
         </SignedIn>
       </div>
