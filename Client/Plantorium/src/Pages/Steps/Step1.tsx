@@ -25,8 +25,11 @@ const Step1 = () => {
             value={values.averageRainfall}
             onChange={handleChange}
             onBlur={handleBlur}
-            className="focus:outline-none border-2 py-4 px-2 text-[#c8c9cc] font-bold [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none rounded-2xl"
+            className={`focus:outline-none border-2 py-4 px-2 placeholder:text-[#c8c9cc] font-bold [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none rounded-2xl ${
+              values.averageRainfall === 0 ? "text-[#c8c9cc]" : "text-black"
+            }`}
           />
+
           {errors.averageRainfall && touched.averageRainfall && (
             <div className="text-red-500">{errors.averageRainfall}</div>
           )}
@@ -41,14 +44,21 @@ const Step1 = () => {
             value={values.soilType}
             onChange={handleChange}
             onBlur={handleBlur}
-            className="py-4 px-2  bg-white text-[#c8c9cc] font-bold  border-2 rounded-xl  "
+            className={`py-4 px-2 bg-white placeholder:text-[#c8c9cc] font-bold border-2 rounded-xl ${
+              values.soilType === "" ? "text-[#c8c9cc]" : ""
+            }`}
           >
-            <option value="" label="Select soil type" />
-            <option value="Humus" label="Humus" />
-            <option value="Loamy" label="Loamy" />
-            <option value="Sandy" label="Sandy" />
-            <option value="Alluvial" label="Alluvial" />
+            <option
+              value=""
+              label="Select soil type"
+              className="text-[#c8c9cc]"
+            />
+            <option value="Humus" label="Humus" className="text-black" />
+            <option value="Loamy" label="Loamy" className="text-black" />
+            <option value="Sandy" label="Sandy" className="text-black" />
+            <option value="Alluvial" label="Alluvial" className="text-black" />
           </select>
+
           {errors.soilType && touched.soilType && (
             <div className="text-red-500">{errors.soilType}</div>
           )}
@@ -63,12 +73,19 @@ const Step1 = () => {
             value={values.soilColor}
             onChange={handleChange}
             onBlur={handleBlur}
-            className="py-4 px-2  bg-white text-[#c8c9cc] font-bold border-2 rounded-xl"
+            className={`py-4 px-2 bg-white placeholder:text-[#c8c9cc] font-bold border-2 rounded-xl ${
+              values.soilColor === "" ? "text-[#c8c9cc]" : ""
+            }`}
           >
-            <option value="" label="Select soil Color" />
-            <option value="Black" label="Black" />
-            <option value="Brownish" label="Brownish" />
+            <option
+              value=""
+              label="Select soil Color"
+              className="text-[#c8c9cc]"
+            />
+            <option value="Black" label="Black" className="text-black" />
+            <option value="Brownish" label="Brownish" className="text-black" />
           </select>
+
           {errors.soilColor && touched.soilColor && (
             <div className="text-red-500">{errors.soilColor}</div>
           )}
@@ -91,12 +108,18 @@ const Step1 = () => {
             value={values.soilTexture}
             onChange={handleChange}
             onBlur={handleBlur}
-            className="py-4 px-2  bg-white text-[#c8c9cc] font-bold border-2 rounded-xl"
+            className={`py-4 px-2  bg-white placeholder:text-[#c8c9cc] font-bold border-2 rounded-xl ${
+              values.soilTexture === "" ? "text-[#c8c9cc]" : ""
+            }`}
           >
-            <option value="" label="Select Soil Texture" />
-            <option value="Soft" label="Soft" />
-            <option value="Hard" label="Hard" />
-            <option value="Airy" label="Airy" />
+            <option
+              value=""
+              label="Select Soil Texture"
+              className="text-[#c8c9cc]"
+            />
+            <option value="Soft" label="Soft" className="text-black" />
+            <option value="Hard" label="Hard" className="text-black" />
+            <option value="Airy" label="Airy" className="text-black" />
           </select>
           {errors.soilTexture && touched.soilTexture && (
             <div className="text-red-500">{errors.soilTexture}</div>
@@ -113,8 +136,11 @@ const Step1 = () => {
             value={values.soilPH}
             onChange={handleChange}
             onBlur={handleBlur}
-            className="focus:outline-none text-[#c8c9cc] font-bold border-2 py-4 px-2  [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none rounded-2xl"
+            className={`focus:outline-none placeholder:text-[#c8c9cc] font-bold border-2 py-4 px-2 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none rounded-2xl ${
+              values.soilPH === 0 ? "text-[#c8c9cc]" : "text-black"
+            }`}
           />
+
           {errors.soilPH && touched.soilPH && (
             <div className="text-red-500">{errors.soilPH}</div>
           )}
