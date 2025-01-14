@@ -16,10 +16,10 @@ const Navbar = () => {
       transition={{ duration: 1 }}
       className="flex flex-col items-center gap-5 lg:flex-row lg:justify-between lg:px-5 lg:py-2"
     >
-      <div className="text-5xl text-center lg:text-xl ">
+      <div className="text-7xl text-center lg:text-xl ">
         Backyard Farming 2.O
       </div>
-      <div className="flex flex-col justify-around items-center font-Montserrat text-2xl gap-5 md:flex-row md:text-lg md:items-center">
+      <div className="flex flex-col justify-around items-center font-Montserrat text-2xl gap-5 md:flex-row md:text-sm md:items-center">
         <SignedOut>
           <AnimatedLink href="#">How It Works</AnimatedLink>
           <AnimatedLink href="#">Plans</AnimatedLink>
