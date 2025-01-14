@@ -14,10 +14,12 @@ const Navbar = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className="px-5 py-2 flex justify-between "
+      className="flex flex-col items-center gap-5 lg:flex-row lg:justify-between lg:px-5 lg:py-2"
     >
-      <div className="text-xl">Backyard Farming 2.O</div>
-      <div className="flex justify-around items-center w-1/3 font-Montserrat text-md">
+      <div className="text-5xl text-center lg:text-xl ">
+        Backyard Farming 2.O
+      </div>
+      <div className="flex flex-col justify-around items-center font-Montserrat text-2xl gap-5 md:flex-row md:text-lg md:items-center">
         <SignedOut>
           <AnimatedLink href="#">How It Works</AnimatedLink>
           <AnimatedLink href="#">Plans</AnimatedLink>
@@ -42,6 +44,7 @@ const Navbar = () => {
           <AnimatedLink href="/myFarms">My Farm</AnimatedLink>
           <AnimatedLink href="#">View Updates</AnimatedLink>
           <AnimatedLink href="#">Team</AnimatedLink>
+
           <UserButton />
         </SignedIn>
       </div>
