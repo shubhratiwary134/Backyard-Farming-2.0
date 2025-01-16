@@ -10,6 +10,7 @@ import ProtectedRoute from "./Components/ProtectedRoute.tsx";
 import MyFarms from "./Pages/MyFarms.tsx";
 import FarmManager from "./Pages/FarmManager.tsx";
 import LoadingScreen from "./Components/LoadingScreen.tsx";
+import Plans from "./Pages/Plans.tsx";
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 if (!PUBLISHABLE_KEY) {
@@ -22,6 +23,7 @@ createRoot(document.getElementById("root")!).render(
         <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
           <Routes>
             <Route path="/" element={<App />} />
+            <Route path="/plans" element={<Plans />}></Route>
             <Route
               path="/CreateFarm"
               element={

@@ -1,5 +1,4 @@
 import BannerImage from "../Components/BannerImage";
-import SubscriptionPlans from "../Components/HomePageComponents/SubscriptionPlans";
 import VideosCarousel from "../Components/HomePageComponents/VideosCarousel";
 
 const HomePage = () => {
@@ -8,7 +7,6 @@ const HomePage = () => {
       <BannerImage />
       {/* <FamousCropsLists /> */}
       <VideosCarousel />
-      <SubscriptionPlans />
     </div>
   );
 };

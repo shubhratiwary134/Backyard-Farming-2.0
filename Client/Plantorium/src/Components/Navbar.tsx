@@ -22,7 +22,7 @@ const Navbar = () => {
       <div className="flex flex-col justify-around items-center font-Montserrat text-2xl gap-5 md:flex-row md:text-sm md:items-center">
         <SignedOut>
           <AnimatedLink href="#">How It Works</AnimatedLink>
-          <AnimatedLink href="#">Plans</AnimatedLink>
+          <AnimatedLink href="/plans">Plans</AnimatedLink>
           <AnimatedLink href="#">Team</AnimatedLink>
           <AnimatedLink href="#">FAQS</AnimatedLink>
           <div className="flex gap-5 ">
@@ -42,7 +42,7 @@ const Navbar = () => {
         <SignedIn>
           <AnimatedLink href="/CreateFarm">Start Farm</AnimatedLink>
           <AnimatedLink href="/myFarms">My Farm</AnimatedLink>
-          <AnimatedLink href="#">View Updates</AnimatedLink>
+          <AnimatedLink href="/plans">Plans</AnimatedLink>
           <AnimatedLink href="#">Team</AnimatedLink>
 
           <UserButton />
