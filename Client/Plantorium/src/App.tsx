@@ -7,7 +7,7 @@ import CheckAndAddUserInTheDB from "./Components/CheckAndAddUserInTheDB";
 
 function App() {
   return (
-    <>
+    <div className="bg-[#FFF6E5]">
       <Navbar />
       <SignedIn>
         <CheckAndAddUserInTheDB />
@@ -16,7 +16,7 @@ function App() {
       <SignedOut>
         <LandingPage />
       </SignedOut>
-    </>
+    </div>
   );
 }
 
