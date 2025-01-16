@@ -1,9 +1,16 @@
 import image1 from "../../Assests/YellowTheme.jpg";
 import image2 from "../../Assests/ReportGIF.gif";
 import image3 from "../../Assests/TrackProgress.gif";
+import { motion } from "motion/react";
 const HowDoesItWork = () => {
   return (
-    <div className="w-full px-10">
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5 }}
+      className="w-full px-10"
+    >
       <div className=" text-5xl font-heading">How Does It Work ?</div>
       <div className="text-gray-500 mt-5 font-sans text-xl">
         AI analyzes your unique backyard farm and provides personalized guidance
@@ -50,7 +57,7 @@ const HowDoesItWork = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

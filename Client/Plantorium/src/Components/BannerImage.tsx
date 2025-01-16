@@ -37,12 +37,12 @@ const BannerImage = () => {
         <SignedOut>
           <div className="mt-20 flex gap-40">
             <SignUpButton>
-              <button className="text-2xl  py-2 px-4 border-[#3ba944] border-y-2 font-dancing font-bold">
+              <button className="text-3xl  py-2 px-4 border-[#3ba944] border-y-2 font-dancing font-bold">
                 Sign Up
               </button>
             </SignUpButton>
             <SignInButton>
-              <button className="text-2xl   px-4 border-[#3ba944] border-y-2 font-dancing  font-bold">
+              <button className="text-3xl   py-2 px-4 border-[#3ba944] border-y-2 font-dancing  font-bold">
                 Log In
               </button>
             </SignInButton>
