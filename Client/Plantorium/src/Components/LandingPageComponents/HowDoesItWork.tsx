@@ -9,9 +9,9 @@ const HowDoesItWork = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className="w-full px-10"
+      className="w-full px-10 mt-10"
     >
-      <div className=" text-5xl font-heading">How Does It Work ?</div>
+      <div className=" text-5xl font-heading ">How Does It Work ?</div>
       <div className="text-gray-500 mt-5 font-sans text-xl">
         AI analyzes your unique backyard farm and provides personalized guidance
       </div>

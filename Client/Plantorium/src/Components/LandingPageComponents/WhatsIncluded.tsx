@@ -4,8 +4,10 @@ import { IoPeople } from "react-icons/io5";
 
 const WhatsIncluded = () => {
   return (
-    <div className="w-full px-10 my-10">
-      <div className="my-10 text-5xl font-heading ">Whats Included !!!</div>
+    <div className="w-screen px-10 mt-10 bg-[#486B4A]">
+      <div className="my-10 text-5xl font-heading text-white">
+        Whats Included !!!
+      </div>
       <div className="flex w-full justify-between my-5">
         <div className="w-80 p-5 flex flex-col border-2 border-gray-300 rounded-lg">
           <div className="text-neutral-900  text-xl font-heading flex justify-between items-center">
