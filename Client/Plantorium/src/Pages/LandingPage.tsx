@@ -9,9 +9,9 @@ const LandingPage = () => {
   return (
     <div className="px-10 flex flex-col items-center ">
       <BannerImage />
-      <TeamVision />
-      <Quote />
       <HowDoesItWork />
+      <Quote />
+      <TeamVision />
 
       <WhatsIncluded />
     </div>
