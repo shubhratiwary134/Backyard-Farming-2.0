@@ -16,7 +16,7 @@ const HowDoesItWork = () => {
         AI analyzes your unique backyard farm and provides personalized guidance
       </div>
       <div className="flex w-full justify-between mt-5">
-        <div className="w-96 overflow-hidden flex flex-col border-2 gap-5 border-gray-200 rounded-lg ">
+        <div className="w-96 overflow-hidden flex flex-col border-2 gap-5 border-gray-300 rounded-lg ">
           <img
             src={image1}
             className="w-full h-2/3 hover:scale-105 duration-200"
@@ -30,7 +30,7 @@ const HowDoesItWork = () => {
             crops to get started.
           </div>
         </div>
-        <div className="w-96 overflow-hidden flex flex-col border-2 gap-5 border-gray-200 rounded-lg">
+        <div className="w-96 overflow-hidden flex flex-col border-2 gap-5 border-gray-300 rounded-lg">
           <img
             src={image2}
             className="w-full  h-2/3 border-b-2 hover:scale-105 duration-200"
@@ -43,7 +43,7 @@ const HowDoesItWork = () => {
             with all the steps you need to help your plants thrive.
           </div>
         </div>
-        <div className="w-96 overflow-hidden flex flex-col border-2 gap-5 border-gray-200 rounded-lg">
+        <div className="w-96 overflow-hidden flex flex-col border-2 gap-5 border-gray-300 rounded-lg">
           <img
             src={image3}
             className="w-full  h-2/3 hover:scale-105 duration-200"
