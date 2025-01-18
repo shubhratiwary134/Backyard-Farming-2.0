@@ -6,8 +6,8 @@ import {
   useAuth,
 } from "@clerk/clerk-react";
 import BannerPic from "../Assests/BannerImage-lightTheme.png";
-import marketPic from "../Assests/market.jpg";
-import BannerPic2 from "../Assests/farmer_enhanced.png";
+import marketPic from "../Assests/market-removebg-preview.jpg";
+import BannerPic2 from "../Assests/farmer_enhanced-removebg-preview.jpg";
 import StartFarmButton from "./StartFarmButton";
 import { motion } from "motion/react";
 const BannerImage = () => {
