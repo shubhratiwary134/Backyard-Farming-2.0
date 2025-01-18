@@ -17,14 +17,14 @@ const BannerImage = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className=" w-full flex  mt-10 mb-20 gap-5"
+      className=" w-full  flex  mt-10 mb-40 gap-5"
     >
       <img src={marketPic} className="hidden xl:block object-contain w-1/4" />
       <div className="w-1/2 relative flex flex-col gap-10 items-center">
         <div className="hidden sm:block sm:text-6xl md:text-8xl lg:text-9xl lg:mt-10 xl:mt-0 xl:text-8xl 2xl:text-9xl text-center  text-[#3ba944] font-heading">
           Backyard Farming 2.0
         </div>
-        <div className="text-md md:text-xl xl:text-xl 2xl:text-2xl text-[#296633] text-center font-Montserrat">
+        <div className="md:text-xl xl:text-xl 2xl:text-2xl text-[#296633] text-center font-Montserrat">
           Turn your backyard into a thriving ecosystem with personalized guides.
           Your sustainable journey begins now with Backyard Farming 2.O !!!
         </div>

@@ -1,4 +1,5 @@
 import BannerImage from "../Components/BannerImage";
+
 import HowDoesItWork from "../Components/LandingPageComponents/HowDoesItWork";
 import TeamVision from "../Components/LandingPageComponents/TeamVision";
 import WhatsIncluded from "../Components/LandingPageComponents/WhatsIncluded";

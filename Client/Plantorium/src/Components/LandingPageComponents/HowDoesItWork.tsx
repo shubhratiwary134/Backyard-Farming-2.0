@@ -9,10 +9,10 @@ const HowDoesItWork = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className="w-full px-10 mt-10"
+      className="w-full px-40 py-10"
     >
       <div className=" text-5xl font-heading ">How Does It Work ?</div>
-      <div className="text-gray-500 mt-5 font-sans text-xl">
+      <div className="text-gray-500 mt-5 font-sans text-lg">
         AI analyzes your unique backyard farm and provides personalized guidance
       </div>
       <div className="flex w-full justify-between mt-5">
@@ -21,7 +21,7 @@ const HowDoesItWork = () => {
             src={image1}
             className="w-full h-2/3 hover:scale-105 duration-200"
           />
-          <div className="text-3xl mr-5 ml-2 font-heading ">
+          <div className="text-2xl mr-5 ml-2 font-heading ">
             Upload Your Plant Photos
           </div>
           <div className="text-base text-gray-600 mr-5 ml-2 ">
@@ -35,7 +35,7 @@ const HowDoesItWork = () => {
             src={image2}
             className="w-full  h-2/3 border-b-2 hover:scale-105 duration-200"
           />
-          <div className="text-3xl mr-5 ml-2 font-heading">
+          <div className="text-2xl mr-5 ml-2 font-heading">
             Receive Weekly Roadmap
           </div>
           <div className="text-base text-gray-600 mr-5 ml-2  ">
@@ -48,7 +48,7 @@ const HowDoesItWork = () => {
             src={image3}
             className="w-full  h-2/3 hover:scale-105 duration-200"
           />
-          <div className="text-3xl mr-5 ml-2 font-heading ">
+          <div className="text-2xl mr-5 ml-2 font-heading ">
             Track Your Progress
           </div>
           <div className="text-base text-gray-600 mr-5 ml-2 ">
