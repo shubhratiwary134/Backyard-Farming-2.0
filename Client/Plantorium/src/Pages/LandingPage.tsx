@@ -12,7 +12,6 @@ const LandingPage = () => {
       <HowDoesItWork />
       <Quote />
       <TeamVision />
-
       <WhatsIncluded />
     </div>
   );

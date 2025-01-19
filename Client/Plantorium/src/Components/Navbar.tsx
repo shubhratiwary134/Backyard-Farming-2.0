@@ -7,6 +7,7 @@ import {
 } from "@clerk/clerk-react";
 import AnimatedLink from "./AnimatedLinkTag";
 import { motion } from "motion/react";
+import logo from "../Assests/Logo.jpg";
 
 const Navbar = () => {
   return (
@@ -16,9 +17,8 @@ const Navbar = () => {
       transition={{ duration: 1 }}
       className="flex flex-col items-center gap-5 lg:flex-row lg:justify-between lg:px-5 lg:py-2"
     >
-      <div className="text-7xl text-center lg:text-xl ">
-        Backyard Farming 2.O
-      </div>
+      <img src={logo} className="w-14 rounded-full" />
+
       <div className="flex flex-col justify-around items-center font-Montserrat text-2xl gap-5 md:flex-row md:text-sm md:items-center">
         <SignedOut>
           <AnimatedLink href="#">How It Works</AnimatedLink>
