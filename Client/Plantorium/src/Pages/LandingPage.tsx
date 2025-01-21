@@ -10,9 +10,10 @@ const LandingPage = () => {
     <div className="px-10 flex flex-col items-center ">
       <BannerImage />
       <Quote />
-      <TeamVision />
+
       <HowDoesItWork />
       <WhatsIncluded />
+      <TeamVision />
     </div>
   );
 };
