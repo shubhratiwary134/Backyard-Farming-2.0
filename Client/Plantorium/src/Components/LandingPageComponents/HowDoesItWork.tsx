@@ -12,8 +12,10 @@ const HowDoesItWork = () => {
       transition={{ duration: 2 }}
       className="w-full px-40 py-20"
     >
-      <div className=" text-5xl font-heading ">How Does It Work ?</div>
-      <div className="text-gray-500 mt-5 font-sans text-lg">
+      <div className=" text-5xl font-heading flex justify-center">
+        How Does It Work ?
+      </div>
+      <div className="text-gray-500 my-5 font-sans text-lg flex justify-center">
         AI analyzes your unique backyard farm and provides personalized guidance
       </div>
       <div className="flex w-full justify-between mt-5">
