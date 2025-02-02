@@ -1,4 +1,4 @@
-import RandomPic from "../../Assests/LeafBackground.jpg";
+import RandomPic from "../../Assests/Farmer character cartoon vector illustration.jpg";
 const TeamVision = () => {
   return (
     <div className="w-screen bg-[#486B4A] flex justify-center gap-40 p-20">

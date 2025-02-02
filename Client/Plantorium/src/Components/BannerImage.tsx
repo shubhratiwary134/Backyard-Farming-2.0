@@ -17,9 +17,9 @@ const BannerImage = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className=" w-full  flex justify-center  my-10  gap-5"
+      className=" w-full  flex justify-center  mt-10 mb-20  gap-5"
     >
-      <img src={marketPic} className="hidden xl:block object-contain w-1/4" />
+      <img src={marketPic} className="hidden xl:block object-contain w-1/4 " />
       <div className="w-1/2 relative flex flex-col gap-10 items-center">
         <div className="hidden sm:block sm:text-6xl md:text-8xl lg:text-9xl lg:mt-10 xl:mt-0 xl:text-8xl 2xl:text-9xl text-center  text-[#3ba944] font-heading">
           Backyard Farming 2.0
