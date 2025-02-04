@@ -12,7 +12,7 @@ const HowDoesItWork = () => {
       transition={{ duration: 2 }}
       className="w-full px-40 py-20"
     >
-      <div className=" text-5xl font-heading flex justify-center">
+      <div className=" text-6xl font-heading flex justify-center">
         How Does It Work ?
       </div>
       <div className="text-gray-500 my-5 font-sans text-lg flex justify-center">
