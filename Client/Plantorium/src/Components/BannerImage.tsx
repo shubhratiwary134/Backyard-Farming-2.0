@@ -9,7 +9,7 @@ import StartFarmButton from "./StartFarmButton";
 import { motion } from "motion/react";
 const BannerImage = () => {
   return (
-    <motion.div className=" w-full flex items-center h-[85%]  gap-5 text-white font-poppins">
+    <motion.div className=" w-full flex items-center h-[95%]  gap-5 text-white font-poppins">
       <div className="w-full relative flex flex-col  items-center ">
         <div className="text-[70px] tracking-[21px] ">
           FARM FRESH, BACKYARD GROWN

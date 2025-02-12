@@ -15,7 +15,7 @@ const Navbar = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className="flex flex-col items-center gap-5 lg:flex-row lg:justify-between lg:py-10 text-white"
+      className="flex flex-col items-center gap-5 lg:flex-row lg:justify-between lg:py-5 text-white"
     >
       <img src={logo} className="w-48 rounded-full" />
 
