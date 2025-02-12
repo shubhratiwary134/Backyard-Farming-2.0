@@ -11,7 +11,7 @@ const BannerImage = () => {
   return (
     <motion.div className=" w-full flex items-center h-[95%]  gap-5 text-white font-poppins">
       <div className="w-full relative flex flex-col  items-center ">
-        <div className="text-[70px] tracking-[21px] ">
+        <div className="text-[70px] tracking-[21px]">
           FARM FRESH, BACKYARD GROWN
         </div>
         <SignedIn>

@@ -8,7 +8,7 @@ import BannerImage from "./Components/BannerImage";
 import bgImageForHero from "./Assests/Bg-blur-for-hero.png";
 function App() {
   return (
-    <div className="bg-[#FFF6E5]">
+    <div className="bg-[#F8E6C8]">
       <div
         style={{
           backgroundImage: `url(${bgImageForHero})`,
@@ -19,7 +19,6 @@ function App() {
         <Navbar />
         <BannerImage />
       </div>
-
       <SignedIn>
         <CheckAndAddUserInTheDB />
         <HomePage />
