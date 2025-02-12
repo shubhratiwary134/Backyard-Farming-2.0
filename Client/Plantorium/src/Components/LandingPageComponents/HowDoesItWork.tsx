@@ -10,7 +10,7 @@ const HowDoesItWork = () => {
       initial={{ opacity: 0, x: 50 }}
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 2 }}
-      className="w-full bg-[#F8E6C8] py-10 text-white font-poppins"
+      className="w-full bg-[#F8E6C8] pt-10 pb-20 text-white font-poppins"
     >
       <div className=" text-black text-6xl  flex justify-center tracking-wide">
         How Does It Work ?
@@ -21,7 +21,7 @@ const HowDoesItWork = () => {
       <div className="flex w-full justify-between mt-5">
         <div className="text-black w-96 flex flex-col items-center gap-5  ">
           <PiNumberCircleOneLight size={64} />
-          <div className="text-black text-2xl mr-5 ml-2 font-heading text-center font-poppins  tracking-wide">
+          <div className="text-black text-2xl mr-5 ml-2  text-center font-poppins  tracking-wide">
             Upload Your Plant Photos
           </div>
           <div className="text-base text-gray-600 mr-5 ml-2 text-center ">
@@ -32,7 +32,7 @@ const HowDoesItWork = () => {
         </div>
         <div className="text-black w-96  flex flex-col items-center  gap-5 rounded-lg">
           <PiNumberCircleTwoLight size={64} />
-          <div className="text-black text-2xl mr-5 ml-2 font-heading text-heading font-poppins tracking-wide">
+          <div className="text-black text-2xl mr-5 ml-2 text-heading font-poppins tracking-wide">
             Receive Weekly Roadmap
           </div>
           <div className="text-base text-gray-600 mr-5 ml-2  text-center font-poppins">
@@ -42,7 +42,7 @@ const HowDoesItWork = () => {
         </div>
         <div className="text-black w-96  flex flex-col gap-5 items-center">
           <PiNumberCircleThreeLight size={64} />
-          <div className="text-black text-2xl mr-5 ml-2 font-heading text-center font-poppins tracking-wide">
+          <div className="text-black text-2xl mr-5 ml-2 text-center font-poppins tracking-wide">
             Track Your Progress
           </div>
           <div className="text-base text-gray-600 mr-5 ml-2 text-center font-poppins">
