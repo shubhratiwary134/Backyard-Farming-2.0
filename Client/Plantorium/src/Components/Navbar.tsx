@@ -10,7 +10,6 @@ import { motion } from "motion/react";
 import logo from "../Assests/Logo.jpg";
 
 const Navbar = () => {
-  // navbar comment for the same
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -20,7 +19,7 @@ const Navbar = () => {
     >
       <img src={logo} className="w-14 rounded-full" />
 
-      <div className="flex flex-col justify-around items-center font-Montserrat text-2xl gap-5 md:flex-row md:text-[20px] md:items-center">
+      <div className="flex flex-col justify-around items-center font-poppins text-2xl gap-20 md:flex-row md:text-[20px] md:items-center">
         <SignedOut>
           <AnimatedLink href="#">How It Works</AnimatedLink>
           <AnimatedLink href="/plans">Plans</AnimatedLink>
@@ -28,14 +27,10 @@ const Navbar = () => {
           <AnimatedLink href="#">FAQS</AnimatedLink>
           <div className="flex gap-5 ">
             <SignUpButton>
-              <button className="bg-[#FFC645] text-black px-5 py-2 rounded-full">
-                SignUp
-              </button>
+              <button className=" px-5 py-2 rounded-full">SignUp</button>
             </SignUpButton>
             <SignInButton>
-              <button className="bg-[#e9f2e6]  text-black px-5 py-2 rounded-full">
-                Login
-              </button>
+              <button className=" px-5 py-2 rounded-full">Login</button>
             </SignInButton>
           </div>
         </SignedOut>
