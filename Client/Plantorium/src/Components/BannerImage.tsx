@@ -16,12 +16,12 @@ const BannerImage = () => {
       className=" w-full flex items-center h-[95%]  gap-5 text-white font-poppins"
     >
       <div className="w-full relative flex flex-col  items-center ">
-        <div className="text-[70px] tracking-[21px]  ">
+        <div className="text-[70px] tracking-[21px] ">
           FARM FRESH, BACKYARD GROWN
         </div>
         <SignedIn>
           <StartFarmButton
-            className="mt-10 text-lg font-dancing lg:text-2xl xl:text-4xl bg-[#3ba944] hover:bg-[#246d27] duration-100 rounded-tl-full rounded-br-full text-white text-md text-center self-center px-4 py-2 m-2 lg:px-8"
+            className="py-5 text-2xl px-2"
             text="Start Your Farm"
           />
         </SignedIn>
