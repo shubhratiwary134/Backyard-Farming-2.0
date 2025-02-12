@@ -10,6 +10,7 @@ import { motion } from "motion/react";
 import logo from "../Assests/Logo.jpg";
 
 const Navbar = () => {
+  // navbar comment for the same
   return (
     <motion.div
       initial={{ opacity: 0 }}
