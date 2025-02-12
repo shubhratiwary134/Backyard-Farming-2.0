@@ -6,15 +6,15 @@ import {
 import { motion } from "motion/react";
 const HowDoesItWork = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0, x: 50 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 2 }}
-      className="w-full bg-[#F8E6C8] pt-10 pb-20 text-white font-poppins"
-    >
-      <div className=" text-black text-6xl  flex justify-center tracking-wide">
+    <div className="w-full bg-[#F8E6C8] pt-10 pb-20 text-white font-poppins">
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 2 }}
+        className=" text-black text-6xl  flex justify-center tracking-wide"
+      >
         How Does It Work ?
-      </div>
+      </motion.div>
       <div className="font-bold text-[#6c8d6e] my-5  text-lg flex justify-center tracking-wide">
         AI analyzes your unique backyard farm and provides personalized guidance
       </div>
@@ -51,7 +51,7 @@ const HowDoesItWork = () => {
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 };
 
