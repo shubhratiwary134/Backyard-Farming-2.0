@@ -8,7 +8,7 @@ const HowDoesItWork = () => {
   return (
     <div className="w-full bg-[#F8E6C8] pt-10 pb-20 text-white font-poppins">
       <motion.div
-        initial={{ opacity: 0, y: 50 }}
+        initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 2 }}
         className=" text-black text-6xl  flex justify-center tracking-wide"
