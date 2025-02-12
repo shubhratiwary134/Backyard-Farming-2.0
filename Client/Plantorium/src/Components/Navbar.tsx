@@ -19,7 +19,7 @@ const Navbar = () => {
     >
       <img src={logo} className="w-48 rounded-full" />
 
-      <div className="flex flex-col justify-around items-center font-poppins font-semibold text-2xl gap-20 md:flex-row md:text-[25px] md:items-center">
+      <div className="flex flex-col justify-around items-center font-poppins text-2xl gap-20 md:flex-row md:text-[25px] md:items-center">
         <SignedOut>
           <AnimatedLink href="#">How It Works</AnimatedLink>
           <AnimatedLink href="/plans">Plans</AnimatedLink>
