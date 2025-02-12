@@ -7,8 +7,8 @@ import { motion } from "motion/react";
 const HowDoesItWork = () => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
+      initial={{ opacity: 0, x: 50 }}
+      whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 2 }}
       className="w-full bg-[#F8E6C8] py-10 text-white font-poppins"
     >
