@@ -15,11 +15,11 @@ const Navbar = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className="flex flex-col items-center gap-5 lg:flex-row lg:justify-between lg:px-5 lg:py-2 text-white"
+      className="flex flex-col items-center gap-5 lg:flex-row lg:justify-between lg:px-5 lg:py-10 text-white"
     >
       <img src={logo} className="w-14 rounded-full" />
 
-      <div className="flex flex-col justify-around items-center font-poppins text-2xl gap-20 md:flex-row md:text-[20px] md:items-center">
+      <div className="flex flex-col justify-around items-center font-poppins text-2xl gap-20 md:flex-row md:text-[25px] md:items-center">
         <SignedOut>
           <AnimatedLink href="#">How It Works</AnimatedLink>
           <AnimatedLink href="/plans">Plans</AnimatedLink>
