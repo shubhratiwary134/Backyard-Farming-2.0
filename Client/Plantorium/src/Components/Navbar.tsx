@@ -17,7 +17,7 @@ const Navbar = () => {
       transition={{ duration: 1 }}
       className="flex flex-col items-center gap-5 lg:flex-row lg:justify-between lg:py-10 text-white"
     >
-      <img src={logo} className="w-32 rounded-full" />
+      <img src={logo} className="w-48 rounded-full" />
 
       <div className="flex flex-col justify-around items-center font-poppins font-semibold text-2xl gap-20 md:flex-row md:text-[25px] md:items-center">
         <SignedOut>
