@@ -11,7 +11,8 @@ export default {
         dancing: ['"Dancing Script"', 'cursive'], 
         heading:['"Playfair Display"','serif'],
         caveat: ['"Caveat"', 'cursive'],
-        Montserrat:['"Montserrat"','cursive']
+        Montserrat:['"Montserrat"','cursive'],
+        poppins: ["poppins",'sans-serif ']
       },
     },
   },
