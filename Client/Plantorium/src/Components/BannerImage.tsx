@@ -3,30 +3,21 @@ import {
   SignedOut,
   SignInButton,
   SignUpButton,
-  useAuth,
 } from "@clerk/clerk-react";
-import BannerPic from "../Assests/BannerImage-lightTheme.png";
-import marketPic from "../Assests/market-removebg-preview.jpg";
-import BannerPic2 from "../Assests/farmer_enhanced-removebg-preview.jpg";
+
 import StartFarmButton from "./StartFarmButton";
 import { motion } from "motion/react";
 const BannerImage = () => {
-  const { isSignedIn } = useAuth();
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className=" w-full  flex justify-center  mt-10 mb-20  gap-5"
+      className=" w-full flex items-center h-[95%]  gap-5 text-white font-poppins"
     >
-      <img src={marketPic} className="hidden xl:block object-contain w-1/4 " />
-      <div className="w-1/2 relative flex flex-col gap-10 items-center">
-        <div className="hidden sm:block sm:text-6xl md:text-8xl lg:text-9xl lg:mt-10 xl:mt-0 xl:text-8xl 2xl:text-9xl text-center  text-[#3ba944] font-heading">
-          Backyard Farming 2.0
-        </div>
-        <div className="md:text-xl xl:text-xl 2xl:text-2xl text-[#296633] text-center font-Montserrat">
-          Turn your backyard into a thriving ecosystem with personalized guides.
-          Your sustainable journey begins now with Backyard Farming 2.O !!!
+      <div className="w-full relative flex flex-col  items-center ">
+        <div className="text-[70px] tracking-[21px]  ">
+          FARM FRESH, BACKYARD GROWN
         </div>
         <SignedIn>
           <StartFarmButton
@@ -35,25 +26,17 @@ const BannerImage = () => {
           />
         </SignedIn>
         <SignedOut>
-          <div className="mt-20 flex gap-40">
+          <div className="mt-20 flex gap-5 items-center tracking-[8px]">
             <SignUpButton>
-              <button className="text-3xl  py-2 px-4 border-[#3ba944] border-y-2 font-dancing font-bold">
-                Sign Up
-              </button>
+              <button className="text-3xl py-2 px-4">Sign Up</button>
             </SignUpButton>
+            <hr className="w-[2px] h-[40px] bg-white border-none" />
             <SignInButton>
-              <button className="text-3xl   py-2 px-4 border-[#3ba944] border-y-2 font-dancing  font-bold">
-                Log In
-              </button>
+              <button className="text-3xl  py-2 px-4 ">Log In</button>
             </SignInButton>
           </div>
         </SignedOut>
       </div>
-
-      <img
-        src={isSignedIn ? BannerPic2 : BannerPic}
-        className=" object-contain w-1/2 xl:w-1/4"
-      />
     </motion.div>
   );
 };
