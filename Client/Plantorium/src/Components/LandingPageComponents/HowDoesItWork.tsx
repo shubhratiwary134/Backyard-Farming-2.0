@@ -10,18 +10,18 @@ const HowDoesItWork = () => {
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 2 }}
-      className="w-full px-40 py-20"
+      className="w-full bg-[#F8E6C8] py-10 text-white font-poppins"
     >
-      <div className=" text-6xl font-heading flex justify-center">
+      <div className=" text-black text-6xl  flex justify-center tracking-wide">
         How Does It Work ?
       </div>
-      <div className="text-gray-500 my-5 font-sans text-lg flex justify-center">
+      <div className="font-bold text-[#6c8d6e] my-5  text-lg flex justify-center tracking-wide">
         AI analyzes your unique backyard farm and provides personalized guidance
       </div>
       <div className="flex w-full justify-between mt-5">
-        <div className="w-96 flex flex-col items-center gap-5  ">
+        <div className="text-black w-96 flex flex-col items-center gap-5  ">
           <PiNumberCircleOneLight size={64} />
-          <div className="text-2xl mr-5 ml-2 font-heading text-center ">
+          <div className="text-black text-2xl mr-5 ml-2 font-heading text-center font-poppins  tracking-wide">
             Upload Your Plant Photos
           </div>
           <div className="text-base text-gray-600 mr-5 ml-2 text-center ">
@@ -30,22 +30,22 @@ const HowDoesItWork = () => {
             crops to get started.
           </div>
         </div>
-        <div className="w-96  flex flex-col items-center  gap-5 rounded-lg">
+        <div className="text-black w-96  flex flex-col items-center  gap-5 rounded-lg">
           <PiNumberCircleTwoLight size={64} />
-          <div className="text-2xl mr-5 ml-2 font-heading text-heading">
+          <div className="text-black text-2xl mr-5 ml-2 font-heading text-heading font-poppins tracking-wide">
             Receive Weekly Roadmap
           </div>
-          <div className="text-base text-gray-600 mr-5 ml-2  text-center">
+          <div className="text-base text-gray-600 mr-5 ml-2  text-center font-poppins">
             Based on your plant choice, we’ll create a tailored weekly roadmap
             with all the steps you need to help your plants thrive.
           </div>
         </div>
-        <div className="w-96  flex flex-col gap-5 items-center">
+        <div className="text-black w-96  flex flex-col gap-5 items-center">
           <PiNumberCircleThreeLight size={64} />
-          <div className="text-2xl mr-5 ml-2 font-heading text-center">
+          <div className="text-black text-2xl mr-5 ml-2 font-heading text-center font-poppins tracking-wide">
             Track Your Progress
           </div>
-          <div className="text-base text-gray-600 mr-5 ml-2 text-center">
+          <div className="text-base text-gray-600 mr-5 ml-2 text-center font-poppins">
             Check off completed tasks each week, track your progress, and share
             tips and experiences with other backyard gardeners
           </div>
