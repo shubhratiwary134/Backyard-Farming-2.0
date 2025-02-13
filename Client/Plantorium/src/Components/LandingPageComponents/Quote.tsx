@@ -8,6 +8,7 @@ const Quote = () => {
       initial={{ opacity: 0, x: 100 }}
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 1 }}
+      viewport={{ once: true }}
       className="w-screen bg-[#f8e6c8] text-black px-10 pt-10 pb-20 font-dancing bg cover bg centre"
       style={{
         backgroundImage: `url(${backgroundImage})`,

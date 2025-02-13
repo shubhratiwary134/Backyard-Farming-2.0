@@ -4,7 +4,7 @@ import { IoPeople } from "react-icons/io5";
 
 const WhatsIncluded = () => {
   return (
-    <div className="w-screen px-20  bg-[#486B4A] fonts-poppins">
+    <div className="w-screen px-20  bg-[#486B4A] font-poppins">
       <div className="my-10 text-5xl font-heading text-white">
         What's Included?
       </div>
