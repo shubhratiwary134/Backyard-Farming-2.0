@@ -1,0 +1,20 @@
+services:
+
+  ai_service:
+    build: ./Rag
+    ports:
+      - "5000:5000"
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: qdrant
+    restart: always
+    ports:
+      - "6333:6333"
+      - "6334:6334"
+    volumes:
+      - qdrant_data:/qdrant/storage
+
+volumes:
+  qdrant_data:
+    driver: local

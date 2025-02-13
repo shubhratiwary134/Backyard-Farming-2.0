@@ -1,0 +1,6 @@
+
+pymupdf
+torch
+nomic
+langchain
+nomic[local]
