@@ -11,13 +11,13 @@ const Quote = () => {
       viewport={{ once: true, amount: 0.5 }}
       className="w-screen text-black px-10 pt-10 pb-20 font-dancing "
       style={{
-        backgroundImage: `url(${backgroundImage})`,
+        // backgroundImage: `url(${backgroundImage})`,
         backgroundSize: "cover",
         //backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="flex p-10   gap-5 space-x-4 mx-4">
+      <div className="flex p-10 bg-[#f7fff7] gap-5 space-x-4 mx-4">
         {/*image*/}
         <img
           src={quoteImage}

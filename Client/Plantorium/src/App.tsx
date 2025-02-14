@@ -8,7 +8,7 @@ import BannerImage from "./Components/Hero";
 import bgImageForHero from "./Assests/BG_for_hero.jpg";
 function App() {
   return (
-    <div className="bg-[#F8E6C8]">
+    <div className="bg-[#f7fff7]">
       <div
         style={{
           backgroundImage: `url(${bgImageForHero})`,
