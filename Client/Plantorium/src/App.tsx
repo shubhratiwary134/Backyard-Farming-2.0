@@ -5,7 +5,7 @@ import LandingPage from "./Pages/LandingPage";
 import Navbar from "./Components/Navbar";
 import CheckAndAddUserInTheDB from "./Components/CheckAndAddUserInTheDB";
 import BannerImage from "./Components/BannerImage";
-import bgImageForHero from "./Assests/Bg-blur-for-hero.png";
+import bgImageForHero from "./Assests/BG_for_hero.jpg";
 function App() {
   return (
     <div className="bg-[#F8E6C8]">
