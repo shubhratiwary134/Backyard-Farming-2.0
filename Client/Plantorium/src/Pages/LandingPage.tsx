@@ -1,4 +1,4 @@
-import BannerImage from "../Components/BannerImage";
+import BannerImage from "../Components/Hero";
 
 import HowDoesItWork from "../Components/LandingPageComponents/HowDoesItWork";
 import Quote from "../Components/LandingPageComponents/Quote";

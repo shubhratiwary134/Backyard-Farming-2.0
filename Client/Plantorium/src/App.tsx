@@ -4,7 +4,7 @@ import HomePage from "./Pages/HomePage";
 import LandingPage from "./Pages/LandingPage";
 import Navbar from "./Components/Navbar";
 import CheckAndAddUserInTheDB from "./Components/CheckAndAddUserInTheDB";
-import BannerImage from "./Components/BannerImage";
+import BannerImage from "./Components/Hero";
 import bgImageForHero from "./Assests/BG_for_hero.jpg";
 function App() {
   return (

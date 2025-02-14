@@ -1,5 +1,5 @@
 const TeamVision = () => {
-  return <div className=" bg-black"></div>;
+  return <div className="h-screen w-screen bg-black"></div>;
 };
 
 export default TeamVision;
