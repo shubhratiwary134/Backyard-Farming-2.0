@@ -9,7 +9,7 @@ const Quote = () => {
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 1 }}
       viewport={{ once: true, amount: 0.5 }}
-      className="w-screen bg-[#f8e6c8] text-black px-10 pt-10 pb-20 font-dancing bg cover bg centre"
+      className="w-screen text-black px-10 pt-10 pb-20 font-dancing "
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: "cover",
