@@ -40,7 +40,7 @@ const TeamVision = () => {
             </motion.p>
           </div>
           <div className="self-end w-[55%]">
-            <p className="text-center text-xl text-gray-400 mb-3">
+            <p className="text-center text-xl text-[#e9e9e9] mb-3">
               At Backyard Farming 2.0, we dream of a future where every backyard
               transforms into a flourishing, sustainable haven. Our mission is
               to empower individuals to cultivate their own green spaces by
