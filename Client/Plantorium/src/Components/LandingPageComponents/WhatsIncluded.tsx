@@ -7,7 +7,7 @@ import photo4 from "../../Assests/photo4.avif";
 const WhatsIncluded = () => {
   return (
     <div
-      className="w-screen h-[180vh]
+      className="w-screen mb-20
     flex flex-col items-center   p-10 "
     >
       <motion.div
