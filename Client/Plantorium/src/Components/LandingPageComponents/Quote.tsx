@@ -1,44 +1,32 @@
-import quoteImage from "../../Assests/your-image.png";
-import backgroundImage from "../../Assests/frame1.2.png";
+import backgroundImage from "../../Assests/mitti.jpg";
 import { motion } from "motion/react";
 
 const Quote = () => {
   return (
     <motion.div
-      initial={{ opacity: 0, x: 100 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      transition={{ duration: 1 }}
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 2 }}
       viewport={{ once: true, amount: 0.5 }}
-      className="w-screen  text-black px-10 pt-10 pb-20 font-dancing "
+      className="w-screen text-white px-10 pt-10 pb-20 font-poppins"
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: "cover",
+
         //backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="flex p-10 bg-[#AD5D50]  gap-5 space-x-4 mx-4">
-        {/*image*/}
-        <img
-          src={quoteImage}
-          alt="Quote Image"
-          className="w-44 h-64 object-cover rounded-lg"
-        />
-        {/*Quote*/}
-        <div className="text-5xl pt-5 px-10 text-center">
-          <p>
-            " Backyard farming is more than just growing food it's about{" "}
-            <span className="text-green-700 font-bold">Cultivating</span> a
-            sustainable future,
-            <span className="text-green-700  font-bold"> Nurturing</span> the
-            earth, and
-            <span className="text-green-700  font-bold">
-              {" "}
-              Reconnecting
-            </span>{" "}
-            with the simple joys of nature. "
-          </p>
-        </div>
+      <div className="  text-center flex ">
+        <p className="text-[2.8rem]">
+          " Backyard farming is more than just growing food it's about
+          <span className="text-green-700 font-bold ">Cultivating</span>a
+          sustainable future,
+          <span className="text-green-700 font-bold  ">Nurturing</span>
+          the earth, and
+          <span className="text-green-700 font-bold ">Reconnecting</span> with
+          the simple joys of nature. "
+        </p>
       </div>
     </motion.div>
   );

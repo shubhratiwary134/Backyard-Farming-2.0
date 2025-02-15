@@ -8,13 +8,13 @@ import BannerImage from "./Components/Hero";
 import bgImageForHero from "./Assests/BG_for_hero.jpg";
 function App() {
   return (
-    <div className="bg-[#F8E6C8]">
+    <div className="bg-[#f7fff7]">
       <div
         style={{
           backgroundImage: `url(${bgImageForHero})`,
-          backgroundSize: "100% auto",
+          // backgroundSize: "100% auto",
         }}
-        className="h-screen w-full bg-no-repeat bg-center"
+        className="h-screen w-full bg-no-repeat bg-center bg-cover 2xl:bg-[length:100%_auto]"
       >
         <Navbar />
         <BannerImage />
