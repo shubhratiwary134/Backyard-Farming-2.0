@@ -1,5 +1,8 @@
 import { MdOutlineArrowOutward } from "react-icons/md";
 import { motion } from "motion/react";
+import arin from "../../Assests/ARIN.png";
+import shreya from "../../Assests/SHREYA.png";
+import shubhra from "../../Assests/SHUBHRA.png";
 
 const TeamVision = () => {
   return (
@@ -57,9 +60,35 @@ const TeamVision = () => {
             viewport={{ once: true, amount: 0.5 }}
             className="w-2/3 h-[70vh] flex items-end"
           >
-            <div className="bg-[#a8d1d1] h-[90%] w-96 rounded-t-full"></div>
-            <div className="bg-[#f9ed85] h-[80%] w-96 rounded-t-full"></div>
-            <div className="bg-[#f197c0] h-[100%] w-96 rounded-t-full"></div>
+            <motion.div
+              whileHover={{ height: "100%" }}
+              className="bg-[#a8d1d1]  h-[75%] w-96 rounded-t-full flex flex-col items-center justify-between"
+            >
+              <div className="mt-20 text-black text-2xl"> Arin Zingade</div>
+              <div className="h-2/3 flex">
+                <img src={arin} />
+              </div>
+            </motion.div>
+            <motion.div
+              whileHover={{ height: "100%" }}
+              className="bg-[#f9ed85] h-[90%] w-96 rounded-t-full flex flex-col items-center justify-between"
+            >
+              <div className="mt-20 text-black text-2xl tracking-wide">
+                Shubhra Tiwary
+              </div>
+              <div className="h-2/3 flex">
+                <img src={shubhra} />
+              </div>
+            </motion.div>
+            <motion.div
+              whileHover={{ height: "100%" }}
+              className="  bg-[#f197c0] h-[85%] w-96 rounded-t-full flex flex-col items-center justify-between"
+            >
+              <div className="mt-20 text-black text-2xl">Shreya Soni</div>
+              <div className="h-2/3 flex ">
+                <img src={shreya} />
+              </div>
+            </motion.div>
           </motion.div>
           <div className="flex flex-col text-3xl items-center self-end gap-10 p-10">
             <div>Blogs</div>
