@@ -1,20 +1,23 @@
+import { MdOutlineArrowOutward } from "react-icons/md";
+import AnimatedLink from "../AnimatedLinkTag";
+
 const TeamVision = () => {
   return (
-    <div className="h-screen w-screen bg-black text-white ">
-      <div className="flex flex-col p-20">
-        <div className="w-full flex justify-between font-poppins">
-          <div className="flex flex-col items-start">
-            <p className="text-5xl ">
+    <div className="h-[100vh] w-screen bg-black text-white ">
+      <div className="flex flex-col justify-between h-full pt-10 px-20">
+        <div className="w-full flex justify-between ">
+          <div className="flex flex-col items-start ">
+            <p className="text-5xl  ">
               The <br></br>
-              <span className="text-8xl text-yellow-300 tracking-widest font-poppins">
+              <span className="text-8xl text-yellow-300 tracking-widest font-bold ">
                 Creative
               </span>
               <br></br>
             </p>
-            <p className="text-5xl self-end">Team</p>
+            <p className="text-5xl self-end ">Team</p>
           </div>
           <div className="self-end w-[55%]">
-            <p className="text-center text-xl text-gray-400">
+            <p className="text-center text-xl text-gray-400 mb-3">
               At Backyard Farming 2.0, we dream of a future where every backyard
               transforms into a flourishing, sustainable haven. Our mission is
               to empower individuals to cultivate their own green spaces by
@@ -23,7 +26,21 @@ const TeamVision = () => {
             </p>
           </div>
         </div>
-        <div></div>
+        <div className="w-full flex justify-between">
+          <div className="w-2/3 h-[70vh] flex items-end">
+            <div className="bg-[#a8d1d1] h-[90%] w-96 rounded-t-full"></div>
+            <div className="bg-[#f9ed85] h-[80%] w-96 rounded-t-full"></div>
+            <div className="bg-[#f197c0] h-[100%] w-96 rounded-t-full"></div>
+          </div>
+          <div className="flex flex-col text-3xl items-center self-end gap-10 p-10">
+            <div>Blogs</div>
+            <div>FAQs</div>
+            <div>Home</div>
+            <button className="px-5 py-5 bg-[#888888] rounded-full flex items-center  underline decoration-white">
+              Know More <MdOutlineArrowOutward size={32} />
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
