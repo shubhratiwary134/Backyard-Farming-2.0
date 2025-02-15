@@ -7,6 +7,7 @@ import shubhraHover from "../../Assests/Shubhra_Bg.png";
 import arinHover from "../../Assests/arin_bg.png";
 import shreyaHover from "../../Assests/shreya_hover_bg.png";
 import { useState } from "react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const TeamVision = () => {
   const [hovered, setHovered] = useState({
@@ -77,9 +78,20 @@ const TeamVision = () => {
               onHoverEnd={() =>
                 setHovered((prev) => ({ ...prev, box1: false }))
               }
-              className="bg-[#a8d1d1]  h-[75%] w-96 rounded-t-full flex flex-col items-center justify-between"
+              className="bg-[#a8d1d1]  h-[70%] w-96 rounded-t-full flex flex-col items-center justify-between"
             >
-              <div className="mt-20 text-black text-2xl"> Arin Zingade</div>
+              <div className="mt-20 text-black text-2xl">
+                {" "}
+                Arin Zingade
+                <div
+                  className={`flex justify-center gap-5 mt-5 ${
+                    !hovered.box1 ? "hidden" : ""
+                  }`}
+                >
+                  <FaGithub />
+                  <FaLinkedin />
+                </div>
+              </div>
               <div className="h-2/3 flex">
                 <img src={hovered.box1 ? arinHover : arin} />
               </div>
@@ -96,6 +108,14 @@ const TeamVision = () => {
             >
               <div className="mt-20 text-black text-2xl tracking-wide">
                 Shubhra Tiwary
+                <div
+                  className={`flex justify-center gap-5 mt-5 ${
+                    !hovered.box2 ? "hidden" : ""
+                  }`}
+                >
+                  <FaGithub />
+                  <FaLinkedin />
+                </div>
               </div>
               <div className="h-2/3 flex">
                 <img src={hovered.box2 ? shubhraHover : shubhra} />
@@ -109,9 +129,19 @@ const TeamVision = () => {
               onHoverEnd={() =>
                 setHovered((prev) => ({ ...prev, box3: false }))
               }
-              className="  bg-[#f197c0] h-[85%] w-96 rounded-t-full flex flex-col items-center justify-between"
+              className="  bg-[#f197c0] h-[80%] w-96 rounded-t-full flex flex-col items-center justify-between"
             >
-              <div className="mt-20 text-black text-2xl">Shreya Soni</div>
+              <div className="mt-20 text-black text-2xl">
+                Shreya Soni
+                <div
+                  className={`flex justify-center gap-5 mt-5 ${
+                    !hovered.box3 ? "hidden" : ""
+                  }`}
+                >
+                  <FaGithub />
+                  <FaLinkedin />
+                </div>
+              </div>
               <div className="h-2/3 flex ">
                 <img src={hovered.box3 ? shreyaHover : shreya} />
               </div>
