@@ -7,7 +7,7 @@ import WhatsIncluded from "../Components/LandingPageComponents/WhatsIncluded";
 const LandingPage = () => {
   return (
     <div className="px-10 flex flex-col items-center ">
-      {/* <ChatBotFeat /> */}
+      <ChatBotFeat />
       <HowDoesItWork />
       <Quote />
       <WhatsIncluded />
