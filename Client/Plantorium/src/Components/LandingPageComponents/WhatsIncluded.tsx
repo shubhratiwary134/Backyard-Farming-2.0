@@ -6,22 +6,7 @@ import photo4 from "../../Assests/photo4.avif";
 
 const WhatsIncluded = () => {
   return (
-    <div
-      className="w-screen mb-20
-    flex flex-col items-center   p-10 "
-    >
-      <motion.div
-        initial={{ y: 20, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.8 }}
-        viewport={{
-          amount: 0.5,
-          once: false,
-        }}
-        className="text-zinc-900 text-7xl event-Heading font-poppins"
-      >
-        What's Included !!!
-      </motion.div>
+    <div className="w-screen mb-20 p-10 ">
       <div className="w-full h-3/4 grid-container grid grid-cols-12 grid-rows-12 gap-4 mt-20">
         <motion.div
           initial={{ x: 30 }}
