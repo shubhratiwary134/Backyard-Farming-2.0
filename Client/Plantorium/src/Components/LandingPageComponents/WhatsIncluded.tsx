@@ -18,7 +18,7 @@ const WhatsIncluded = () => {
           amount: 0.5,
           once: false,
         }}
-        className="text-zinc-900 text-8xl event-Heading font-poppins"
+        className="text-zinc-900 text-7xl event-Heading font-poppins"
       >
         What's Included !!!
       </motion.div>
