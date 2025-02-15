@@ -3,8 +3,17 @@ import { motion } from "motion/react";
 import arin from "../../Assests/ARIN.png";
 import shreya from "../../Assests/SHREYA.png";
 import shubhra from "../../Assests/SHUBHRA.png";
+import shubhraHover from "../../Assests/Shubhra_Bg.png";
+import arinHover from "../../Assests/arin_bg.png";
+import shreyaHover from "../../Assests/shreya_hover_bg.png";
+import { useState } from "react";
 
 const TeamVision = () => {
+  const [hovered, setHovered] = useState({
+    box1: false,
+    box2: false,
+    box3: false,
+  });
   return (
     <div className="h-[100vh] w-screen bg-black text-white  ">
       <div className="flex flex-col justify-between h-full pt-10 px-20">
@@ -62,31 +71,49 @@ const TeamVision = () => {
           >
             <motion.div
               whileHover={{ height: "100%" }}
+              onHoverStart={() =>
+                setHovered((prev) => ({ ...prev, box1: true }))
+              }
+              onHoverEnd={() =>
+                setHovered((prev) => ({ ...prev, box1: false }))
+              }
               className="bg-[#a8d1d1]  h-[75%] w-96 rounded-t-full flex flex-col items-center justify-between"
             >
               <div className="mt-20 text-black text-2xl"> Arin Zingade</div>
               <div className="h-2/3 flex">
-                <img src={arin} />
+                <img src={hovered.box1 ? arinHover : arin} />
               </div>
             </motion.div>
             <motion.div
               whileHover={{ height: "100%" }}
+              onHoverStart={() =>
+                setHovered((prev) => ({ ...prev, box2: true }))
+              }
+              onHoverEnd={() =>
+                setHovered((prev) => ({ ...prev, box2: false }))
+              }
               className="bg-[#f9ed85] h-[90%] w-96 rounded-t-full flex flex-col items-center justify-between"
             >
               <div className="mt-20 text-black text-2xl tracking-wide">
                 Shubhra Tiwary
               </div>
               <div className="h-2/3 flex">
-                <img src={shubhra} />
+                <img src={hovered.box2 ? shubhraHover : shubhra} />
               </div>
             </motion.div>
             <motion.div
               whileHover={{ height: "100%" }}
+              onHoverStart={() =>
+                setHovered((prev) => ({ ...prev, box3: true }))
+              }
+              onHoverEnd={() =>
+                setHovered((prev) => ({ ...prev, box3: false }))
+              }
               className="  bg-[#f197c0] h-[85%] w-96 rounded-t-full flex flex-col items-center justify-between"
             >
               <div className="mt-20 text-black text-2xl">Shreya Soni</div>
               <div className="h-2/3 flex ">
-                <img src={shreya} />
+                <img src={hovered.box3 ? shreyaHover : shreya} />
               </div>
             </motion.div>
           </motion.div>
