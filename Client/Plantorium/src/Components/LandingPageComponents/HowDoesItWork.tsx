@@ -6,7 +6,7 @@ import {
 import { motion } from "motion/react";
 const HowDoesItWork = () => {
   return (
-    <div className="w-full bg-[#F8E6C8]  pb-20 text-white font-poppins">
+    <div className="w-full bg-[#005200]  pb-20 text-white font-poppins">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -15,7 +15,7 @@ const HowDoesItWork = () => {
       >
         How Does It Work ?
       </motion.div>
-      <div className="font-bold text-[#6c8d6e] my-5  text-lg flex justify-center tracking-wide">
+      <div className="font-bold text-black my-5  text-lg flex justify-center tracking-wide">
         AI analyzes your unique backyard farm and provides personalized guidance
       </div>
       <div className="flex w-full justify-between mt-5">
