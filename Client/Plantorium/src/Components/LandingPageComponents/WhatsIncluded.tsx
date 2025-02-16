@@ -3,8 +3,15 @@ import photo1 from "../../Assests/photo1.avif";
 import photo2 from "../../Assests/photo2.avif";
 import photo3 from "../../Assests/photo3.avif";
 import photo4 from "../../Assests/photo4.avif";
+import { useState } from "react";
 
 const WhatsIncluded = () => {
+  const [hovered, setHovered] = useState({
+    box1: false,
+    box2: false,
+    box3: false,
+    box4: false,
+  });
   return (
     <div className="w-screen mb-20 p-10 font-poppins">
       <div className="w-full h-3/4 grid-container grid grid-cols-12 grid-rows-12 gap-4 mt-20">
@@ -15,11 +22,17 @@ const WhatsIncluded = () => {
           viewport={{
             once: true,
           }}
-          className="relative col-span-6 row-span-6 overflow-hidden flex justify-center items-center rounded-2xl  "
+          onHoverStart={() => setHovered((prev) => ({ ...prev, box1: true }))}
+          onHoverEnd={() => setHovered((prev) => ({ ...prev, box1: false }))}
+          className={`relative col-span-6 row-span-6 overflow-hidden flex justify-center items-center rounded-2xl ${
+            hovered.box1 ? "bg-black" : ""
+          }`}
         >
           <img
             src={photo1}
-            className="w-full h-full object-cover rounded-lg hover:scale-110 duration-300"
+            className={`w-full h-full object-cover rounded-lg hover:scale-110 duration-300 ${
+              hovered.box1 ? "hidden" : ""
+            }`}
           />
           <div className="absolute text-white top-4 text-6xl">
             Personalized Farm Report
@@ -77,7 +90,7 @@ const WhatsIncluded = () => {
             src={photo4}
             className="w-full h-full object-cover rounded-2xl hover:scale-110 duration-300"
           />
-          <div className="absolute text-white top-4 left-2 text-6xl">
+          <div className="absolute text-white top-4 left-4 text-6xl">
             Marketplace
           </div>
         </motion.div>
