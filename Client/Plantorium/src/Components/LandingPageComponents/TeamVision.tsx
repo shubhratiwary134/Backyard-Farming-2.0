@@ -11,9 +11,9 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 const TeamVision = () => {
   const [hovered, setHovered] = useState({
-    box1: false,
-    box2: false,
-    box3: false,
+    shape1: false,
+    shape2: false,
+    shape3: false,
   });
   return (
     <div className="h-[100vh] w-screen bg-black text-white  ">
@@ -73,10 +73,10 @@ const TeamVision = () => {
             <motion.div
               whileHover={{ height: "100%" }}
               onHoverStart={() =>
-                setHovered((prev) => ({ ...prev, box1: true }))
+                setHovered((prev) => ({ ...prev, shape1: true }))
               }
               onHoverEnd={() =>
-                setHovered((prev) => ({ ...prev, box1: false }))
+                setHovered((prev) => ({ ...prev, shape1: false }))
               }
               className="bg-[#a8d1d1]  h-[70%] w-96 rounded-t-full flex flex-col items-center justify-between"
             >
@@ -85,7 +85,7 @@ const TeamVision = () => {
                 Arin Zingade
                 <div
                   className={`flex justify-center gap-5 mt-5 ${
-                    !hovered.box1 ? "hidden" : ""
+                    !hovered.shape1 ? "hidden" : ""
                   }`}
                 >
                   <FaGithub />
@@ -93,16 +93,16 @@ const TeamVision = () => {
                 </div>
               </div>
               <div className="h-2/3 flex">
-                <img src={hovered.box1 ? arinHover : arin} />
+                <img src={hovered.shape1 ? arinHover : arin} />
               </div>
             </motion.div>
             <motion.div
               whileHover={{ height: "100%" }}
               onHoverStart={() =>
-                setHovered((prev) => ({ ...prev, box2: true }))
+                setHovered((prev) => ({ ...prev, shape2: true }))
               }
               onHoverEnd={() =>
-                setHovered((prev) => ({ ...prev, box2: false }))
+                setHovered((prev) => ({ ...prev, shape2: false }))
               }
               className="bg-[#f9ed85] h-[90%] w-96 rounded-t-full flex flex-col items-center justify-between"
             >
@@ -110,7 +110,7 @@ const TeamVision = () => {
                 Shubhra Tiwary
                 <div
                   className={`flex justify-center gap-5 mt-5 ${
-                    !hovered.box2 ? "hidden" : ""
+                    !hovered.shape2 ? "hidden" : ""
                   }`}
                 >
                   <FaGithub />
@@ -118,16 +118,16 @@ const TeamVision = () => {
                 </div>
               </div>
               <div className="h-2/3 flex">
-                <img src={hovered.box2 ? shubhraHover : shubhra} />
+                <img src={hovered.shape2 ? shubhraHover : shubhra} />
               </div>
             </motion.div>
             <motion.div
               whileHover={{ height: "100%" }}
               onHoverStart={() =>
-                setHovered((prev) => ({ ...prev, box3: true }))
+                setHovered((prev) => ({ ...prev, shape3: true }))
               }
               onHoverEnd={() =>
-                setHovered((prev) => ({ ...prev, box3: false }))
+                setHovered((prev) => ({ ...prev, shape3: false }))
               }
               className="  bg-[#f197c0] h-[80%] w-96 rounded-t-full flex flex-col items-center justify-between"
             >
@@ -135,7 +135,7 @@ const TeamVision = () => {
                 Shreya Soni
                 <div
                   className={`flex justify-center gap-5 mt-5 ${
-                    !hovered.box3 ? "hidden" : ""
+                    !hovered.shape3 ? "hidden" : ""
                   }`}
                 >
                   <FaGithub />
@@ -143,7 +143,7 @@ const TeamVision = () => {
                 </div>
               </div>
               <div className="h-2/3 flex ">
-                <img src={hovered.box3 ? shreyaHover : shreya} />
+                <img src={hovered.shape3 ? shreyaHover : shreya} />
               </div>
             </motion.div>
           </motion.div>

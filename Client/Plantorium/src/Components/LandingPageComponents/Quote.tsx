@@ -20,11 +20,11 @@ const Quote = () => {
       <div className="  text-center flex ">
         <p className="text-[2.8rem]">
           " Backyard farming is more than just growing food it's about
-          <span className="text-green-700 font-bold ">Cultivating</span>a
+          <span className="text-green-700 font-bold "> Cultivating</span>a
           sustainable future,
-          <span className="text-green-700 font-bold  ">Nurturing</span>
+          <span className="text-green-700 font-bold  "> Nurturing</span>
           the earth, and
-          <span className="text-green-700 font-bold ">Reconnecting</span> with
+          <span className="text-green-700 font-bold "> Reconnecting</span> with
           the simple joys of nature. "
         </p>
       </div>
