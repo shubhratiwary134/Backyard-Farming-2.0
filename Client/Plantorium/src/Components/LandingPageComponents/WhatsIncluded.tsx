@@ -18,21 +18,27 @@ const WhatsIncluded = () => {
         <motion.div
           initial={{ x: 30 }}
           whileInView={{ x: 0 }}
+          animate={{
+            backgroundColor: hovered.box1 ? "#fff" : "transparent",
+            border: hovered.box1 ? "2px solid black" : "",
+          }}
+          exit={{ backgroundColor: "transparent" }}
           transition={{ duration: 0.5 }}
           viewport={{
             once: true,
           }}
           onHoverStart={() => setHovered((prev) => ({ ...prev, box1: true }))}
           onHoverEnd={() => setHovered((prev) => ({ ...prev, box1: false }))}
-          className={`relative col-span-6 row-span-6 overflow-hidden flex justify-center items-center rounded-2xl ${
-            hovered.box1 ? "bg-black" : ""
-          }`}
+          className={`relative col-span-6 row-span-6 overflow-hidden flex justify-center items-center rounded-2xl`}
         >
-          <img
+          <motion.img
             src={photo1}
-            className={`w-full h-full object-cover rounded-lg hover:scale-110 duration-300 ${
-              hovered.box1 ? "hidden" : ""
-            }`}
+            animate={{
+              opacity: hovered.box1 ? 0 : 1,
+              scale: hovered.box1 ? 1.4 : 1,
+            }}
+            transition={{ duration: 0.5 }}
+            className={`w-full h-full object-cover rounded-lg`}
           />
           <div className="absolute text-white top-4 text-6xl">
             Personalized Farm Report
