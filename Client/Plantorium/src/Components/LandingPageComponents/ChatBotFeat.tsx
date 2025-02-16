@@ -1,3 +1,4 @@
+import chatbot from "../../Assests/chatbot_2.png";
 const ChatBotFeat = () => {
   return (
     <div className="w-screen h-screen flex gap-40 p-10">
@@ -5,7 +6,7 @@ const ChatBotFeat = () => {
         Have your <br></br>
         <span className="text-7xl text-blue-500">Personal Guide</span>
       </div>
-      <img src="" className="object-contain p-10" />
+      <img src={chatbot} className="object-contain p-10" />
     </div>
   );
 };
