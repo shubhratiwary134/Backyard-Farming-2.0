@@ -15,7 +15,7 @@ const HowDoesItWork = () => {
       >
         How Does It Work ?
       </motion.div>
-      <div className="font-bold text-black my-5  text-lg flex justify-center tracking-wide">
+      <div className="font-bold text-[#6c8d6e] my-5  text-lg flex justify-center tracking-wide">
         AI analyzes your unique backyard farm and provides personalized guidance
       </div>
       <div className="flex w-full justify-between mt-5">
