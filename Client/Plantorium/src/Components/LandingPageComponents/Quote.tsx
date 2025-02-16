@@ -1,4 +1,4 @@
-import backgroundImage from "../../Assests/mitti.jpg";
+import backgroundImage from "../../Assests/mitti5.png";
 import { motion } from "motion/react";
 
 const Quote = () => {
@@ -19,7 +19,7 @@ const Quote = () => {
     >
       <div className="  text-center flex ">
         <p className="text-[2.8rem]">
-          " Backyard farming is more than just growing food it's about
+          " Backyard farming is more than just growing food it's about 
           <span className="text-green-700 font-bold ">Cultivating</span>a
           sustainable future,
           <span className="text-green-700 font-bold  ">Nurturing</span>
