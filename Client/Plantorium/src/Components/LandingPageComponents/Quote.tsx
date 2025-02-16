@@ -8,7 +8,7 @@ const Quote = () => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 2 }}
       viewport={{ once: true, amount: 0.5 }}
-      className="w-screen text-white px-10 pt-10 pb-20 font-poppins"
+      className="w-screen text-white px-10 pt-10 pb-20 font-anakatoria"
       style={{
         backgroundImage: `url(${backgroundImage})`,
         backgroundSize: "cover",
@@ -18,11 +18,11 @@ const Quote = () => {
       }}
     >
       <div className="  text-center flex ">
-        <p className="text-[2.8rem]">
+        <p className="text-[3rem]">
           " Backyard farming is more than just growing food it's about
-          <span className="text-green-700 font-bold "> Cultivating</span>a
+          <span className="text-green-700 font-bold "> Cultivating </span>a
           sustainable future,
-          <span className="text-green-700 font-bold  "> Nurturing</span>
+          <span className="text-green-700 font-bold  "> Nurturing </span>
           the earth, and
           <span className="text-green-700 font-bold "> Reconnecting</span> with
           the simple joys of nature. "

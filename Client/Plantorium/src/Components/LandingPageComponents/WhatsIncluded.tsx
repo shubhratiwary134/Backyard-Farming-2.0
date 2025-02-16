@@ -41,7 +41,7 @@ const WhatsIncluded = () => {
             className={`w-full h-full object-cover rounded-lg`}
           />
           <div
-            className={`absolute  top-14 text-6xl ${
+            className={`absolute top-10 text-6xl ${
               hovered.box1 ? "text-black" : "text-white"
             }`}
           >

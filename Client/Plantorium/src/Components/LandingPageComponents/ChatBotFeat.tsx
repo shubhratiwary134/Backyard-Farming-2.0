@@ -8,7 +8,7 @@ const ChatBotFeat = () => {
   return (
     <div className="w-screen flex flex-col">
       <div>
-        <div className="text-7xl text-center font-bold font-anakatoria p-10">
+        <div className="text-7xl text-center font-bold font-anakatoria tracking-wide p-10">
           {" "}
           Turn Your Questions
           <img
@@ -22,20 +22,26 @@ const ChatBotFeat = () => {
         </div>
       </div>
       <div className="w-full h-[65vh] flex justify-between">
-        <div className="w-[60%] flex flex-col items-center ml-10 gap-10 font-poppins">
-          <h1 className="text-4xl">Get immediate accurate answers !!</h1>
-          <img src={usertext} alt="user text" className=" w-1/2 " />
+        <div className="bg-[#fef7a2] rounded-r-full w-2/3 flex flex-col items-center  gap-10 font-dancing ">
+          <h1 className="mt-10  text-6xl">
+            Get immediate accurate answers !!!
+          </h1>
+          <img
+            src={usertext}
+            alt="user text"
+            className=" w-1/2  rounded-full mix-blend-multiply"
+          />
           <img
             src={botreply}
             alt="bot reply"
-            className="w-2/3 self-start ml-10"
+            className="w-3/4 self-start ml-10 mix-blend-multiply"
           />
         </div>
 
         <img
           src={tomatina}
           alt="tomato bg remove"
-          className="w-[40%] object-contain self-end"
+          className="w-[40%] object-contain self-end "
         />
       </div>
     </div>
