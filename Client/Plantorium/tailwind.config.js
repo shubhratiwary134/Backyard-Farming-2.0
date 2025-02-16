@@ -12,7 +12,8 @@ export default {
         heading:['"Playfair Display"','serif'],
         caveat: ['"Caveat"', 'cursive'],
         Montserrat:['"Montserrat"','cursive'],
-        poppins: ["poppins",'sans-serif']
+        poppins: ["poppins",'sans-serif'],
+        anakatoria: ["Anakatoria", "sans-serif"], 
       },
     },
   },
