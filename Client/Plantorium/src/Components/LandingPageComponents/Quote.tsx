@@ -18,7 +18,7 @@ const Quote = () => {
       }}
     >
       <div className="  text-center flex ">
-        <p className="text-[3rem]">
+        <p className="text-[2.5rem] xl:text-[3rem]">
           " Backyard farming is more than just growing food it's about
           <span className="text-green-700 font-bold "> Cultivating </span>a
           sustainable future,
