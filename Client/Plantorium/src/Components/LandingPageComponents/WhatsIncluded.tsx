@@ -41,14 +41,14 @@ const WhatsIncluded = () => {
             className={`w-full h-full object-cover rounded-lg`}
           />
           <div
-            className={`absolute top-5 lg:text-[2rem] xl:text-[2.6rem] 2xl:text-[3rem] text-center ${
+            className={`absolute top-5 lg:text-[2rem] xl:text-[2.6rem] 2xl:text-[3.6rem] text-center ${
               hovered.box1 ? "text-black" : "text-white"
             }`}
           >
             Personalized Farm Report
           </div>
           <div
-            className={`absolute p-5 lg:text-[0.9rem] xl:text-[1.2rem] 2xl:text-[1.4rem]  text-center text-zinc-700 ${
+            className={`absolute p-5 lg:text-[0.9rem] xl:text-[1.2rem] 2xl:text-[1.8rem]  text-center text-zinc-700 ${
               !hovered.box1 ? "hidden" : ""
             }`}
           >
