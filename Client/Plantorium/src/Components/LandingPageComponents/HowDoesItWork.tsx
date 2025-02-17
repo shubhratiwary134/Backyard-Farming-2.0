@@ -6,7 +6,7 @@ import {
 import { motion } from "motion/react";
 const HowDoesItWork = () => {
   return (
-    <div className="w-full  bg-[#f7fff7] mt-20 pb-20 text-white font-poppins">
+    <div className="w-full  bg-[#f7fff7] mt-20 pb-20  text-white font-poppins">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
