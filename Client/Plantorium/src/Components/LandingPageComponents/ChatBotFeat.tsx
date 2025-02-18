@@ -13,7 +13,7 @@ const ChatBotFeat = () => {
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 2 }}
-          className="text-7xl text-center font-bold font-anakatoria tracking-wide p-10"
+          className="2xl:text-7xl xl:text-6xl lg:text-5xl text-center font-bold font-anakatoria tracking-wide p-10"
         >
           {" "}
           Turn Your Questions
@@ -27,9 +27,9 @@ const ChatBotFeat = () => {
           <img src={chatbot} alt="chatbot gif" className="w-44 inline-block " />
         </motion.div>
       </div>
-      <div className="w-full h-[65vh] flex justify-between">
+      <div className="w-full 2xl:h-[65vh] xl:h-[60vh] lg:h-[50vh] flex justify-between">
         <div className="bg-[#fef7a2] rounded-r-full w-2/3 flex flex-col items-center  gap-10 font-dancing ">
-          <h1 className="mt-10  text-6xl">
+          <h1 className="mt-10  2xl:text-6xl xl:text-5xl lg:text-4xl ">
             Get immediate accurate answers !!!
           </h1>
           <img

@@ -16,7 +16,7 @@ const TeamVision = () => {
     shape3: false,
   });
   return (
-    <div className="2xl:h-[100vh] xl:[90vh] w-screen bg-black text-white  ">
+    <div className="2xl:min-h-screen xl:h-[90vh] lg:h-[80vh] w-screen bg-black text-white  ">
       <div className="flex flex-col justify-between h-full pt-10 px-20">
         <div className="w-full flex justify-between ">
           <div className="flex flex-col items-start ">
@@ -68,7 +68,7 @@ const TeamVision = () => {
             whileInView={{ opacity: 1 }}
             transition={{ duration: 1 }}
             viewport={{ once: true, amount: 0.5 }}
-            className="w-2/3 2xl:h-[70vh]  xl:h-[60vh] flex  items-end"
+            className="w-2/3 2xl:h-[70vh] xl:h-[60vh] lg:h-[40vh] flex items-end"
           >
             <motion.div
               whileHover={{ height: "100%" }}
@@ -78,7 +78,7 @@ const TeamVision = () => {
               onHoverEnd={() =>
                 setHovered((prev) => ({ ...prev, shape1: false }))
               }
-              className="bg-[#a8d1d1] h-[70%] w-96 rounded-t-full flex flex-col items-center justify-between"
+              className="bg-[#a8d1d1]  2xl:h-[49vh] xl:h-[42vh] lg:h-[28vh] w-96 rounded-t-full flex flex-col items-center justify-between"
             >
               <div className="mt-20 text-black text-2xl">
                 {" "}
@@ -104,7 +104,7 @@ const TeamVision = () => {
               onHoverEnd={() =>
                 setHovered((prev) => ({ ...prev, shape2: false }))
               }
-              className="bg-[#f9ed85] h-[90%] w-96 rounded-t-full flex flex-col items-center justify-between"
+              className="bg-[#f9ed85] 2xl:h-[63vh] xl:h-[54vh] lg:h-[36vh]  w-96 rounded-t-full flex flex-col items-center justify-between "
             >
               <div className="mt-20 text-black text-2xl tracking-wide">
                 Shubhra Tiwary
@@ -129,7 +129,7 @@ const TeamVision = () => {
               onHoverEnd={() =>
                 setHovered((prev) => ({ ...prev, shape3: false }))
               }
-              className="  bg-[#f197c0] h-[80%] w-96 rounded-t-full flex flex-col items-center justify-between"
+              className="  bg-[#f197c0] 2xl:h-[56vh] xl:h-[42vh] lg:h-[32vh] w-96 rounded-t-full flex flex-col items-center justify-between "
             >
               <div className="mt-20 text-black text-2xl">
                 Shreya Soni
