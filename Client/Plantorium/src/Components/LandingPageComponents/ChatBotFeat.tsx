@@ -3,12 +3,18 @@ import chatbot from "../../Assests/chatbot.gif";
 import usertext from "../../Assests/usertext_2.png";
 import botreply from "../../Assests/botreply_2.png";
 import tomatina from "../../Assests/tomatoremovebg.png";
+import { motion } from "motion/react";
 
 const ChatBotFeat = () => {
   return (
     <div className="w-screen flex flex-col">
       <div>
-        <div className="text-7xl text-center font-bold font-anakatoria tracking-wide p-10">
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 2 }}
+          className="text-7xl text-center font-bold font-anakatoria tracking-wide p-10"
+        >
           {" "}
           Turn Your Questions
           <img
@@ -19,7 +25,7 @@ const ChatBotFeat = () => {
           Into Crops <br />
           Talk to your Farming Chatbot
           <img src={chatbot} alt="chatbot gif" className="w-44 inline-block " />
-        </div>
+        </motion.div>
       </div>
       <div className="w-full h-[65vh] flex justify-between">
         <div className="bg-[#fef7a2] rounded-r-full w-2/3 flex flex-col items-center  gap-10 font-dancing ">
