@@ -88,7 +88,7 @@ const WhatsIncluded = () => {
             className="w-full h-full object-cover rounded-lg "
           />
           <div
-            className={`absolute  top-14 text-6xl text-center ${
+            className={`absolute  top-14  text-center lg:text-[2rem] xl:text-[2.6rem] 2xl:text-[3.6rem]  ${
               hovered.box2 ? "text-black" : "text-white"
             }`}
           >
@@ -123,7 +123,7 @@ const WhatsIncluded = () => {
             className="w-full h-full object-cover rounded-lg "
           />
           <div
-            className={`absolute  top-14 text-6xl text-center ${
+            className={`absolute  top-14 text-6xl text-center lg:text-[2rem] xl:text-[2.6rem] 2xl:text-[3.6rem] ${
               hovered.box3 ? "text-black" : "text-white"
             }`}
           >
@@ -166,7 +166,7 @@ const WhatsIncluded = () => {
             className="w-full h-full object-cover rounded-2xl"
           />
           <div
-            className={`absolute  top-14 text-6xl ${
+            className={`absolute  top-14 lg:text-[2rem] xl:text-[2.6rem] 2xl:text-[3.6rem] ${
               hovered.box4 ? "text-black" : "text-white"
             }`}
           >
