@@ -5,9 +5,12 @@ export const getFamousCrops = createAsyncThunk(
   "/famousCrops",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axios.get("http://localhost:3000/famousCrops", {
-        withCredentials: true,
-      });
+      const response = await axios.get(
+        `${import.meta.env.VITE_API_ENDPOINT}/famousCrops`,
+        {
+          withCredentials: true,
+        }
+      );
 
       return response.data;
     } catch (error) {
