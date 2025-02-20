@@ -105,6 +105,11 @@ export const createPlantorium = async (req: Request, res: Response) => {
 
 export const getGeneratedReport = (req: Request, res: Response) => {
   const { crop } = req.body;
+  // first hit the rag endpoint /report to create the report
+
+  // store it in DB with report model
+
+  // return the Report to the frontend
   res.status(200).json({ crop, message: "report is successfully generated" });
 };
 
