@@ -202,14 +202,14 @@ const WhatsIncluded = () => {
             className="w-full h-full object-cover rounded-2xl"
           />
           <div
-            className={`absolute  top-9 lg:text-[2rem] xl:text-[2.6rem] 2xl:text-[3.6rem] ${
+            className={`absolute  top-9 lg:text-[2rem] xl:text-[2.6rem] 2xl:text-[3.2rem] ${
               hovered.box4 ? "text-black" : "text-white"
             }`}
           >
             Marketplace
           </div>
           <div
-            className={`absolute top-10 bottom-2 p-10 text-xl text-center md:top-4  lg:top-14  xl:top-16  2xl:top-20  md:text-[0.7rem] lg:text-[0.7rem] xl:text-[1.0rem] 2xl:text-[1.6rem] text-zinc-700
+            className={`absolute top-10 p-5 bottom-2 text-xl text-center md:top-8  lg:top-14  xl:top-16  2xl:top-20  md:text-[0.5rem] lg:text-[0.7rem] xl:text-[1.0rem] 2xl:text-[1.0rem] text-zinc-700
               leading-tight sm:leading-tight md:leading-tight lg:leading-snug xl:leading-normal 2xl:leading-relaxed ${
               !hovered.box4 ? "hidden" : ""
             }`}
