@@ -139,7 +139,7 @@ class Query(VectorDatabase):
         """
 
         REPORT_PROMPT_TEMPLATE = """
-        Make a report based on the context based only on the following context:
+        Make a report in bullet Points based only on the following context:
         {context}
         include:
         1) Soil Analysis
