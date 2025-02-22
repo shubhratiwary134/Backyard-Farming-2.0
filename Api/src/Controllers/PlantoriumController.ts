@@ -2,6 +2,8 @@ import { Request, Response } from "express";
 import cloudinary from "../Config/cloudinaryConfig";
 import axios from "axios";
 const Plantorium = require("../Models/PlantoriumModel");
+const User = require("../Models/UserModel");
+const Report = require("../Models/ReportModel");
 export const createPlantorium = async (req: Request, res: Response) => {
   const data = req.body;
   if (!data) {
@@ -111,13 +113,20 @@ export const postGeneratedReport = async (req: Request, res: Response) => {
       .status(400)
       .json({ message: "invalid or empty fields in the request" });
   }
+
   //find the farm associated with the user
+  const plantorium = await User.findById(userId).populate("Plantorium");
+
+  const plantoriumID = plantorium?.id;
   // first hit the rag endpoint /report to create the report
-
+  const response = await axios.post("");
   // store it in DB with report model
-
+  const report = await Report.create({
+    plantoriumID,
+    reportText: response,
+  });
   // return the Report to the frontend
-  res.status(200).json({ crop, message: "report is successfully generated" });
+  res.status(200).json({ report });
 };
 
 export const getSpecificPlantorium = async (req: Request, res: Response) => {
