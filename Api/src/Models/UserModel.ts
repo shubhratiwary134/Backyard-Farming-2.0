@@ -36,6 +36,11 @@ const UserSchema = new mongoose.Schema({
     type: Boolean, //If the user has opted for weekly notifications or not
     default: true,
   },
+  plantorium: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Plantorium",
+    unique: true,
+  },
 });
 
 const User = mongoose.model("User", UserSchema);

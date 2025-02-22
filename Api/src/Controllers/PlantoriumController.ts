@@ -103,12 +103,15 @@ export const createPlantorium = async (req: Request, res: Response) => {
   }
 };
 
-export const postGeneratedReport = (req: Request, res: Response) => {
+export const postGeneratedReport = async (req: Request, res: Response) => {
   const { crop } = req.body;
-  if (!crop) {
-    return res.status(400).json({ message: "crop field is empty" });
+  const { userId } = req.body;
+  if (!crop || !userId) {
+    return res
+      .status(400)
+      .json({ message: "invalid or empty fields in the request" });
   }
-
+  //find the farm associated with the user
   // first hit the rag endpoint /report to create the report
 
   // store it in DB with report model

@@ -5,6 +5,7 @@ const plantoriumSchema = new mongoose.Schema({
     type: String,
     required: true,
     ref: "User",
+    unique: true,
   },
   averageRainfall: {
     type: Number, // Average rainfall in mm
