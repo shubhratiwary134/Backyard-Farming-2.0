@@ -105,6 +105,9 @@ export const createPlantorium = async (req: Request, res: Response) => {
 
 export const postGeneratedReport = (req: Request, res: Response) => {
   const { crop } = req.body;
+  if (!crop) {
+    return res.status(400).json({ message: "crop field is empty" });
+  }
 
   // first hit the rag endpoint /report to create the report
 

@@ -3,18 +3,20 @@ import axios from "axios";
 
 const generateReportThunk = createAsyncThunk(
   "/generateReportThunk",
-  async (crop, { rejectWithValue }) => {
+  async (
+    { userId, crop }: { userId: string; crop: string },
+    { rejectWithValue }
+  ) => {
     try {
       const response = await axios.post(
         "http://localhost:3000/api/plantorium/generateReport",
-        crop,
+        { userId, crop },
         {
           headers: {
             "Content-Type": "application/json",
           },
         }
       );
-      console.log(response.data.crop);
       return response.data.message;
     } catch (error) {
       if (axios.isAxiosError(error)) {
