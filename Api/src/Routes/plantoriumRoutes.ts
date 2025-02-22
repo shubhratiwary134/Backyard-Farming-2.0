@@ -2,9 +2,9 @@ import upload from "../Config/multerConfig";
 import {
   createPlantorium,
   deleteSpecificPlantorium,
-  getGeneratedReport,
   getSpecificPlantorium,
   getUserPlantoriums,
+  postGeneratedReport,
   updateSpecificPlantorium,
 } from "../Controllers/PlantoriumController";
 const express = require("express");
@@ -20,5 +20,5 @@ plantoriumRoutes.get("/:id", getSpecificPlantorium);
 plantoriumRoutes.delete("/:id", deleteSpecificPlantorium);
 plantoriumRoutes.put("/:id", updateSpecificPlantorium);
 plantoriumRoutes.get("/user/:id", getUserPlantoriums);
-plantoriumRoutes.post("/generateReport", getGeneratedReport);
+plantoriumRoutes.post("/generateReport", postGeneratedReport);
 export default plantoriumRoutes;
