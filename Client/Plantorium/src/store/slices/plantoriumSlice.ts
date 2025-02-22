@@ -26,7 +26,7 @@ interface plantoriumInitialState {
 
 const initialState: plantoriumInitialState = {
   plantoriums: [], // array to store the farms of the user
-  cropChoices: ["first", "second", "third"],
+  cropChoices: ["carrot", "maize", "sweet potatoes"],
   status: "idle",
   error: null,
 };
