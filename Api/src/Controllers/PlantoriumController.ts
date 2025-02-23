@@ -174,8 +174,10 @@ export const postGeneratedReport = async (req: Request, res: Response) => {
         plantoriumID,
         reportText: response,
       });
+      // only sending the frontend reportText so that it could easily store it in slice
+      const reportText = report.reportText;
       // return the Report to the frontend
-      res.status(200).json({ report });
+      res.status(201).json({ message: "report Created", reportText });
     } catch (err) {
       res
         .status(500)

@@ -17,14 +17,15 @@ const reportSlice = createSlice({
   initialState: initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(generateReportThunk.pending, () => {
-      console.log("generate report pending");
+    builder.addCase(generateReportThunk.pending, (state) => {
+      state.status = "pending";
     });
     builder.addCase(generateReportThunk.fulfilled, (state, action) => {
       state.status = "completed";
-      state.reportText = action.payload;
+      state.reportText = action.payload.reportText;
     });
-    builder.addCase(generateReportThunk.rejected, () => {
+    builder.addCase(generateReportThunk.rejected, (state, action) => {
+      state.error = (action.payload as string) || "Error Creating Report";
       console.log("genrateReportEndpoint Rejected");
     });
   },
