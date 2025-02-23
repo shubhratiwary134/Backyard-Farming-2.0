@@ -1,5 +1,8 @@
+import { useAppSelector } from "../store/Hook";
+
 const Report = () => {
-  return <div>Report</div>;
+  const { reportText } = useAppSelector((state) => state.report);
+  return <div>{reportText}</div>;
 };
 
 export default Report;
