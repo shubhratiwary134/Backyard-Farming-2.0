@@ -116,17 +116,74 @@ export const postGeneratedReport = async (req: Request, res: Response) => {
 
   //find the farm associated with the user
   const plantorium = await User.findById(userId).populate("Plantorium");
+  if (plantorium) {
+    try {
+      const plantoriumID = plantorium?._id;
 
-  const plantoriumID = plantorium?.id;
-  // first hit the rag endpoint /report to create the report
-  const response = await axios.post("");
-  // store it in DB with report model
-  const report = await Report.create({
-    plantoriumID,
-    reportText: response,
-  });
-  // return the Report to the frontend
-  res.status(200).json({ report });
+      const payload = {
+        question: `You are an expert in sustainable agriculture and precision farming. Based on the following user-provided farm details, generate a comprehensive Backyard Farming 2.0 report covering:
+    
+    1. **Soil Analysis** - Evaluate the soil type, texture, pH, and color to determine its fertility and suitability for crops. Suggest any necessary soil amendments.
+    2. **Previous Crop Data & Crop Rotation Suggestions** - Analyze past crops grown and suggest an optimal crop rotation plan to maintain soil health and maximize yield.
+    3. **Watering & Irrigation Plan** - Recommend an irrigation strategy based on water supply type, average rainfall, and land area. Provide efficient water management techniques.
+    4. **Fertilization & Nutrient Management** - Suggest an ideal fertilization plan, including organic or chemical fertilizers, based on soil conditions and nutrient needs.
+    5. **Pest & Disease Control** - Assess past crop diseases and affected crops to provide preventive and curative measures for pest and disease management.
+    6. **Seasonal Care & Weather Protection** - Provide season-specific farming advice, including temperature variations, frost protection, and extreme weather precautions.
+    7. **Expected Yield & Harvesting Guidelines** - Estimate expected yield based on the given conditions and provide best harvesting practices to ensure crop quality.
+    
+    ### User Input: 
+    Average Rainfall in mm - ${plantorium.averageRainfall}
+    soilType - ${plantorium.soilType}
+    soilColor - ${plantorium.soilColor}
+    soilTexture - ${plantorium.soilTexture}
+    soilPH - ${plantorium.soilPH}
+    pastCrops - ${
+      plantorium.pastCrops.length
+        ? plantorium.pastCrops.join(", ")
+        : "No past crops provided"
+    }
+    cropDiseases - ${
+      plantorium.cropDiseases.length
+        ? plantorium.cropDiseases.join(", ")
+        : "No crop Diseases provided"
+    }
+    affectedCrops - ${
+      plantorium.affectedCrops.length
+        ? plantorium.affectedCrops.join(", ")
+        : "No affected Crops provided"
+    }
+    waterSupply - ${plantorium.waterSupply}
+    landArea in square meters - ${plantorium.landArea}
+    Address - ${plantorium.Address || "Address not provided"}
+    ### Output Format: 
+    Provide a structured, detailed report with clear sections and practical, actionable recommendations.`,
+      };
+
+      // first hit the rag endpoint /report to create the report
+      const response = await axios.post(
+        "http://127.0.0.1:5000/api/v1/query",
+        payload,
+        {
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      // store it in DB with report model
+      const report = await Report.create({
+        plantoriumID,
+        reportText: response,
+      });
+      // return the Report to the frontend
+      res.status(200).json({ report });
+    } catch (err) {
+      res
+        .status(400)
+        .json({ message: `something went wrong error is : ${err}` });
+    }
+  }
+
+  res.status(400).json({ message: "Plantorium for this user does not exist" });
 };
 
 export const getSpecificPlantorium = async (req: Request, res: Response) => {
