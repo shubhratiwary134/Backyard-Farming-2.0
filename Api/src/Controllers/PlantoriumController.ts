@@ -178,12 +178,12 @@ export const postGeneratedReport = async (req: Request, res: Response) => {
       res.status(200).json({ report });
     } catch (err) {
       res
-        .status(400)
+        .status(500)
         .json({ message: `something went wrong error is : ${err}` });
     }
   }
 
-  res.status(400).json({ message: "Plantorium for this user does not exist" });
+  res.status(404).json({ message: "Plantorium for this user does not exist" });
 };
 
 export const getSpecificPlantorium = async (req: Request, res: Response) => {
@@ -230,19 +230,21 @@ export const updateSpecificPlantorium = async (req: Request, res: Response) => {
     res.status(500).json({ error: "Server error" });
   }
 };
-export const getUserPlantoriums = async (req: Request, res: Response) => {
+export const getUserPlantorium = async (req: Request, res: Response) => {
   const userId = req.params.id;
   try {
-    // find all the plantoriums associated with the user .
-    const plantoriums = await Plantorium.find({ userId: userId });
-    if (!plantoriums) {
+    // find the plantorium associated with the user.
+    const plantorium = await User.findByID({ userId }).populate("Plantorium");
+    if (!plantorium) {
       return res
         .status(404)
         .json({ message: "no plantoriums found for the user" });
     }
-    return res.status(200).json(plantoriums);
+    return res.status(200).json(plantorium);
   } catch (err) {
     console.error(err);
-    res.status(500).json({ message: "problem in getting the Plantoriums" });
+    res.status(500).json({
+      message: `this is issue in fetching the plantorium for the user error:${err}`,
+    });
   }
 };
