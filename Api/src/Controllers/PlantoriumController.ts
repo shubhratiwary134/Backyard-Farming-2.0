@@ -261,7 +261,7 @@ export const getUserPlantorium = async (req: Request, res: Response) => {
   const userId = req.params.id;
   try {
     // find the plantorium associated with the user.
-    const plantorium = await User.findByID({ userId }).populate("Plantorium");
+    const plantorium = await Plantorium.findOne({ userId });
     if (!plantorium) {
       return res
         .status(404)
