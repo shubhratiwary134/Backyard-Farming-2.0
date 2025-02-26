@@ -1,12 +1,6 @@
 import mongoose from "mongoose";
 
 const reportSchema = new mongoose.Schema({
-  plantoriumID: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Plantorium",
-    required: true,
-    unique: true,
-  },
   reportText: { type: String, required: true },
   createdAt: { type: Date, default: Date.now },
 });
