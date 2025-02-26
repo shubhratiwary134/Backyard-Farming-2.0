@@ -188,6 +188,10 @@ export const postGeneratedReport = async (req: Request, res: Response) => {
   res.status(404).json({ message: "Plantorium for this user does not exist" });
 };
 
+export const getReport = async (req: Request, res: Response) => {
+  const userId = req.params.id;
+};
+
 export const getSpecificPlantorium = async (req: Request, res: Response) => {
   const plantoriumId = req.params.id;
   try {
