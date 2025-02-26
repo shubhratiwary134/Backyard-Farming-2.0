@@ -115,7 +115,7 @@ export const postGeneratedReport = async (req: Request, res: Response) => {
   }
 
   //find the farm associated with the user
-  const plantorium = await User.findById(userId).populate("Plantorium");
+  const plantorium = await Plantorium.findOne({ userId });
   if (plantorium) {
     try {
       const plantoriumID = plantorium?._id;
@@ -190,6 +190,14 @@ export const postGeneratedReport = async (req: Request, res: Response) => {
 
 export const getReport = async (req: Request, res: Response) => {
   const userId = req.params.id;
+  try {
+    const plantorium = await Plantorium.findOne({ userId });
+    if (!plantorium) {
+      console.log("No plantorium found for this user");
+      return;
+    }
+    const report = await Report.findOne({ plantoriumId: plantorium._id });
+  } catch {}
 };
 
 export const getSpecificPlantorium = async (req: Request, res: Response) => {
