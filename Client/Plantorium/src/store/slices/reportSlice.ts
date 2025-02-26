@@ -2,13 +2,13 @@ import { createSlice } from "@reduxjs/toolkit";
 import generateReportThunk from "../thunks/reportThunk";
 interface reportIntialState {
   reportText: string;
-  status: "idle" | "pending" | "completed" | "failed";
+  reportStatus: "loading" | "generated" | "notGenerated" | "error";
   error: string | null;
 }
 
 const initialState: reportIntialState = {
   reportText: "",
-  status: "idle",
+  reportStatus: "notGenerated",
   error: null,
 };
 
@@ -18,14 +18,22 @@ const reportSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder.addCase(generateReportThunk.pending, (state) => {
-      state.status = "pending";
+      state.reportStatus = "loading";
+      state.error = null;
     });
     builder.addCase(generateReportThunk.fulfilled, (state, action) => {
-      state.status = "completed";
-      state.reportText = action.payload.reportText;
+      if (action.payload.reportExists) {
+        state.reportText = action.payload.reportText;
+        state.reportStatus = "generated";
+      } else {
+        state.reportText = "";
+        state.reportStatus = "notGenerated";
+      }
+      state.error = null;
     });
     builder.addCase(generateReportThunk.rejected, (state, action) => {
       state.error = (action.payload as string) || "Error Creating Report";
+      state.reportStatus = "error";
       console.log("genrateReportEndpoint Rejected");
     });
   },

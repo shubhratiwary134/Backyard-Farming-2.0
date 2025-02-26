@@ -12,7 +12,6 @@ function App() {
       <div
         style={{
           backgroundImage: `url(${bgImageForHero})`,
-          // backgroundSize: "100% auto",
         }}
         className="h-screen w-full bg-no-repeat bg-center bg-cover 2xl:bg-[length:100%_auto]"
       >
