@@ -193,11 +193,24 @@ export const getReport = async (req: Request, res: Response) => {
   try {
     const plantorium = await Plantorium.findOne({ userId });
     if (!plantorium) {
-      console.log("No plantorium found for this user");
-      return;
+      return res
+        .status(404)
+        .json({ message: "No plantorium found for this user" });
     }
     const report = await Report.findOne({ plantoriumId: plantorium._id });
-  } catch {}
+    if (!report) {
+      return res.status(404).json({
+        message: "No Report found for this plantorium",
+        reportExists: false,
+      });
+    }
+    const reportText = report.reportText;
+
+    res.status(200).json({ reportText, reportExists: true });
+  } catch (err) {
+    console.log("error while fetching report ", err);
+    res.status(500).json(err);
+  }
 };
 
 export const getSpecificPlantorium = async (req: Request, res: Response) => {
