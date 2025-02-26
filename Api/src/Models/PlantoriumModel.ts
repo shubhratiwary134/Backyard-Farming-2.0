@@ -70,11 +70,6 @@ const plantoriumSchema = new mongoose.Schema({
       type: String,
     },
   ],
-  report: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "Report",
-    unique: true,
-  },
 });
 
 const Plantorium = mongoose.model("Plantorium", plantoriumSchema);
