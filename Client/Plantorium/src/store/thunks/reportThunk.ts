@@ -30,4 +30,6 @@ const generateReportThunk = createAsyncThunk(
   }
 );
 
+const getReport = createAsyncThunk("/getReport", async () => {});
+
 export default generateReportThunk;
