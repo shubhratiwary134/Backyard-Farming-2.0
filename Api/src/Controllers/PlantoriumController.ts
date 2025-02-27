@@ -106,8 +106,7 @@ export const createPlantorium = async (req: Request, res: Response) => {
 };
 
 export const postGeneratedReport = async (req: Request, res: Response) => {
-  const { crop } = req.body;
-  const { userId } = req.body;
+  const { crop, userId } = req.body;
   if (!crop || !userId) {
     return res
       .status(400)
