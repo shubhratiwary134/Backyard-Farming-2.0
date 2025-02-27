@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import generateReportThunk from "../thunks/reportThunk";
-import getReportThunk from "../thunks/reportThunk";
+import { generateReportThunk, getReportThunk } from "../thunks/reportThunk";
+
 interface reportIntialState {
   reportText: string;
   reportStatus: "loading" | "generated" | "notGenerated" | "error";

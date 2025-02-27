@@ -3,7 +3,7 @@ import axios from "axios";
 
 //note whatever the thunk sends in the Return ---> that becomes the action.payload for the slice
 
-const generateReportThunk = createAsyncThunk(
+export const generateReportThunk = createAsyncThunk(
   "/generateReportThunk",
   async (
     { userId, crop }: { userId: string; crop: string },
@@ -32,7 +32,7 @@ const generateReportThunk = createAsyncThunk(
   }
 );
 
-const getReportThunk = createAsyncThunk(
+export const getReportThunk = createAsyncThunk(
   "/getReport",
   async (userId, { rejectWithValue }) => {
     try {
@@ -53,5 +53,3 @@ const getReportThunk = createAsyncThunk(
     }
   }
 );
-
-export default generateReportThunk;
