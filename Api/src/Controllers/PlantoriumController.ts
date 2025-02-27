@@ -208,7 +208,7 @@ export const getReport = async (req: Request, res: Response) => {
     }
     const reportText = report.reportText;
 
-    res.status(200).json({ reportText, reportExists: true });
+    return res.status(200).json({ reportText, reportExists: true });
   } catch (err) {
     console.log("error while fetching report ", err);
     res.status(500).json(err);
