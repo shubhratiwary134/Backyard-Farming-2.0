@@ -34,7 +34,7 @@ export const generateReportThunk = createAsyncThunk(
 
 export const getReportThunk = createAsyncThunk(
   "/getReport",
-  async (userId, { rejectWithValue }) => {
+  async (userId: string, { rejectWithValue }) => {
     try {
       const response = await axios.get(
         `http://localhost:3000/api/plantorium/getReport/${userId}`,
