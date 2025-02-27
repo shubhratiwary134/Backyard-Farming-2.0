@@ -30,6 +30,26 @@ const generateReportThunk = createAsyncThunk(
   }
 );
 
-const getReport = createAsyncThunk("/getReport", async () => {});
+const getReportThunk = createAsyncThunk(
+  "/getReport",
+  async (userId, { rejectWithValue }) => {
+    try {
+      const response = await axios.get(
+        `http://localhost:3000/api/plantorium/getReport/${userId}`,
+        {
+          withCredentials: true,
+        }
+      );
+      return response.data;
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        return rejectWithValue(
+          error.response?.data.message ||
+            "Unable to fetch the Report due to some error "
+        );
+      }
+    }
+  }
+);
 
 export default generateReportThunk;
