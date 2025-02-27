@@ -14,15 +14,20 @@ const Report = () => {
       dispatch(getReportThunk(userId));
     }
   }, [dispatch, user?.id, reportStatus]);
-  return (
-    <div>
-      {reportStatus == "generated" ? (
-        <div>{reportText}</div>
-      ) : (
-        <LoadingScreen />
-      )}
-    </div>
-  );
+
+  const reportContent = () => {
+    switch (reportStatus) {
+      case "loading":
+        return <LoadingScreen />;
+      case "error":
+        return <div>Error creating the Report</div>;
+      case "generated":
+        return <div>{reportText}</div>;
+      case "notGenerated":
+        return <div>No report available yet. Please create a report.</div>;
+    }
+  };
+  return <div>{reportContent()}</div>;
 };
 
 export default Report;
