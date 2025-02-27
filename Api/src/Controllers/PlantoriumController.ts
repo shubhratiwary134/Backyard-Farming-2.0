@@ -118,7 +118,7 @@ export const postGeneratedReport = async (req: Request, res: Response) => {
   const plantorium = await Plantorium.findOne({ userId });
   if (plantorium) {
     try {
-      const plantoriumID = plantorium?._id;
+      const plantoriumID = plantorium._id;
 
       const payload = {
         question: `You are an expert in sustainable agriculture and precision farming. Based on the following user-provided farm details, generate a comprehensive Backyard Farming 2.0 report covering:
@@ -172,20 +172,22 @@ export const postGeneratedReport = async (req: Request, res: Response) => {
       // store it in DB with report model
       const report = await Report.create({
         plantoriumID,
-        reportText: response,
+        reportText: response.data,
       });
       // only sending the frontend reportText so that it could easily store it in slice
       const reportText = report.reportText;
       // return the Report to the frontend
-      res.status(201).json({ message: "report Created", reportText });
+      return res.status(201).json({ message: "report Created", reportText });
     } catch (err) {
-      res
+      return res
         .status(500)
         .json({ message: `something went wrong error is : ${err}` });
     }
   }
 
-  res.status(404).json({ message: "Plantorium for this user does not exist" });
+  return res
+    .status(404)
+    .json({ message: "Plantorium for this user does not exist" });
 };
 
 export const getReport = async (req: Request, res: Response) => {
