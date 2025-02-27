@@ -22,13 +22,8 @@ const reportSlice = createSlice({
       state.error = null;
     });
     builder.addCase(generateReportThunk.fulfilled, (state, action) => {
-      if (action.payload.reportExists) {
-        state.reportText = action.payload.reportText;
-        state.reportStatus = "generated";
-      } else {
-        state.reportText = "";
-        state.reportStatus = "notGenerated";
-      }
+      state.reportText = action.payload.reportText;
+      state.reportStatus = "generated";
       state.error = null;
     });
     builder.addCase(generateReportThunk.rejected, (state, action) => {

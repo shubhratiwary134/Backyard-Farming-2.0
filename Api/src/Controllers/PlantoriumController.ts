@@ -176,11 +176,13 @@ export const postGeneratedReport = async (req: Request, res: Response) => {
       // only sending the frontend reportText so that it could easily store it in slice
       const reportText = report.reportText;
       // return the Report to the frontend
-      return res.status(201).json({ message: "report Created", reportText });
+      return res
+        .status(201)
+        .json({ message: "report Created", reportText, reportExists: true });
     } catch (err) {
       return res
         .status(500)
-        .json({ message: `something went wrong error is : ${err}` });
+        .json({ message: `something went wrong error: ${err}` });
     }
   }
 
