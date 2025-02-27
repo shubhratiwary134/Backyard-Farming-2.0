@@ -25,6 +25,8 @@ const Report = () => {
         return <div>{reportText}</div>;
       case "notGenerated":
         return <div>No report available yet. Please create a report.</div>;
+      default:
+        return null;
     }
   };
   return <div>{reportContent()}</div>;
