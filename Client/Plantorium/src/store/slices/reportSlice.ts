@@ -29,7 +29,6 @@ const reportSlice = createSlice({
     builder.addCase(generateReportThunk.rejected, (state, action) => {
       state.error = (action.payload as string) || "Error Creating Report";
       state.reportStatus = "error";
-      console.log("genrateReportEndpoint Rejected");
     });
   },
 });

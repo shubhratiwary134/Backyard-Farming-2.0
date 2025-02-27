@@ -1,6 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
+//note whatever the thunk sends in the Return ---> that becomes the action.payload for the slice
+
 const generateReportThunk = createAsyncThunk(
   "/generateReportThunk",
   async (
@@ -18,7 +20,7 @@ const generateReportThunk = createAsyncThunk(
           },
         }
       );
-      return response.data.message;
+      return response.data;
     } catch (error) {
       if (axios.isAxiosError(error)) {
         return rejectWithValue(
