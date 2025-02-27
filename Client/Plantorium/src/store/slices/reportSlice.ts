@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import generateReportThunk from "../thunks/reportThunk";
+import getReportThunk from "../thunks/reportThunk";
 interface reportIntialState {
   reportText: string;
   reportStatus: "loading" | "generated" | "notGenerated" | "error";
@@ -29,6 +30,24 @@ const reportSlice = createSlice({
     builder.addCase(generateReportThunk.rejected, (state, action) => {
       state.error = (action.payload as string) || "Error Creating Report";
       state.reportStatus = "error";
+    });
+    builder.addCase(getReportThunk.pending, (state) => {
+      state.reportStatus = "loading";
+      state.error = null;
+    });
+    builder.addCase(getReportThunk.fulfilled, (state, action) => {
+      if (action.payload.reportExists) {
+        state.reportText = action.payload.reportText;
+        state.reportStatus = "generated";
+      } else {
+        state.reportText = "";
+        state.reportStatus = "notGenerated";
+      }
+      state.error = null;
+    });
+    builder.addCase(getReportThunk.rejected, (state, action) => {
+      state.reportStatus = "error";
+      state.error = (action.payload as string) || "error fetching the report ";
     });
   },
 });
