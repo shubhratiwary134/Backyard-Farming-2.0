@@ -1,7 +1,6 @@
 import { useUser } from "@clerk/clerk-react";
 import { useAppDispatch, useAppSelector } from "../store/Hook";
-import generateReportThunk from "../store/thunks/reportThunk";
-
+import { generateReportThunk } from "../store/thunks/reportThunk";
 const CropChoice = () => {
   const { cropChoices } = useAppSelector((state) => state.plantorium);
   const dispatch = useAppDispatch();

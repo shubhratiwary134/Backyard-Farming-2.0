@@ -12,6 +12,7 @@ import FarmManager from "./Pages/FarmManager.tsx";
 import Plans from "./Pages/Plans.tsx";
 import Report from "./Pages/Report.tsx";
 import { PersistGate } from "redux-persist/integration/react";
+import Chat from "./Pages/Chat.tsx";
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 if (!PUBLISHABLE_KEY) {
@@ -47,6 +48,14 @@ createRoot(document.getElementById("root")!).render(
                 element={
                   <ProtectedRoute>
                     <Report />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/chat"
+                element={
+                  <ProtectedRoute>
+                    <Chat />
                   </ProtectedRoute>
                 }
               />
