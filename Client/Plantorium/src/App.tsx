@@ -6,6 +6,8 @@ import Navbar from "./Components/Navbar";
 import CheckAndAddUserInTheDB from "./Components/CheckAndAddUserInTheDB";
 import BannerImage from "./Components/Hero";
 import bgImageForHero from "./Assests/BG_for_hero.jpg";
+import ChatButton from "./Components/chatButton";
+
 function App() {
   return (
     <div className="bg-[#f7fff7]">
@@ -21,6 +23,7 @@ function App() {
       <SignedIn>
         <CheckAndAddUserInTheDB />
         <HomePage />
+        <ChatButton />
       </SignedIn>
       <SignedOut>
         <LandingPage />
