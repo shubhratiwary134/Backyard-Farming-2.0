@@ -1,16 +1,16 @@
 import { useNavigate } from "react-router";
-
+import chatbotLogo from "../Assests/logoChat.jpg";
 const ChatButton = () => {
   const navigate = useNavigate();
   return (
     <div>
       <button
-        className="w-28 rounded-full absolute bottom-10 bg-red-500 p-5 right-10"
+        className="w-44 rounded-full absolute bottom-10  p-5 right-10"
         onClick={() => {
           navigate("/chat");
         }}
       >
-        Chat
+        <img src={chatbotLogo} className="w-full rounded-full" />
       </button>
     </div>
   );
