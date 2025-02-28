@@ -20,5 +20,5 @@ plantoriumRoutes.get("/:id", getSpecificPlantorium);
 plantoriumRoutes.delete("/:id", deleteSpecificPlantorium);
 plantoriumRoutes.put("/:id", updateSpecificPlantorium);
 plantoriumRoutes.post("/generateReport", postGeneratedReport);
-plantoriumRoutes.get("/user/:id", getReport);
+plantoriumRoutes.get("/:id", getReport);
 export default plantoriumRoutes;
