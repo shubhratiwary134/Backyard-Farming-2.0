@@ -87,15 +87,10 @@ export const createPlantorium = async (req: Request, res: Response) => {
       Address,
       photos: imageUrls,
     });
-    const cropChoicesResponse = await axios.post(
-      "http://localhost:3000/predictCrops",
-      plantorium
-    );
-    const cropChoices = cropChoicesResponse.data.cropChoices;
+
     res.status(201).json({
       message: "plantorium successfully created",
       plantorium,
-      cropChoices,
     });
   } catch (err) {
     console.log(err);
@@ -171,7 +166,7 @@ export const postGeneratedReport = async (req: Request, res: Response) => {
       // store it in DB with report model
       const report = await Report.create({
         plantoriumID,
-        reportText: response.data,
+        reportText: response.data.response,
       });
       // only sending the frontend reportText so that it could easily store it in slice
       const reportText = report.reportText;
