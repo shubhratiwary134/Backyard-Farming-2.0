@@ -1,5 +1,11 @@
+import ChatSidebar from "../Components/chatComponents/chatSidebar";
+
 const Chat = () => {
-  return <div>Chat</div>;
+  return (
+    <div>
+      <ChatSidebar />
+    </div>
+  );
 };
 
 export default Chat;
