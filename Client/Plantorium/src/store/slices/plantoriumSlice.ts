@@ -18,15 +18,30 @@ interface Farm {
 }
 
 interface plantoriumInitialState {
-  plantoriums: Farm[];
+  plantorium: Farm;
   cropChoices: string[];
   status: "idle" | "pending" | "completed" | "failed";
   error: string | null;
 }
 
 const initialState: plantoriumInitialState = {
-  plantoriums: [], // array to store the farms of the user
-  cropChoices: ["first", "second", "third"],
+  plantorium: {
+    userId: "",
+    averageRainfall: 0,
+    soilType: "",
+    soilColor: "",
+    soilTexture: "",
+    soilPH: 0,
+    pastCrops: [],
+    cropDiseases: [],
+    affectedCrops: [],
+    waterSupply: "",
+    landArea: 0,
+    createdAt: undefined,
+    Address: "",
+    photos: [],
+  },
+  cropChoices: ["carrot", "maize", "sweet potatoes"],
   status: "idle",
   error: null,
 };
@@ -51,7 +66,7 @@ const plantoriumSlice = createSlice({
           action.payload.plantorium &&
           action.payload.cropChoices
         ) {
-          state.plantoriums.push(action.payload.plantorium);
+          state.plantorium = action.payload.plantorium;
           state.cropChoices.push(action.payload.CropChoices);
         }
       })
@@ -67,7 +82,7 @@ const plantoriumSlice = createSlice({
       })
       .addCase(myFarms.fulfilled, (state, action) => {
         state.status = "completed";
-        state.plantoriums = Array.isArray(action.payload) ? action.payload : [];
+        state.plantorium = action.payload || {};
       })
       .addCase(myFarms.rejected, (state, action) => {
         state.status = "failed";
