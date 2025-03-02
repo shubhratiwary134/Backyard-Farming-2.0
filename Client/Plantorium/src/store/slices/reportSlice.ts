@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { generateReportThunk, getReportThunk } from "../thunks/reportThunk";
 
-interface reportIntialState {
+interface reportInterface {
   reportText: string;
   reportStatus: "loading" | "generated" | "notGenerated" | "error";
   error: string | null;
 }
 
-const initialState: reportIntialState = {
+const initialState: reportInterface = {
   reportText: "",
   reportStatus: "notGenerated",
   error: null,
