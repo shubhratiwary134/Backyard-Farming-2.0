@@ -2,7 +2,7 @@ import mongoose, { Mongoose } from "mongoose";
 
 const plantoriumSchema = new mongoose.Schema({
   userId: {
-    type: String,
+    type: String, //clerk user ID used for referencing
     required: true,
     ref: "User",
     unique: true,
