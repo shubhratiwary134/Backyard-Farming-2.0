@@ -16,6 +16,8 @@ const chatSlice = createSlice({
   name: "chat",
   initialState: initialState,
   reducers: {},
-  extraReducers: {},
+  extraReducers: (builder) => {
+    builder.addCase(create);
+  },
 });
 export default chatSlice.reducer;
