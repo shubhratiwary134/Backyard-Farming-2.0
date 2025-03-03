@@ -10,10 +10,6 @@ const messageSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  timeStamp: {
-    type: Date,
-    default: Date.now,
-  },
 });
 
 const chatSchema = new mongoose.Schema(
