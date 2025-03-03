@@ -20,8 +20,8 @@ const chatSchema = new mongoose.Schema(
   {
     userId: {
       type: String, // Clerk user ID used for referencing
-      required: true,
       ref: "User",
+      required: true,
     },
     messages: [messageSchema],
   },
