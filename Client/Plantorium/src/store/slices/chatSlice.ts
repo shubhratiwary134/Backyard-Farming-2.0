@@ -1,14 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+interface currentChatInterface {}
 interface chatInterface {
-  currentChat: {};
+  currentChat: currentChatInterface;
   chats: Object[];
   status: "idle" | "loading" | "completed";
   error: string | null;
 }
 const initialState: chatInterface = {
   currentChat: null,
-  chats: [],
+  chats: [], // to minimize api calls for past chats
   status: "idle",
   error: null,
 };
@@ -17,7 +18,7 @@ const chatSlice = createSlice({
   initialState: initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(create);
+    builder.addCase(cre);
   },
 });
 export default chatSlice.reducer;
