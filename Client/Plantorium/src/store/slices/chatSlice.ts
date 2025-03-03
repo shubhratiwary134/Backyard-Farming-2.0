@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { postChatThunk } from "../thunks/chatThunk";
 
 interface Message {
   role: "user" | "bot";
@@ -29,7 +30,18 @@ const chatSlice = createSlice({
   initialState: initialState,
   reducers: {},
   extraReducers: (builder) => {
-    builder.addCase(cre);
+    builder
+      .addCase(postChatThunk.pending, (state) => {
+        state.status = "loading";
+      })
+      .addCase(postChatThunk.fulfilled, (state, action) => {
+        state.status = "completed";
+        state.currentChat = action.payload.chat;
+        state.chats.push(action.payload.chat);
+      })
+      .addCase(postChatThunk.rejected, (state, action) => {
+        state.error = (action.payload as string) || "Error creating the chat";
+      });
   },
 });
 export default chatSlice.reducer;
