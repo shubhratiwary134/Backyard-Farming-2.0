@@ -1,6 +1,8 @@
 import { Request, Response } from "express";
 import { Chat } from "../Models/ChatModel";
 
+const User = require("../Models/ChatModel");
+
 interface ChatRequestBody {
   userId: string;
   firstQuery: string;
@@ -9,17 +11,19 @@ interface ChatRequestBody {
 export const createChat = async (req: Request, res: Response) => {
   const { userId, firstQuery } = req.body as ChatRequestBody;
 
-  if (!userId) {
-    return res
-      .status(400)
-      .json({ message: "No userId found , can't create chat" });
+  if (!userId || !firstQuery) {
+    return res.status(400).json({
+      message: "Invalid request - missing fields: (userId) or (firstQuery)",
+    });
   }
-  if (!firstQuery) {
-    return res
-      .status(400)
-      .json({ message: "cannot create chat first message is empty " });
-  }
+
   try {
+    const userExists = await User.findOne({ clerkUserId: userId });
+    if (!userExists) {
+      return res
+        .status(404)
+        .json({ message: "User not found — invalid clerkUserId" });
+    }
     const chat = await Chat.create({
       userId,
       messages: [
