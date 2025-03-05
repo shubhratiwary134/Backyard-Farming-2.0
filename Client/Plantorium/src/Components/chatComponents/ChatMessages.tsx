@@ -14,7 +14,7 @@ const ChatMessages = () => {
         ))
       ) : (
         <div className=" text-gray-600 text-7xl flex justify-center  items-center h-full">
-          Start Querying
+          Start Querying...
         </div>
       )}
     </div>
