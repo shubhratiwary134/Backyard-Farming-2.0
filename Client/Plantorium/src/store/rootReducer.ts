@@ -3,6 +3,7 @@ import cropReducer from "./slices/cropsSlice";
 import plantoriumReducer from "./slices/plantoriumSlice";
 import userReducer from "./slices/userSlice";
 import reportReducer from "./slices/reportSlice";
+import chatReducer from "./slices/chatSlice";
 import { persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
@@ -16,5 +17,6 @@ const rootReducer = combineReducers({
   plantorium: plantoriumReducer,
   user: userReducer,
   report: persistReducer(persistConfig, reportReducer),
+  chat: chatReducer,
 });
 export default rootReducer;
