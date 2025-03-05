@@ -3,7 +3,7 @@ import { GoSidebarCollapse, GoSidebarExpand } from "react-icons/go";
 import { motion } from "motion/react";
 
 const ChatSidebar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   return (
     <div>
       <motion.div

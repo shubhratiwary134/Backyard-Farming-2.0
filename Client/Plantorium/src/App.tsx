@@ -6,7 +6,7 @@ import Navbar from "./Components/Navbar";
 import CheckAndAddUserInTheDB from "./Components/CheckAndAddUserInTheDB";
 import BannerImage from "./Components/Hero";
 import bgImageForHero from "./Assests/BG_for_hero.jpg";
-import ChatButton from "./Components/chatButton";
+import ChatButton from "./Components/ChatButton";
 
 function App() {
   return (
