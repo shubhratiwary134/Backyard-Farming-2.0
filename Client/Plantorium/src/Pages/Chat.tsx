@@ -1,6 +1,6 @@
 import ChatMessages from "../Components/chatComponents/chatMessages";
 import ChatQuestionBar from "../Components/chatComponents/ChatQuestionBar";
-import ChatSidebar from "../Components/chatComponents/chatSidebar";
+import ChatSidebar from "../Components/chatComponents/ChatSidebar";
 
 const Chat = () => {
   return (

@@ -1,8 +1,11 @@
 import { useState } from "react";
 import { GoSidebarCollapse, GoSidebarExpand } from "react-icons/go";
 import { motion } from "motion/react";
+import { FaHome } from "react-icons/fa";
+import { useNavigate } from "react-router";
 
 const ChatSidebar = () => {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(true);
   return (
     <div>
@@ -21,6 +24,9 @@ const ChatSidebar = () => {
         ) : (
           <GoSidebarCollapse size={32} />
         )}
+      </button>
+      <button className="fixed top-10 left-40  " onClick={() => navigate("/")}>
+        <FaHome size={32} />
       </button>
     </div>
   );
