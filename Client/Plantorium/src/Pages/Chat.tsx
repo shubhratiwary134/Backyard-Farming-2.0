@@ -1,11 +1,15 @@
+import ChatMessages from "../Components/chatComponents/chatMessages";
 import ChatQuestionBar from "../Components/chatComponents/ChatQuestionBar";
 import ChatSidebar from "../Components/chatComponents/chatSidebar";
 
 const Chat = () => {
   return (
-    <div className="flex justify-between">
+    <div className="flex justify-between ">
       <ChatSidebar />
-      <ChatQuestionBar />
+      <div className="flex flex-col w-3/4 justify-between">
+        <ChatMessages />
+        <ChatQuestionBar />
+      </div>
     </div>
   );
 };
