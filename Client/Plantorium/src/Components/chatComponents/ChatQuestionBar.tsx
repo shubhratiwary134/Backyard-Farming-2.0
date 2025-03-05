@@ -1,11 +1,19 @@
 import { Formik } from "formik";
 import { FaLeaf } from "react-icons/fa6";
 import { chatSchema } from "../../Schema/ChatSchema";
-
 import { ChatValues } from "../../Types/ChatTypes";
+import { useAppDispatch, useAppSelector } from "../../store/Hook";
+import { getResponseThunk, postChatThunk } from "../../store/thunks/chatThunk";
 const ChatQuestionBar = () => {
+  const { currentChat } = useAppSelector((state) => state.chat);
+  const dispatch = useAppDispatch();
   const handleSubmit = (values: ChatValues) => {
-    console.log(values.query);
+    if (currentChat.currentMessages.length === 0) {
+      dispatch(postChatThunk);
+    }
+    // dispatch adding to the query here
+    // dispatch response Thunk
+    dispatch(getResponseThunk);
   };
 
   const initialValues: ChatValues = {
