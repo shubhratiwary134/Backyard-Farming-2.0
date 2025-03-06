@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { Chat } from "../Models/ChatModel";
 import axios from "axios";
 
-const User = require("../Models/ChatModel");
+const User = require("../Models/UserModel");
 
 export const createChat = async (req: Request, res: Response) => {
   const { userId, firstQuery } = req.body;

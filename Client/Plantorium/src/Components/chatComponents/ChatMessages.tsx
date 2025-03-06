@@ -3,12 +3,19 @@ import { useAppSelector } from "../../store/Hook";
 const ChatMessages = () => {
   const { currentChat } = useAppSelector((state) => state.chat);
   return (
-    <div className="w-4/5 h-4/5 flex flex-col gap-40 overflow-y-auto ">
+    <div
+      className="w-4/5 h-4/5 flex flex-col gap-20 overflow-y-auto p-5 "
+      style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+    >
       {currentChat.currentMessages && currentChat.currentMessages.length > 0 ? (
         currentChat.currentMessages.map((message) => (
           <div
             key={message.id}
-            className={`${message.role === "bot" ? "self-start" : "self-end"}`}
+            className={`${
+              message.role === "bot"
+                ? "self-start bg-gray-300"
+                : "self-end bg-green-400 text-white"
+            } py-5 px-5  rounded-xl`}
           >
             {message.text}
           </div>

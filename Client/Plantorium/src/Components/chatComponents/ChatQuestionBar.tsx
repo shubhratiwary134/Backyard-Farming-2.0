@@ -20,14 +20,21 @@ const ChatQuestionBar = () => {
         // while the slice updates the currentChatId for the future in the fulfilled state
         const newChatId = result.payload?.chat?._id;
         if (newChatId) {
-          await dispatch(getResponseThunk(newChatId));
+          await dispatch(
+            getResponseThunk({ chatId: newChatId, query: firstQuery })
+          );
         }
       }
       // dispatch adding to the query here
       // dispatch response Thunk
       else {
         dispatch(addQueryToCurrentChat(values.query));
-        await dispatch(getResponseThunk(currentChat.currentChatId));
+        await dispatch(
+          getResponseThunk({
+            chatId: currentChat.currentChatId,
+            query: values.query,
+          })
+        );
       }
     }
   };
@@ -36,7 +43,7 @@ const ChatQuestionBar = () => {
     query: "",
   };
   return (
-    <div className=" w-full mb-10 ">
+    <div className="fixed bottom-10 w-3/4 mb-10 ">
       <Formik
         initialValues={initialValues}
         validationSchema={chatSchema}
@@ -50,7 +57,7 @@ const ChatQuestionBar = () => {
               value={values.query}
               onChange={handleChange}
               onBlur={handleBlur}
-              className="w-4/5 h-5 py-8 px-10 bg-slate-300 rounded-3xl placeholder:text-zinc-700 placeholder:text-xl focus:outline-none"
+              className="w-4/5 h-5 py-8 px-10 bg-black rounded-3xl placeholder:text-zinc-400 placeholder:text-xl focus:outline-none"
               placeholder="Ask Question "
             />
             <button type="submit">
