@@ -3,9 +3,11 @@ import { FaLeaf } from "react-icons/fa6";
 import { chatSchema } from "../../Schema/ChatSchema";
 import { ChatValues } from "../../Types/ChatTypes";
 import { useAppDispatch, useAppSelector } from "../../store/Hook";
+import { addQueryToCurrentChat } from "../../store/slices/chatSlice";
 import { getResponseThunk, postChatThunk } from "../../store/thunks/chatThunk";
 const ChatQuestionBar = () => {
   const { currentChat } = useAppSelector((state) => state.chat);
+
   const dispatch = useAppDispatch();
   const handleSubmit = (values: ChatValues) => {
     if (currentChat.currentMessages.length === 0) {
@@ -13,6 +15,7 @@ const ChatQuestionBar = () => {
     }
     // dispatch adding to the query here
     // dispatch response Thunk
+    dispatch(addQueryToCurrentChat(values.query));
     dispatch(getResponseThunk);
   };
 

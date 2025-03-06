@@ -71,4 +71,5 @@ const chatSlice = createSlice({
       });
   },
 });
+export const { addQueryToCurrentChat } = chatSlice.actions;
 export default chatSlice.reducer;
