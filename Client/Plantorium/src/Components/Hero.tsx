@@ -16,7 +16,7 @@ const BannerImage = () => {
         </div>
         <SignedIn>
           <StartFarmButton
-            className="py-5 text-2xl px-2"
+            className="mt-20 text-xl py-2 px-4 xl:text-2xl tracking-[3px] border-x-2  border-white"
             text="Start Your Farm"
           />
         </SignedIn>
