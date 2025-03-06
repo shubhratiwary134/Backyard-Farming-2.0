@@ -3,11 +3,14 @@ import axios from "axios";
 
 export const postChatThunk = createAsyncThunk(
   "/createChat",
-  async (userId, { rejectWithValue }) => {
+  async (
+    { userId, firstQuery }: { userId: string; firstQuery: string },
+    { rejectWithValue }
+  ) => {
     try {
       const response = await axios.post(
         "http://localhost:3000/api/chat/create",
-        userId,
+        { userId, firstQuery },
         {
           headers: {
             "Content-Type": "application/json",

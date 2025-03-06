@@ -43,11 +43,16 @@ const chatSlice = createSlice({
     builder
       .addCase(postChatThunk.pending, (state) => {
         state.status = "loading";
+        state.error = null;
       })
       .addCase(postChatThunk.fulfilled, (state, action) => {
         state.status = "completed";
-        state.currentChat = action.payload.chat;
+        state.currentChat = {
+          currentChatId: action.payload.chat._id,
+          currentMessages: action.payload.chat.messages,
+        };
         state.chats.push(action.payload.chat);
+        state.error = null;
       })
       .addCase(postChatThunk.rejected, (state, action) => {
         state.error = (action.payload as string) || "Error creating the chat";

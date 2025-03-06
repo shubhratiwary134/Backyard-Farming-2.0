@@ -5,18 +5,31 @@ import { ChatValues } from "../../Types/ChatTypes";
 import { useAppDispatch, useAppSelector } from "../../store/Hook";
 import { addQueryToCurrentChat } from "../../store/slices/chatSlice";
 import { getResponseThunk, postChatThunk } from "../../store/thunks/chatThunk";
+import { useUser } from "@clerk/clerk-react";
 const ChatQuestionBar = () => {
   const { currentChat } = useAppSelector((state) => state.chat);
-
+  const { user } = useUser();
   const dispatch = useAppDispatch();
-  const handleSubmit = (values: ChatValues) => {
-    if (currentChat.currentMessages.length === 0) {
-      dispatch(postChatThunk);
+  const userId = user?.id;
+  const handleSubmit = async (values: ChatValues) => {
+    if (userId && values.query) {
+      if (currentChat.currentMessages.length === 0) {
+        const firstQuery = values.query;
+        const result = await dispatch(postChatThunk({ userId, firstQuery }));
+        // using the result directly here because the chatId is required in the getResponseThunk
+        // while the slice updates the currentChatId for the future in the fulfilled state
+        const newChatId = result.payload?.chat?._id;
+        if (newChatId) {
+          await dispatch(getResponseThunk(newChatId));
+        }
+      }
+      // dispatch adding to the query here
+      // dispatch response Thunk
+      else {
+        dispatch(addQueryToCurrentChat(values.query));
+        await dispatch(getResponseThunk(currentChat.currentChatId));
+      }
     }
-    // dispatch adding to the query here
-    // dispatch response Thunk
-    dispatch(addQueryToCurrentChat(values.query));
-    dispatch(getResponseThunk(currentChat.currentChatId));
   };
 
   const initialValues: ChatValues = {
