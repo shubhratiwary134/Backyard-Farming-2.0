@@ -1,21 +1,26 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const generateReportThunk = createAsyncThunk(
+//note whatever the thunk sends in the Return ---> that becomes the action.payload for the slice
+
+export const generateReportThunk = createAsyncThunk(
   "/generateReportThunk",
-  async (crop, { rejectWithValue }) => {
+  async (
+    { userId, crop }: { userId: string; crop: string },
+    { rejectWithValue }
+  ) => {
     try {
       const response = await axios.post(
         "http://localhost:3000/api/plantorium/generateReport",
-        crop,
+        { userId, crop },
         {
+          withCredentials: true, // since our backend and frontend are running on different ports we need to add this so that our session cookies are sent without any problem
           headers: {
             "Content-Type": "application/json",
           },
         }
       );
-      console.log(response.data.crop);
-      return response.data.message;
+      return response.data;
     } catch (error) {
       if (axios.isAxiosError(error)) {
         return rejectWithValue(
@@ -27,4 +32,24 @@ const generateReportThunk = createAsyncThunk(
   }
 );
 
-export default generateReportThunk;
+export const getReportThunk = createAsyncThunk(
+  "/getReport",
+  async (userId: string, { rejectWithValue }) => {
+    try {
+      const response = await axios.get(
+        `http://localhost:3000/api/plantorium/getReport/${userId}`,
+        {
+          withCredentials: true,
+        }
+      );
+      return response.data;
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        return rejectWithValue(
+          error.response?.data.message ||
+            "Unable to fetch the Report due to some error "
+        );
+      }
+    }
+  }
+);

@@ -15,6 +15,7 @@ export const checkAndAddUserInTheDBThunk = createAsyncThunk(
         "http://localhost:3000/api/user/Check-or-create-user",
         userData,
         {
+          withCredentials: true,
           headers: {
             "Content-Type": "application/json",
           },

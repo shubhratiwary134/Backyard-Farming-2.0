@@ -6,13 +6,14 @@ import Navbar from "./Components/Navbar";
 import CheckAndAddUserInTheDB from "./Components/CheckAndAddUserInTheDB";
 import BannerImage from "./Components/Hero";
 import bgImageForHero from "./Assests/BG_for_hero.jpg";
+import ChatButton from "./Components/ChatButton";
+
 function App() {
   return (
     <div className="bg-[#f7fff7]">
       <div
         style={{
           backgroundImage: `url(${bgImageForHero})`,
-          // backgroundSize: "100% auto",
         }}
         className="h-screen w-full bg-no-repeat bg-center bg-cover 2xl:bg-[length:100%_auto]"
       >
@@ -22,6 +23,7 @@ function App() {
       <SignedIn>
         <CheckAndAddUserInTheDB />
         <HomePage />
+        <ChatButton />
       </SignedIn>
       <SignedOut>
         <LandingPage />
