@@ -28,7 +28,7 @@ export const postChatThunk = createAsyncThunk(
 
 export const getResponseThunk = createAsyncThunk(
   "/getResponseThunk",
-  async (chatId, { rejectWithValue }) => {
+  async (chatId: string, { rejectWithValue }) => {
     try {
       const response = await axios.post(
         "http://localhost:3000/api/chat/query",

@@ -16,7 +16,7 @@ const ChatQuestionBar = () => {
     // dispatch adding to the query here
     // dispatch response Thunk
     dispatch(addQueryToCurrentChat(values.query));
-    dispatch(getResponseThunk);
+    dispatch(getResponseThunk(currentChat.currentChatId));
   };
 
   const initialValues: ChatValues = {
