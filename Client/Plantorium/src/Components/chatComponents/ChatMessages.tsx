@@ -7,6 +7,7 @@ const ChatMessages = () => {
       {currentChat.currentMessages && currentChat.currentMessages.length > 0 ? (
         currentChat.currentMessages.map((message) => (
           <div
+            key={message.id}
             className={`${message.role === "bot" ? "self-start" : "self-end"}`}
           >
             {message.text}
