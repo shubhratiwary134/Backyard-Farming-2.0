@@ -57,7 +57,7 @@ const ChatQuestionBar = () => {
               value={values.query}
               onChange={handleChange}
               onBlur={handleBlur}
-              className="w-4/5 h-5 py-8 px-10 bg-black rounded-3xl placeholder:text-zinc-400 placeholder:text-xl focus:outline-none"
+              className="w-4/5 h-5 py-8 px-10 bg-zinc-800 rounded-3xl placeholder:text-zinc-400 placeholder:text-xl focus:outline-none"
               placeholder="Ask Question "
             />
             <button type="submit">

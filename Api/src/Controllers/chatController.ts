@@ -83,3 +83,24 @@ export const addMessageAndGetResponse = async (req: Request, res: Response) => {
     res.status(500).json({ message: `Internal Server Error : ${error}` });
   }
 };
+
+export const getChats = async (req: Request, res: Response) => {
+  const userId = req.params.id;
+  if (!userId) {
+    return res
+      .status(400)
+      .json({ message: "invalid request userId not found" });
+  }
+  try {
+    const chats = await Chat.find({ userId });
+    if (!chats) {
+      return res.status(404).json({ message: "no chats found for the user " });
+    }
+    return res
+      .status(200)
+      .json({ message: "successfully found chats for the user ", chats });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json({ message: "something went wrong" });
+  }
+};

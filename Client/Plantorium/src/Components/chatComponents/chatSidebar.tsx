@@ -13,7 +13,7 @@ const ChatSidebar = () => {
         initial={{ x: "-100%" }}
         animate={{ x: isOpen ? "0%" : "-100%" }}
         transition={{ type: "spring", stiffness: 200, damping: 25 }}
-        className={`h-full w-80  bg-gray-300 flex flex-col items-center p-10 `}
+        className={`h-screen w-80  bg-gray-300 flex flex-col items-center p-10 `}
       ></motion.div>
       <button
         onClick={() => setIsOpen(!isOpen)}
