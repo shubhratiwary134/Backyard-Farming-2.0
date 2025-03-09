@@ -20,8 +20,16 @@ export const createChat = async (req: Request, res: Response) => {
         .status(404)
         .json({ message: "User not found — invalid clerkUserId" });
     }
+    const words = firstQuery.split(" ");
+    // if greater than 15 we add ...
+    const chatTitle =
+      words.length > 15
+        ? words.slice(0, 15).join(" ") + "..."
+        : words.join(" ");
+
     const chat = await Chat.create({
       userId,
+      chatTitle,
       messages: [
         {
           role: "user",

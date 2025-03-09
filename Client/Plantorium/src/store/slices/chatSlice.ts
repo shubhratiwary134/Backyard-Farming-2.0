@@ -12,17 +12,19 @@ interface Message {
 }
 interface currentChatInterface {
   currentChatId: string;
+  currentChatTitle: string;
   currentMessages: Message[];
 }
 interface chatInterface {
   currentChat: currentChatInterface;
-  chats: { chatId: string; messages: Message[] }[];
+  chats: { chatId: string; chatTitle: string; messages: Message[] }[];
   status: "idle" | "loading" | "completed";
   error: string | null;
 }
 const initialState: chatInterface = {
   currentChat: {
     currentChatId: "",
+    currentChatTitle: "",
     currentMessages: [],
   },
   chats: [], // to minimize api calls for past chats
@@ -53,6 +55,7 @@ const chatSlice = createSlice({
         state.status = "completed";
         state.currentChat = {
           currentChatId: action.payload.chat._id,
+          currentChatTitle: action.payload.chat.chatTitle,
           currentMessages: action.payload.chat.messages,
         };
         state.chats.push(action.payload.chat);
