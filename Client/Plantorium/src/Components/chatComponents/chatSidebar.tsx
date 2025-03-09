@@ -1,22 +1,36 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { GoSidebarCollapse, GoSidebarExpand } from "react-icons/go";
 import { motion } from "motion/react";
 import { FaHome } from "react-icons/fa";
 import { useNavigate } from "react-router";
-import { useAppSelector } from "../../store/Hook";
+import { useAppDispatch, useAppSelector } from "../../store/Hook";
+import { getAllChats } from "../../store/thunks/chatThunk";
+import { useUser } from "@clerk/clerk-react";
 
 const ChatSidebar = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(true);
+  const dispatch = useAppDispatch();
+  const { user } = useUser();
   const { chats } = useAppSelector((state) => state.chat);
+  useEffect(() => {
+    const userId = user?.id;
+    if (userId) {
+      dispatch(getAllChats(userId));
+    }
+  }, []);
   return (
     <div>
       <motion.div
         initial={{ x: "-100%" }}
         animate={{ x: isOpen ? "0%" : "-100%" }}
         transition={{ type: "spring", stiffness: 200, damping: 25 }}
-        className={`h-screen w-80  bg-gray-300 flex flex-col items-center p-10 `}
-      ></motion.div>
+        className={`h-screen w-80  bg-gray-300 flex flex-col gap-20 pt-40 items-center p-10 `}
+      >
+        {chats.map((chat) => (
+          <div className="text-white text-3xl">hey</div>
+        ))}
+      </motion.div>
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="fixed top-10 left-10  "
