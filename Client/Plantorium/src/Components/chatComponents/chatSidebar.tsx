@@ -3,10 +3,12 @@ import { GoSidebarCollapse, GoSidebarExpand } from "react-icons/go";
 import { motion } from "motion/react";
 import { FaHome } from "react-icons/fa";
 import { useNavigate } from "react-router";
+import { useAppSelector } from "../../store/Hook";
 
 const ChatSidebar = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(true);
+  const { chats } = useAppSelector((state) => state.chat);
   return (
     <div>
       <motion.div
