@@ -56,3 +56,25 @@ export const getResponseThunk = createAsyncThunk(
     }
   }
 );
+
+export const getAllChats = createAsyncThunk(
+  "/getAllChats",
+  async (userId: string, { rejectWithValue }) => {
+    try {
+      const response = await axios.get(
+        `http://localhost:3000/api/chat/getChats/${userId}`,
+        {
+          withCredentials: true,
+        }
+      );
+      return response.data;
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        return rejectWithValue(
+          error.response?.data.message || "something went wrong"
+        );
+      }
+      return rejectWithValue("Unknown Error occurred ");
+    }
+  }
+);
