@@ -1,5 +1,9 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { getResponseThunk, postChatThunk } from "../thunks/chatThunk";
+import {
+  getAllChats,
+  getResponseThunk,
+  postChatThunk,
+} from "../thunks/chatThunk";
 import { v4 as uuidv4 } from "uuid";
 interface Message {
   id: string;
@@ -71,6 +75,20 @@ const chatSlice = createSlice({
         state.status = "completed";
       })
       .addCase(getResponseThunk.rejected, (state, action) => {
+        state.error =
+          (action.payload as string) || "Error Getting the Response";
+      });
+    builder
+      .addCase(getAllChats.pending, (state) => {
+        state.status = "loading";
+        state.error = null;
+      })
+      .addCase(getAllChats.fulfilled, (state, action) => {
+        state.status = "completed";
+        state.chats = action.payload.chats;
+        state.error = null;
+      })
+      .addCase(getAllChats.rejected, (state, action) => {
         state.error =
           (action.payload as string) || "Error Getting the Response";
       });
