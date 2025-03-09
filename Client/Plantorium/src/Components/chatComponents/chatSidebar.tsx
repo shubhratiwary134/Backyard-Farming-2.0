@@ -25,10 +25,10 @@ const ChatSidebar = () => {
         initial={{ x: "-100%" }}
         animate={{ x: isOpen ? "0%" : "-100%" }}
         transition={{ type: "spring", stiffness: 200, damping: 25 }}
-        className={`h-screen w-80  bg-gray-300 flex flex-col gap-20 pt-40 items-center p-10 `}
+        className={`h-screen w-80  bg-gray-300 flex flex-col gap-5 pt-40 items-center p-10 `}
       >
         {chats.map((chat) => (
-          <div className="text-white text-3xl">hey</div>
+          <div className=" text-xl">{chat.chatId}</div>
         ))}
       </motion.div>
       <button

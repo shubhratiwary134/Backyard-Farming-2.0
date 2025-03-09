@@ -104,9 +104,17 @@ export const getChats = async (req: Request, res: Response) => {
     if (!chats) {
       return res.status(404).json({ message: "no chats found for the user " });
     }
-    return res
-      .status(200)
-      .json({ message: "successfully found chats for the user ", chats });
+    // since we dont need complete object in the frontend with timestamps , we will simplify the chats array and send that to the frontend
+    // for each chat object we return chatId, chatTitle and messages
+    const simplifiedChats = chats.map((chat) => ({
+      chatId: chat._id,
+      chatTitle: chat.chatTitle,
+      messages: chat.messages,
+    }));
+    return res.status(200).json({
+      message: "successfully found chats for the user ",
+      simplifiedChats,
+    });
   } catch (err) {
     console.log(err);
     res.status(500).json({ message: "something went wrong" });

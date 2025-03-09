@@ -88,7 +88,7 @@ const chatSlice = createSlice({
       })
       .addCase(getAllChats.fulfilled, (state, action) => {
         state.status = "completed";
-        state.chats = action.payload.chats;
+        state.chats = action.payload.simplifiedChats;
         state.error = null;
       })
       .addCase(getAllChats.rejected, (state, action) => {
