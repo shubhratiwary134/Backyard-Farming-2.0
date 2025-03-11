@@ -15,10 +15,13 @@ const ChatSidebar = () => {
   const { chats } = useAppSelector((state) => state.chat);
   useEffect(() => {
     const userId = user?.id;
-    if (userId) {
+    if (userId && !chats) {
       dispatch(getAllChats(userId));
     }
   }, []);
+  const handleChatClick = () => {
+    console.log("Hell Yeah");
+  };
   return (
     <div>
       <motion.div
@@ -28,7 +31,9 @@ const ChatSidebar = () => {
         className={`h-screen w-80  bg-gray-300 flex flex-col gap-5 pt-40 items-center p-10 `}
       >
         {chats.map((chat) => (
-          <div className=" text-xl">{chat.chatId}</div>
+          <div className=" text-xl" onClick={handleChatClick}>
+            {chat.chatTitle}
+          </div>
         ))}
       </motion.div>
       <button
