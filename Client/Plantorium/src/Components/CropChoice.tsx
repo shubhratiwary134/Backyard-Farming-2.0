@@ -19,6 +19,7 @@ const CropChoice = () => {
                   const result = await dispatch(
                     generateReportThunk({ userId, crop })
                   );
+                  // waiting for the result of the dispatch to navigate
                   if (generateReportThunk.fulfilled.match(result)) {
                     navigate("/report"); // Navigates only after report is successfully generated
                   }
