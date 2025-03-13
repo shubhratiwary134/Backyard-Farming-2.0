@@ -15,7 +15,7 @@ const ChatSidebar = () => {
   const { chats } = useAppSelector((state) => state.chat);
   useEffect(() => {
     const userId = user?.id;
-    if (userId && !chats) {
+    if (userId) {
       dispatch(getAllChats(userId));
     }
   }, []);
