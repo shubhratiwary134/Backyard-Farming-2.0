@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { GoSidebarCollapse, GoSidebarExpand } from "react-icons/go";
 import { motion } from "motion/react";
-import { FaHome } from "react-icons/fa";
+import { FaHome, FaPlusSquare } from "react-icons/fa";
 import { useNavigate } from "react-router";
 import { useAppDispatch, useAppSelector } from "../../store/Hook";
 import { getAllChats } from "../../store/thunks/chatThunk";
@@ -49,6 +49,9 @@ const ChatSidebar = () => {
       </button>
       <button className="fixed top-10 left-40  " onClick={() => navigate("/")}>
         <FaHome size={32} />
+      </button>
+      <button className="fixed top-10 left-60">
+        <FaPlusSquare size={32} />
       </button>
     </div>
   );
