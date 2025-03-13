@@ -24,7 +24,12 @@ const Report = () => {
       case "error":
         return <div>Error creating the Report</div>;
       case "generated":
-        return <div dangerouslySetInnerHTML={{ __html: html }}></div>;
+        return (
+          <div
+            dangerouslySetInnerHTML={{ __html: html }}
+            className="p-40"
+          ></div>
+        );
       case "notGenerated":
         return <div>No report available yet. Please create a report.</div>;
       default:
