@@ -25,13 +25,13 @@ const Report = () => {
         return <div>Error creating the Report</div>;
       case "generated":
         return (
-          <div>
-            <div className="w-full flex justify-center text-8xl mt-10 font-serif ">
+          <div className="bg-[#b6cfb7]">
+            <div className="w-full flex justify-center text-8xl font-serif ">
               Report
             </div>
             <div
               dangerouslySetInnerHTML={{ __html: html }}
-              className="mx-20 my-10 px-10 py-5  rounded-lg shadow-black border-2 border-black"
+              className="bg-[#f7fff7]  mx-20 my-10 px-10 py-20  rounded-lg shadow-black border-2 border-black"
             ></div>
           </div>
         );

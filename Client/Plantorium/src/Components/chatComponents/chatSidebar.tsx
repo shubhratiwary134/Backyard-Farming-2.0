@@ -20,6 +20,7 @@ const ChatSidebar = () => {
     }
   }, []);
   const handleChatClick = () => {
+    // we will fetch the chat from this chatId and then set it to current chat
     console.log("Hell Yeah");
   };
   return (
@@ -31,7 +32,7 @@ const ChatSidebar = () => {
         className={`h-screen w-80  bg-gray-300 flex flex-col gap-5 pt-40 items-center p-10 `}
       >
         {chats.map((chat) => (
-          <div className=" text-xl" onClick={handleChatClick}>
+          <div className=" text-xl" onClick={handleChatClick} key={chat.chatId}>
             {chat.chatTitle}
           </div>
         ))}

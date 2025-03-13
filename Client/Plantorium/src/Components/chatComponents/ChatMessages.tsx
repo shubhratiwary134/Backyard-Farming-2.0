@@ -13,7 +13,7 @@ const ChatMessages = () => {
             key={message.id}
             className={`${
               message.role === "bot"
-                ? "self-start"
+                ? "self-start text-xl"
                 : "self-end bg-green-400 text-white"
             } py-5 px-5  rounded-xl`}
           >
