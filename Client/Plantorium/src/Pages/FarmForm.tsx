@@ -86,7 +86,7 @@ const FarmForm = ({ farmSubmission }) => {
         <Formik
           initialValues={initialValues}
           validationSchema={handleValidation(step)}
-          onSubmit={async (values) => {
+          onSubmit={(values) => {
             if (user) {
               const dataWithUserId = {
                 ...values,
