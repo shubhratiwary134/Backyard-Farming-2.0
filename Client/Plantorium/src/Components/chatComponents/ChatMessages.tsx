@@ -1,14 +1,14 @@
 import { useAppSelector } from "../../store/Hook";
 
 const ChatMessages = () => {
-  const { currentChat } = useAppSelector((state) => state.chat);
+  const { currentMessages } = useAppSelector((state) => state.chat.currentChat);
   return (
     <div
       className="w-4/5 h-4/5 flex flex-col gap-20 overflow-y-auto p-5 "
       style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
     >
-      {currentChat.currentMessages && currentChat.currentMessages.length > 0 ? (
-        currentChat.currentMessages.map((message) => (
+      {currentMessages && currentMessages.length > 0 ? (
+        currentMessages.map((message) => (
           <div
             key={message.id}
             className={`${

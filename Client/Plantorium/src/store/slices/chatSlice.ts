@@ -104,7 +104,7 @@ const chatSlice = createSlice({
       })
       .addCase(getSpecificChat.fulfilled, (state, action) => {
         state.status = "completed";
-        state.currentChat = action.payload.chat;
+        state.currentChat = action.payload.newCurrentChat;
         state.error = null;
       })
       .addCase(getSpecificChat.rejected, (state, action) => {

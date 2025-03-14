@@ -4,7 +4,7 @@ import { motion } from "motion/react";
 import { FaHome, FaPlusSquare } from "react-icons/fa";
 import { useNavigate } from "react-router";
 import { useAppDispatch, useAppSelector } from "../../store/Hook";
-import { getAllChats } from "../../store/thunks/chatThunk";
+import { getAllChats, getSpecificChat } from "../../store/thunks/chatThunk";
 import { useUser } from "@clerk/clerk-react";
 
 const ChatSidebar = () => {
@@ -20,7 +20,9 @@ const ChatSidebar = () => {
     }
   }, []);
   const handleChatClick = (chatId) => {
-    dispatch(getSpecificChat(chatId));
+    if (chatId) {
+      dispatch(getSpecificChat(chatId));
+    }
   };
   return (
     <div>
@@ -32,8 +34,8 @@ const ChatSidebar = () => {
       >
         {chats.map((chat) => (
           <div
-            className=" text-xl"
-            onClick={handleChatClick(chat.chatId)}
+            className=" text-xl cursor-pointer"
+            onClick={() => handleChatClick(chat.chatId)}
             key={chat.chatId}
           >
             {chat.chatTitle}
