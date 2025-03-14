@@ -122,7 +122,7 @@ export const getSpecificChat = async (req: Request, res: Response) => {
   if (!chatId) {
     return res
       .status(400)
-      .json({ message: "ChatId not found invalid request" });
+      .json({ message: "ChatId not found, invalid request" });
   }
   try {
     const chat = await Chat.findById(chatId);
@@ -140,7 +140,26 @@ export const getSpecificChat = async (req: Request, res: Response) => {
       .status(200)
       .json({ message: "successfully fetched the chat ", newCurrentChat });
   } catch (error) {
-    console.log(error);
+    return res.status(500).json({ message: "internal server error" });
+  }
+};
+
+export const deleteSpecificChat = async (req: Request, res: Response) => {
+  const chatId = req.params.id;
+  if (!chatId) {
+    return res
+      .status(400)
+      .json({ message: "ChatId not found, invalid request" });
+  }
+  try {
+    const chat = await Chat.findByIdAndDelete(chatId);
+    if (!chat) {
+      return res
+        .status(404)
+        .json({ message: "chat not found for this chatId" });
+    }
+    return res.status(200).json({ message: "chat successfully deleted" });
+  } catch (error) {
     return res.status(500).json({ message: "internal server error" });
   }
 };

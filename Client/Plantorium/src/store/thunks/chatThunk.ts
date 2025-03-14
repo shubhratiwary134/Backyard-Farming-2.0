@@ -100,3 +100,25 @@ export const getSpecificChat = createAsyncThunk(
     }
   }
 );
+
+export const deleteChat = createAsyncThunk(
+  "/deleteChat",
+  async (chatId: string, { rejectWithValue }) => {
+    try {
+      const response = await axios.delete(
+        `http://localhost:3000/api/chat/deleteChat/${chatId}`,
+        {
+          withCredentials: true,
+        }
+      );
+      return response.data;
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        return rejectWithValue(
+          error.response?.data.message || "something went wrong"
+        );
+      }
+      return rejectWithValue("Unknown Error occurred ");
+    }
+  }
+);
