@@ -1,5 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import {
+  deleteChat,
   getAllChats,
   getResponseThunk,
   getSpecificChat,
@@ -111,6 +112,21 @@ const chatSlice = createSlice({
         state.error = null;
       })
       .addCase(getSpecificChat.rejected, (state, action) => {
+        state.error =
+          (action.payload as string) || "Error Getting the Response";
+      });
+    builder
+      .addCase(deleteChat.pending, (state) => {
+        state.status = "loading";
+        state.error = null;
+      })
+      .addCase(deleteChat.fulfilled, (state, action) => {
+        state.status = "completed";
+        state.chats = state.chats.filter(
+          (chat) => chat !== action.payload.chat
+        );
+      })
+      .addCase(deleteChat.rejected, (state, action) => {
         state.error =
           (action.payload as string) || "Error Getting the Response";
       });
