@@ -36,7 +36,7 @@ const ChatSidebar = () => {
       >
         {chats.map((chat) => (
           <div
-            className="w-full text-lg hover:bg-green-800 p-5 rounded-xl duration:200 cursor-pointer flex justify-between items-center"
+            className="w-full text-lg hover:bg-green-800 hover:text-white p-5 rounded-xl duration:200 cursor-pointer flex justify-between items-center"
             onClick={() => handleChatClick(chat.chatId)}
             key={chat.chatId}
           >
