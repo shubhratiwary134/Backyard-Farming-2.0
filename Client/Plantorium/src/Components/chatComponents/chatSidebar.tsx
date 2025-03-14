@@ -7,6 +7,7 @@ import { useAppDispatch, useAppSelector } from "../../store/Hook";
 import { getAllChats, getSpecificChat } from "../../store/thunks/chatThunk";
 import { useUser } from "@clerk/clerk-react";
 import { setCurrentChat } from "../../store/slices/chatSlice";
+import { SlOptionsVertical } from "react-icons/sl";
 const ChatSidebar = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(true);
@@ -31,15 +32,16 @@ const ChatSidebar = () => {
         initial={{ x: "-100%" }}
         animate={{ x: isOpen ? "0%" : "-100%" }}
         transition={{ type: "spring", stiffness: 200, damping: 25 }}
-        className={`h-screen w-88  bg-gray-300 flex flex-col gap-5 pt-40 items-center p-10 `}
+        className={`h-screen w-88  bg-gray-300 flex flex-col gap-10 pt-40 items-center p-5 `}
       >
         {chats.map((chat) => (
           <div
-            className="text-lg cursor-pointer"
+            className="w-full text-lg  cursor-pointer flex justify-between items-center"
             onClick={() => handleChatClick(chat.chatId)}
             key={chat.chatId}
           >
             {chat.chatTitle}
+            <SlOptionsVertical />
           </div>
         ))}
       </motion.div>
