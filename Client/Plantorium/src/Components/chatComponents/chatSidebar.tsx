@@ -11,6 +11,7 @@ import { SlOptionsVertical } from "react-icons/sl";
 const ChatSidebar = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(true);
+  const [dropDown, setDropDown] = useState(false);
   const dispatch = useAppDispatch();
   const { user } = useUser();
   const { chats } = useAppSelector((state) => state.chat);
@@ -36,12 +37,12 @@ const ChatSidebar = () => {
       >
         {chats.map((chat) => (
           <div
-            className="w-full text-lg hover:bg-green-800 hover:text-white p-5 rounded-xl duration:200 cursor-pointer flex justify-between items-center"
+            className="w-full text-lg hover:bg-green-800 hover:text-white p-5 rounded-xl duration:200 cursor-pointer flex justify-between items-center "
             onClick={() => handleChatClick(chat.chatId)}
             key={chat.chatId}
           >
             {chat.chatTitle}
-            <SlOptionsVertical />
+            <SlOptionsVertical onClick={() => setDropDown(!dropDown)} />
           </div>
         ))}
       </motion.div>
