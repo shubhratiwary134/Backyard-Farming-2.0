@@ -7,7 +7,7 @@ import { addQueryToCurrentChat } from "../../store/slices/chatSlice";
 import { getResponseThunk, postChatThunk } from "../../store/thunks/chatThunk";
 import { useUser } from "@clerk/clerk-react";
 const ChatQuestionBar = () => {
-  const { currentChat } = useAppSelector((state) => state.chat);
+  const { currentChat, error } = useAppSelector((state) => state.chat);
   const { user } = useUser();
   const dispatch = useAppDispatch();
   const userId = user?.id;
@@ -60,7 +60,7 @@ const ChatQuestionBar = () => {
               className="w-4/5 h-5 py-8 px-10 bg-zinc-400 rounded-3xl placeholder:text-zinc-400 placeholder:text-xl text-white text-2xl focus:outline-none"
               placeholder="Ask Question "
             />
-            <button type="submit">
+            <button type="submit" disabled={!(error === null)}>
               <FaLeaf size={48} />
             </button>
           </form>
