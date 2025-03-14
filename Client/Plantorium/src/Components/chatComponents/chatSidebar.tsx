@@ -19,9 +19,8 @@ const ChatSidebar = () => {
       dispatch(getAllChats(userId));
     }
   }, []);
-  const handleChatClick = () => {
-    // we will fetch the chat from this chatId and then set it to current chat
-    console.log("Hell Yeah");
+  const handleChatClick = (chatId) => {
+    dispatch(getSpecificChat(chatId));
   };
   return (
     <div>
@@ -32,7 +31,11 @@ const ChatSidebar = () => {
         className={`h-screen w-80  bg-gray-300 flex flex-col gap-5 pt-40 items-center p-10 `}
       >
         {chats.map((chat) => (
-          <div className=" text-xl" onClick={handleChatClick} key={chat.chatId}>
+          <div
+            className=" text-xl"
+            onClick={handleChatClick(chat.chatId)}
+            key={chat.chatId}
+          >
             {chat.chatTitle}
           </div>
         ))}

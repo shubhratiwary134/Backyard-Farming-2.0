@@ -2,9 +2,11 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import {
   getAllChats,
   getResponseThunk,
+  getSpecificChat,
   postChatThunk,
 } from "../thunks/chatThunk";
 import { v4 as uuidv4 } from "uuid";
+
 interface Message {
   id: string;
   role: "user" | "bot";
@@ -92,6 +94,20 @@ const chatSlice = createSlice({
         state.error = null;
       })
       .addCase(getAllChats.rejected, (state, action) => {
+        state.error =
+          (action.payload as string) || "Error Getting the Response";
+      });
+    builder
+      .addCase(getSpecificChat.pending, (state) => {
+        state.status = "loading";
+        state.error = null;
+      })
+      .addCase(getSpecificChat.fulfilled, (state, action) => {
+        state.status = "completed";
+        state.currentChat = action.payload.chat;
+        state.error = null;
+      })
+      .addCase(getSpecificChat.rejected, (state, action) => {
         state.error =
           (action.payload as string) || "Error Getting the Response";
       });
