@@ -30,11 +30,11 @@ const ChatSidebar = () => {
         initial={{ x: "-100%" }}
         animate={{ x: isOpen ? "0%" : "-100%" }}
         transition={{ type: "spring", stiffness: 200, damping: 25 }}
-        className={`h-screen w-80  bg-gray-300 flex flex-col gap-5 pt-40 items-center p-10 `}
+        className={`h-screen w-88  bg-gray-300 flex flex-col gap-5 pt-40 items-center p-10 `}
       >
         {chats.map((chat) => (
           <div
-            className=" text-xl cursor-pointer"
+            className="text-lg cursor-pointer"
             onClick={() => handleChatClick(chat.chatId)}
             key={chat.chatId}
           >
