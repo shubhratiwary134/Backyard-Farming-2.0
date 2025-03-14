@@ -32,11 +32,11 @@ const ChatSidebar = () => {
         initial={{ x: "-100%" }}
         animate={{ x: isOpen ? "0%" : "-100%" }}
         transition={{ type: "spring", stiffness: 200, damping: 25 }}
-        className={`h-screen w-88  bg-gray-300 flex flex-col gap-10 pt-40 items-center p-5 `}
+        className={`h-screen w-88  bg-gray-300 flex flex-col pt-40 items-center p-5 `}
       >
         {chats.map((chat) => (
           <div
-            className="w-full text-lg  cursor-pointer flex justify-between items-center"
+            className="w-full text-lg hover:bg-green-800 p-5 rounded-xl duration:200 cursor-pointer flex justify-between items-center"
             onClick={() => handleChatClick(chat.chatId)}
             key={chat.chatId}
           >
