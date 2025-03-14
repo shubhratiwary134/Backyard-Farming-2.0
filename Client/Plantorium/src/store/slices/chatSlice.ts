@@ -46,6 +46,9 @@ const chatSlice = createSlice({
       };
       state.currentChat.currentMessages.push(query);
     },
+    setCurrentChat: (state, action) => {
+      state.currentChat = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -113,5 +116,5 @@ const chatSlice = createSlice({
       });
   },
 });
-export const { addQueryToCurrentChat } = chatSlice.actions;
+export const { addQueryToCurrentChat, setCurrentChat } = chatSlice.actions;
 export default chatSlice.reducer;

@@ -6,20 +6,21 @@ import { useNavigate } from "react-router";
 import { useAppDispatch, useAppSelector } from "../../store/Hook";
 import { getAllChats, getSpecificChat } from "../../store/thunks/chatThunk";
 import { useUser } from "@clerk/clerk-react";
-
+import { setCurrentChat } from "../../store/slices/chatSlice";
 const ChatSidebar = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(true);
   const dispatch = useAppDispatch();
   const { user } = useUser();
   const { chats } = useAppSelector((state) => state.chat);
+
   useEffect(() => {
     const userId = user?.id;
     if (userId) {
       dispatch(getAllChats(userId));
     }
   }, []);
-  const handleChatClick = (chatId) => {
+  const handleChatClick = (chatId: string) => {
     if (chatId) {
       dispatch(getSpecificChat(chatId));
     }
@@ -56,7 +57,18 @@ const ChatSidebar = () => {
         <FaHome size={32} />
       </button>
       <button className="fixed top-10 left-60">
-        <FaPlusSquare size={32} />
+        <FaPlusSquare
+          size={32}
+          onClick={() => {
+            dispatch(
+              setCurrentChat({
+                currentChatId: "",
+                currentChatTitle: "",
+                currentMessages: [],
+              })
+            );
+          }}
+        />
       </button>
     </div>
   );
