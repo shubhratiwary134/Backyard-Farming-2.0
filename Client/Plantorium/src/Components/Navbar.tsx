@@ -39,7 +39,7 @@ const Navbar = () => {
           <AnimatedLink href="/CreateFarm">Start Farm</AnimatedLink>
           <AnimatedLink href="/myFarms">My Farm</AnimatedLink>
           <AnimatedLink href="/plans">Plans</AnimatedLink>
-          <AnimatedLink href="#">Team</AnimatedLink>
+          <AnimatedLink href="#">Support</AnimatedLink>
 
           <UserButton />
         </SignedIn>
