@@ -7,11 +7,13 @@ import { useAppDispatch, useAppSelector } from "../../store/Hook";
 import { getAllChats, getSpecificChat } from "../../store/thunks/chatThunk";
 import { useUser } from "@clerk/clerk-react";
 import { setCurrentChat } from "../../store/slices/chatSlice";
-import { SlOptionsVertical } from "react-icons/sl";
+import { MdDelete } from "react-icons/md";
+import { Box, Modal, Typography } from "@mui/material";
+
 const ChatSidebar = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(true);
-  const [dropDown, setDropDown] = useState(false);
+  const [isDelete, setIsDelete] = useState(false);
   const dispatch = useAppDispatch();
   const { user } = useUser();
   const { chats } = useAppSelector((state) => state.chat);
@@ -26,6 +28,9 @@ const ChatSidebar = () => {
     if (chatId) {
       dispatch(getSpecificChat(chatId));
     }
+  };
+  const handleDelete = () => {
+    console.log("deleting the deleted ");
   };
   return (
     <div>
@@ -42,7 +47,36 @@ const ChatSidebar = () => {
             key={chat.chatId}
           >
             {chat.chatTitle}
-            <SlOptionsVertical onClick={() => setDropDown(!dropDown)} />
+            <MdDelete size={24} onClick={() => setIsDelete(true)} />
+            <Modal
+              open={isDelete}
+              onClose={() => setIsDelete(false)}
+              className=" flex justify-center items-center"
+            >
+              <Box className="bg-gray-300 w-1/2 h-80 rounded-xl text-black   flex flex-col gap-10 p-5  items-center">
+                <Typography variant="h3" component="h1">
+                  Delete Chat ?
+                </Typography>
+                <Typography variant="h5" component="h1">
+                  This will delete{" "}
+                  <span className="font-extrabold">{chat.chatTitle}</span>
+                </Typography>
+                <div className="flex gap-10">
+                  <button
+                    className="bg-red-500 text-white px-8 py-2 rounded-lg hover:bg-red-700 transition"
+                    onClick={handleDelete} // Add your delete function here
+                  >
+                    Delete
+                  </button>
+                  <button
+                    className="bg-gray-900 text-white px-8 py-2 rounded-lg hover:bg-zinc-800 transition"
+                    onClick={() => setIsDelete(false)}
+                  >
+                    Cancel
+                  </button>
+                </div>
+              </Box>
+            </Modal>
           </div>
         ))}
       </motion.div>
