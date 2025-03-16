@@ -18,7 +18,7 @@ const ChatQuestionBar = () => {
         const result = await dispatch(postChatThunk({ userId, firstQuery }));
         // using the result directly here because the chatId is required in the getResponseThunk
         // while the slice updates the currentChatId for the future in the fulfilled state
-        const newChatId = result.payload?.chat?._id;
+        const newChatId = result.payload?.simplifiedChat?.chatId;
         if (newChatId) {
           await dispatch(
             getResponseThunk({ chatId: newChatId, query: firstQuery })

@@ -34,13 +34,10 @@ const ChatSidebar = () => {
     }
   };
   const handleDelete = (chatId: string) => {
-    console.log(chatId);
     if (chatId) {
       dispatch(deleteChat(chatId));
       setIsDelete(false);
-      console.log("inside the chatID if statement in handle delete ");
     }
-    console.log("deleting");
   };
   return (
     <div>
