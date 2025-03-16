@@ -3,7 +3,7 @@ import photo1 from "../../Assests/photo1.avif";
 import photo2 from "../../Assests/photo2.avif";
 import photo3 from "../../Assests/photo3.avif";
 import photo4 from "../../Assests/photo4.avif";
-import tempimg from "../../Assests/finalimage.png"
+import tempimg from "../../Assests/finalimage.png";
 import { useState } from "react";
 
 const WhatsIncluded = () => {
@@ -80,7 +80,6 @@ const WhatsIncluded = () => {
           onHoverEnd={() => setHovered((prev) => ({ ...prev, box2: false }))}
           className="relative col-span-6 row-span-12 flex justify-center  rounded-2xl overflow-hidden"
         >
-        
           <motion.img
             animate={{
               opacity: hovered.box2 ? 0 : 1,
@@ -90,7 +89,7 @@ const WhatsIncluded = () => {
             src={photo2}
             className="w-full h-full object-cover rounded-lg "
           />
-          
+
           <div
             className={`absolute  top-14  text-center lg:text-[2rem] xl:text-[2.6rem] 2xl:text-[3.6rem]  ${
               hovered.box2 ? "text-black" : "text-white"
@@ -102,35 +101,38 @@ const WhatsIncluded = () => {
           {/*image here*/}
           {hovered.box2 && (
             <motion.div
-              initial={{opacity: 0, y:50}}
-              animate={{opacity:1, y:0}}
-              exit={{opacity:0, y:50}}
-              transition={{duration: 0.5}}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 50 }}
+              transition={{ duration: 0.5 }}
               className="absolute bottom-0 flex justify-center w-full"
-              >
-              <img 
+            >
+              <img
                 src={tempimg}
                 className="max-w-full max-h-[50%] object-contain"
-                />
+              />
             </motion.div>
           )}
           {/*paragraph*/}
           {hovered.box2 && (
             <motion.p
-              initial={{opacity:0, y: 10}}
-              animate={{opacity:1, y:0}}
-              exit={{opacity:0, y:10}}
-              transition={{duration: 0.5}}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 10 }}
+              transition={{ duration: 0.5 }}
               className="absolute inset-0 flex items-center justify-center text-center text-black text-lg p-4 
               text-[0.3rem] md:text-[0.7rem] lg:text-[1.2rem] xl:text-[1.4rem] 2xl:text-[1.6rem]
               bg-white bg-opacity-60 rounded-l"
-              >Successful farming requires consistent planning. The Adaptive Weekly Roadmap creates a 
-              custom task list tailored to the farm’s unique requirements. Weekly updates help refine 
-              and adjust the roadmap based on real-time progress, ensuring that tasks align with the 
-              farm’s evolving needs. This system simplifies farm management while maximizing efficiency.
-              </motion.p>
+            >
+              Successful farming requires consistent planning. The Adaptive
+              Weekly Roadmap creates a custom task list tailored to the farm's
+              unique requirements. Weekly updates help refine and adjust the
+              roadmap based on real-time progress, ensuring that tasks align
+              with the farm's evolving needs. This system simplifies farm
+              management while maximizing efficiency.
+            </motion.p>
           )}
-          </motion.div>
+        </motion.div>
         {/*end here*/}
         <motion.div
           initial={{ x: -20 }}
@@ -209,16 +211,14 @@ const WhatsIncluded = () => {
             Marketplace
           </div>
           <div
-            className={`absolute top-10 p-5 bottom-2 text-xl text-center md:top-8  lg:top-14  xl:top-16  2xl:top-20  md:text-[0.5rem] lg:text-[0.7rem] xl:text-[1.0rem] 2xl:text-[1.0rem] text-zinc-700
-              leading-tight sm:leading-tight md:leading-tight lg:leading-snug xl:leading-normal 2xl:leading-relaxed ${
+            className={`absolute top-20 p-5 sm:text-[0.6rem] md:text-[0.6rem] lg:text-[0.9rem] xl:text-[1.2rem] 2xl:text-[1.4rem] text-center text-zinc-700 sm:top-12 md:top-12  lg:top-20  xl:top-28  2xl:top-44 ${
               !hovered.box4 ? "hidden" : ""
             }`}
           >
-            Access to high-quality farming products is essential for a thriving farm. The Marketplace connects farmers with trusted suppliers,
+            Access to high-quality farming products is essential for a thriving
+            farm. The Marketplace connects farmers with trusted suppliers,
             offering a selection of organic seeds, fertilizers, pesticides, and
-            farming tools. This platform ensures that every farm gets the best
-            resources at competitive prices, making procurement seamless and
-            efficient.
+            farming tools.
           </div>
         </motion.div>
       </div>
