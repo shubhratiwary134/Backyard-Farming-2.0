@@ -11,7 +11,7 @@ const HowDoesItWork = () => {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 2 }}
-        className=" text-black lg:text-4xl 2xl:text-6xl xl:text-5xl  flex justify-center tracking-wide"
+        className=" text-black md:text-3xl lg:text-4xl 2xl:text-6xl xl:text-5xl  flex justify-center tracking-wide"
       >
         How Does It Work ?
       </motion.div>
@@ -21,7 +21,7 @@ const HowDoesItWork = () => {
       <div className="flex w-full justify-between mt-5">
         <div className="text-black w-96 flex flex-col items-center gap-5  ">
           <PiNumberCircleOneLight size={64} />
-          <div className="text-black lg:text-lg xl:text-xl 2xl:text-2xl mr-5 ml-2  text-center font-poppins  tracking-wide">
+          <div className="text-black md:text-md lg:text-lg xl:text-xl 2xl:text-2xl mr-5 ml-2  text-center font-poppins  tracking-wide">
             Upload Your Plant Photos
           </div>
           <div className="2xl:text-base xl:text-[0.9rem] lg:text-[0.8rem] text-gray-600 mr-5 ml-2 text-center ">
@@ -32,7 +32,7 @@ const HowDoesItWork = () => {
         </div>
         <div className="text-black w-96  flex flex-col items-center  gap-5 rounded-lg">
           <PiNumberCircleTwoLight size={64} />
-          <div className="text-black lg:text-lg  xl:text-xl 2xl:text-2xl mr-5 ml-2 text-heading font-poppins tracking-wide">
+          <div className="text-black md:text-md lg:text-lg  xl:text-xl 2xl:text-2xl mr-5 ml-2 text-heading font-poppins tracking-wide">
             Receive Weekly Roadmap
           </div>
           <div className="2xl:text-base xl:text-[0.9rem] lg:text-[0.8rem] text-gray-600 mr-5 ml-2  text-center font-poppins">
