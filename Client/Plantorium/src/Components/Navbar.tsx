@@ -19,12 +19,11 @@ const Navbar = () => {
     >
       <img src={logo} className="w-48 rounded-full p-2" />
 
-      <div className="flex flex-col justify-around items-center font-poppins text-2xl gap-20 md:flex-row md:text-[20px] md:items-center  ">
+      <div className="flex flex-col justify-around items-center font-poppins text-2xl gap-20 md:flex-row md:text-[18px] xl:text-[16px] md:items-center  ">
         <SignedOut>
           <AnimatedLink href="#">How It Works</AnimatedLink>
-          <AnimatedLink href="/plans">Plans</AnimatedLink>
+          <AnimatedLink href="/plans">Features</AnimatedLink>
           <AnimatedLink href="#">Team</AnimatedLink>
-          <AnimatedLink href="#">FAQS</AnimatedLink>
           <div className="flex gap-5 ">
             <SignUpButton>
               <button className=" px-5 py-2 rounded-full">SignUp</button>
@@ -39,7 +38,7 @@ const Navbar = () => {
           <AnimatedLink href="/CreateFarm">Start Farm</AnimatedLink>
           <AnimatedLink href="/myFarms">My Farm</AnimatedLink>
           <AnimatedLink href="/plans">Plans</AnimatedLink>
-          <AnimatedLink href="#">Team</AnimatedLink>
+          <AnimatedLink href="#">Support</AnimatedLink>
 
           <UserButton />
         </SignedIn>

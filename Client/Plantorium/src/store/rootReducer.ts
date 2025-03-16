@@ -12,11 +12,15 @@ const persistConfig = {
   key: "report",
   storage,
 };
+const persistConfigChat = {
+  key: "chat",
+  storage,
+};
 const rootReducer = combineReducers({
   crops: cropReducer,
   plantorium: plantoriumReducer,
   user: userReducer,
   report: persistReducer(persistConfig, reportReducer),
-  chat: chatReducer,
+  chat: persistReducer(persistConfigChat, chatReducer),
 });
 export default rootReducer;

@@ -24,7 +24,7 @@ const startServer = async () => {
   //Protected Routes that require the authentication
   app.use("/api", PrivateRoutes);
   app.listen(PORT, () => {
-    console.log("lets fucking go brother ");
+    console.log("Server connected to port 3000 ");
   });
 
   // termination logic to close the connection

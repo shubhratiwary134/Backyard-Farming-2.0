@@ -11,12 +11,12 @@ const BannerImage = () => {
   return (
     <motion.div className=" w-full flex items-center h-[75%] lg:h-[95%]  gap-5 text-white font-poppins">
       <div className="w-full relative flex flex-col  items-center ">
-        <div className="text-7xl lg:text-[2.3rem] pl-10 text-center lg:p-4 xl:text-[2.8rem] 2xl:text-[3.8rem] xl:tracking-[21px] tracking-[16px]">
+        <div className=" text-7xl lg:text-[2.3rem] pl-10 text-center lg:p-4 xl:text-[2.8rem] 2xl:text-[3.8rem] xl:tracking-[18px] tracking-[16px]">
           FARM FRESH, BACKYARD GROWN
         </div>
         <SignedIn>
           <StartFarmButton
-            className="py-5 text-2xl px-2"
+            className="mt-20 text-xl py-2 px-4 xl:text-2xl tracking-[3px] border-x-2  border-white"
             text="Start Your Farm"
           />
         </SignedIn>

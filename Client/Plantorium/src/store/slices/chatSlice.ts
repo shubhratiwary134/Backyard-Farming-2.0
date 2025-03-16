@@ -1,6 +1,13 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { getResponseThunk, postChatThunk } from "../thunks/chatThunk";
+import {
+  deleteChat,
+  getAllChats,
+  getResponseThunk,
+  getSpecificChat,
+  postChatThunk,
+} from "../thunks/chatThunk";
 import { v4 as uuidv4 } from "uuid";
+
 interface Message {
   id: string;
   role: "user" | "bot";
@@ -8,17 +15,19 @@ interface Message {
 }
 interface currentChatInterface {
   currentChatId: string;
+  currentChatTitle: string;
   currentMessages: Message[];
 }
 interface chatInterface {
   currentChat: currentChatInterface;
-  chats: { chatId: string; messages: Message[] }[];
+  chats: { chatId: string; chatTitle: string; messages: Message[] }[];
   status: "idle" | "loading" | "completed";
   error: string | null;
 }
 const initialState: chatInterface = {
   currentChat: {
     currentChatId: "",
+    currentChatTitle: "",
     currentMessages: [],
   },
   chats: [], // to minimize api calls for past chats
@@ -38,16 +47,25 @@ const chatSlice = createSlice({
       };
       state.currentChat.currentMessages.push(query);
     },
+    setCurrentChat: (state, action) => {
+      state.currentChat = action.payload;
+    },
   },
   extraReducers: (builder) => {
     builder
       .addCase(postChatThunk.pending, (state) => {
         state.status = "loading";
+        state.error = null;
       })
       .addCase(postChatThunk.fulfilled, (state, action) => {
         state.status = "completed";
-        state.currentChat = action.payload.chat;
-        state.chats.push(action.payload.chat);
+        state.currentChat = {
+          currentChatId: action.payload.simplifiedChat.chatId,
+          currentChatTitle: action.payload.simplifiedChat.chatTitle,
+          currentMessages: action.payload.simplifiedChat.messages,
+        };
+        state.chats.push(action.payload.simplifiedChat);
+        state.error = null;
       })
       .addCase(postChatThunk.rejected, (state, action) => {
         state.error = (action.payload as string) || "Error creating the chat";
@@ -69,7 +87,50 @@ const chatSlice = createSlice({
         state.error =
           (action.payload as string) || "Error Getting the Response";
       });
+    builder
+      .addCase(getAllChats.pending, (state) => {
+        state.status = "loading";
+        state.error = null;
+      })
+      .addCase(getAllChats.fulfilled, (state, action) => {
+        state.status = "completed";
+        state.chats = action.payload.simplifiedChats;
+        state.error = null;
+      })
+      .addCase(getAllChats.rejected, (state, action) => {
+        state.error =
+          (action.payload as string) || "Error Getting the Response";
+      });
+    builder
+      .addCase(getSpecificChat.pending, (state) => {
+        state.status = "loading";
+        state.error = null;
+      })
+      .addCase(getSpecificChat.fulfilled, (state, action) => {
+        state.status = "completed";
+        state.currentChat = action.payload.newCurrentChat;
+        state.error = null;
+      })
+      .addCase(getSpecificChat.rejected, (state, action) => {
+        state.error =
+          (action.payload as string) || "Error Getting the Response";
+      });
+    builder
+      .addCase(deleteChat.pending, (state) => {
+        state.status = "loading";
+        state.error = null;
+      })
+      .addCase(deleteChat.fulfilled, (state, action) => {
+        state.status = "completed";
+        state.chats = state.chats.filter(
+          (chat) => chat.chatId !== action.payload.chatId
+        );
+      })
+      .addCase(deleteChat.rejected, (state, action) => {
+        state.error =
+          (action.payload as string) || "Error Getting the Response";
+      });
   },
 });
-export const { addQueryToCurrentChat } = chatSlice.actions;
+export const { addQueryToCurrentChat, setCurrentChat } = chatSlice.actions;
 export default chatSlice.reducer;

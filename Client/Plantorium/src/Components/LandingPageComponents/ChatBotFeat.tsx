@@ -28,7 +28,11 @@ const ChatBotFeat = () => {
         </motion.div>
       </div>
       <div className="w-full 2xl:h-[65vh] xl:h-[60vh] lg:h-[50vh] flex justify-between">
-        <div className="bg-[#fef7a2] rounded-r-full w-2/3 flex flex-col items-center  gap-10 font-dancing ">
+        <motion.div
+          initial={{ width: 0 }}
+          whileInView={{ width: "66%" }}
+          className="bg-[#fef7a2] rounded-r-full  flex flex-col items-center  gap-10 font-dancing "
+        >
           <h1 className="mt-10  2xl:text-6xl xl:text-5xl lg:text-4xl ">
             Get immediate accurate answers !!!
           </h1>
@@ -42,9 +46,12 @@ const ChatBotFeat = () => {
             alt="bot reply"
             className="w-3/4 self-start ml-10 mix-blend-multiply"
           />
-        </div>
+        </motion.div>
 
-        <img
+        <motion.img
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 2 }}
           src={tomatina}
           alt="tomato bg remove"
           className="w-[40%] object-contain self-end "

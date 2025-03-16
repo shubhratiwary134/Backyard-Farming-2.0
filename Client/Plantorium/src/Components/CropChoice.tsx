@@ -1,9 +1,11 @@
 import { useUser } from "@clerk/clerk-react";
 import { useAppDispatch, useAppSelector } from "../store/Hook";
 import { generateReportThunk } from "../store/thunks/reportThunk";
+import { useNavigate } from "react-router";
 const CropChoice = () => {
   const { cropChoices } = useAppSelector((state) => state.plantorium);
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   const { user } = useUser();
   const userId = user?.id;
   return (
@@ -12,9 +14,15 @@ const CropChoice = () => {
         return (
           <div>
             <button
-              onClick={() => {
+              onClick={async () => {
                 if (userId) {
-                  dispatch(generateReportThunk({ userId, crop }));
+                  const result = await dispatch(
+                    generateReportThunk({ userId, crop })
+                  );
+                  // waiting for the result of the dispatch to navigate
+                  if (generateReportThunk.fulfilled.match(result)) {
+                    navigate("/report"); // Navigates only after report is successfully generated
+                  }
                 }
               }}
             >

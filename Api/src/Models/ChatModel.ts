@@ -19,6 +19,10 @@ const chatSchema = new mongoose.Schema(
       ref: "User",
       required: true,
     },
+    chatTitle: {
+      type: String,
+      required: true,
+    },
     messages: [messageSchema],
   },
   { timestamps: true }

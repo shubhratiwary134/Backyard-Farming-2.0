@@ -6,7 +6,7 @@ const Chat = () => {
   return (
     <div className="flex justify-between ">
       <ChatSidebar />
-      <div className="flex flex-col w-3/4 justify-between">
+      <div className=" w-3/4 ">
         <ChatMessages />
         <ChatQuestionBar />
       </div>

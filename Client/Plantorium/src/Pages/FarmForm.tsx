@@ -10,10 +10,10 @@ import Step2 from "./Steps/Step2";
 import Step3 from "./Steps/Step3";
 import { FarmFormValues } from "../Types/FarmFormTypes";
 import { LinearProgress } from "@mui/material";
-import { useAppDispatch, useAppSelector } from "../store/Hook";
+import { useAppDispatch } from "../store/Hook";
 import { createAFarm } from "../store/thunks/plantoriumThunk";
 import { useUser } from "@clerk/clerk-react";
-import toast, { Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import farmHeadingPhoto from "../Assests/formHeading2.jpg";
 import { GiFarmTractor } from "react-icons/gi";
@@ -22,7 +22,6 @@ const FarmForm = ({ farmSubmission }) => {
   const [step, setStep] = useState(1);
   const { user } = useUser();
   const dispatch = useAppDispatch();
-  const { status } = useAppSelector((state) => state.plantorium);
   const initialValues: FarmFormValues = {
     averageRainfall: 0,
     soilType: "",
@@ -94,17 +93,6 @@ const FarmForm = ({ farmSubmission }) => {
                 userId: user.id,
               };
               dispatch(createAFarm(dataWithUserId));
-              if (status == "completed") {
-                toast.success("Form submitted successfully!", {
-                  position: "top-center",
-                  duration: 2000,
-                });
-              } else if (status == "failed") {
-                toast.error("Error submitting the form!", {
-                  position: "bottom-center",
-                  duration: 2000,
-                });
-              }
               farmSubmission();
             }
           }}
