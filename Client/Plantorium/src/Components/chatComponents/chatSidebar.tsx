@@ -53,7 +53,7 @@ const ChatSidebar = () => {
               onClose={() => setIsDelete(false)}
               className=" flex justify-center items-center"
             >
-              <Box className="bg-gray-300 w-1/2 h-80 rounded-xl text-black   flex flex-col gap-10 p-5  items-center">
+              <Box className="bg-gray-300 w-1/2 h-80 rounded-xl text-black border-2 border-orange-300  flex flex-col gap-10 p-5  items-center">
                 <Typography variant="h3" component="h1">
                   Delete Chat ?
                 </Typography>
