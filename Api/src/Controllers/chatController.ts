@@ -35,8 +35,15 @@ export const createChat = async (req: Request, res: Response) => {
         },
       ],
     });
+    const simplifiedChat = {
+      chatId: chat._id,
+      chatTitle: chat.chatTitle,
+      messages: chat.messages,
+    };
     // can pass chat._id to the frontend
-    return res.status(201).json({ message: "chat created successfully", chat });
+    return res
+      .status(201)
+      .json({ message: "chat created successfully", simplifiedChat });
   } catch (error) {
     return res
       .status(500)
@@ -158,7 +165,9 @@ export const deleteSpecificChat = async (req: Request, res: Response) => {
         .status(404)
         .json({ message: "chat not found for this chatId" });
     }
-    return res.status(200).json({ message: "chat successfully deleted" });
+    return res
+      .status(200)
+      .json({ message: "chat successfully deleted", chatId });
   } catch (error) {
     return res.status(500).json({ message: "internal server error" });
   }

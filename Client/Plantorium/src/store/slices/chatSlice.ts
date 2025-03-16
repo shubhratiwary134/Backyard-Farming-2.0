@@ -60,11 +60,11 @@ const chatSlice = createSlice({
       .addCase(postChatThunk.fulfilled, (state, action) => {
         state.status = "completed";
         state.currentChat = {
-          currentChatId: action.payload.chat._id,
-          currentChatTitle: action.payload.chat.chatTitle,
-          currentMessages: action.payload.chat.messages,
+          currentChatId: action.payload.simplifiedChat.chatId,
+          currentChatTitle: action.payload.simplifiedChat.chatTitle,
+          currentMessages: action.payload.simplifiedChat.messages,
         };
-        state.chats.push(action.payload.chat);
+        state.chats.push(action.payload.simplifiedChat);
         state.error = null;
       })
       .addCase(postChatThunk.rejected, (state, action) => {
@@ -123,7 +123,7 @@ const chatSlice = createSlice({
       .addCase(deleteChat.fulfilled, (state, action) => {
         state.status = "completed";
         state.chats = state.chats.filter(
-          (chat) => chat !== action.payload.chat
+          (chat) => chat.chatId !== action.payload.chatId
         );
       })
       .addCase(deleteChat.rejected, (state, action) => {

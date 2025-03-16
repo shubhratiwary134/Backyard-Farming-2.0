@@ -4,7 +4,11 @@ import { motion } from "motion/react";
 import { FaHome, FaPlusSquare } from "react-icons/fa";
 import { useNavigate } from "react-router";
 import { useAppDispatch, useAppSelector } from "../../store/Hook";
-import { getAllChats, getSpecificChat } from "../../store/thunks/chatThunk";
+import {
+  deleteChat,
+  getAllChats,
+  getSpecificChat,
+} from "../../store/thunks/chatThunk";
 import { useUser } from "@clerk/clerk-react";
 import { setCurrentChat } from "../../store/slices/chatSlice";
 import { MdDelete } from "react-icons/md";
@@ -23,14 +27,20 @@ const ChatSidebar = () => {
     if (userId) {
       dispatch(getAllChats(userId));
     }
-  }, []);
+  }, [dispatch, user?.id]);
   const handleChatClick = (chatId: string) => {
     if (chatId) {
       dispatch(getSpecificChat(chatId));
     }
   };
-  const handleDelete = () => {
-    console.log("deleting the deleted ");
+  const handleDelete = (chatId: string) => {
+    console.log(chatId);
+    if (chatId) {
+      dispatch(deleteChat(chatId));
+      setIsDelete(false);
+      console.log("inside the chatID if statement in handle delete ");
+    }
+    console.log("deleting");
   };
   return (
     <div>
@@ -38,7 +48,7 @@ const ChatSidebar = () => {
         initial={{ x: "-100%" }}
         animate={{ x: isOpen ? "0%" : "-100%" }}
         transition={{ type: "spring", stiffness: 200, damping: 25 }}
-        className={`min-h-screen h-full w-88  bg-gray-300 flex flex-col pt-40 items-center p-5 `}
+        className={`min-h-screen h-full min-w-96  bg-gray-300 flex flex-col pt-40 items-center p-5 `}
       >
         {chats.map((chat) => (
           <div
@@ -64,7 +74,7 @@ const ChatSidebar = () => {
                 <div className="flex gap-10">
                   <button
                     className="bg-red-500 text-white px-8 py-2 rounded-lg hover:bg-red-700 transition"
-                    onClick={handleDelete} // Add your delete function here
+                    onClick={() => handleDelete(chat.chatId)} // Add your delete function here
                   >
                     Delete
                   </button>
