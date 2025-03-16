@@ -22,9 +22,8 @@ const Navbar = () => {
       <div className="flex flex-col justify-around items-center font-poppins text-2xl gap-20 md:flex-row md:text-[18px] xl:text-[16px] md:items-center  ">
         <SignedOut>
           <AnimatedLink href="#">How It Works</AnimatedLink>
-          <AnimatedLink href="/plans">Plans</AnimatedLink>
+          <AnimatedLink href="/plans">Features</AnimatedLink>
           <AnimatedLink href="#">Team</AnimatedLink>
-          <AnimatedLink href="#">FAQS</AnimatedLink>
           <div className="flex gap-5 ">
             <SignUpButton>
               <button className=" px-5 py-2 rounded-full">SignUp</button>
