@@ -9,6 +9,7 @@ import {
 import AnimatedLink from "./AnimatedLinkTag";
 import { motion } from "motion/react";
 import logo from "../Assests/logo_Backyard.png";
+import blackLogo from "../Assests/logo_backyard_black.png";
 import { useAppSelector } from "../store/Hook";
 
 const Navbar = () => {
@@ -23,7 +24,10 @@ const Navbar = () => {
         isSignedIn ? "text-black" : "text-white"
       }`}
     >
-      <img src={logo} className="w-48 rounded-full p-2" />
+      <img
+        src={isSignedIn ? blackLogo : logo}
+        className="w-48 rounded-full p-2"
+      />
 
       <div className="flex flex-col justify-around items-center font-poppins text-2xl gap-20 md:flex-row md:text-[18px] xl:text-[16px] md:items-center  ">
         <SignedOut>

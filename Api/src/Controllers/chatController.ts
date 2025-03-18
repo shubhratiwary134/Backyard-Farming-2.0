@@ -70,6 +70,8 @@ export const addMessageAndGetResponse = async (req: Request, res: Response) => {
       role: "user",
       text: query,
     });
+    // sort the chat id and get the messages , send those messages as the History to the query endpoint
+    // with that update the payload
     const payload = {
       question: query,
     };
