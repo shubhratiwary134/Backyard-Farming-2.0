@@ -17,7 +17,7 @@ import { Box, Modal, Typography } from "@mui/material";
 const ChatSidebar = () => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(true);
-  const [isDelete, setIsDelete] = useState(false);
+  const [deleteChatId, setDeleteChatId] = useState<string | null>(null);
   const dispatch = useAppDispatch();
   const { user } = useUser();
   const { chats } = useAppSelector((state) => state.chat);
@@ -33,10 +33,17 @@ const ChatSidebar = () => {
       dispatch(getSpecificChat(chatId));
     }
   };
-  const handleDelete = (chatId: string) => {
-    if (chatId) {
-      dispatch(deleteChat(chatId));
-      setIsDelete(false);
+  const handleDelete = () => {
+    if (deleteChatId) {
+      dispatch(deleteChat(deleteChatId));
+      setDeleteChatId(null);
+      dispatch(
+        setCurrentChat({
+          currentChatId: "",
+          currentChatTitle: "",
+          currentMessages: [],
+        })
+      );
     }
   };
   return (
@@ -54,36 +61,13 @@ const ChatSidebar = () => {
             key={chat.chatId}
           >
             {chat.chatTitle}
-            <MdDelete size={24} onClick={() => setIsDelete(true)} />
-            <Modal
-              open={isDelete}
-              onClose={() => setIsDelete(false)}
-              className=" flex justify-center items-center"
-            >
-              <Box className="bg-gray-300 w-1/2 h-80 rounded-xl text-black border-2 border-orange-300  flex flex-col gap-10 p-5  items-center">
-                <Typography variant="h3" component="h1">
-                  Delete Chat ?
-                </Typography>
-                <Typography variant="h5" component="h1">
-                  This will delete{" "}
-                  <span className="font-extrabold">{chat.chatTitle}</span>
-                </Typography>
-                <div className="flex gap-10">
-                  <button
-                    className="bg-red-500 text-white px-8 py-2 rounded-lg hover:bg-red-700 transition"
-                    onClick={() => handleDelete(chat.chatId)} // Add your delete function here
-                  >
-                    Delete
-                  </button>
-                  <button
-                    className="bg-gray-900 text-white px-8 py-2 rounded-lg hover:bg-zinc-800 transition"
-                    onClick={() => setIsDelete(false)}
-                  >
-                    Cancel
-                  </button>
-                </div>
-              </Box>
-            </Modal>
+            <MdDelete
+              size={24}
+              onClick={(e) => {
+                e.stopPropagation(); // Prevent triggering `onClick` of the div
+                setDeleteChatId(chat.chatId);
+              }}
+            />
           </div>
         ))}
       </motion.div>
@@ -114,6 +98,32 @@ const ChatSidebar = () => {
           }}
         />
       </button>
+      <Modal
+        open={!!deleteChatId}
+        onClose={() => setDeleteChatId(null)}
+        className="flex justify-center items-center"
+      >
+        <Box className="bg-gray-300 w-1/2 h-80 rounded-xl text-black border-2 border-orange-300 flex flex-col gap-10 p-5 items-center">
+          <Typography variant="h3">Delete Chat?</Typography>
+          <Typography variant="h5">
+            This will delete the chat permanently.
+          </Typography>
+          <div className="flex gap-10">
+            <button
+              className="bg-red-500 text-white px-8 py-2 rounded-lg hover:bg-red-700 transition"
+              onClick={handleDelete}
+            >
+              Delete
+            </button>
+            <button
+              className="bg-gray-900 text-white px-8 py-2 rounded-lg hover:bg-zinc-800 transition"
+              onClick={() => setDeleteChatId(null)}
+            >
+              Cancel
+            </button>
+          </div>
+        </Box>
+      </Modal>
     </div>
   );
 };
