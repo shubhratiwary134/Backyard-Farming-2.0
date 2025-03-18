@@ -23,11 +23,13 @@ const ChatSidebar = () => {
   const { chats } = useAppSelector((state) => state.chat);
 
   useEffect(() => {
-    const userId = user?.id;
-    if (userId) {
-      dispatch(getAllChats(userId));
+    if (!chats) {
+      const userId = user?.id;
+      if (userId) {
+        dispatch(getAllChats(userId));
+      }
     }
-  }, [dispatch, user?.id]);
+  }, [dispatch, user?.id, chats]);
   const handleChatClick = (chatId: string) => {
     if (chatId) {
       dispatch(getSpecificChat(chatId));
