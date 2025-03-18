@@ -113,8 +113,20 @@ const TeamVision = () => {
                     !hovered.shape2 ? "hidden" : ""
                   }`}
                 >
-                  <FaGithub />
-                  <FaLinkedin />
+                  <a
+                    href="https://github.com/shubhratiwary134"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaGithub />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/shubhra-tiwary/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaLinkedin />
+                  </a>
                 </div>
               </div>
               <div className="h-2/3 flex">
@@ -148,10 +160,16 @@ const TeamVision = () => {
             </motion.div>
           </motion.div>
           <div className="flex flex-col 2xl:text-3xl  xl:text-2xl items-center self-end gap-10 p-10">
-            <div>Blogs</div>
-            <div>FAQs</div>
-            <div>Home</div>
-            <button className="px-5 py-5 bg-[#888888] rounded-full flex items-center  underline decoration-white">
+            <div className="hover:bg-white hover:text-black px-10 py-2 hover:py-4 rounded-3xl cursor-pointer duration-200">
+              Blogs
+            </div>
+            <div className="hover:bg-white hover:text-black px-10 py-2 hover:py-4 rounded-3xl cursor-pointer duration-200">
+              FAQs
+            </div>
+            <div className="hover:bg-white hover:text-black px-10 py-2 hover:py-4 rounded-3xl cursor-pointer duration-200">
+              Home
+            </div>
+            <button className="px-5 py-5 bg-[#888888] rounded-full flex items-center  underline decoration-white hover:bg-white hover:text-black hover:decoration-black  duration-200">
               Know More <MdOutlineArrowOutward size={32} />
             </button>
           </div>
