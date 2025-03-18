@@ -7,6 +7,7 @@ import CheckAndAddUserInTheDB from "./Components/CheckAndAddUserInTheDB";
 import BannerImage from "./Components/Hero";
 import bgImageForHero from "./Assests/BG_for_hero.jpg";
 import ChatButton from "./Components/ChatButton";
+import AuthWatcher from "./Components/AuthWatcher";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Navbar />
         <BannerImage />
       </div>
+      <AuthWatcher />
       <SignedIn>
         <CheckAndAddUserInTheDB />
         <HomePage />
