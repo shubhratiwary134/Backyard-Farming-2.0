@@ -38,7 +38,7 @@ const Navbar = () => {
 
         <SignedIn>
           <AnimatedLink href="/CreateFarm">Start Farm</AnimatedLink>
-          <AnimatedLink href="/myFarms">My Farm</AnimatedLink>
+          <AnimatedLink href="/myFarm">My Farm</AnimatedLink>
           {reportStatus === "generated" && (
             <AnimatedLink href="/report">Report</AnimatedLink>
           )}
