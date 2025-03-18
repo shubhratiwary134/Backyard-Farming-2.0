@@ -1,7 +1,5 @@
-import VideosCarousel from "../Components/HomePageComponents/VideosCarousel";
-
 const HomePage = () => {
-  return <VideosCarousel />;
+  return <></>;
 };
 
 export default HomePage;

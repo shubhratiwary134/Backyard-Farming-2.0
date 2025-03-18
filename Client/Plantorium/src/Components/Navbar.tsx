@@ -3,6 +3,7 @@ import {
   SignedOut,
   SignInButton,
   SignUpButton,
+  useAuth,
   UserButton,
 } from "@clerk/clerk-react";
 import AnimatedLink from "./AnimatedLinkTag";
@@ -12,12 +13,15 @@ import { useAppSelector } from "../store/Hook";
 
 const Navbar = () => {
   const { reportStatus } = useAppSelector((state) => state.report);
+  const { isSignedIn } = useAuth();
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1 }}
-      className="flex flex-col items-center gap-5 lg:flex-row lg:justify-between px-5 text-white"
+      className={`flex flex-col items-center gap-5 lg:flex-row lg:justify-between px-5 ${
+        isSignedIn ? "text-black" : "text-white"
+      }`}
     >
       <img src={logo} className="w-48 rounded-full p-2" />
 

@@ -12,22 +12,23 @@ import AuthWatcher from "./Components/AuthWatcher";
 function App() {
   return (
     <div className="bg-[#f7fff7]">
-      <div
-        style={{
-          backgroundImage: `url(${bgImageForHero})`,
-        }}
-        className="h-screen w-full bg-no-repeat bg-center bg-cover 2xl:bg-[length:100%_auto]"
-      >
-        <Navbar />
-        <BannerImage />
-      </div>
       <AuthWatcher />
       <SignedIn>
         <CheckAndAddUserInTheDB />
+        <Navbar />
         <HomePage />
         <ChatButton />
       </SignedIn>
       <SignedOut>
+        <div
+          style={{
+            backgroundImage: `url(${bgImageForHero})`,
+          }}
+          className="h-screen w-full bg-no-repeat bg-center bg-cover 2xl:bg-[length:100%_auto]"
+        >
+          <Navbar />
+          <BannerImage />
+        </div>
         <LandingPage />
       </SignedOut>
     </div>
