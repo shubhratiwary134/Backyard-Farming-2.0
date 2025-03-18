@@ -88,8 +88,20 @@ const TeamVision = () => {
                     !hovered.shape1 ? "hidden" : ""
                   }`}
                 >
-                  <FaGithub />
-                  <FaLinkedin />
+                  <a
+                    href="https://github.com/arinzingade"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaGithub />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/arin-zingade-783381274/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaLinkedin />
+                  </a>
                 </div>
               </div>
               <div className="h-2/3 flex">
@@ -150,8 +162,20 @@ const TeamVision = () => {
                     !hovered.shape3 ? "hidden" : ""
                   }`}
                 >
-                  <FaGithub />
-                  <FaLinkedin />
+                  <a
+                    href="https://github.com/i-shreya"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaGithub />
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/shreya-soni-ss23/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <FaLinkedin />
+                  </a>
                 </div>
               </div>
               <div className="h-2/3 flex ">
