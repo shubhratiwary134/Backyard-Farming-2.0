@@ -8,8 +8,10 @@ import {
 import AnimatedLink from "./AnimatedLinkTag";
 import { motion } from "motion/react";
 import logo from "../Assests/logo_Backyard.png";
+import { useAppSelector } from "../store/Hook";
 
 const Navbar = () => {
+  const { reportStatus } = useAppSelector((state) => state.report);
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -37,9 +39,10 @@ const Navbar = () => {
         <SignedIn>
           <AnimatedLink href="/CreateFarm">Start Farm</AnimatedLink>
           <AnimatedLink href="/myFarms">My Farm</AnimatedLink>
-          <AnimatedLink href="/plans">Plans</AnimatedLink>
+          {reportStatus === "generated" && (
+            <AnimatedLink href="/report">Report</AnimatedLink>
+          )}
           <AnimatedLink href="#">Support</AnimatedLink>
-
           <UserButton />
         </SignedIn>
       </div>
