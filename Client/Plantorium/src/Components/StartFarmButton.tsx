@@ -1,3 +1,4 @@
+import { FaArrowTrendUp } from "react-icons/fa6";
 import { useNavigate } from "react-router";
 
 const StartFarmButton = ({ className, text }) => {
@@ -6,6 +7,7 @@ const StartFarmButton = ({ className, text }) => {
     <div>
       <button className={className} onClick={() => navigate("/CreateFarm")}>
         {text}
+        <FaArrowTrendUp />
       </button>
     </div>
   );

@@ -1,5 +1,5 @@
 import homePageImage from "../Assests/BannerImage-lightTheme.png";
-import { FaArrowTrendUp } from "react-icons/fa6";
+import StartFarmButton from "../Components/StartFarmButton";
 
 const HomePage = () => {
   return (
@@ -16,9 +16,10 @@ const HomePage = () => {
           <li> Get a personalized report with tailored recommendations!</li>
         </ul>
         <div className="flex justify-center mt-4 ml-10">
-          <button className="flex items-center justify-center gap-3 w-40 px-3 text-lg underline py-4 bg-black text-white rounded-full">
-            Start farm <FaArrowTrendUp />
-          </button>
+          <StartFarmButton
+            className="flex items-center justify-center gap-3 w-40 px-3 text-lg underline py-4 bg-black text-white rounded-full"
+            text="Start Farm"
+          ></StartFarmButton>
         </div>
       </div>
       <img src={homePageImage} className="w-[30%] object-cover" />
