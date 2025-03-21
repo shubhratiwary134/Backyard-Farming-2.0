@@ -3,7 +3,7 @@ import { generateReportThunk, getReportThunk } from "../thunks/reportThunk";
 
 interface reportInterface {
   reportText: string;
-  reportStatus: "idle" | "loading" | "generated" | "error";
+  reportStatus: "idle" | "loading" | "generated" | "error" | "notYetCreated";
   error: string | null;
 }
 
@@ -45,8 +45,19 @@ const reportSlice = createSlice({
       state.error = null;
     });
     builder.addCase(getReportThunk.rejected, (state, action) => {
-      state.reportStatus = "error";
-      state.error = (action.payload as string) || "error fetching the report";
+      if (
+        typeof action.payload === "object" &&
+        action.payload !== null &&
+        "reportNotFound" in action.payload
+      ) {
+        state.reportStatus = "notYetCreated";
+      } else {
+        state.reportStatus = "error";
+        state.error =
+          typeof action.payload === "string"
+            ? action.payload
+            : "Error fetching the report";
+      }
     });
   },
 });

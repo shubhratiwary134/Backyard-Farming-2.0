@@ -45,11 +45,14 @@ export const getReportThunk = createAsyncThunk(
       return response.data;
     } catch (error) {
       if (axios.isAxiosError(error)) {
+        if (error.response?.status === 404) {
+          return rejectWithValue({ reportNotFound: true });
+        }
         return rejectWithValue(
-          error.response?.data.message ||
-            "Unable to fetch the Report due to some error "
+          error.response?.data?.message || "Failed to fetch the report."
         );
       }
+      return rejectWithValue("An unexpected error occurred.");
     }
   }
 );

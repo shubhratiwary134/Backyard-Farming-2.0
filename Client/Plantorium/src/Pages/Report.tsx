@@ -23,8 +23,8 @@ const Report = () => {
         return <LoadingScreen />;
       case "error":
         return (
-          <div className="w-full h-screen flex  text-3xl justify-center items-center">
-            Error creating the Report
+          <div className="w-full h-screen flex  text-3xl justify-center items-center text-gray-500">
+            Error Creating The Report
           </div>
         );
       case "generated":
@@ -37,6 +37,12 @@ const Report = () => {
               dangerouslySetInnerHTML={{ __html: html }}
               className="bg-[#f7fff7]  mx-20 my-10 px-10 py-20  rounded-lg shadow-black border-2 border-black"
             ></div>
+          </div>
+        );
+      case "notYetCreated":
+        return (
+          <div className="w-full h-screen flex justify-center items-center text-3xl text-gray-500">
+            Report not found. Kindly create the farm first.
           </div>
         );
       default:
