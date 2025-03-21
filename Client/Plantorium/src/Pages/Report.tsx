@@ -53,8 +53,8 @@ const Report = () => {
         );
       case "generated":
         return (
-          <div className="bg-[#b6cfb7]">
-            <div className="flex justify-between items-center">
+          <div className="bg-[#e1e4e1]  flex flex-col gap-20">
+            <div className=" mt-5 flex justify-between items-center">
               <div className="ml-5 w-3/4  text-8xl font-serif ">Report</div>
               <button
                 className="mr-10 bg-slate-600 text-white px-10 py-2 rounded-full"
@@ -66,7 +66,7 @@ const Report = () => {
 
             <div
               dangerouslySetInnerHTML={{ __html: html }}
-              className="bg-[#f7fff7]  mx-20 my-10 px-10 py-20  rounded-lg shadow-black border-2 border-black"
+              className="bg-[#f7fff7]  mx-20  px-10 py-20  rounded-lg shadow-black border-2 border-black"
             ></div>
           </div>
         );
