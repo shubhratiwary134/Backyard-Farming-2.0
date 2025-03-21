@@ -11,10 +11,10 @@ const Report = () => {
   const { reportText, reportStatus } = useAppSelector((state) => state.report);
   useEffect(() => {
     const userId = user?.id;
-    if (userId && reportStatus === "notGenerated") {
+    if (userId && !reportText) {
       dispatch(getReportThunk(userId));
     }
-  }, [dispatch, user?.id, reportStatus]);
+  }, [dispatch, user?.id, reportText]);
 
   const reportContent = () => {
     const html = marked.parse(reportText);
@@ -22,7 +22,11 @@ const Report = () => {
       case "loading":
         return <LoadingScreen />;
       case "error":
-        return <div>Error creating the Report</div>;
+        return (
+          <div className="w-full h-screen flex  text-3xl justify-center items-center">
+            Error creating the Report
+          </div>
+        );
       case "generated":
         return (
           <div className="bg-[#b6cfb7]">
@@ -35,8 +39,6 @@ const Report = () => {
             ></div>
           </div>
         );
-      case "notGenerated":
-        return <div>No report available yet. Please create a report.</div>;
       default:
         return null;
     }

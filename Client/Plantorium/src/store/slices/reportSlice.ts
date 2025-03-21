@@ -3,20 +3,24 @@ import { generateReportThunk, getReportThunk } from "../thunks/reportThunk";
 
 interface reportInterface {
   reportText: string;
-  reportStatus: "loading" | "generated" | "notGenerated" | "error";
+  reportStatus: "idle" | "loading" | "generated" | "error";
   error: string | null;
 }
 
 const initialState: reportInterface = {
   reportText: "",
-  reportStatus: "notGenerated",
+  reportStatus: "idle",
   error: null,
 };
 
 const reportSlice = createSlice({
   name: "Report",
   initialState: initialState,
-  reducers: {},
+  reducers: {
+    setReportStatus: (state, action) => {
+      state.reportStatus = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder.addCase(generateReportThunk.pending, (state) => {
       state.reportStatus = "loading";
@@ -36,19 +40,15 @@ const reportSlice = createSlice({
       state.error = null;
     });
     builder.addCase(getReportThunk.fulfilled, (state, action) => {
-      if (action.payload.reportExists) {
-        state.reportText = action.payload.reportText;
-        state.reportStatus = "generated";
-      } else {
-        state.reportText = "";
-        state.reportStatus = "notGenerated";
-      }
+      state.reportText = action.payload.reportText;
+      state.reportStatus = "generated";
       state.error = null;
     });
     builder.addCase(getReportThunk.rejected, (state, action) => {
       state.reportStatus = "error";
-      state.error = (action.payload as string) || "error fetching the report ";
+      state.error = (action.payload as string) || "error fetching the report";
     });
   },
 });
+export const { setReportStatus } = reportSlice.actions;
 export default reportSlice.reducer;
