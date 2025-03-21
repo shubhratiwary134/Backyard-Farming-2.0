@@ -5,6 +5,7 @@ import { useUser } from "@clerk/clerk-react";
 import LoadingScreen from "../Components/LoadingScreen";
 import { marked } from "marked";
 import { jsPDF } from "jspdf";
+import html2canvas from "html2canvas";
 const Report = () => {
   const dispatch = useAppDispatch();
   const { user } = useUser();
@@ -18,27 +19,28 @@ const Report = () => {
 
   const reportContent = () => {
     const html = marked.parse(reportText);
-    const handleExport = () => {
+    const handleExport = async () => {
       const doc = new jsPDF();
-      const marginLeft = 10;
-      const marginTop = 10;
-      const maxWidth = 180; // Text width limit
-      const lineHeight = 10;
-      const maxHeight = 280; // Avoids cutting off bottom text
 
-      let y = marginTop;
-      const lines = doc.splitTextToSize(reportText, maxWidth);
+      const htmlText = await marked(reportText);
 
-      lines.forEach((line) => {
-        if (y + lineHeight > maxHeight) {
-          doc.addPage(); // Add a new page
-          y = marginTop; // Reset y position for new page
-        }
-        doc.text(line, marginLeft, y);
-        y += lineHeight;
-      });
+      const tempDiv = document.createElement("div");
+      tempDiv.innerHTML = htmlText;
+      tempDiv.style.width = "180mm";
+      tempDiv.style.padding = "10px";
+      tempDiv.style.fontSize = "14px";
+      tempDiv.style.fontFamily = "Arial, sans-serif";
+      document.body.appendChild(tempDiv);
 
+      // Convert HTML to canvas and add it to the PDF
+      const canvas = await html2canvas(tempDiv);
+      const imgData = canvas.toDataURL("image/png");
+
+      doc.addImage(imgData, "PNG", 10, 10, 180, 250);
       doc.save("report.pdf");
+
+      // Remove tempDiv after conversion
+      document.body.removeChild(tempDiv);
     };
     switch (reportStatus) {
       case "loading":
