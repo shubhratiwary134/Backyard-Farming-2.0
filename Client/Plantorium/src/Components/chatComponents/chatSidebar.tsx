@@ -54,7 +54,7 @@ const ChatSidebar = () => {
         initial={{ x: "-100%" }}
         animate={{ x: isOpen ? "0%" : "-100%" }}
         transition={{ type: "spring", stiffness: 200, damping: 25 }}
-        className={`min-h-screen h-full min-w-96  bg-gray-300 flex flex-col pt-40 items-center p-5 `}
+        className={`fixed top-0 left-0 h-screen min-w-96  bg-gray-300 flex flex-col pt-40 items-center p-5 `}
       >
         {chats.map((chat) => (
           <div

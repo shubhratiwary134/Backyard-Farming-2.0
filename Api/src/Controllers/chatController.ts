@@ -66,11 +66,12 @@ export const addMessageAndGetResponse = async (req: Request, res: Response) => {
         .status(404)
         .json({ message: "No Chat Found for the particular chatId" });
     }
-    chat.messages.push({
-      role: "user",
-      text: query,
-    });
-
+    if (chat.messages.length > 1) {
+      chat.messages.push({
+        role: "user",
+        text: query,
+      });
+    }
     // converting the array into string to pass as a payload
     const chatHistory = chat.messages
       .slice(-5)

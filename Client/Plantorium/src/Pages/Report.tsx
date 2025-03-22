@@ -5,7 +5,7 @@ import { useUser } from "@clerk/clerk-react";
 import LoadingScreen from "../Components/LoadingScreen";
 import { marked } from "marked";
 import { jsPDF } from "jspdf";
-import html2canvas from "html2canvas";
+
 const Report = () => {
   const dispatch = useAppDispatch();
   const { user } = useUser();
