@@ -5,11 +5,14 @@ import { useUser } from "@clerk/clerk-react";
 import LoadingScreen from "../Components/LoadingScreen";
 import { marked } from "marked";
 import { jsPDF } from "jspdf";
+import { FaHome } from "react-icons/fa";
+import { useNavigate } from "react-router";
 
 const Report = () => {
   const dispatch = useAppDispatch();
   const { user } = useUser();
   const { reportText, reportStatus } = useAppSelector((state) => state.report);
+  const navigate = useNavigate();
   useEffect(() => {
     const userId = user?.id;
     if (userId && !reportText) {
@@ -53,8 +56,11 @@ const Report = () => {
       case "generated":
         return (
           <div className="bg-[#e1e4e1]  flex flex-col gap-20">
-            <div className=" mt-5 flex justify-between items-center">
-              <div className="ml-5 w-3/4  text-8xl font-serif ">Report</div>
+            <div className="px-20 mt-5 flex justify-between items-center">
+              <button onClick={() => navigate("/")}>
+                <FaHome size={64} />
+              </button>
+              <div className="ml-5   text-8xl font-serif ">Report</div>
               <button
                 className="mr-10 bg-slate-600 text-white px-10 py-2 rounded-full"
                 onClick={handleExport}
