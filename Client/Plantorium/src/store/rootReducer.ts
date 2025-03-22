@@ -5,16 +5,16 @@ import userReducer from "./slices/userSlice";
 import reportReducer from "./slices/reportSlice";
 import chatReducer from "./slices/chatSlice";
 import { persistReducer } from "redux-persist";
-import storage from "redux-persist/lib/storage";
+import sessionStorage from "redux-persist/lib/storage/session";
 
-// persist config is used to configure the reducer for the reportReducer to store the states in the localStorage
+// persist config is used to configure the reducer for the reportReducer to store the states in the sessionStorage
 const persistConfig = {
   key: "report",
-  storage,
+  storage: sessionStorage,
 };
 const persistConfigChat = {
   key: "chat",
-  storage,
+  storage: sessionStorage,
 };
 const rootReducer = combineReducers({
   crops: cropReducer,
