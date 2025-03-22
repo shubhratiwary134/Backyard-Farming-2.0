@@ -54,7 +54,7 @@ const ChatSidebar = () => {
         initial={{ x: "-100%" }}
         animate={{ x: isOpen ? "0%" : "-100%" }}
         transition={{ type: "spring", stiffness: 200, damping: 25 }}
-        className={`fixed top-0 left-0 h-screen min-w-96  bg-gray-300 flex flex-col pt-40 items-center p-5 `}
+        className={`fixed top-0 left-0 h-screen w-80   bg-gray-300 flex flex-col pt-40 items-center p-5 `}
       >
         {chats.map((chat) => (
           <div
@@ -105,7 +105,7 @@ const ChatSidebar = () => {
         onClose={() => setDeleteChatId(null)}
         className="flex justify-center items-center"
       >
-        <Box className="bg-gray-300 w-1/2 h-80 rounded-xl text-black border-2 border-orange-300 flex flex-col gap-10 p-5 items-center">
+        <Box className="bg-gray-300 w-1/2 h-80 rounded-xl text-black border-2 border-black flex flex-col gap-10 p-5 items-center">
           <Typography variant="h3">Delete Chat?</Typography>
           <Typography variant="h5">
             This will delete the chat permanently.
