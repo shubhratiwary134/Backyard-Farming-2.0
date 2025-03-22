@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import cloudinary from "../Config/cloudinaryConfig";
 import axios from "axios";
+import mongoose from "mongoose";
 const Plantorium = require("../Models/PlantoriumModel");
 const User = require("../Models/UserModel");
 const Report = require("../Models/ReportModel");
@@ -195,12 +196,13 @@ export const getReport = async (req: Request, res: Response) => {
         message: "No plantorium found for this user",
       });
     }
-    const report = await Report.findOne({ plantoriumId: plantorium._id });
+    const report = await Report.findOne({ plantoriumID: plantorium._id });
     if (!report) {
       return res.status(404).json({
         message: "No Report found for this plantorium",
       });
     }
+
     const reportText = report.reportText;
 
     return res.status(200).json({ reportText, reportExists: true });
