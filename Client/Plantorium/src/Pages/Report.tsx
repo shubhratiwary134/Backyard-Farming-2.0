@@ -77,8 +77,11 @@ const Report = () => {
         );
       case "notYetCreated":
         return (
-          <div className="w-full h-screen flex justify-center items-center text-3xl text-gray-500">
+          <div className="w-full h-screen flex flex-col gap-10 justify-center items-center text-3xl text-gray-500">
             Report not found. Kindly create the farm first.
+            <button onClick={() => navigate("/")}>
+              <FaHome size={64} />
+            </button>
           </div>
         );
       default:
