@@ -80,6 +80,23 @@ export const updateProfileMetadata = async (req: Request, res: Response) => {
     res.status(500).json({ message: "error in updating the profile" });
   }
 };
+export const getStatus = async (req: Request, res: Response) => {
+  const clerkUserId = req.params.id;
+  try {
+    const user = await User.findOne({ clerkUserId });
+    if (!user) {
+      return res.status(404).json({ message: "User Not Found" });
+    }
+    return res
+      .status(200)
+      .json({ message: "status fetched successfully", hasFarm: user.hasFarm });
+  } catch (error) {
+    return res
+      .status(500)
+      .json({ message: `error while fetching status ${error}` });
+  }
+};
+
 export const deleteUser = async (req: Request, res: Response) => {
   const userId = req.params.id;
   try {
