@@ -55,5 +55,5 @@ const userSlice = createSlice({
       });
   },
 });
-export const { setHasChecked } = userSlice.actions;
+export const { setHasChecked, setHasFarm } = userSlice.actions;
 export default userSlice.reducer;
