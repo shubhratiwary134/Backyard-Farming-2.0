@@ -37,7 +37,7 @@ export const getStatus = createAsyncThunk(
   async (userId: string, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        `http://localhost:3000/api/user/getStatus/${userId}`,
+        `http://localhost:3000/api/user/status/${userId}`,
         {
           withCredentials: true,
         }

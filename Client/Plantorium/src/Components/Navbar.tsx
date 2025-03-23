@@ -10,9 +10,11 @@ import AnimatedLink from "./AnimatedLinkTag";
 import { motion } from "motion/react";
 import logo from "../Assests/logo_Backyard.png";
 import blackLogo from "../Assests/logo_backyard_black.png";
+import { useAppSelector } from "../store/Hook";
 
 const Navbar = () => {
   const { isSignedIn } = useAuth();
+  const { hasFarm } = useAppSelector((state) => state.user);
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -43,8 +45,11 @@ const Navbar = () => {
         </SignedOut>
 
         <SignedIn>
-          <AnimatedLink href="/CreateFarm">Start Farm</AnimatedLink>
-          <AnimatedLink href="/myFarm">My Farm</AnimatedLink>
+          {hasFarm ? (
+            <AnimatedLink href="/myFarm">My Farm</AnimatedLink>
+          ) : (
+            <AnimatedLink href="/CreateFarm">Start Farm</AnimatedLink>
+          )}
 
           <AnimatedLink href="/report">Report</AnimatedLink>
 

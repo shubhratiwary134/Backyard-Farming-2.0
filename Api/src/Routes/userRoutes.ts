@@ -14,5 +14,5 @@ userRoutes.get("/profile", getProfile);
 userRoutes.put("/:id", updateProfileMetadata);
 userRoutes.delete("/:id", deleteUser);
 userRoutes.post("/Check-or-create-user", CheckAndAddUser);
-userRoutes.get("status/:id", getStatus);
+userRoutes.get("/status/:id", getStatus);
 export default userRoutes;
