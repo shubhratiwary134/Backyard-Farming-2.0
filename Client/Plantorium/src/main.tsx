@@ -7,12 +7,12 @@ import { ClerkProvider } from "@clerk/clerk-react";
 import { persistor, store } from "./store/store.ts";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ProtectedRoute from "./Components/ProtectedRoute.tsx";
-import MyFarms from "./Pages/MyFarms.tsx";
 import FarmManager from "./Pages/FarmManager.tsx";
 import Plans from "./Pages/Plans.tsx";
 import Report from "./Pages/Report.tsx";
 import { PersistGate } from "redux-persist/integration/react";
 import Chat from "./Pages/Chat.tsx";
+import MyFarm from "./Pages/MyFarm.tsx";
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 if (!PUBLISHABLE_KEY) {
@@ -39,7 +39,7 @@ createRoot(document.getElementById("root")!).render(
                 path="/myFarm"
                 element={
                   <ProtectedRoute>
-                    <></>
+                    <MyFarm/>
                   </ProtectedRoute>
                 }
               />
