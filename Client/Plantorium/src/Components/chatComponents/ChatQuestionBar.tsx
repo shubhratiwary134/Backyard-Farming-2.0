@@ -12,9 +12,11 @@ const ChatQuestionBar = () => {
   const dispatch = useAppDispatch();
   const userId = user?.id;
   const handleSubmit = async (values: ChatValues) => {
-    if (userId && values.query) {
+    const query = values.query;
+    values.query = "";
+    if (userId && query) {
       if (currentChat.currentMessages.length === 0) {
-        const firstQuery = values.query;
+        const firstQuery = query;
         const result = await dispatch(postChatThunk({ userId, firstQuery }));
         // using the result directly here because the chatId is required in the getResponseThunk
         // while the slice updates the currentChatId for the future in the fulfilled state
@@ -28,11 +30,11 @@ const ChatQuestionBar = () => {
       // dispatch adding to the query here
       // dispatch response Thunk
       else {
-        dispatch(addQueryToCurrentChat(values.query));
+        dispatch(addQueryToCurrentChat(query));
         await dispatch(
           getResponseThunk({
             chatId: currentChat.currentChatId,
-            query: values.query,
+            query: query,
           })
         );
       }

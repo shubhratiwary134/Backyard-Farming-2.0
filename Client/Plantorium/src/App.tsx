@@ -8,6 +8,7 @@ import BannerImage from "./Components/Hero";
 import bgImageForHero from "./Assests/BG_for_hero.jpg";
 import ChatButton from "./Components/ChatButton";
 import AuthWatcher from "./Components/AuthWatcher";
+import HasFarmCheck from "./Components/HasFarmCheck";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <AuthWatcher />
       <SignedIn>
         <CheckAndAddUserInTheDB />
+        <HasFarmCheck />
         <Navbar />
         <HomePage />
         <ChatButton />

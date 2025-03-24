@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { createAFarm, myFarms } from "../thunks/plantoriumThunk";
+import { setHasFarm } from "./userSlice";
 interface Farm {
   userId: string; // Reference to the User
   averageRainfall: number; // Average rainfall in mm
@@ -68,6 +69,7 @@ const plantoriumSlice = createSlice({
         ) {
           state.plantorium = action.payload.plantorium;
           state.cropChoices.push(action.payload.CropChoices);
+          setHasFarm(true);
         }
       })
       .addCase(createAFarm.rejected, (state, action) => {

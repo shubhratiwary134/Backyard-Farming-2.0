@@ -191,9 +191,9 @@ const TeamVision = () => {
               FAQs
             </div>
             <div className="hover:bg-white hover:text-black px-10 py-2 hover:py-4 rounded-3xl cursor-pointer duration-200">
-              Home
+              Reports
             </div>
-            <button className="px-5 py-5 bg-[#888888] rounded-full flex items-center  underline decoration-white hover:bg-white hover:text-black hover:decoration-black  duration-200">
+            <button className="px-5 py-5 bg-[#888888] rounded-full flex items-center  underline decoration-white hover:bg-white hover:text-black hover:decoration-black  duration-200 hover:py-6">
               Know More <MdOutlineArrowOutward size={32} />
             </button>
           </div>

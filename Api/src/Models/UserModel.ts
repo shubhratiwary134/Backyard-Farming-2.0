@@ -21,6 +21,10 @@ const UserSchema = new mongoose.Schema({
       type: String, // array of the users CropPreferences
     },
   ],
+  hasFarm: {
+    type: Boolean,
+    default: false,
+  },
   defaultAddress: {
     street: String, //Address of the User
     city: String,

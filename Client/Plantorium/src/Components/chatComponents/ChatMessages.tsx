@@ -6,7 +6,7 @@ const ChatMessages = () => {
   const { error } = useAppSelector((state) => state.chat);
   return (
     <div
-      className="w-4/5 h-4/5 flex flex-col gap-20 overflow-y-auto p-5 "
+      className="w-5/6 h-full mb-40 flex flex-col gap-20 overflow-y-auto p-5 "
       style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
     >
       {currentMessages && currentMessages.length > 0 ? (
@@ -16,14 +16,14 @@ const ChatMessages = () => {
             className={`${
               message.role === "bot"
                 ? "self-start text-xl"
-                : "self-end bg-green-800 text-white"
-            } py-5 px-5  rounded-xl`}
+                : "self-end  bg-green-800 text-white"
+            } py-5 px-5  rounded-3xl`}
           >
             {message.text}
           </div>
         ))
       ) : (
-        <div className=" text-gray-600 text-7xl flex justify-center  items-center h-full">
+        <div className=" text-gray-600 text-7xl flex justify-center items-center h-screen">
           Start Querying...
         </div>
       )}

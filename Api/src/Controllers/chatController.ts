@@ -66,14 +66,27 @@ export const addMessageAndGetResponse = async (req: Request, res: Response) => {
         .status(404)
         .json({ message: "No Chat Found for the particular chatId" });
     }
-    chat.messages.push({
-      role: "user",
-      text: query,
-    });
-    // sort the chat id and get the messages , send those messages as the History to the query endpoint
-    // with that update the payload
+    if (chat.messages.length > 1) {
+      chat.messages.push({
+        role: "user",
+        text: query,
+      });
+    }
+    // converting the array into string to pass as a payload
+    const chatHistory = chat.messages
+      .slice(-5)
+      .map(
+        (message) => `${message.role == "bot" ? "AI" : "User"}:${message.text}`
+      )
+      .join("\n");
+
     const payload = {
-      question: query,
+      question: `You are an AI chatbot. Use the conversation history for context to maintain coherence. 
+  conversation History: 
+  ${chatHistory}
+  Current User Query:
+  User: ${query}
+  `,
     };
     const response = await axios.post(
       "http://127.0.0.1:5000/api/v1/query",

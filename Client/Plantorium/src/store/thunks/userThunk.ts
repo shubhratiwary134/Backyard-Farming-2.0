@@ -32,3 +32,24 @@ export const checkAndAddUserInTheDBThunk = createAsyncThunk(
     }
   }
 );
+export const getStatus = createAsyncThunk(
+  "/getStatus",
+  async (userId: string, { rejectWithValue }) => {
+    try {
+      const response = await axios.get(
+        `http://localhost:3000/api/user/status/${userId}`,
+        {
+          withCredentials: true,
+        }
+      );
+      return response.data;
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        return rejectWithValue(
+          error.response?.data.message || "something went wrong"
+        );
+      }
+      return rejectWithValue("unknown error arrived");
+    }
+  }
+);

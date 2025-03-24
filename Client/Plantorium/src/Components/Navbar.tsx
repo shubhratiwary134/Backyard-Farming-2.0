@@ -13,8 +13,8 @@ import blackLogo from "../Assests/logo_backyard_black.png";
 import { useAppSelector } from "../store/Hook";
 
 const Navbar = () => {
-  const { reportStatus } = useAppSelector((state) => state.report);
   const { isSignedIn } = useAuth();
+  const { hasFarm } = useAppSelector((state) => state.user);
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -36,20 +36,27 @@ const Navbar = () => {
           <AnimatedLink href="#">Team</AnimatedLink>
           <div className="flex gap-5 ">
             <SignUpButton>
-              <button className=" px-5 py-2 rounded-full">SignUp</button>
+              <button className=" px-5 py-2 rounded-full border-2">
+                Sign Up
+              </button>
             </SignUpButton>
             <SignInButton>
-              <button className=" px-5 py-2 rounded-full">Login</button>
+              <button className=" px-5 py-2 rounded-full border-2">
+                Login
+              </button>
             </SignInButton>
           </div>
         </SignedOut>
 
         <SignedIn>
-          <AnimatedLink href="/CreateFarm">Start Farm</AnimatedLink>
-          <AnimatedLink href="/myFarm">My Farm</AnimatedLink>
-          {reportStatus === "generated" && (
-            <AnimatedLink href="/report">Report</AnimatedLink>
+          {hasFarm ? (
+            <AnimatedLink href="/myFarm">My Farm</AnimatedLink>
+          ) : (
+            <AnimatedLink href="/CreateFarm">Start Farm</AnimatedLink>
           )}
+
+          <AnimatedLink href="/report">Report</AnimatedLink>
+
           <AnimatedLink href="#">Support</AnimatedLink>
           <UserButton />
         </SignedIn>

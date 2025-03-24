@@ -18,6 +18,8 @@
     "@splinetool/react-spline": "^4.0.0",
     "axios": "^1.7.7",
     "formik": "^2.4.6",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^3.0.1",
     "marked": "^15.0.7",
     "motion": "^11.15.0",
     "next-themes": "^0.3.0",
