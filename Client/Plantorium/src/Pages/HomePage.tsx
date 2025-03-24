@@ -1,7 +1,9 @@
 import homePageImage from "../Assests/BannerImage-lightTheme.png";
 import StartFarmButton from "../Components/StartFarmButton";
+import { useAppSelector } from "../store/Hook";
 
 const HomePage = () => {
+  const { hasFarm } = useAppSelector((state) => state.user);
   return (
     <div className="flex justify-between px-10 ">
       <div className="w-1/2 flex flex-col gap-20 mt-20">
@@ -15,12 +17,14 @@ const HomePage = () => {
           <li> Submit your farm details and let us analyze your setup.</li>
           <li> Get a personalized report with tailored recommendations!</li>
         </ul>
-        <div className="flex justify-center mt-4 ml-10">
-          <StartFarmButton
-            className="flex items-center justify-center gap-3 w-40 px-3 text-lg underline py-4 bg-black text-white rounded-full"
-            text="Start Farm"
-          ></StartFarmButton>
-        </div>
+        {!hasFarm && (
+          <div className="flex justify-center mt-4 ml-10">
+            <StartFarmButton
+              className="flex items-center justify-center gap-3 w-40 px-3 text-lg underline py-4 bg-black text-white rounded-full"
+              text="Start Farm"
+            ></StartFarmButton>
+          </div>
+        )}
       </div>
       <img src={homePageImage} className="w-[30%] object-cover" />
     </div>

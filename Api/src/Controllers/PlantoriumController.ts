@@ -88,7 +88,7 @@ export const createPlantorium = async (req: Request, res: Response) => {
       Address,
       photos: imageUrls,
     });
-
+    await User.findOneAndUpdate({ clerkUserId: userId }, { hasFarm: true });
     res.status(201).json({
       message: "plantorium successfully created",
       plantorium,
