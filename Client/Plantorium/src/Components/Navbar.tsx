@@ -36,10 +36,14 @@ const Navbar = () => {
           <AnimatedLink href="#">Team</AnimatedLink>
           <div className="flex gap-5 ">
             <SignUpButton>
-              <button className=" px-5 py-2 rounded-full">SignUp</button>
+              <button className=" px-5 py-2 rounded-full border-2">
+                Sign Up
+              </button>
             </SignUpButton>
             <SignInButton>
-              <button className=" px-5 py-2 rounded-full">Login</button>
+              <button className=" px-5 py-2 rounded-full border-2">
+                Login
+              </button>
             </SignInButton>
           </div>
         </SignedOut>
