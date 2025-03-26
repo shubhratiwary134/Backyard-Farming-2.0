@@ -18,10 +18,10 @@ export const CheckAndAddUser = async (req: Request, res: Response) => {
     const UserInTheDB = await User.findOne({ email });
 
     if (!UserInTheDB) {
-      await User.create({ email, clerkUserId, name });
+      const user = await User.create({ email, clerkUserId, name });
       return res.status(201).json({
         message: "User has been created successfully.",
-        user: UserInTheDB,
+        user,
       });
     }
 
