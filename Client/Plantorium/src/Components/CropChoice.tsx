@@ -30,6 +30,7 @@ const CropChoice = () => {
                     }
                   }
                 }}
+                className="border-2 px-10 py-2"
               >
                 {crop}
               </button>
