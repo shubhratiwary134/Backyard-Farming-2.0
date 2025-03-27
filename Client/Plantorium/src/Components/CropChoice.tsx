@@ -2,13 +2,17 @@ import { useUser } from "@clerk/clerk-react";
 import { useAppDispatch, useAppSelector } from "../store/Hook";
 import { generateReportThunk } from "../store/thunks/reportThunk";
 import { useNavigate } from "react-router";
+import LoadingScreen from "./LoadingScreen";
 const CropChoice = () => {
   const { cropChoices } = useAppSelector((state) => state.plantorium);
+  const { reportStatus } = useAppSelector((state) => state.report);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const { user } = useUser();
   const userId = user?.id;
-
+  if (reportStatus === "loading") {
+    return <LoadingScreen />;
+  }
   return (
     <div>
       <div className="h-screen flex justify-around items-center gap-20">
