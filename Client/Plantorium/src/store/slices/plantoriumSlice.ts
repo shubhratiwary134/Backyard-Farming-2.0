@@ -84,7 +84,10 @@ const plantoriumSlice = createSlice({
       })
       .addCase(myFarm.fulfilled, (state, action) => {
         state.status = "completed";
-        state.plantorium = action.payload.plantorium || {};
+        // right now we only get the limited values from the backend , in future will get the complete object to use in the myFarm endpoint
+        state.plantorium.averageRainfall = action.payload.averageRainfall;
+        state.plantorium.soilType = action.payload.soilType;
+        state.plantorium.waterSupply = action.payload.waterSupply;
       })
       .addCase(myFarm.rejected, (state, action) => {
         state.status = "failed";

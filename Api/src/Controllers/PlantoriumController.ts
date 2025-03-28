@@ -251,9 +251,13 @@ export const getUserPlantorium = async (req: Request, res: Response) => {
     if (!plantorium) {
       return res
         .status(404)
-        .json({ message: "no plantoriums found for the user" });
+        .json({ message: "No plantorium found for the user" });
     }
-    return res.status(200).json(plantorium);
+    return res.status(200).json({
+      averageRainfall: plantorium.averageRainfall,
+      waterSupply: plantorium.waterSupply,
+      soilType: plantorium.soilType,
+    });
   } catch (err) {
     console.error(err);
     res.status(500).json({
