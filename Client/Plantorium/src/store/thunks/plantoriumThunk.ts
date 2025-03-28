@@ -50,7 +50,7 @@ export const createAFarm = createAsyncThunk(
     }
   }
 );
-export const myFarms = createAsyncThunk(
+export const myFarm = createAsyncThunk(
   "/myFarm",
   async (userId: string, { rejectWithValue }) => {
     try {

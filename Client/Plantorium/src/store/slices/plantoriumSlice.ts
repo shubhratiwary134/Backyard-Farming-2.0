@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { createAFarm, myFarms } from "../thunks/plantoriumThunk";
+import { createAFarm, myFarm } from "../thunks/plantoriumThunk";
 import { setHasFarm } from "./userSlice";
 interface Farm {
   userId: string; // Reference to the User
@@ -78,15 +78,15 @@ const plantoriumSlice = createSlice({
       });
 
     builder
-      .addCase(myFarms.pending, (state) => {
+      .addCase(myFarm.pending, (state) => {
         state.status = "pending";
         state.error = null;
       })
-      .addCase(myFarms.fulfilled, (state, action) => {
+      .addCase(myFarm.fulfilled, (state, action) => {
         state.status = "completed";
-        state.plantorium = action.payload || {};
+        state.plantorium = action.payload.plantorium || {};
       })
-      .addCase(myFarms.rejected, (state, action) => {
+      .addCase(myFarm.rejected, (state, action) => {
         state.status = "failed";
         state.error =
           (action.payload as string) || "failed to Fetch Users Farms";
