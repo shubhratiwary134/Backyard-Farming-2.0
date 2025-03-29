@@ -54,11 +54,11 @@ const ChatSidebar = () => {
         initial={{ x: "-100%" }}
         animate={{ x: isOpen ? "0%" : "-100%" }}
         transition={{ type: "spring", stiffness: 200, damping: 25 }}
-        className={`fixed top-0 left-0 h-screen w-80   bg-gray-300 flex flex-col pt-40 items-center p-5 `}
+        className={`fixed top-0 left-0 h-screen w-80 gap-5   bg-[#355e3b] flex flex-col pt-40 items-center p-5 `}
       >
         {chats.map((chat) => (
           <div
-            className="w-full text-lg hover:bg-green-800 hover:text-white p-5 rounded-xl duration:200 cursor-pointer flex justify-between items-center "
+            className="w-full text-lg text-white hover:bg-[#f7f7f7] hover:text-black px-5  py-2 rounded-xl duration:200 cursor-pointer flex justify-between items-center "
             onClick={() => handleChatClick(chat.chatId)}
             key={chat.chatId}
           >
@@ -78,13 +78,13 @@ const ChatSidebar = () => {
         className="fixed top-10 left-10  "
       >
         {isOpen ? (
-          <GoSidebarExpand size={32} />
+          <GoSidebarExpand size={32} color="white" />
         ) : (
-          <GoSidebarCollapse size={32} />
+          <GoSidebarCollapse size={32} color="white" />
         )}
       </button>
       <button className="fixed top-10 left-40  " onClick={() => navigate("/")}>
-        <FaHome size={32} />
+        <FaHome size={32} color="white" />
       </button>
       <button className="fixed top-10 left-60">
         <FaPlusSquare
@@ -98,6 +98,7 @@ const ChatSidebar = () => {
               })
             );
           }}
+          color="white"
         />
       </button>
       <Modal

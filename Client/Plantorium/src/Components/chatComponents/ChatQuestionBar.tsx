@@ -59,11 +59,11 @@ const ChatQuestionBar = () => {
               value={values.query}
               onChange={handleChange}
               onBlur={handleBlur}
-              className="w-4/5 h-5 py-8 px-10 bg-zinc-400 rounded-3xl placeholder:text-zinc-900 placeholder:text-xl text-white text-2xl focus:outline-none"
+              className="w-4/5 h-5 py-8 px-10 bg-[#83a388] rounded-3xl placeholder:text-white placeholder:text-xl text-white text-2xl focus:outline-none"
               placeholder="Ask Question "
             />
             <button type="submit" disabled={!(error === null)}>
-              <FaLeaf size={48} />
+              <FaLeaf size={48} color="#006838" />
             </button>
           </form>
         )}

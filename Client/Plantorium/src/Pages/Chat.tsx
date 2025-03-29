@@ -4,9 +4,9 @@ import ChatSidebar from "../Components/chatComponents/ChatSidebar";
 
 const Chat = () => {
   return (
-    <div className="flex justify-between ">
+    <div className="flex justify-between bg-[#f7fff7]">
       <ChatSidebar />
-      <div className=" w-3/4 ">
+      <div className=" w-3/4  ">
         <ChatMessages />
         <ChatQuestionBar />
       </div>
