@@ -42,7 +42,7 @@ const initialState: plantoriumInitialState = {
     Address: "",
     photos: [],
   },
-  cropChoices: ["carrot", "maize", "sweet potatoes"],
+  cropChoices: ["Carrot", "Maize", "Sweet potatoes"],
   status: "idle",
   error: null,
 };
