@@ -80,11 +80,11 @@ const ChatSidebar = () => {
         {isOpen ? (
           <GoSidebarExpand size={32} color="white" />
         ) : (
-          <GoSidebarCollapse size={32} color="white" />
+          <GoSidebarCollapse size={32} color="black" />
         )}
       </button>
       <button className="fixed top-10 left-40  " onClick={() => navigate("/")}>
-        <FaHome size={32} color="white" />
+        <FaHome size={32} color={`${isOpen ? "white" : "black"}`} />
       </button>
       <button className="fixed top-10 left-60">
         <FaPlusSquare
@@ -98,7 +98,7 @@ const ChatSidebar = () => {
               })
             );
           }}
-          color="white"
+          color={`${isOpen ? "white" : "black"}`}
         />
       </button>
       <Modal
