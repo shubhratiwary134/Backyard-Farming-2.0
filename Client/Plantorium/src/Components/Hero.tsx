@@ -16,13 +16,13 @@ const BannerImage = () => {
 
         <div className="mt-20 flex gap-20 items-center tracking-[3px] xl:tracking-[5px]">
           <SignUpButton>
-            <button className="text-xl py-2 px-4 xl:text-2xl border-2 hover:border-green-300 duration-150 hover:text-green-300 hover:px-10">
+            <button className="text-xl  py-2 px-4 xl:text-2xl border-2 hover:bg-white  duration-150 hover:text-black hover:py-5 hover:px-10">
               Sign Up
             </button>
           </SignUpButton>
 
           <SignInButton>
-            <button className="text-xl  py-2 px-4 xl:text-2xl border-2 hover:border-green-300 duration-150 hover:text-green-300 hover:px-10">
+            <button className="text-xl  py-2 px-4 xl:text-2xl border-2 hover:bg-white  duration-150 hover:text-black hover:py-5 hover:px-10">
               Log In
             </button>
           </SignInButton>
