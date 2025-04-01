@@ -8,6 +8,7 @@ import { jsPDF } from "jspdf";
 import { FaHome } from "react-icons/fa";
 import { useNavigate } from "react-router";
 import { CiExport } from "react-icons/ci";
+import { motion } from "framer-motion";
 
 const Report = () => {
   const dispatch = useAppDispatch();
@@ -71,12 +72,15 @@ const Report = () => {
               </button>
             </div>
 
-            <div
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.5 }}
               dangerouslySetInnerHTML={{ __html: html }}
-              className="w-full max-w-none prose lg:prose-xl 2xl:prose-3xl px-40 py-10 font-poppins text-white
-  [&_p:has(strong)]:text-4xl [&_p:has(strong)]:font-bold [&_p:has(strong)]:font-caveat [&_p]:text-lg
+              className="w-full max-w-none prose lg:prose-xl 2xl:prose-3xl px-20 py-10 font-poppins text-white
+  [&_p:has(strong)]:text-4xl [&_p:has(strong)]:font-bold [&_p:has(strong)]:font-heading [&_p]:text-lg
   [&_p>strong]:text-white"
-            ></div>
+            ></motion.div>
           </div>
         );
       case "notYetCreated":
