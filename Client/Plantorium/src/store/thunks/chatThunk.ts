@@ -9,7 +9,7 @@ export const postChatThunk = createAsyncThunk(
   ) => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/chat/create",
+        `${import.meta.env.VITE_ENDPOINT_BASE_URL}/api/chat/create`,
         { userId, firstQuery },
         {
           headers: {
@@ -37,7 +37,7 @@ export const getResponseThunk = createAsyncThunk(
   ) => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/chat/query",
+        `${import.meta.env.VITE_ENDPOINT_BASE_URL}/api/chat/query`,
         { chatId, query },
         {
           headers: {
@@ -62,7 +62,7 @@ export const getAllChats = createAsyncThunk(
   async (userId: string, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        `http://localhost:3000/api/chat/getChats/${userId}`,
+        `${import.meta.env.VITE_ENDPOINT_BASE_URL}/api/chat/getChats/${userId}`,
         {
           withCredentials: true,
         }
@@ -84,7 +84,9 @@ export const getSpecificChat = createAsyncThunk(
   async (chatId: string, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        `http://localhost:3000/api/chat/getSpecificChat/${chatId}`,
+        `${
+          import.meta.env.VITE_ENDPOINT_BASE_URL
+        }/api/chat/getSpecificChat/${chatId}`,
         {
           withCredentials: true,
         }
@@ -106,7 +108,9 @@ export const deleteChat = createAsyncThunk(
   async (chatId: string, { rejectWithValue }) => {
     try {
       const response = await axios.delete(
-        `http://localhost:3000/api/chat/deleteChat/${chatId}`,
+        `${
+          import.meta.env.VITE_ENDPOINT_BASE_URL
+        }/api/chat/deleteChat/${chatId}`,
         {
           withCredentials: true,
         }

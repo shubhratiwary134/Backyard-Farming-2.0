@@ -31,7 +31,7 @@ export const createAFarm = createAsyncThunk(
       });
 
       const response = await axios.post(
-        "http://localhost:3000/api/plantorium/createNew",
+        `${import.meta.env.VITE_ENDPOINT_BASE_URL}/api/plantorium/createNew`,
         formData,
         {
           headers: {
@@ -55,7 +55,9 @@ export const myFarm = createAsyncThunk(
   async (userId: string, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        `http://localhost:3000/api/plantorium/user/${userId}`,
+        `${
+          import.meta.env.VITE_ENDPOINT_BASE_URL
+        }/api/plantorium/user/${userId}`,
         {
           withCredentials: true,
         }

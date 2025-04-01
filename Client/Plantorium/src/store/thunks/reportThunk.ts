@@ -11,7 +11,9 @@ export const generateReportThunk = createAsyncThunk(
   ) => {
     try {
       const response = await axios.post(
-        "http://localhost:3000/api/plantorium/generateReport",
+        `${
+          import.meta.env.VITE_ENDPOINT_BASE_URL
+        }/api/plantorium/generateReport`,
         { userId, crop },
         {
           withCredentials: true, // since our backend and frontend are running on different ports we need to add this so that our session cookies are sent without any problem
@@ -37,7 +39,9 @@ export const getReportThunk = createAsyncThunk(
   async (userId: string, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        `http://localhost:3000/api/plantorium/getReport/${userId}`,
+        `${
+          import.meta.env.VITE_ENDPOINT_BASE_URL
+        }/api/plantorium/getReport/${userId}`,
         {
           withCredentials: true,
         }
