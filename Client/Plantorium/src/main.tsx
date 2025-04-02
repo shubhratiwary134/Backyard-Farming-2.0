@@ -28,7 +28,9 @@ createRoot(document.getElementById("root")!).render(
             <Routes>
               <Route path="/" element={<App />} />
               <Route path="/plans" element={<Plans />}></Route>
-              <Route path = "/caseStudy" element= { <CaseStudy/>} > </Route>
+              <Route path="/caseStudy" element={<CaseStudy />}>
+                {" "}
+              </Route>
               <Route
                 path="/CreateFarm"
                 element={

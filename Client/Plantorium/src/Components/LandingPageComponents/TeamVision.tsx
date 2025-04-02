@@ -8,6 +8,7 @@ import arinHover from "../../Assests/arin_bg.png";
 import shreyaHover from "../../Assests/shreya_hover_bg.png";
 import { useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { useNavigate } from "react-router";
 
 const TeamVision = () => {
   const [hovered, setHovered] = useState({
@@ -15,6 +16,7 @@ const TeamVision = () => {
     shape2: false,
     shape3: false,
   });
+  const navigate = useNavigate();
   return (
     <div className="2xl:min-h-screen xl:h-[90vh] lg:h-[80vh] w-screen bg-black text-white  ">
       <div className="flex flex-col justify-between h-full pt-10 px-20">
@@ -190,9 +192,12 @@ const TeamVision = () => {
             <div className="hover:bg-white hover:text-black px-10 py-2 hover:py-4 rounded-3xl cursor-pointer duration-200">
               FAQs
             </div>
-            <div className="hover:bg-white hover:text-black px-10 py-2 hover:py-4 rounded-3xl cursor-pointer duration-200">
-              Reports
-            </div>
+            <button
+              onClick={() => navigate("/caseStudy")}
+              className="hover:bg-white hover:text-black px-10 py-2 hover:py-4 rounded-3xl cursor-pointer duration-200"
+            >
+              Case Study
+            </button>
             <button className="px-5 py-5 bg-[#888888] rounded-full flex items-center  underline decoration-white hover:bg-white hover:text-black hover:decoration-black  duration-200 hover:py-6">
               Know More <MdOutlineArrowOutward size={32} />
             </button>

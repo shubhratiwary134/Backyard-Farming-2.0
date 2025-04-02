@@ -6,21 +6,19 @@ const HomePage = () => {
   const { hasFarm } = useAppSelector((state) => state.user);
 
   return (
-    <div className="flex flex-col md:flex-row items-center justify-center md:justify-between px-4 sm:px-8 md:px-10 py-10">
-      <div className="w-full md:w-1/2 flex flex-col gap-6 md:gap-12 mt-6 md:mt-16 items-center md:items-center">
-        <h1 className="text-4xl sm:text-5xl md:text-3xl lg:text-6xl font-poppins text-center leading-tight">
+    <div className="flex flex-col md:flex-row  justify-center md:justify-between px-4 sm:px-8 md:px-10 py-5">
+      <div className="w-full md:w-1/2 flex flex-col gap-6 md:gap-12 mt-6 md:mt-16 xl:md-20 items-center md:items-center">
+        <h1 className="text-4xl sm:text-5xl md:text-3xl lg:text-6xl xl:text-7xl font-poppins text-center leading-tight">
           Backyard Farming 2.0
         </h1>
 
-        
-        <ul className="text-sm sm:text-lg md:text-lg lg:text-xl font-poppins list-disc list-outside space-y-2 pl-4 sm:pl-6 md:pl-10 text-center md:text-left">
+        <ul className="text-sm sm:text-lg md:text-lg lg:text-xl xl:text-2xl  font-poppins list-disc list-outside space-y-2 pl-4 sm:pl-6 md:pl-10 text-center md:text-left">
           <li>Track growth, update logs, and follow smart suggestions.</li>
           <li>Ask the AI chatbot now for instant farming advice.</li>
           <li>Submit your farm details and let us analyze your setup.</li>
           <li>Get a personalized report with tailored recommendations!</li>
         </ul>
 
-      
         {!hasFarm && (
           <div className="flex justify-center md:justify-end mt-4 w-full md:w-[80%] lg:w-[70%]">
             <StartFarmButton
