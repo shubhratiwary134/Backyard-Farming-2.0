@@ -13,6 +13,7 @@ import Report from "./Pages/Report.tsx";
 import { PersistGate } from "redux-persist/integration/react";
 import Chat from "./Pages/Chat.tsx";
 import MyFarm from "./Pages/MyFarm.tsx";
+import { CaseStudy } from "./Pages/CaseStudy.tsx";
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 if (!PUBLISHABLE_KEY) {
@@ -27,6 +28,7 @@ createRoot(document.getElementById("root")!).render(
             <Routes>
               <Route path="/" element={<App />} />
               <Route path="/plans" element={<Plans />}></Route>
+              <Route path = "/caseStudy" element= { <CaseStudy/>} > </Route>
               <Route
                 path="/CreateFarm"
                 element={
