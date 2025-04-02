@@ -7,7 +7,7 @@ const HomePage = () => {
 
   return (
     <div className="flex flex-col md:flex-row  justify-center md:justify-between px-4 sm:px-8 md:px-10 py-5">
-      <div className="w-full md:w-1/2 flex flex-col gap-6 md:gap-12 mt-6 md:mt-16 xl:md-20 items-center md:items-center">
+      <div className="w-full md:w-1/2 flex flex-col gap-6 md:gap-12 mt-6 md:mt-16 xl:mt-24  items-center md:items-center">
         <h1 className="text-4xl sm:text-5xl md:text-3xl lg:text-6xl xl:text-7xl font-poppins text-center leading-tight">
           Backyard Farming 2.0
         </h1>
