@@ -5,7 +5,7 @@ const ChatButton = () => {
   return (
     <div>
       <button
-        className="w-44 rounded-full absolute bottom-10 hover:px-10 hover:scale-110 duration-200 p-5 left-10 shadow-2xl shadow-black"
+        className="w-44 rounded-full absolute bottom-10 hover:p-5 hover:scale-110 duration-200 left-10 shadow-2xl shadow-black"
         onClick={() => {
           navigate("/chat");
         }}

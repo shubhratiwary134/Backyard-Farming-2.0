@@ -7,12 +7,15 @@ import { marked } from "marked";
 import { jsPDF } from "jspdf";
 import { FaHome } from "react-icons/fa";
 import { useNavigate } from "react-router";
+import { CiExport } from "react-icons/ci";
+import { motion } from "framer-motion";
 
 const Report = () => {
   const dispatch = useAppDispatch();
   const { user } = useUser();
   const { reportText, reportStatus } = useAppSelector((state) => state.report);
   const navigate = useNavigate();
+
   useEffect(() => {
     const userId = user?.id;
     if (userId && !reportText) {
@@ -55,24 +58,29 @@ const Report = () => {
         );
       case "generated":
         return (
-          <div className="bg-[#e1e4e1]  flex flex-col gap-20">
+          <div className=" bg-[#355e3b] flex flex-col gap-20 text-white">
             <div className="px-20 mt-5 flex justify-between items-center">
               <button onClick={() => navigate("/")}>
-                <FaHome size={64} />
+                <FaHome size={48} />
               </button>
-              <div className="ml-5   text-8xl font-serif ">Report</div>
+              <div className="ml-5 text-7xl font-serif  ">Backyard Report</div>
               <button
-                className="mr-10 bg-slate-600 text-white px-10 py-2 rounded-full"
+                className="mr-10 px-10 py-2 rounded-full"
                 onClick={handleExport}
               >
-                Export As PDF
+                <CiExport size={48} />
               </button>
             </div>
 
-            <div
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1.5 }}
               dangerouslySetInnerHTML={{ __html: html }}
-              className="bg-[#f7fff7] mb-10 mx-20  p-10 rounded-lg shadow-black border-2 border-black"
-            ></div>
+              className="w-full max-w-none prose lg:prose-xl 2xl:prose-3xl px-20 py-10 font-poppins text-white
+  [&_p:has(strong)]:text-4xl [&_p:has(strong)]:font-bold [&_p:has(strong)]:font-heading [&_p]:text-lg
+  [&_p>strong]:text-white"
+            ></motion.div>
           </div>
         );
       case "notYetCreated":

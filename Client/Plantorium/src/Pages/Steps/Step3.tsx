@@ -25,7 +25,7 @@ const Step3 = () => {
       transition={{ duration: 1 }}
       className="flex flex-col gap-10"
     >
-      <p className="text-lg">Upload images</p>
+      <p className="text-xl font-poppins">Upload Soil Images</p>
       <div className="grid grid-cols-4 gap-10 ">
         {values.Photos?.map((image, index) => {
           return (

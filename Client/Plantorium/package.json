@@ -16,6 +16,7 @@
     "@mui/material": "^5.16.11",
     "@reduxjs/toolkit": "^2.2.8",
     "@splinetool/react-spline": "^4.0.0",
+    "@tailwindcss/typography": "^0.5.16",
     "axios": "^1.7.7",
     "formik": "^2.4.6",
     "html2canvas": "^1.4.1",

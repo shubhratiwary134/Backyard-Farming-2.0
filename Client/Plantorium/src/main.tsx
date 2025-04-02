@@ -41,7 +41,7 @@ createRoot(document.getElementById("root")!).render(
                 path="/myFarm"
                 element={
                   <ProtectedRoute>
-                    <MyFarm/>
+                    <MyFarm />
                   </ProtectedRoute>
                 }
               />
