@@ -3,6 +3,11 @@ import { useAppDispatch, useAppSelector } from "../store/Hook";
 import { getFamousCrops } from "../store/thunks/cropThunk";
 import image1 from "../Assests/YellowTheme.jpg";
 
+interface CropInterface {
+  name: string;
+  description: string;
+}
+
 const FamousCropsLists = () => {
   const dispatch = useAppDispatch();
   const { allFamousCrops } = useAppSelector((state) => state.crops);
@@ -11,7 +16,7 @@ const FamousCropsLists = () => {
   }, [dispatch]);
   return (
     <div className="grid grid-cols-4 gap-20">
-      {allFamousCrops.map((crop, id) => {
+      {allFamousCrops.map((crop: CropInterface, id) => {
         return (
           <div
             key={id}

@@ -24,7 +24,7 @@ const Report = () => {
   }, [dispatch, user?.id, reportText]);
 
   const reportContent = () => {
-    const html = marked.parse(reportText);
+    const html = marked.parse(reportText) as string;
     const handleExport = () => {
       const doc = new jsPDF();
       const marginLeft = 10;
@@ -36,7 +36,7 @@ const Report = () => {
       let y = marginTop;
       const lines = doc.splitTextToSize(reportText, maxWidth);
 
-      lines.forEach((line) => {
+      lines.forEach((line: string) => {
         if (y + lineHeight > maxHeight) {
           doc.addPage(); // Add a new page
           y = marginTop; // Reset y position for new page

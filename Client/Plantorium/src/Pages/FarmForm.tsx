@@ -1,4 +1,4 @@
-import { Formik } from "formik";
+import { Formik, FormikErrors } from "formik";
 import {
   plantoriumValidationSchemaStep1,
   plantoriumValidationSchemaStep2,
@@ -18,7 +18,7 @@ import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
 import farmHeadingPhoto from "../Assests/formHeading2.jpg";
 import { GiFarmTractor } from "react-icons/gi";
 
-const FarmForm = ({ farmSubmission }) => {
+const FarmForm = ({ farmSubmission }: { farmSubmission: () => void }) => {
   const [step, setStep] = useState(1);
   const { user } = useUser();
   const dispatch = useAppDispatch();
@@ -38,7 +38,7 @@ const FarmForm = ({ farmSubmission }) => {
   };
   const handleNextStep = async (
     e: React.MouseEvent<HTMLButtonElement>,
-    validateForm
+    validateForm: () => Promise<FormikErrors<FarmFormValues>>
   ) => {
     e.preventDefault();
     const errors = await validateForm();
