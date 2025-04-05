@@ -1,4 +1,4 @@
-import ChatMessages from "../Components/chatComponents/chatMessages";
+import ChatMessages from "../Components/chatComponents/ChatMessages";
 import ChatQuestionBar from "../Components/chatComponents/ChatQuestionBar";
 import ChatSidebar from "../Components/chatComponents/ChatSidebar";
 

@@ -9,7 +9,7 @@ const AddressInputField = () => {
   const { values, handleChange, handleBlur, errors, touched, setFieldValue } =
     useFormikContext<FarmFormValues>();
   const [loading, setLoading] = useState(false);
-  const getGeoLocation = async (latitude, longitude) => {
+  const getGeoLocation = async (latitude: number, longitude: number) => {
     try {
       // fetch the user location using the API
       const response = await fetch(

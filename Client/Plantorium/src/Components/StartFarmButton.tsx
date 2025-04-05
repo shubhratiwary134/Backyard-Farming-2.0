@@ -1,7 +1,13 @@
 import { FaArrowTrendUp } from "react-icons/fa6";
 import { useNavigate } from "react-router";
 
-const StartFarmButton = ({ className, text }) => {
+const StartFarmButton = ({
+  className,
+  text,
+}: {
+  className?: string;
+  text: string;
+}) => {
   const navigate = useNavigate();
   return (
     <div>

@@ -14,7 +14,7 @@ const Step3 = () => {
       setFieldValue("Photos", updatedPhotos.slice(0, 4)); // Limit to 5 files
     }
   }
-  function handleRemove(index) {
+  function handleRemove(index: number) {
     const updatedPhotos = values.Photos?.filter((_, i) => i !== index);
     setFieldValue("Photos", updatedPhotos);
   }

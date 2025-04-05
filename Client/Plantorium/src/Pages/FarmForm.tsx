@@ -36,7 +36,10 @@ const FarmForm = ({ farmSubmission }) => {
     Address: "",
     Photos: [],
   };
-  const handleNextStep = async (e, validateForm) => {
+  const handleNextStep = async (
+    e: React.MouseEvent<HTMLButtonElement>,
+    validateForm
+  ) => {
     e.preventDefault();
     const errors = await validateForm();
     if (Object.keys(errors).length === 0) {
@@ -44,12 +47,12 @@ const FarmForm = ({ farmSubmission }) => {
     }
   };
 
-  const handlePreviousStep = (e) => {
+  const handlePreviousStep = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     const newStep = Math.max(step - 1, 1);
     setStep(newStep);
   };
-  const handleValidation = (step) => {
+  const handleValidation = (step: number) => {
     switch (step) {
       case 1:
         return plantoriumValidationSchemaStep1;
