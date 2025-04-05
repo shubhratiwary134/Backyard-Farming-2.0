@@ -20,7 +20,7 @@ const Step2 = () => {
               <label htmlFor="pastCrops" className="px-1 text-lg font-mono">
                 Past Crops
               </label>
-              {values.pastCrops.map((crop, index) => (
+              {values.pastCrops.map((_, index) => (
                 <div key={index} className="flex gap-4 items-center">
                   <input
                     type="text"
@@ -115,7 +115,7 @@ const Step2 = () => {
               <label htmlFor="affectedCrops" className="px-1 text-lg font-mono">
                 Affected Crops
               </label>
-              {values.affectedCrops.map((crop, index) => (
+              {values.affectedCrops.map((_, index) => (
                 <div key={index} className=" flex items-center gap-4">
                   <input
                     type="text"
@@ -156,7 +156,7 @@ const Step2 = () => {
               <label htmlFor="cropDiseases" className="px-1 text-lg font-mono">
                 Crop Diseases
               </label>
-              {values.cropDiseases.map((disease, index) => (
+              {values.cropDiseases.map((_, index) => (
                 <div key={index} className="flex gap-4 items-center">
                   <input
                     type="text"
