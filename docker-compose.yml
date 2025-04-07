@@ -19,13 +19,13 @@ services:
     networks:
       - Plantify-network
   backend: 
-    build: ./api
+    build: ./Api
     ports:
       - "3000:3000"
     depends_on:
       - ai_service
     env_file:
-      - ./api/.env
+      - ./Api/.env
     networks:
       - Plantify-network
     
