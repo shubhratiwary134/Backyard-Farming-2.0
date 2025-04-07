@@ -20,7 +20,7 @@ const startServer = async () => {
   app.use(cors(corsOptions));
   app.use(express.json()); // parse the JSON data into the request Format
   //Public Routes that don't require the authentication for the access
-  app.use("/", PublicRoutes);
+  app.use("/public", PublicRoutes);
   //Protected Routes that require the authentication
   app.use("/api", PrivateRoutes);
   app.listen(PORT, () => {

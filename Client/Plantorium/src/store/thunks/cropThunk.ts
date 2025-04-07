@@ -5,7 +5,7 @@ export const getFamousCrops = createAsyncThunk(
   "/famousCrops",
   async (_, { rejectWithValue }) => {
     try {
-      const response = await axios.get(`/famousCrops`, {
+      const response = await axios.get(`/public/famousCrops`, {
         withCredentials: true,
       });
 
