@@ -3,7 +3,7 @@ import { Chat } from "../Models/ChatModel";
 import axios from "axios";
 
 const User = require("../Models/UserModel");
-
+const AiBaseURL = process.env.AI_BASE_URL;
 export const createChat = async (req: Request, res: Response) => {
   const { userId, firstQuery } = req.body;
 
@@ -88,15 +88,11 @@ export const addMessageAndGetResponse = async (req: Request, res: Response) => {
   User: ${query}
   `,
     };
-    const response = await axios.post(
-      "http://127.0.0.1:5000/api/v1/query",
-      payload,
-      {
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
+    const response = await axios.post(`${AiBaseURL}/api/v1/query`, payload, {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
     const responseText = response.data.response;
     chat.messages.push({
       role: "bot",

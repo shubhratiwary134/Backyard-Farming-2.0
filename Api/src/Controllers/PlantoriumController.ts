@@ -5,6 +5,7 @@ import mongoose from "mongoose";
 const Plantorium = require("../Models/PlantoriumModel");
 const User = require("../Models/UserModel");
 const Report = require("../Models/ReportModel");
+const AiBaseURL = process.env.AI_BASE_URL;
 export const createPlantorium = async (req: Request, res: Response) => {
   const data = req.body;
   if (!data) {
@@ -155,15 +156,11 @@ export const postGeneratedReport = async (req: Request, res: Response) => {
       };
 
       // first hit the rag endpoint /report to create the report
-      const response = await axios.post(
-        "http://127.0.0.1:5000/api/v1/query",
-        payload,
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const response = await axios.post(`${AiBaseURL}/api/v1/query`, payload, {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
       // store it in DB with report model
       const report = await Report.create({
         plantoriumID,
