@@ -30,15 +30,11 @@ export const createAFarm = createAsyncThunk(
         formData.append("Photos", file);
       });
 
-      const response = await axios.post(
-        `${import.meta.env.VITE_ENDPOINT_BASE_URL}/api/plantorium/createNew`,
-        formData,
-        {
-          headers: {
-            "Content-Type": "multipart/form-data",
-          },
-        }
-      );
+      const response = await axios.post(`/api/plantorium/createNew`, formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
       return response.data;
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -54,14 +50,9 @@ export const myFarm = createAsyncThunk(
   "/myFarm",
   async (userId: string, { rejectWithValue }) => {
     try {
-      const response = await axios.get(
-        `${
-          import.meta.env.VITE_ENDPOINT_BASE_URL
-        }/api/plantorium/user/${userId}`,
-        {
-          withCredentials: true,
-        }
-      );
+      const response = await axios.get(`/api/plantorium/user/${userId}`, {
+        withCredentials: true,
+      });
       return response.data;
     } catch (error) {
       if (axios.isAxiosError(error)) {

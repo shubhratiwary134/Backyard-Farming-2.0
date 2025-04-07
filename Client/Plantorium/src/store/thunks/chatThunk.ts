@@ -9,7 +9,7 @@ export const postChatThunk = createAsyncThunk(
   ) => {
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_ENDPOINT_BASE_URL}/api/chat/create`,
+        `/api/chat/create`,
         { userId, firstQuery },
         {
           headers: {
@@ -37,7 +37,7 @@ export const getResponseThunk = createAsyncThunk(
   ) => {
     try {
       const response = await axios.post(
-        `${import.meta.env.VITE_ENDPOINT_BASE_URL}/api/chat/query`,
+        `/api/chat/query`,
         { chatId, query },
         {
           headers: {
@@ -61,12 +61,9 @@ export const getAllChats = createAsyncThunk(
   "/getAllChats",
   async (userId: string, { rejectWithValue }) => {
     try {
-      const response = await axios.get(
-        `${import.meta.env.VITE_ENDPOINT_BASE_URL}/api/chat/getChats/${userId}`,
-        {
-          withCredentials: true,
-        }
-      );
+      const response = await axios.get(`/api/chat/getChats/${userId}`, {
+        withCredentials: true,
+      });
       return response.data;
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -83,14 +80,9 @@ export const getSpecificChat = createAsyncThunk(
   "/getSpecificChat",
   async (chatId: string, { rejectWithValue }) => {
     try {
-      const response = await axios.get(
-        `${
-          import.meta.env.VITE_ENDPOINT_BASE_URL
-        }/api/chat/getSpecificChat/${chatId}`,
-        {
-          withCredentials: true,
-        }
-      );
+      const response = await axios.get(`/api/chat/getSpecificChat/${chatId}`, {
+        withCredentials: true,
+      });
       return response.data;
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -107,14 +99,9 @@ export const deleteChat = createAsyncThunk(
   "/deleteChat",
   async (chatId: string, { rejectWithValue }) => {
     try {
-      const response = await axios.delete(
-        `${
-          import.meta.env.VITE_ENDPOINT_BASE_URL
-        }/api/chat/deleteChat/${chatId}`,
-        {
-          withCredentials: true,
-        }
-      );
+      const response = await axios.delete(`/api/chat/deleteChat/${chatId}`, {
+        withCredentials: true,
+      });
       return response.data;
     } catch (error) {
       if (axios.isAxiosError(error)) {

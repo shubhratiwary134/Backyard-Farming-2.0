@@ -12,9 +12,7 @@ export const checkAndAddUserInTheDBThunk = createAsyncThunk(
   async (userData: UserDataType, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        `${
-          import.meta.env.VITE_ENDPOINT_BASE_URL
-        }/api/user/Check-or-create-user`,
+        `/api/user/Check-or-create-user`,
         userData,
         {
           withCredentials: true,
@@ -38,12 +36,9 @@ export const getStatus = createAsyncThunk(
   "/getStatus",
   async (userId: string, { rejectWithValue }) => {
     try {
-      const response = await axios.get(
-        `${import.meta.env.VITE_ENDPOINT_BASE_URL}/api/user/status/${userId}`,
-        {
-          withCredentials: true,
-        }
-      );
+      const response = await axios.get(`/api/user/status/${userId}`, {
+        withCredentials: true,
+      });
       return response.data;
     } catch (error) {
       if (axios.isAxiosError(error)) {
