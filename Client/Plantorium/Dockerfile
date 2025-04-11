@@ -1,6 +1,7 @@
 FROM node:18-alpine AS builder
 
 WORKDIR /client
+COPY .env .env.production
 
 COPY package*.json ./
 COPY tsconfig.json ./
@@ -10,7 +11,7 @@ RUN npm install
 
 COPY . . 
 
-RUN npm run build
+RUN npm run build -- --mode production
 
 FROM nginx:alpine
 

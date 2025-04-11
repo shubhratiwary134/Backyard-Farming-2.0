@@ -4,8 +4,6 @@ services:
     build: ./Rag
     env_file:
       - ./Rag/.env
-    ports:
-      - "5000:5000"
     networks:
       - Plantify-network
   frontend:
@@ -14,14 +12,10 @@ services:
       - "80:80"
     depends_on:
       - backend
-    env_file:
-      - ./Client/Plantorium/.env
     networks:
       - Plantify-network
   backend: 
     build: ./Api
-    ports:
-      - "3000:3000"
     depends_on:
       - ai_service
     env_file:
@@ -33,9 +27,6 @@ services:
     image: qdrant/qdrant:latest
     container_name: qdrant
     restart: always
-    ports:
-      - "6333:6333"
-      - "6334:6334"
     volumes:
       - qdrant_data:/qdrant/storage
 
