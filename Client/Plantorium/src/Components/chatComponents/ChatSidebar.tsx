@@ -28,7 +28,7 @@ const ChatSidebar = () => {
         dispatch(getAllChats(userId));
       }
     }
-  }, [dispatch, userId, chats]);
+  }, [dispatch, userId, chats.length]);
   const handleChatClick = (chatId: string) => {
     if (chatId) {
       dispatch(getSpecificChat(chatId));
