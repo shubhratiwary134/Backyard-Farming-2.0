@@ -2,6 +2,7 @@
 
 A comprehensive AI-powered platform designed to support modern backyard farmers with intelligent guidance, automated management, and immersive visualization.
 
+[🎥 Watch Demo Video for Landing Page](https://drive.google.com/file/d/1ohhMY5R1z1ty1VJNi8aT9ubhtK2hc3aq/view?usp=sharing)
 ---
 
 ## 🧠 Overview
