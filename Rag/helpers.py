@@ -15,7 +15,6 @@ load_dotenv()
 
 # Qdrant & Groq Configuration
 QDRANT_HOST = os.getenv("QDRANT_HOST", "localhost")
-QDRANT_PORT = int(os.getenv("QDRANT_PORT", 6333))
 COLLECTION_NAME = os.getenv("COLLECTION_NAME", "default_collection")
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
