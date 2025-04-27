@@ -15,7 +15,8 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 ENV PYTHONUNBUFFERED=1
+ENV FLASK_APP=api.py
+ENV FLASK_ENV=production
+EXPOSE 5000
 
-EXPOSE 8000
-
-CMD ["gunicorn", "-b", "0.0.0.0:8000", "your_main_script:app"]
+CMD ["gunicorn", "--bind", "0.0.0.0:5000", "api:app"]
