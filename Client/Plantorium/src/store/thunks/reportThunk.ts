@@ -1,6 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
+const apiUrl = import.meta.env.VITE_ENDPOINT_BASE_URL;
 //note whatever the thunk sends in the Return ---> that becomes the action.payload for the slice
 
 export const generateReportThunk = createAsyncThunk(
@@ -11,7 +12,7 @@ export const generateReportThunk = createAsyncThunk(
   ) => {
     try {
       const response = await axios.post(
-        `/api/plantorium/generateReport`,
+        `${apiUrl}/api/plantorium/generateReport`,
         { userId, crop },
         {
           withCredentials: true, // since our backend and frontend are running on different ports we need to add this so that our session cookies are sent without any problem
@@ -36,9 +37,12 @@ export const getReportThunk = createAsyncThunk(
   "/getReport",
   async (userId: string, { rejectWithValue }) => {
     try {
-      const response = await axios.get(`/api/plantorium/getReport/${userId}`, {
-        withCredentials: true,
-      });
+      const response = await axios.get(
+        `${apiUrl}/api/plantorium/getReport/${userId}`,
+        {
+          withCredentials: true,
+        }
+      );
       return response.data;
     } catch (error) {
       if (axios.isAxiosError(error)) {

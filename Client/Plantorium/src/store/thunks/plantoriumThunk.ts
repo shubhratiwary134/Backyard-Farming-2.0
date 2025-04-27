@@ -2,6 +2,8 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { FormValueForThunk } from "../../Types/FarmFormTypes";
 
+const apiUrl = import.meta.env.VITE_ENDPOINT_BASE_URL;
+
 export const createAFarm = createAsyncThunk(
   "/createAFarm",
   async (FarmFormData: FormValueForThunk, { rejectWithValue }) => {
@@ -30,11 +32,15 @@ export const createAFarm = createAsyncThunk(
         formData.append("Photos", file);
       });
 
-      const response = await axios.post(`/api/plantorium/createNew`, formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
+      const response = await axios.post(
+        `${apiUrl}/api/plantorium/createNew`,
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
       return response.data;
     } catch (error) {
       if (axios.isAxiosError(error)) {
@@ -50,9 +56,12 @@ export const myFarm = createAsyncThunk(
   "/myFarm",
   async (userId: string, { rejectWithValue }) => {
     try {
-      const response = await axios.get(`/api/plantorium/user/${userId}`, {
-        withCredentials: true,
-      });
+      const response = await axios.get(
+        `${apiUrl}/api/plantorium/user/${userId}`,
+        {
+          withCredentials: true,
+        }
+      );
       return response.data;
     } catch (error) {
       if (axios.isAxiosError(error)) {

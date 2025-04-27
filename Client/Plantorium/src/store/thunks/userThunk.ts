@@ -1,6 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
+const apiUrl = import.meta.env.VITE_ENDPOINT_BASE_URL;
 interface UserDataType {
   name: string;
   clerkUserId: string;
@@ -12,7 +13,7 @@ export const checkAndAddUserInTheDBThunk = createAsyncThunk(
   async (userData: UserDataType, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        `/api/user/Check-or-create-user`,
+        `${apiUrl}/api/user/Check-or-create-user`,
         userData,
         {
           withCredentials: true,
@@ -36,7 +37,7 @@ export const getStatus = createAsyncThunk(
   "/getStatus",
   async (userId: string, { rejectWithValue }) => {
     try {
-      const response = await axios.get(`/api/user/status/${userId}`, {
+      const response = await axios.get(`${apiUrl}/api/user/status/${userId}`, {
         withCredentials: true,
       });
       return response.data;
