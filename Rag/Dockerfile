@@ -1,17 +1,21 @@
-FROM pytorch/pytorch:2.2.0-cuda11.8-cudnn8-runtime
-
-ENV PYTHONDONTWRITEBYTECODE=1
-ENV PYTHONUNBUFFERED=1
-ENV FLASK_APP=api.py
-ENV FLASK_ENV=production
+FROM python:3.10-slim
 
 WORKDIR /app
 
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gcc \
+    libgl1-mesa-glx \
+    libglib2.0-0 \
+    && rm -rf /var/lib/apt/lists/*
+
 COPY requirements.txt .
+
 RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
-EXPOSE 5000
+ENV PYTHONUNBUFFERED=1
 
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "api:app"]
+EXPOSE 8000
+
+CMD ["gunicorn", "-b", "0.0.0.0:8000", "your_main_script:app"]

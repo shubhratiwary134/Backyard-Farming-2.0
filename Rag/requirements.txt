@@ -4,7 +4,6 @@ pymupdf
 python-dotenv
 qdrant-client
 torch
-nomic
 langchain
 nomic[local]
 groq
