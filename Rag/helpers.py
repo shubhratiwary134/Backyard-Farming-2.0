@@ -14,7 +14,7 @@ from groq import Groq
 load_dotenv()
 
 # Qdrant & Groq Configuration
-QDRANT_HOST = os.getenv("QDRANT_HOST", "localhost")
+QDRANT_HOST = os.getenv("QDRANT_HOST", "https://qdrant-services.onrender.com")
 COLLECTION_NAME = os.getenv("COLLECTION_NAME", "default_collection")
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
