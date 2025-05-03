@@ -6,7 +6,7 @@ import PrivateRoutes from "./Routes/PrivateRoutes";
 const cors = require("cors");
 const express = require("express");
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 const corsOptions = {
   origin: "https://backyard-farming-2-0.vercel.app",
@@ -23,7 +23,7 @@ const startServer = async () => {
   app.use("/public", PublicRoutes);
   //Protected Routes that require the authentication
   app.use("/api", PrivateRoutes);
-  app.listen(PORT, () => {
+  app.listen(PORT, "0.0.0.0", () => {
     console.log("Server connected to port 3000 ");
   });
 
