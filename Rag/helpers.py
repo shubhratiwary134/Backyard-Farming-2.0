@@ -21,8 +21,8 @@ GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 # Ensure Groq client is initialized
 groq_client = Groq(api_key=GROQ_API_KEY)
 
-# Detect if CUDA is available
-device = "cuda" if torch.cuda.is_available() else "cpu"
+
+device ="cpu"
 
 class RAG:
     def extract_text_from_pdf(self, pdf_path):

@@ -3,7 +3,6 @@ flask-cors
 pymupdf
 python-dotenv
 qdrant-client
-torch
 langchain
 nomic[local]
 groq
