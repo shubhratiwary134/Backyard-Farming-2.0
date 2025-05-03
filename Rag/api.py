@@ -5,7 +5,10 @@ from flask_cors import CORS
 import os
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, supports_credentials=True, origins=[
+    "https://backyard-farming-2-0.onrender.com",
+    "http://localhost:3000"
+])
 @app.route('/api/v1/upload', methods=['POST'])
 def upload_pdf():
 
