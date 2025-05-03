@@ -9,7 +9,7 @@ const app = express();
 const PORT = 3000;
 
 const corsOptions = {
-  origin: "http://localhost:5173", // Allow only this origin
+  origin: "https://backyard-farming-2-0.vercel.app/",
   methods: ["GET", "POST", "PUT", "DELETE"], // Allow specific HTTP methods
   allowedHeaders: ["Content-Type", "Authorization"], // Specify allowed headers
   credentials: true, // Allow credentials (cookies, authorization headers, etc.)
