@@ -14,6 +14,7 @@ export const postChatThunk = createAsyncThunk(
         `${apiUrl}/api/chat/create`,
         { userId, firstQuery },
         {
+          withCredentials: true,
           headers: {
             "Content-Type": "application/json",
           },
@@ -42,6 +43,7 @@ export const getResponseThunk = createAsyncThunk(
         `${apiUrl}/api/chat/query`,
         { chatId, query },
         {
+          withCredentials: true,
           headers: {
             "Content-Type": "application/json",
           },
