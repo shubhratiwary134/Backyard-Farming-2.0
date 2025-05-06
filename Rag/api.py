@@ -1,17 +1,20 @@
 
 from flask import Flask, request, jsonify
 from helpers import WorkFlows
+from threading import Thread
 from flask_cors import CORS
 import os
 
 app = Flask(__name__)
+UPLOAD_FOLDER = 'uploads'
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 CORS(app, supports_credentials=True, origins=[
     "https://backyard-farming-2-0.onrender.com",
     "http://localhost:3000"
 ])
+
 @app.route('/api/v1/upload', methods=['POST'])
 def upload_pdf():
-
     if "file" not in request.files:
         return jsonify({"error": "No file provided"}), 400
 
@@ -20,25 +23,25 @@ def upload_pdf():
     if file.filename == "":
         return jsonify({"error": "No selected file"}), 400
     
-    # Define the directory where files will be saved
     uploads_dir = "./uploads"
-    
-    # Ensure the 'uploads' directory exists
     if not os.path.exists(uploads_dir):
         os.makedirs(uploads_dir)
 
-    # Save the file
     pdf_path = os.path.join(uploads_dir, file.filename)
     file.save(pdf_path)
 
-    try:
-        # Process the file using WorkFlows
-        workflow = WorkFlows()
-        workflow.ingest_data(pdf_path)
-        return jsonify({"message": f"File '{file.filename}' processed and stored in vectorDB"}), 200
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
+    # Define the background ingestion function
+    def async_embed(path):
+        try:
+            workflow = WorkFlows()
+            workflow.ingest_data(path)
+        except Exception as e:
+            print(f"[Background Error] Embedding failed for {path}: {e}")
 
+    # Start embedding in a separate thread
+    Thread(target=async_embed, args=(pdf_path,)).start()
+
+    return jsonify({"message": f"File '{file.filename}' upload received. Embedding started."}), 200
 
 @app.route("/api/v1/query", methods=["POST"])
 def query_rag():
