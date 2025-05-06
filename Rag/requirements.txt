@@ -7,3 +7,4 @@ langchain
 nomic[local]
 groq
 gunicorn
+numpy==1.26.4
