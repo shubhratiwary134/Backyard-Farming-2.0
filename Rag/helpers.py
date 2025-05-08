@@ -22,7 +22,6 @@ GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 groq_client = Groq(api_key=GROQ_API_KEY)
 
 
-device ="cpu"
 
 class RAG:
     def extract_text_from_pdf(self, pdf_path):
@@ -41,8 +40,7 @@ class RAG:
             texts=texts,
             model='nomic-embed-text-v1.5',
             task_type='search_document',
-            inference_mode='local',
-            device=device,
+            inference_mode='api',
         )
         return output
     
