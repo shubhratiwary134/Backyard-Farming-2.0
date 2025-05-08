@@ -55,7 +55,7 @@ class RAG:
 
 class VectorDatabase(RAG):
     def add_to_qdrant(self, chunks):  
-        client = QdrantClient(url=f"https://{QDRANT_HOST}")
+        client = QdrantClient(url=f"https://{QDRANT_HOST}:6333")
 
         # Ensure collection exists
         collections = client.get_collections().collections
@@ -105,7 +105,7 @@ class VectorDatabase(RAG):
             return False
     
     def clear_database(self):
-        client = QdrantClient(url=f"https://{QDRANT_HOST}")
+        client = QdrantClient(url=f"https://{QDRANT_HOST}:6333")
 
         if COLLECTION_NAME in [col.name for col in client.get_collections().collections]:
             client.delete_collection(collection_name=COLLECTION_NAME)
@@ -117,7 +117,7 @@ class Query(VectorDatabase):
 
     def query_rag(self, query_text: str):
         embedded_query = self.get_embedding_function([query_text])['embeddings'][0]
-        client = QdrantClient(url=f"https://{QDRANT_HOST}")
+        client = QdrantClient(url=f"https://{QDRANT_HOST}:6333")
         
         search_result = client.search(
             collection_name=COLLECTION_NAME, 
