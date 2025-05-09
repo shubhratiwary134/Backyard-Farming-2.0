@@ -151,16 +151,20 @@ class Query(VectorDatabase):
         {context}
 
         Answer the question based on the above context 
-        ONLY in a way that you are speaking to another human being, keep it concise: {question}
+        ONLY in a way that you are speaking to another human being: {question}
         """
 
         REPORT_PROMPT_TEMPLATE = """
-        Make a report based on the context based only on the following context:
+        Make a report in bullet Points based only on the following context:
         {context}
         include:
-        1) preferred pesticides
-        2) potential diseases
-        3) Soil preparation methods or something related to soil
+        1) Soil Analysis
+        2) Previous Crop Data & Crop Rotation Suggestions
+        3) Watering & Irrigation Plan
+        4) Fertilization & Nutrient Management
+        5) Pest & Disease Control
+        6) Seasonal Care & Weather Protection
+        7) Expected Yield & Harvesting Guidelines
 
         Answer the question based on the above context  in CLEAR BULLET POINTS
         

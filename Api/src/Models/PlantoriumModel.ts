@@ -1,10 +1,11 @@
-import mongoose from "mongoose";
+import mongoose, { Mongoose } from "mongoose";
 
 const plantoriumSchema = new mongoose.Schema({
   userId: {
     type: String,
     required: true,
     ref: "User",
+    unique: true,
   },
   averageRainfall: {
     type: Number, // Average rainfall in mm

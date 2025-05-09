@@ -157,7 +157,7 @@ const Step2 = () => {
 
         <div className="flex flex-col gap-1">
           <label htmlFor="landArea" className="px-1 text-lg font-mono ">
-            Land-Area
+            Land-Area (square meters)
           </label>
           <input
             type="number"

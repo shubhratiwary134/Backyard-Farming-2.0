@@ -1,6 +1,6 @@
 import { ClerkExpressWithAuth } from "@clerk/clerk-sdk-node";
 import userRoutes from "./userRoutes";
-import plantoriumRoutes from "./plantoriumRoutes";
+import plantoriumRoutes from "./PlantoriumRoutes";
 
 const express = require("express");
 

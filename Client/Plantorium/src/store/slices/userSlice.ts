@@ -27,7 +27,7 @@ const userSlice = createSlice({
       })
       .addCase(checkAndAddUserInTheDBThunk.fulfilled, (state, action) => {
         state.status = "completed";
-        state.currentUser = action.payload;
+        state.currentUser = action.payload.user;
         state.hasChecked = true;
       })
       .addCase(checkAndAddUserInTheDBThunk.rejected, (state, action) => {
