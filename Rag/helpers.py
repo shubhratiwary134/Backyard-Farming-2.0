@@ -11,22 +11,33 @@ import uuid
 import os
 from groq import Groq
 
+import logging
+logger = logging.getLogger(_name_)
+
 load_dotenv()
 
 # Qdrant & Groq Configuration
-QDRANT_HOST = os.getenv("QDRANT_HOST", "qdrant-services.onrender.com")
+QDRANT_HOST = os.getenv("QDRANT_HOST", "qdrant")
+QDRANT_PORT = int(os.getenv("QDRANT_PORT", 6333))
 COLLECTION_NAME = os.getenv("COLLECTION_NAME", "default_collection")
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 
 # Ensure Groq client is initialized
 groq_client = Groq(api_key=GROQ_API_KEY)
 
-
+# Detect if CUDA is available
+device = "cuda" if torch.cuda.is_available() else "cpu"
 
 class RAG:
+    
     def extract_text_from_pdf(self, pdf_path):
         doc = fitz.open(pdf_path)
+
+        logger.info(f"Extracting text from {pdf_path}")
+
         text = "\n".join([page.get_text("text") for page in doc])
+        logger.info(f"Extracted text length: {len(text)} characters")
+
         return text
 
     def split_text_into_chunks(self, text, chunk_size=500, chunk_overlap=50):
@@ -40,7 +51,8 @@ class RAG:
             texts=texts,
             model='nomic-embed-text-v1.5',
             task_type='search_document',
-            inference_mode='api',
+            inference_mode='local',
+            device=device,
         )
         return output
     
@@ -53,21 +65,28 @@ class RAG:
 
 class VectorDatabase(RAG):
     def add_to_qdrant(self, chunks):  
-        client = QdrantClient(url=f"https://{QDRANT_HOST}")
+        logger.info("Adding documents to Qdrant")
+        logger.info(f"Qdrant Host: {QDRANT_HOST}, Port: {QDRANT_PORT}")
+
+        client = QdrantClient(host=QDRANT_HOST, port=QDRANT_PORT)
+
+        logger.info(client)
 
         # Ensure collection exists
         collections = client.get_collections().collections
         collection_names = [col.name for col in collections]
 
+        logger.info(f"Existing collections: {collection_names}")
+    
         if COLLECTION_NAME not in collection_names:
             print(f"Creating collection '{COLLECTION_NAME}'")
             client.create_collection(
                 collection_name=COLLECTION_NAME,
                 vectors_config=VectorParams(size=768, distance=Distance.COSINE),  
             )
-            print(f"Collection '{COLLECTION_NAME}' created successfully.")
+            logger.info(f"Collection '{COLLECTION_NAME}' created successfully.")
         else:
-            print(f"Collection '{COLLECTION_NAME}' already exists.")
+            logger.error(f"Collection '{COLLECTION_NAME}' already exists.")
 
         chunks_with_ids = self.calculate_chunk_ids(chunks)
 
@@ -103,8 +122,7 @@ class VectorDatabase(RAG):
             return False
     
     def clear_database(self):
-        client = QdrantClient(url=f"https://{QDRANT_HOST}")
-
+        client = QdrantClient(host=QDRANT_HOST, port=QDRANT_PORT)
         if COLLECTION_NAME in [col.name for col in client.get_collections().collections]:
             client.delete_collection(collection_name=COLLECTION_NAME)
             print(f"Cleared collection '{COLLECTION_NAME}'")
@@ -115,7 +133,7 @@ class Query(VectorDatabase):
 
     def query_rag(self, query_text: str):
         embedded_query = self.get_embedding_function([query_text])['embeddings'][0]
-        client = QdrantClient(url=f"https://{QDRANT_HOST}")
+        client = QdrantClient(host=QDRANT_HOST, port=QDRANT_PORT)
         
         search_result = client.search(
             collection_name=COLLECTION_NAME, 

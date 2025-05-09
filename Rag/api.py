@@ -1,46 +1,50 @@
-
 from flask import Flask, request, jsonify
 from helpers import WorkFlows
-from threading import Thread
-from flask_cors import CORS
 import os
+import logging
 
-app = Flask(__name__)
+app = Flask(_name_)
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(_name_)
 
-CORS(app, supports_credentials=True, origins=[
-    "https://backyard-farming-2-0.onrender.com",
-    "http://localhost:3000"
-])
+UPLOAD_FOLDER = "./uploads"
+os.makedirs(UPLOAD_FOLDER, exist_ok=True)
 
 @app.route('/api/v1/upload', methods=['POST'])
 def upload_pdf():
-    if "file" not in request.files:
-        return jsonify({"error": "No file provided"}), 400
+    try:
+        # Ensure a file is included in the request
+        if "file" not in request.files:
+            logger.warning("No file part in the request.")
+            return jsonify({"error": "No file provided"}), 400
 
-    file = request.files["file"]
+        file = request.files["file"]
 
-    if file.filename == "":
-        return jsonify({"error": "No selected file"}), 400
-    
-    uploads_dir = "./uploads"
-    if not os.path.exists(uploads_dir):
-        os.makedirs(uploads_dir)
+        if file.filename == "":
+            logger.warning("Empty filename received.")
+            return jsonify({"error": "No selected file"}), 400
 
-    pdf_path = os.path.join(uploads_dir, file.filename)
-    file.save(pdf_path)
+        # Validate file type (only PDF allowed)
+        if not file.filename.lower().endswith(".pdf"):
+            logger.warning("Invalid file type.")
+            return jsonify({"error": "Only PDF files are allowed"}), 400
 
-    # Define the background ingestion function
-    def async_embed(path):
-        try:
-            workflow = WorkFlows()
-            workflow.ingest_data(path)
-        except Exception as e:
-            print(f"[Background Error] Embedding failed for {path}: {e}")
+        # Save the file
+        pdf_path = os.path.join(UPLOAD_FOLDER, file.filename)
+        file.save(pdf_path)
+        logger.info(f"Saved file to: {pdf_path}")
 
-    # Start embedding in a separate thread
-    Thread(target=async_embed, args=(pdf_path,)).start()
+        # Process the file using WorkFlows
+        workflow = WorkFlows()
+        workflow.ingest_data(pdf_path)
+        logger.info(f"File '{file.filename}' processed successfully.")
 
-    return jsonify({"message": f"File '{file.filename}' upload received. Embedding started."}), 200
+        return jsonify({"message": f"File '{file.filename}' processed and stored in vectorDB"}), 200
+
+    except Exception as e:
+        logger.exception("Error during PDF upload or processing")
+        return jsonify({"error": str(e)}), 500
+
 
 @app.route("/api/v1/query", methods=["POST"])
 def query_rag():
@@ -76,5 +80,5 @@ def generate_report():
         return jsonify({"error": str(e)}), 500
 
 
-if __name__ == "__main__":
+if _name_ == "_main_":
     app.run(debug=True, port = 5000, host = '0.0.0.0')
