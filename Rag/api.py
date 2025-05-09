@@ -3,9 +3,9 @@ from helpers import WorkFlows
 import os
 import logging
 
-app = Flask(_name_)
+app = Flask(__name__)
 logging.basicConfig(level=logging.INFO)
-logger = logging.getLogger(_name_)
+logger = logging.getLogger(__name__)
 
 UPLOAD_FOLDER = "./uploads"
 os.makedirs(UPLOAD_FOLDER, exist_ok=True)
@@ -80,5 +80,5 @@ def generate_report():
         return jsonify({"error": str(e)}), 500
 
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     app.run(debug=True, port = 5000, host = '0.0.0.0')
