@@ -4,3 +4,7 @@ torch
 nomic
 langchain
 nomic[local]
+flask
+qdrant_client
+python-dotenv
+groq
