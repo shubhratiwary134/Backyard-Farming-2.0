@@ -4,14 +4,22 @@ import image3 from "../Assests/report4.png";
 import image4 from "../Assests/report3.png";
 import image5 from "../Assests/report5.png";
 import { motion } from "framer-motion";
+import { useNavigate } from "react-router";
+import { FaHome } from "react-icons/fa";
 
 export const CaseStudy = () => {
+  const navigate = useNavigate();
   return (
-    <div className="bg-black text-white min-h-screen p-10 font-[Poppins]">
-      <div className="text-center">
-        <h1 className="text-7xl font-poppins text-[#ffde59] tracking-widest">
-          Case Study
-        </h1>
+    <div className="bg-zinc-900 text-white min-h-screen p-10 font-[Poppins]">
+      <div className=" flex gap-20">
+        <button onClick={() => navigate("/")}>
+          <FaHome size={64} />
+        </button>
+        <div className="w-[80%] text-center flex justify-center">
+          <h1 className="text-7xl font-poppins text-[#ffde59] tracking-widest">
+            Case Study
+          </h1>
+        </div>
       </div>
       <div className="flex flex-col gap-10 mt-10">
         {/*report1*/}
@@ -129,9 +137,9 @@ export const CaseStudy = () => {
 
         {/* Report 5 */}
         <div className="group relative w-full mt-10 flex flex-col gap-10 items-center">
-          <p className="text-[#d2d2d1] text-3xl text-center ml-4 w-full font-poppins tracking-wider">
+          <p className="text-[#d2d2d1] text-3xl  ml-4 w-full font-poppins tracking-wider">
             # Personalized Farming Plans: Enhancing Urban Gardening with
-            Tailored Roadmaps by{" "}
+            Tailored Roadmaps by <br></br>
             <span className="text-[#ffde59]">Arin Zingade</span>
           </p>
           <div className="w-3/4 mt-2 overflow-hidden">
