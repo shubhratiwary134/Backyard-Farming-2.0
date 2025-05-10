@@ -15,7 +15,7 @@ export const CaseStudy = () => {
         <button onClick={() => navigate("/")}>
           <FaHome size={64} />
         </button>
-        <div className="w-[80%] text-center flex justify-center">
+        <div className="text-center flex justify-center">
           <h1 className="text-7xl font-poppins text-[#ffde59] tracking-widest">
             Case Study
           </h1>
@@ -25,8 +25,8 @@ export const CaseStudy = () => {
         {/*report1*/}
         <div className="group relative w-full mt-10 flex flex-col gap-10 items-center">
           <p className="text-[#d2d2d1] text-2xl ml-4 w-full font-poppins tracking-wider">
-            # Problems and Challenges by{" "}
-            <span className="text-[#ffde59]">Shreya Soni</span>
+            / Problems and Challenges by{" "}
+            <span className="text-[#ffde59]">Shreya Soni</span> /
           </p>
           <div className="w-3/4 mt-2 overflow-hidden">
             <motion.img
@@ -52,9 +52,9 @@ export const CaseStudy = () => {
 
         {/*report2*/}
         <div className="group relative w-full mt-10 flex flex-col gap-10 items-center">
-          <p className="text-[#d2d2d1] text-3xl ml-4 w-full font-poppins tracking-wider">
-            # Knowledge Gaps in Urban Farming: Understanding Public Interest by{" "}
-            <span className="text-[#ffde59]">Shreya Soni</span>
+          <p className="text-[#d2d2d1] text-2xl ml-4 w-full font-poppins tracking-wider">
+            / Knowledge Gaps in Urban Farming: Understanding Public Interest by{" "}
+            <span className="text-[#ffde59]">Shreya Soni</span> /
           </p>
           <div className="w-3/4 mt-2 overflow-hidden">
             <motion.img
@@ -80,9 +80,9 @@ export const CaseStudy = () => {
 
         {/*report3*/}
         <div className="group relative w-full mt-10 flex flex-col gap-10 items-center">
-          <p className="text-[#d2d2d1] text-3xl ml-4 w-full font-poppins tracking-wider">
-            # Marketplace Feature in Backyard Farming 2.0 by{" "}
-            <span className="text-[#ffde59]">Shubhra Tiwary</span>
+          <p className="text-[#d2d2d1] text-2xl ml-4 w-full font-poppins tracking-wider">
+            / Marketplace Feature in Backyard Farming 2.0 by{" "}
+            <span className="text-[#ffde59]">Shubhra Tiwary</span> /
           </p>
           <div className="w-3/4 mt-2 overflow-hidden">
             <motion.img
@@ -108,10 +108,10 @@ export const CaseStudy = () => {
 
         {/* Report 4 */}
         <div className="group relative w-full mt-10 flex flex-col gap-10 items-center">
-          <p className="text-[#d2d2d1] text-3xl ml-4 w-full font-poppins tracking-wider">
-            # Mitigating Agriculture's Carbon Footprint: The Role of Urban and
-            Backyard Farming in Emission Reduction by{" "}
-            <span className="text-[#ffde59]">Shubhra Tiwary</span>
+          <p className="text-[#d2d2d1] text-2xl ml-4 w-full font-poppins tracking-wider">
+            / Mitigating Agriculture's Carbon Footprint: The Role of Backyard
+            Farming in Emission Reduction by{" "}
+            <span className="text-[#ffde59]">Shubhra Tiwary</span> /
           </p>
           <div className="w-3/4 mt-2 overflow-hidden">
             <motion.img
@@ -137,10 +137,10 @@ export const CaseStudy = () => {
 
         {/* Report 5 */}
         <div className="group relative w-full mt-10 flex flex-col gap-10 items-center">
-          <p className="text-[#d2d2d1] text-3xl  ml-4 w-full font-poppins tracking-wider">
-            # Personalized Farming Plans: Enhancing Urban Gardening with
+          <p className="text-[#d2d2d1] text-2xl  ml-4 w-full font-poppins tracking-wider">
+            / Personalized Farming Plans: Enhancing Urban Gardening with
             Tailored Roadmaps by <br></br>
-            <span className="text-[#ffde59]">Arin Zingade</span>
+            <span className="text-[#ffde59]">Arin Zingade</span> /
           </p>
           <div className="w-3/4 mt-2 overflow-hidden">
             <motion.img
