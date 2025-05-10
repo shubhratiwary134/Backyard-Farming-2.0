@@ -14,7 +14,7 @@ const CropChoice = () => {
     return <LoadingScreen />;
   }
   return (
-    <div className="h-screen bg-[#355e3b] text-white flex flex-col items-center justify-center  gap-20">
+    <div className="w-screen h-screen bg-[#355e3b] text-white flex flex-col items-center justify-center  gap-20">
       <div className="text-6xl p-10">Select Crop Type </div>
       <div className=" flex  justify-around items-center gap-40 ">
         {cropChoices.map((crop) => {
