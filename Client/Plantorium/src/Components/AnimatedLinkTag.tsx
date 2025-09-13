@@ -13,7 +13,10 @@ const AnimatedLink = ({
   className = "",
 }: AnimatedLinkProps) => {
   return (
-    <motion.a href={href} className={`relative inline-block ${className}`}>
+    <motion.a
+      href={href}
+      className={`relative inline-block hover:border-b-2 border-white ${className} `}
+    >
       {children}
     </motion.a>
   );
