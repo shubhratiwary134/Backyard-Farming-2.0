@@ -46,7 +46,6 @@ This project is built on a modern microservice architecture, fully containerized
   * **State Management:** Redux Toolkit
   * **Routing:** React Router DOM
   * **Animations:** Framer Motion
-  * **Authentication:** Auth0 React SDK
 
 ### Backend (API)
 
@@ -80,7 +79,6 @@ This project is designed to be run easily using Docker Compose.
   * Python (for manual install)
   * Docker & Docker Compose
   * A **Cloudinary** account (for image storage)
-  * An **Auth0** account (for authentication)
   * A **MongoDB** Atlas URI or local MongoDB instance
 
 ### 1\. Clone the Repository
