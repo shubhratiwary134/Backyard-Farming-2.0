@@ -2,6 +2,8 @@
 
 ---
 
+![React](https://img.shields.io/badge/React-Frontend-blue?style=for-the-badge&logo=react) ![TypeScript](https://img.shields.io/badge/TypeScript-Code-blue?style=for-the-badge&logo=typescript) ![Vite](https://img.shields.io/badge/Vite-Build-purple?style=for-the-badge&logo=vite) ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-Styling-cyan?style=for-the-badge&logo=tailwindcss) ![Redux](https://img.shields.io/badge/Redux-State-purple?style=for-the-badge&logo=redux) ![Node.js](https://img.shields.io/badge/Node.js-Backend-green?style=for-the-badge&logo=node.js) ![Express](https://img.shields.io/badge/Express-API-black?style=for-the-badge&logo=express) ![MongoDB](https://img.shields.io/badge/MongoDB-Database-green?style=for-the-badge&logo=mongodb) ![Python](https://img.shields.io/badge/Python-AI_Service-blue?style=for-the-badge&logo=python) ![Flask](https://img.shields.io/badge/Flask-AI_API-black?style=for-the-badge&logo=flask) ![LangChain](https://img.shields.io/badge/LangChain-RAG-purple?style=for-the-badge) ![Groq](https://img.shields.io/badge/Groq-LLM-orange?style=for-the-badge) ![Clerk](https://img.shields.io/badge/Clerk-Auth-blue?style=for-the-badge) ![Cloudinary](https://img.shields.io/badge/Cloudinary-Storage-blue?style=for-the-badge&logo=cloudinary) ![Docker](https://img.shields.io/badge/Docker-DevOps-blue?style=for-the-badge&logo=docker) ![MIT License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
+
 A comprehensive AI-powered platform designed to support modern backyard farmers with intelligent guidance, automated management, and immersive visualization.
 
 [ Watch Demo Video for Landing Page](https://drive.google.com/file/d/1ohhMY5R1z1ty1VJNi8aT9ubhtK2hc3aq/view?usp=sharing)
