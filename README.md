@@ -23,9 +23,7 @@ Whether you're a seasoned gardener or just starting, Plantorium helps you track 
 ##  Core Features
 
   * **Secure Authentication:** User registration and login handled securely via **clerk**, ensuring profile and farm data are protected.
-  * **Multi Step Farm Creation:** An intuitive, multi step form (`FarmForm`) guides users through setting up their virtual farm, capturing details like location, soil type, and sunlight exposure.
   * **Farm Dashboard:** A central hub (`MyFarm`) where users can view and manage their registered farm, including all their crops.
-  * **Crop Management:** Users can browse a database of crops and add them to their farm, tracking their progress from seed to harvest.
   * **Advanced AI Chatbot (RAG):** A dedicated chat interface (`Chat`) powered by a separate Python microservice. This service uses a **Retrieval-Augmented Generation (RAG)** model to provide highly accurate and relevant gardening advice, pulling information from a knowledge base of documents (like `corn_1.pdf`).
   * **Image Uploads:** Users can upload images of their farm and plants using **Multer** for processing and **Cloudinary** for cloud storage.
   * **Dynamic Reporting:** A feature to generate reports (`Report`) on farm status, crop health, or other user defined metrics.
