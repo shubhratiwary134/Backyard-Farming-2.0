@@ -22,7 +22,7 @@ Whether you're a seasoned gardener or just starting, Plantorium helps you track 
 
 ##  Core Features
 
-  * **Secure Authentication:** User registration and login handled securely via **Auth0**, ensuring profile and farm data are protected.
+  * **Secure Authentication:** User registration and login handled securely via **clerk**, ensuring profile and farm data are protected.
   * **Multi Step Farm Creation:** An intuitive, multi step form (`FarmForm`) guides users through setting up their virtual farm, capturing details like location, soil type, and sunlight exposure.
   * **Farm Dashboard:** A central hub (`MyFarm`) where users can view and manage their registered farm, including all their crops.
   * **Crop Management:** Users can browse a database of crops and add them to their farm, tracking their progress from seed to harvest.
